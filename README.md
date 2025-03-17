@@ -4,7 +4,7 @@ A terminal-based todo list application for tracking subjects with Nursery and Pr
 
 ## Features
 
-- Track multiple subjects (English, Mathematics, Science, etc.)
+- Track multiple subjects (English, Math, Science, etc.)
 - Each subject has both Nursery and Primary sections
 - Each section has two status checkboxes: Done and Printed
 - Interactive terminal UI with color-coded status indicators

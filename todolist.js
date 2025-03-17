@@ -8,7 +8,7 @@ const readline = require('readline');
 
 // Define the subjects array (copied from index.js)
 const subjects = [
- "Mathematics",
+ "Math",
  "English Language",
  "Basic Science and Technology",
  "Computer Science",
