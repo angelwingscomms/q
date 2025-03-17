@@ -1,0 +1,362 @@
+{
+  "Mathematics": {
+    "n1": {
+      "done": false,
+      "printed": false
+    },
+    "n2": {
+      "done": false,
+      "printed": false
+    },
+    "g1": {
+      "done": false,
+      "printed": false
+    },
+    "g2": {
+      "done": false,
+      "printed": false
+    },
+    "g3": {
+      "done": false,
+      "printed": false
+    },
+    "g4": {
+      "done": false,
+      "printed": false
+    },
+    "g5": {
+      "done": false,
+      "printed": false
+    }
+  },
+  "English Language": {
+    "n1": {
+      "done": false,
+      "printed": false
+    },
+    "n2": {
+      "done": false,
+      "printed": false
+    },
+    "g1": {
+      "done": false,
+      "printed": false
+    },
+    "g2": {
+      "done": false,
+      "printed": false
+    },
+    "g3": {
+      "done": false,
+      "printed": false
+    },
+    "g4": {
+      "done": false,
+      "printed": false
+    },
+    "g5": {
+      "done": false,
+      "printed": false
+    }
+  },
+  "Basic Science and Technology": {
+    "n1": {
+      "done": false,
+      "printed": false
+    },
+    "n2": {
+      "done": false,
+      "printed": true
+    },
+    "g1": {
+      "done": false,
+      "printed": false
+    },
+    "g2": {
+      "done": false,
+      "printed": false
+    },
+    "g3": {
+      "done": false,
+      "printed": false
+    },
+    "g4": {
+      "done": false,
+      "printed": false
+    },
+    "g5": {
+      "done": false,
+      "printed": false
+    }
+  },
+  "Computer Science": {
+    "n1": {
+      "done": false,
+      "printed": false
+    },
+    "n2": {
+      "done": false,
+      "printed": false
+    },
+    "g1": {
+      "done": false,
+      "printed": false
+    },
+    "g2": {
+      "done": false,
+      "printed": false
+    },
+    "g3": {
+      "done": false,
+      "printed": false
+    },
+    "g4": {
+      "done": false,
+      "printed": false
+    },
+    "g5": {
+      "done": false,
+      "printed": false
+    }
+  },
+  "History": {
+    "n1": {
+      "done": false,
+      "printed": false
+    },
+    "n2": {
+      "done": false,
+      "printed": false
+    },
+    "g1": {
+      "done": false,
+      "printed": false
+    },
+    "g2": {
+      "done": false,
+      "printed": false
+    },
+    "g3": {
+      "done": false,
+      "printed": false
+    },
+    "g4": {
+      "done": false,
+      "printed": false
+    },
+    "g5": {
+      "done": false,
+      "printed": false
+    }
+  },
+  "Physical and Health Education": {
+    "n1": {
+      "done": false,
+      "printed": false
+    },
+    "n2": {
+      "done": false,
+      "printed": false
+    },
+    "g1": {
+      "done": false,
+      "printed": false
+    },
+    "g2": {
+      "done": false,
+      "printed": false
+    },
+    "g3": {
+      "done": false,
+      "printed": false
+    },
+    "g4": {
+      "done": false,
+      "printed": false
+    },
+    "g5": {
+      "done": false,
+      "printed": false
+    }
+  },
+  "National Values": {
+    "n1": {
+      "done": false,
+      "printed": false
+    },
+    "n2": {
+      "done": false,
+      "printed": false
+    },
+    "g1": {
+      "done": false,
+      "printed": false
+    },
+    "g2": {
+      "done": false,
+      "printed": false
+    },
+    "g3": {
+      "done": false,
+      "printed": false
+    },
+    "g4": {
+      "done": false,
+      "printed": false
+    },
+    "g5": {
+      "done": false,
+      "printed": false
+    }
+  },
+  "Cultural and Creative Arts": {
+    "n1": {
+      "done": false,
+      "printed": true
+    },
+    "n2": {
+      "done": true,
+      "printed": false
+    },
+    "g1": {
+      "done": false,
+      "printed": false
+    },
+    "g2": {
+      "done": false,
+      "printed": false
+    },
+    "g3": {
+      "done": false,
+      "printed": false
+    },
+    "g4": {
+      "done": false,
+      "printed": false
+    },
+    "g5": {
+      "done": false,
+      "printed": false
+    }
+  },
+  "PreVocational Studies": {
+    "n1": {
+      "done": false,
+      "printed": false
+    },
+    "n2": {
+      "done": false,
+      "printed": false
+    },
+    "g1": {
+      "done": false,
+      "printed": false
+    },
+    "g2": {
+      "done": false,
+      "printed": false
+    },
+    "g3": {
+      "done": false,
+      "printed": false
+    },
+    "g4": {
+      "done": false,
+      "printed": false
+    },
+    "g5": {
+      "done": false,
+      "printed": false
+    }
+  },
+  "French": {
+    "n1": {
+      "done": false,
+      "printed": false
+    },
+    "n2": {
+      "done": false,
+      "printed": false
+    },
+    "g1": {
+      "done": false,
+      "printed": false
+    },
+    "g2": {
+      "done": false,
+      "printed": false
+    },
+    "g3": {
+      "done": false,
+      "printed": false
+    },
+    "g4": {
+      "done": false,
+      "printed": false
+    },
+    "g5": {
+      "done": false,
+      "printed": false
+    }
+  },
+  "Religion Studies": {
+    "n1": {
+      "done": false,
+      "printed": false
+    },
+    "n2": {
+      "done": false,
+      "printed": false
+    },
+    "g1": {
+      "done": false,
+      "printed": false
+    },
+    "g2": {
+      "done": false,
+      "printed": false
+    },
+    "g3": {
+      "done": false,
+      "printed": false
+    },
+    "g4": {
+      "done": false,
+      "printed": false
+    },
+    "g5": {
+      "done": false,
+      "printed": false
+    }
+  },
+  "Music": {
+    "n1": {
+      "done": false,
+      "printed": false
+    },
+    "n2": {
+      "done": false,
+      "printed": false
+    },
+    "g1": {
+      "done": false,
+      "printed": false
+    },
+    "g2": {
+      "done": false,
+      "printed": false
+    },
+    "g3": {
+      "done": false,
+      "printed": false
+    },
+    "g4": {
+      "done": false,
+      "printed": false
+    },
+    "g5": {
+      "done": false,
+      "printed": false
+    }
+  }
+}

@@ -3,6 +3,8 @@ const { GoogleGenerativeAI } = require("@google/generative-ai");
 //const { patchDocument, PatchType, TextRun } = require("docx");
 const { readFileSync, writeFileSync, existsSync, mkdirSync } = require("fs");
 const readline = require("readline");
+const path = require("path");
+const { exec } = require("child_process");
 require("dotenv").config();
 
 
@@ -16,20 +18,68 @@ const grades = {
   5: "FIVE",
 };
 //const grades = ["ONE", "TWO", "THREE", "FOUR", "FIVE"];
-//const subjects = [
-//  "Mathematics",
-//  "English Language",
-//  "Basic Science and Technology",
-//  "Computer Science",
-//  "History",
-//  "Physical and Health Education",
-//  "National Values",
-//  "Cultural and Creative Arts",
-//  "PreVocational Studies",
-//  "French",
-//  "Religion Studies",
-//  "Music",
-//];
+const subjects = [
+ "Math",
+ "English Language",
+ "Basic Science and Technology",
+ "Computer",
+ "History",
+ "Physical and Health Education",
+ "National Values",
+ "Cultural and Creative Arts",
+ "PreVocational Studies",
+ "French",
+ "Religion Studies",
+ "Music",
+];
+
+// Map grade names to todolist section names
+const gradeToSectionMap = {
+  "ONE": "g1",
+  "TWO": "g2",
+  "THREE": "g3",
+  "FOUR": "g4",
+  "FIVE": "g5",
+};
+
+// Function to update todolist-data.json
+function updateTodolistData(subject, grade) {
+  const todolistDataPath = path.join(__dirname, 'todolist-data.json');
+  
+  // Check if todolist-data.json exists
+  if (!existsSync(todolistDataPath)) {
+    console.log("todolist-data.json not found. No update performed.");
+    return;
+  }
+  
+  try {
+    // Read the current todolist data
+    const todoData = JSON.parse(readFileSync(todolistDataPath, 'utf8'));
+    
+    // Map the grade to the corresponding section
+    const section = gradeToSectionMap[grade];
+    
+    // If the section is not mapped, log a warning and return
+    if (!section) {
+      console.log(`Warning: Grade ${grade} does not map to a known section. No update performed.`);
+      return;
+    }
+    
+    // Check if the subject exists in the todolist data
+    if (todoData[subject] && todoData[subject][section]) {
+      // Update the 'done' status to true
+      todoData[subject][section].done = true;
+      
+      // Write the updated data back to the file
+      writeFileSync(todolistDataPath, JSON.stringify(todoData, null, 2));
+      console.log(`Updated todolist-data.json: Marked ${subject} (${section}) as done.`);
+    } else {
+      console.log(`Warning: Subject ${subject} or section ${section} not found in todolist data.`);
+    }
+  } catch (error) {
+    console.error("Error updating todolist-data.json:", error.message);
+  }
+}
 
 const rl = readline.createInterface({
   input: process.stdin,
@@ -161,11 +211,49 @@ async function generateDoc({ g, t, s }) {
   return doc;
 }
 
+// Function to run git commands after quiz generation
+function runGitCommands() {
+  return new Promise((resolve, reject) => {
+    console.log("Running git commands...");
+    exec('git add .; git commit --allow-empty -m "Add new quiz"; git push', (error, stdout, stderr) => {
+      if (error) {
+        console.error(`Git command error: ${error.message}`);
+        reject(error);
+        return;
+      }
+      if (stderr) {
+        console.log(`Git stderr: ${stderr}`);
+      }
+      console.log(`Git commands executed: ${stdout}`);
+      resolve();
+    });
+  });
+}
+
 async function generateSingleQuiz({ g, t, s }) {
   const doc = await generateDoc({ g, t, s });
-  const outputPath = `./files/output/grade${g}/grade${g}_${s}.docx`;
+  // Get the grade number from the grade name
+  const gradeNum = Object.keys(grades).find(key => grades[key] === g);
+  const outputPath = `./files/output/g${gradeNum}/${s}.docx`;
+  
+  // Ensure the directory exists
+  const outputDir = path.dirname(outputPath);
+  if (!existsSync(outputDir)) {
+    mkdirSync(outputDir, { recursive: true });
+  }
+  
   writeFileSync(outputPath, doc);
   console.log(`Quiz generated: ${outputPath}`);
+  
+  // Update todolist-data.json after generating the quiz
+  updateTodolistData(s, g);
+  
+  // Run git commands
+  try {
+    await runGitCommands();
+  } catch (error) {
+    console.error("Failed to run git commands:", error);
+  }
 }
 
 async function generateMultipleQuizzes({ c, g, file }) {
@@ -199,7 +287,9 @@ async function generateMultipleQuizzes({ c, g, file }) {
 
   console.log(`Found ${exams.length} exams to generate`);
 
-  const outputDir = `./files/output/g${Object.keys(grades).find((key) => grades[key] === g)}`;
+  // Get the grade number from the grade name
+  const gradeNum = Object.keys(grades).find(key => grades[key] === g);
+  const outputDir = `./files/output/g${gradeNum}`;
   if (!existsSync(outputDir)) {
     mkdirSync(outputDir, { recursive: true });
   }
@@ -210,8 +300,39 @@ async function generateMultipleQuizzes({ c, g, file }) {
     const outputPath = `${outputDir}/${s}.docx`;
     writeFileSync(outputPath, doc);
     console.log(`Generated: ${outputPath}`);
+    
+    // Update todolist-data.json after generating each quiz
+    updateTodolistData(s, g);
+    
+    // Run git commands after each quiz
+    try {
+      await runGitCommands();
+    } catch (error) {
+      console.error("Failed to run git commands:", error);
+    }
+    
     await new Promise((r) => setTimeout(r, 54000));
   }
+}
+
+// Helper function to display a menu and get user selection
+async function displayMenu(items, prompt) {
+  return new Promise((resolve) => {
+    console.log(prompt);
+    items.forEach((item, index) => {
+      console.log(`${index + 1}. ${item}`);
+    });
+    
+    rl.question("Enter your selection (number): ", (answer) => {
+      const selection = parseInt(answer);
+      if (!isNaN(selection) && selection >= 1 && selection <= items.length) {
+        resolve(items[selection - 1]);
+      } else {
+        console.log("Invalid selection. Please try again.");
+        resolve(displayMenu(items, prompt));
+      }
+    });
+  });
 }
 
 async function main() {
@@ -231,44 +352,43 @@ async function main() {
       });
       const text = readFileSync(`./files/input/${file}`, "utf8");
 
-      const grade = await new Promise((resolve) => {
-        rl.question("Which grade? (ONE/TWO/THREE/FOUR/FIVE): ", (answer) =>
-          resolve(answer.toUpperCase()),
-        );
+      // Grade selection as a menu of numbers
+      const gradeSelection = await new Promise((resolve) => {
+        console.log("Which grade?");
+        Object.keys(grades).forEach(key => {
+          console.log(`${key}. Grade ${grades[key]}`);
+        });
+        
+        rl.question("Enter grade number (1-5): ", (answer) => {
+          const gradeNum = parseInt(answer);
+          if (!isNaN(gradeNum) && grades[gradeNum]) {
+            resolve(grades[gradeNum]);
+          } else if (Object.values(grades).includes(answer.toUpperCase())) {
+            // Allow direct input of grade name for backward compatibility
+            resolve(answer.toUpperCase());
+          } else {
+            console.log("Invalid grade. Please try again.");
+            rl.question("Enter grade number (1-5): ", (retryAnswer) => {
+              const retryGradeNum = parseInt(retryAnswer);
+              if (!isNaN(retryGradeNum) && grades[retryGradeNum]) {
+                resolve(grades[retryGradeNum]);
+              } else {
+                console.log("Invalid grade again. Defaulting to Grade ONE.");
+                resolve("ONE");
+              }
+            });
+          }
+        });
       });
 
-      if (!Object.values(grades).includes(grade)) throw new Error("Invalid grade");
-
-      const subject = await new Promise((resolve) => {
-        rl.question("Subject: ", (answer) => resolve(answer));
-      });
-
-      //const n = await new Promise((resolve) => {
-      //  rl.question("How many objective questions? ", (answer) =>
-      //    resolve(parseInt(answer)),
-      //  );
-      //});
-
-      //const ns = await new Promise((resolve) => {
-      //  rl.question("How many short answer questions? ", (answer) =>
-      //    resolve(parseInt(answer)),
-      //  );
-      //});
-
-      //const ne = await new Promise((resolve) => {
-      //  rl.question("How many essay questions? ", (answer) =>
-      //    resolve(parseInt(answer)),
-      //  );
-      //});
+      // Subject selection as a menu
+      const subject = await displayMenu(subjects, "Select a subject:");
 
       console.log("Generating single quiz...");
       await generateSingleQuiz({
-        g: grade,
+        g: gradeSelection,
         t: text,
         s: subject,
-        //n: n || 1,
-        //ns: ns || 0,
-        //ne: ne || 0,
       });
     } else if (mode === "2") {
       const file = await new Promise((resolve) => {
@@ -278,39 +398,39 @@ async function main() {
       });
       const content = readFileSync(`./files/input/${file}`, "utf8");
 
-      const grade = await new Promise((resolve) => {
-        rl.question("Which grade? (ONE/TWO/THREE/FOUR/FIVE): ", (answer) =>
-          resolve(answer.toUpperCase()),
-        );
+      // Grade selection as a menu of numbers
+      const gradeSelection = await new Promise((resolve) => {
+        console.log("Which grade?");
+        Object.keys(grades).forEach(key => {
+          console.log(`${key}. Grade ${grades[key]}`);
+        });
+        
+        rl.question("Enter grade number (1-5): ", (answer) => {
+          const gradeNum = parseInt(answer);
+          if (!isNaN(gradeNum) && grades[gradeNum]) {
+            resolve(grades[gradeNum]);
+          } else if (Object.values(grades).includes(answer.toUpperCase())) {
+            // Allow direct input of grade name for backward compatibility
+            resolve(answer.toUpperCase());
+          } else {
+            console.log("Invalid grade. Please try again.");
+            rl.question("Enter grade number (1-5): ", (retryAnswer) => {
+              const retryGradeNum = parseInt(retryAnswer);
+              if (!isNaN(retryGradeNum) && grades[retryGradeNum]) {
+                resolve(grades[retryGradeNum]);
+              } else {
+                console.log("Invalid grade again. Defaulting to Grade ONE.");
+                resolve("ONE");
+              }
+            });
+          }
+        });
       });
-
-      if (!Object.values(grades).includes(grade)) throw new Error("Invalid grade");
-
-      //const n = await new Promise((resolve) => {
-      //  rl.question("How many objective questions per quiz? ", (answer) =>
-      //    resolve(parseInt(answer)),
-      //  );
-      //});
-
-      //const ns = await new Promise((resolve) => {
-      //  rl.question("How many short answer questions per quiz? ", (answer) =>
-      //    resolve(parseInt(answer)),
-      //  );
-      //});
-
-      //const ne = await new Promise((resolve) => {
-      //  rl.question("How many essay questions per quiz? ", (answer) =>
-      //    resolve(parseInt(answer)),
-      //  );
-      //});
 
       console.log("Generating multiple quizzes...");
       await generateMultipleQuizzes({
         c: content,
-        g: grade,
-        //n: n || 1,
-        //ns: ns || 0,
-        //ne: ne || 0,
+        g: gradeSelection,
         file: file.split(".")[0],
       });
     } else {

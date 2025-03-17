@@ -11,23 +11,36 @@ async function redoTodoQuizzes() {
         // Filter for TODO files
         const todoFiles = files.filter(file => file.startsWith('TODO'));
         
+        // Read the parsed g2.json file
+        const parsedDataPath = path.join(__dirname, '../files/input/parsed/g2.json');
+        const parsedData = JSON.parse(await fs.readFile(parsedDataPath, 'utf-8'));
+        
+        // Create a map of subject to content for quick lookup
+        const subjectContentMap = {};
+        parsedData.forEach(item => {
+            if (item.subject && item.content) {
+                subjectContentMap[item.subject] = item.content;
+            }
+        });
+        
         for (const todoFile of todoFiles) {
-            // Extract subject from filename (assuming format TODO_subject.json or similar)
+            // Extract subject from filename (assuming format TODO - subject.json or similar)
             const subject = todoFile.replace('TODO - ', '').replace('.json', '');
             
-            // Read the corresponding input file
-            const inputPath = path.join(__dirname, '../files/input/g2', `${subject}.txt`);
-            const inputContent = await fs.readFile(inputPath, 'utf-8');
+            // Get content from the parsed data
+            const inputContent = subjectContentMap[subject];
+            
+            if (!inputContent) {
+                console.log(`No content found for subject: ${subject}`);
+                continue;
+            }
             
             // Generate new quiz
-            const newQuiz = await generateSingleQuiz(inputContent, subject);
+            const newQuiz = await generateSingleQuiz({ g: 2, t: inputContent, s: subject });
             
             // Write the new quiz, replacing the TODO file
-            const outputPath = path.join(outputDir, todoFile.replace('TODO_', ''));
+            const outputPath = path.join(outputDir, todoFile);
             await fs.writeFile(outputPath, JSON.stringify(newQuiz, null, 2));
-            
-            // Delete the TODO file
-            await fs.unlink(path.join(outputDir, todoFile));
             
             console.log(`Processed ${todoFile}`);
         }
