@@ -7,6 +7,190 @@ const path = require("path");
 const { exec } = require("child_process");
 require("dotenv").config();
 
+// Function to manually extract exams from text when JSON parsing fails
+function manuallyExtractExams(text, subjectList) {
+  console.log("Manually extracting exams from text...");
+  const exams = [];
+  
+  // Try to identify subject headers and their content
+  // This assumes the text has subject headers followed by content
+  let currentSubject = null;
+  let currentContent = [];
+  
+  // Split the text into lines for processing
+  const lines = text.split(/\r?\n/);
+  
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i].trim();
+    
+    // Skip empty lines
+    if (!line) continue;
+    
+    // Check if this line is a subject header
+    const subjectMatch = subjectList.find(subject => 
+      line.toUpperCase().includes(subject.toUpperCase()) || 
+      line.toUpperCase() === subject.toUpperCase()
+    );
+    
+    if (subjectMatch) {
+      // If we already have a subject, save the previous one
+      if (currentSubject && currentContent.length > 0) {
+        exams.push({
+          subject: currentSubject,
+          content: currentContent.join('\n')
+        });
+        currentContent = [];
+      }
+      
+      currentSubject = subjectMatch;
+    } else if (currentSubject) {
+      // Add this line to the current content
+      currentContent.push(line);
+    }
+  }
+  
+  // Add the last subject if there is one
+  if (currentSubject && currentContent.length > 0) {
+    exams.push({
+      subject: currentSubject,
+      content: currentContent.join('\n')
+    });
+  }
+  
+  // If we couldn't find any subjects using the above method,
+  // try a more aggressive approach by splitting the text into equal chunks
+  if (exams.length === 0 && subjectList.length > 0) {
+    console.log("No subjects found using header detection. Trying chunk-based extraction...");
+    
+    // Remove any markdown or code block markers
+    const cleanText = text.replace(/```[\s\S]*?```/g, '');
+    
+    // Split the text into roughly equal chunks based on the number of subjects
+    const chunkSize = Math.ceil(cleanText.length / subjectList.length);
+    
+    for (let i = 0; i < subjectList.length; i++) {
+      const startPos = i * chunkSize;
+      const endPos = Math.min(startPos + chunkSize, cleanText.length);
+      const chunk = cleanText.substring(startPos, endPos);
+      
+      if (chunk.trim()) {
+        exams.push({
+          subject: subjectList[i],
+          content: chunk.trim()
+        });
+      }
+    }
+  }
+  
+  console.log(`Manually extracted ${exams.length} exams`);
+  return exams;
+}
+
+// Helper function to sanitize and parse JSON responses from AI models
+function sanitizeJsonResponse(response) {
+  // First try direct parsing
+  try {
+    return JSON.parse(response);
+  } catch (error) {
+    console.log(`JSON parse error: ${error.message}`);
+    
+    // Check if the response starts with markdown code block
+    const markdownMatch = response.match(/```(?:json)?\s*([\s\S]*?)```/);
+    if (markdownMatch) {
+      try {
+        console.log("Found markdown code block, attempting to parse its contents");
+        return JSON.parse(markdownMatch[1]);
+      } catch (markdownError) {
+        console.log(`Markdown extraction failed: ${markdownError.message}`);
+      }
+    }
+    
+    // Try to extract a valid JSON array using regex
+    try {
+      const jsonArrayMatch = response.match(/\[\s*\{[\s\S]*?\}\s*\]/);
+      if (jsonArrayMatch) {
+        console.log("Found JSON array pattern, attempting to parse");
+        return JSON.parse(jsonArrayMatch[0]);
+      }
+    } catch (regexError) {
+      console.log(`Regex extraction failed: ${regexError.message}`);
+    }
+    
+    // Try to fix common JSON issues
+    try {
+      console.log("Attempting to sanitize and fix JSON");
+      // Replace common problematic characters
+      let sanitized = response
+        .replace(/[\u0000-\u001F\u007F-\u009F]/g, "") // Remove control characters
+        .replace(/\\(?!["\\/bfnrt])/g, "\\\\") // Escape backslashes not followed by valid escape chars
+        .replace(/(?<!\\)"/g, '\\"') // Escape unescaped quotes
+        .replace(/[\r\n]+/g, " ") // Replace newlines with spaces
+        .replace(/,\s*]/g, "]") // Remove trailing commas in arrays
+        .replace(/,\s*}/g, "}"); // Remove trailing commas in objects
+      
+      // Try to find the beginning and end of a JSON array
+      const startIdx = sanitized.indexOf('[');
+      const endIdx = sanitized.lastIndexOf(']');
+      
+      if (startIdx !== -1 && endIdx !== -1 && startIdx < endIdx) {
+        sanitized = sanitized.substring(startIdx, endIdx + 1);
+        console.log("Extracted JSON array by finding brackets");
+        return JSON.parse(sanitized);
+      }
+      
+      // If we can't find an array, try to find an object
+      const objStartIdx = sanitized.indexOf('{');
+      const objEndIdx = sanitized.lastIndexOf('}');
+      
+      if (objStartIdx !== -1 && objEndIdx !== -1 && objStartIdx < objEndIdx) {
+        sanitized = sanitized.substring(objStartIdx, objEndIdx + 1);
+        console.log("Extracted JSON object by finding braces");
+        const parsedObj = JSON.parse(sanitized);
+        // If we found an object but need an array, wrap it
+        return Array.isArray(parsedObj) ? parsedObj : [parsedObj];
+      }
+    } catch (sanitizeError) {
+      console.log(`Sanitization failed: ${sanitizeError.message}`);
+    }
+    
+    // Last resort: try to manually construct a valid array from the content
+    try {
+      console.log("Attempting manual JSON construction as last resort");
+      
+      // Look for patterns that might indicate subject/content pairs
+      const subjects = response.match(/["']subject["']\s*:\s*["']([^"']+)["']/g) || [];
+      const contents = response.match(/["']content["']\s*:\s*["']([^"']+)["']/g) || [];
+      
+      if (subjects.length > 0 && contents.length > 0) {
+        console.log(`Found ${subjects.length} subjects and ${contents.length} contents`);
+        
+        // Try to construct a simple array of objects
+        const manualArray = [];
+        for (let i = 0; i < Math.min(subjects.length, contents.length); i++) {
+          const subjectMatch = subjects[i].match(/["']subject["']\s*:\s*["']([^"']+)["']/);
+          const contentMatch = contents[i].match(/["']content["']\s*:\s*["']([^"']+)["']/);
+          
+          if (subjectMatch && contentMatch) {
+            manualArray.push({
+              subject: subjectMatch[1],
+              content: contentMatch[1]
+            });
+          }
+        }
+        
+        if (manualArray.length > 0) {
+          console.log(`Manually constructed ${manualArray.length} exam objects`);
+          return manualArray;
+        }
+      }
+    } catch (manualError) {
+      console.log(`Manual construction failed: ${manualError.message}`);
+    }
+    
+    // If all else fails, throw the original error
+    throw new Error(`Failed to parse JSON response: ${error.message}`);
+  }
+}
 
 const G = process.env.G || "YOUR_API_KEY_HERE";
 const genAI = new GoogleGenerativeAI(G);
@@ -137,8 +321,9 @@ const multiQuizModel = genAI.getGenerativeModel({
 });
 
 async function createSingleQuiz({ t }) {
-  const result =
-    await singleQuizModel.generateContent(`Perfectly following the format of the first quiz, edit the second quiz while retaining all questions.
+  try {
+    const result =
+      await singleQuizModel.generateContent(`Perfectly following the format of the first quiz, edit the second quiz while retaining all questions.
 Rephrase each question to maintain the same meaning, tone, and English language level as the original, but improve grammar and clarity.
 Within each section (objective, Section B, Section C), randomize the order of questions while keeping them within their respective sections.
 Make all concise.
@@ -178,12 +363,42 @@ Text to create quiz from:
 ${t}
 """
 `);
-  return result.response.text();
+    
+    const responseText = result.response.text();
+    
+    // Try to parse the response as JSON, but handle cases where it might not be valid JSON
+    try {
+      return JSON.stringify(sanitizeJsonResponse(responseText));
+    } catch (error) {
+      // If it's not valid JSON, return the raw text
+      console.log("Response is not valid JSON, returning raw text");
+      return JSON.stringify([responseText]);
+    }
+  } catch (error) {
+    console.error(`Error in createSingleQuiz: ${error.message}`);
+    throw error;
+  }
 }
 
 async function generateDoc({ g, t, s }) {
   const q = await createSingleQuiz({ t });
   const { patchDocument, PatchType, TextRun } = require("docx");
+  
+  let quizContent;
+  try {
+    // Try to parse the quiz content as JSON
+    quizContent = JSON.parse(q);
+  } catch (error) {
+    console.error(`Error parsing quiz content: ${error.message}`);
+    // If parsing fails, wrap the content in an array
+    quizContent = [q];
+  }
+  
+  // Ensure quizContent is an array
+  if (!Array.isArray(quizContent)) {
+    quizContent = [quizContent];
+  }
+  
   const doc = await patchDocument({
     data: readFileSync(`./files/template${g === "ONE" ? "-cc" : ""}.docx`),
     outputType: "nodebuffer", 
@@ -199,7 +414,7 @@ async function generateDoc({ g, t, s }) {
       },
       q: {
         type: PatchType.PARAGRAPH,
-        children: JSON.parse(q).reduce((acc, e) => {
+        children: quizContent.reduce((acc, e) => {
           acc.push(new TextRun(e));
           acc.push(new TextRun({ break: 1 }));
           acc.push(new TextRun({ break: 1 }));
@@ -266,11 +481,19 @@ async function generateMultipleQuizzes({ c, g, file }) {
 
   if (existsSync(parsedFilePath)) {
     console.log(`Using cached parsed data from ${parsedFilePath}`);
-    exams = JSON.parse(readFileSync(parsedFilePath, "utf8"));
-  } else {
+    try {
+      exams = JSON.parse(readFileSync(parsedFilePath, "utf8"));
+    } catch (error) {
+      console.error(`Error reading cached data: ${error.message}`);
+      console.log("Regenerating parsed data...");
+      // Continue to regenerate the data
+    }
+  }
+
+  if (!exams) {
     console.log("Parsing exams...");
-    exams = JSON.parse(
-      (
+    try {
+      const aiResponse = (
         await multiQuizModel.generateContent(
           `return a JSON array of EACH AND EVERY exam given, where each exam object has 'subject' and 'content', the subject being that exam's subject, and the content being the exam's content as a string. Use exactly these subjects were relevant: ${JSON.stringify(subjects)}
                 Include EVERY subject.
@@ -278,11 +501,73 @@ async function generateMultipleQuizzes({ c, g, file }) {
                 ${c}
                 `,
         )
-      ).response.text(),
-    );
+      ).response.text();
 
-    writeFileSync(parsedFilePath, JSON.stringify(exams, null, 2));
-    console.log(`Saved parsed exams to ${parsedFilePath}`);
+      // Save the raw response for debugging
+      const debugFilePath = `./files/input/parsed/${file}-raw-response.txt`;
+      writeFileSync(debugFilePath, aiResponse);
+      console.log(`Saved raw AI response to ${debugFilePath} for debugging`);
+
+      try {
+        // Use the sanitizeJsonResponse helper function to parse the AI response
+        exams = sanitizeJsonResponse(aiResponse);
+      } catch (parseError) {
+        console.error(`JSON parsing error: ${parseError.message}`);
+        console.log("Raw response excerpt (first 500 chars):");
+        console.log(aiResponse.substring(0, 500));
+        console.log("...");
+        console.log("Raw response excerpt (last 500 chars):");
+        console.log(aiResponse.substring(Math.max(0, aiResponse.length - 500)));
+        
+        // Try a more aggressive approach for JSON extraction
+        console.log("Attempting more aggressive JSON extraction...");
+        
+        // Look for array-like structures
+        const arrayMatch = aiResponse.match(/\[\s*\{[\s\S]*\}\s*\]/);
+        if (arrayMatch) {
+          try {
+            exams = JSON.parse(arrayMatch[0]);
+            console.log("Successfully extracted JSON array using regex");
+          } catch (regexError) {
+            console.error(`Regex extraction failed: ${regexError.message}`);
+            
+            // Last resort: try to manually extract subjects and content
+            console.log("Attempting manual extraction of subjects and content...");
+            exams = manuallyExtractExams(aiResponse, subjects);
+            
+            if (!exams || exams.length === 0) {
+              throw parseError; // Rethrow the original error if manual extraction fails
+            }
+          }
+        } else {
+          // Try manual extraction as a last resort
+          console.log("No JSON array found. Attempting manual extraction...");
+          exams = manuallyExtractExams(aiResponse, subjects);
+          
+          if (!exams || exams.length === 0) {
+            throw parseError; // Rethrow the original error if manual extraction fails
+          }
+        }
+      }
+
+      // Validate the parsed exams
+      if (!Array.isArray(exams)) {
+        throw new Error("Parsed result is not an array");
+      }
+      
+      // Ensure each exam has the required properties
+      exams = exams.filter(exam => exam && typeof exam === 'object' && exam.subject && exam.content);
+      
+      if (exams.length === 0) {
+        throw new Error("No valid exams found in the parsed result");
+      }
+
+      writeFileSync(parsedFilePath, JSON.stringify(exams, null, 2));
+      console.log(`Saved parsed exams to ${parsedFilePath}`);
+    } catch (error) {
+      console.error(`Error parsing exams: ${error.message}`);
+      throw new Error(`Failed to parse exams: ${error.message}`);
+    }
   }
 
   console.log(`Found ${exams.length} exams to generate`);
