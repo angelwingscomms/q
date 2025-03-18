@@ -279,11 +279,25 @@ const singleQuizModel = genAI.getGenerativeModel({
     maxOutputTokens: 65536,
     responseMimeType: "application/json",
     responseSchema: {
-      description: "Array of questions",
-      type: "ARRAY",
-      items: {
-        type: "STRING",
+      type: "OBJECT",
+      properties: {
+        A: {
+          type: "ARRAY",
+          items: { type: "STRING" },
+          description: "Section A: Objective questions"
+        },
+        B: {
+          type: "ARRAY",
+          items: { type: "STRING" },
+          description: "Section B: Short answer questions"
+        },
+        C: {
+          type: "ARRAY",
+          items: { type: "STRING" },
+          description: "Section C: Theory questions"
+        }
       },
+      required: ["A", "B", "C"]
     },
   },
 });
@@ -323,13 +337,16 @@ const multiQuizModel = genAI.getGenerativeModel({
 async function createSingleQuiz({ t }) {
   try {
     const result =
-      await singleQuizModel.generateContent(`Perfectly following the format of the first quiz, edit the second quiz while retaining all questions.
-Rephrase all questions to use different words to ask the same question, but maintain the same meaning, tone, and English language level as the original, and improve grammar and clarity.
-Within each section (objective, Section B, Section C), randomize the order of questions while keeping them within their respective sections.
-Make all concise. Leave a line break after each question.
+      await singleQuizModel.generateContent(`Create a quiz with three sections (A, B, C) in JSON format.
+Each section should be an array of strings containing the questions for that section.
+
+Section A should contain objective questions (multiple choice).
+Section B should contain short answer questions.
+Section C should contain essay/theory questions.
+
+Format requirements:
 
 For Section A (objective questions):
-- Replace multiple blanks (e.g., "_____") with a single underscore (e.g., "_")
 - Never end with a full stop
 - Use brackets for options (e.g., (a)...) and place questions and options on same line
 - Fix bad questions by removing or replacing options to ensure one correct answer
@@ -338,27 +355,10 @@ For Section A (objective questions):
 For Section B (short answer questions):
 - Use exactly 9 underscores (_________) for fill in the blanks
 
-For Section C (essay questions, if any):
-- Rephrase the question to maintain the same meaning, tone, and English language level as the original, but use different words to ask the same question, and improve grammar and clarity.
-
-Respond with ONLY the edited version of the second quiz as JSON.
-
-The first quiz:
-"""
-1. When you take care of your body you will look attractive (a) True (b) False
-2. How many noses do you have? (a) 2 (b) 1 (c) 3
-3. How many nostrils do you have? (a) 1 (b) 2 (c) 3
-
-Section B: Short answer
-1. How many sides does a hexagon have? _________
-2. Sum of angles in a triangle. _________
-3. 5 + 4 = _________
-
-Section C: Essay
-1. Write the theory of relative posterity.
-2. Describe the relationship of astronomy and sacred geometry
-3. What did the wind tell the sun?
-"""
+For Section C (essay questions):
+- Make questions clear and concise
+- Maintain academic language level
+- Each question should require detailed explanation
 
 Text to create quiz from:
 """
@@ -367,15 +367,7 @@ ${t}
 `);
     
     const responseText = result.response.text();
-    
-    // Try to parse the response as JSON, but handle cases where it might not be valid JSON
-    try {
-      return JSON.stringify(sanitizeJsonResponse(responseText));
-    } catch (error) {
-      // If it's not valid JSON, return the raw text
-      console.log("Response is not valid JSON, returning raw text");
-      return JSON.stringify([responseText]);
-    }
+    return responseText;
   } catch (error) {
     console.error(`Error in createSingleQuiz: ${error.message}`);
     throw error;
@@ -388,17 +380,10 @@ async function generateDoc({ g, t, s }) {
   
   let quizContent;
   try {
-    // Try to parse the quiz content as JSON
     quizContent = JSON.parse(q);
   } catch (error) {
     console.error(`Error parsing quiz content: ${error.message}`);
-    // If parsing fails, wrap the content in an array
-    quizContent = [q];
-  }
-  
-  // Ensure quizContent is an array
-  if (!Array.isArray(quizContent)) {
-    quizContent = [quizContent];
+    throw error;
   }
 
   // Get grade number and create json folder path
@@ -430,14 +415,42 @@ async function generateDoc({ g, t, s }) {
       },
       q: {
         type: PatchType.DOCUMENT,
-        children: quizContent.map(content => {
-          return new Paragraph({
-            children: [new TextRun(content)],
-            spacing: { after: 9 }
-          });
-        }),
+        children: [
+          // Section A
+          new Paragraph({
+            children: [new TextRun("Section A: Objective Questions")],
+            spacing: { after: 400 }
+          }),
+          ...quizContent.A.map((question, index) => 
+            new Paragraph({
+              children: [new TextRun(`${index + 1}. ${question}`)],
+              spacing: { after: 300 }
+            })
+          ),
+          // Section B
+          new Paragraph({
+            children: [new TextRun("Section B: Short Answer Questions")],
+            spacing: { after: 400 }
+          }),
+          ...quizContent.B.map((question, index) => 
+            new Paragraph({
+              children: [new TextRun(`${index + 1}. ${question}`)],
+              spacing: { after: 300 }
+            })
+          ),
+          // Section C
+          new Paragraph({
+            children: [new TextRun("Section C: Essay Questions")],
+            spacing: { after: 400 }
+          }),
+          ...quizContent.C.map((question, index) => 
+            new Paragraph({
+              children: [new TextRun(`${index + 1}. ${question}`)],
+              spacing: { after: 300 }
+            })
+          )
+        ],
       },
-      
     },
   });
   return doc;
