@@ -341,7 +341,7 @@ For Section B (short answer questions):
 For Section C (essay questions, if any):
 - Rephrase the question to maintain the same meaning, tone, and English language level as the original, but use different words to ask the same question, and improve grammar and clarity.
 
-Respond with ONLY the edited version of the second quiz as plain text, not as JSON.
+Respond with ONLY the edited version of the second quiz as JSON.
 
 The first quiz:
 """
