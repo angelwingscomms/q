@@ -419,7 +419,7 @@ async function generateDoc({ g, t, s }) {
         children: quizContent.map(content => {
           return new Paragraph({
             children: [new TextRun(content)],
-            spacing: { after: 200, line: 360, lineRule: 'auto' }
+            spacing: { after: 9 }
           });
         }),
       },
