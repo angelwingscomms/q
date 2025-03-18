@@ -400,6 +400,20 @@ async function generateDoc({ g, t, s }) {
   if (!Array.isArray(quizContent)) {
     quizContent = [quizContent];
   }
+
+  // Get grade number and create json folder path
+  const gradeNum = Object.keys(grades).find(key => grades[key] === g);
+  const jsonDir = `./files/output/g${gradeNum}/json`;
+  
+  // Create json directory if it doesn't exist
+  if (!existsSync(jsonDir)) {
+    mkdirSync(jsonDir, { recursive: true });
+  }
+
+  // Save the quiz JSON data
+  const jsonPath = `${jsonDir}/${s}.json`;
+  writeFileSync(jsonPath, JSON.stringify(quizContent, null, 2));
+  console.log(`Saved quiz JSON to: ${jsonPath}`);
   
   const doc = await patchDocument({
     data: readFileSync(`./files/template${g === "ONE" ? "-cc" : ""}.docx`),
@@ -423,6 +437,7 @@ async function generateDoc({ g, t, s }) {
           });
         }),
       },
+      
     },
   });
   return doc;
@@ -476,6 +491,15 @@ async function generateSingleQuiz({ g, t, s }) {
 async function generateMultipleQuizzes({ c, g, file }) {
   if (!existsSync("./files/input/parsed")) {
     mkdirSync("./files/input/parsed", { recursive: true });
+  }
+
+  // Get grade number for the json directory path
+  const currentGradeNum = Object.keys(grades).find(key => grades[key] === g);
+  const jsonDir = `./files/output/g${currentGradeNum}/json`;
+  
+  // Create json directory if it doesn't exist
+  if (!existsSync(jsonDir)) {
+    mkdirSync(jsonDir, { recursive: true });
   }
 
   const parsedFilePath = `./files/input/parsed/${file}.json`;
@@ -584,6 +608,27 @@ async function generateMultipleQuizzes({ c, g, file }) {
 
   for (const { subject: s, content: t } of exams) {
     console.log(`Generating quiz for ${s}...`);
+
+    // First get the quiz content
+    const quiz = await createSingleQuiz({ t });
+    let quizContent;
+    try {
+      quizContent = JSON.parse(quiz);
+    } catch (error) {
+      console.error(`Error parsing quiz content: ${error.message}`);
+      quizContent = [quiz];
+    }
+    
+    if (!Array.isArray(quizContent)) {
+      quizContent = [quizContent];
+    }
+
+    // Save the quiz JSON data
+    const jsonPath = `${jsonDir}/${s}.json`;
+    writeFileSync(jsonPath, JSON.stringify(quizContent, null, 2));
+    console.log(`Saved quiz JSON to: ${jsonPath}`);
+
+    // Generate Word document
     const doc = await generateDoc({ g, t, s });
     const outputPath = `${outputDir}/${s}.docx`;
     writeFileSync(outputPath, doc);
