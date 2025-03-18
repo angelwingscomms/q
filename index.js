@@ -326,7 +326,7 @@ async function createSingleQuiz({ t }) {
       await singleQuizModel.generateContent(`Perfectly following the format of the first quiz, edit the second quiz while retaining all questions.
 Rephrase all questions to use different words to ask the same question, but maintain the same meaning, tone, and English language level as the original, and improve grammar and clarity.
 Within each section (objective, Section B, Section C), randomize the order of questions while keeping them within their respective sections.
-Make all concise.
+Make all concise. Leave a line break after each question.
 
 For Section A (objective questions):
 - Replace multiple blanks (e.g., "_____") with a single underscore (e.g., "_")
