@@ -6,7 +6,6 @@ const path = require('path');
 const os = require('os');
 const inquirer = require('inquirer');
 const { format } = require('date-fns');
-
 const TEMP_DIR = path.join(os.tmpdir(), 'voice-recordings');
 
 // Ensure temp directory exists
@@ -37,16 +36,16 @@ async function listRecordings() {
 async function record() {
     const timestamp = format(new Date(), 'yyyyMMdd-HHmmss');
     const outputPath = path.join(TEMP_DIR, `recording-${timestamp}.wav`);
-    
+
     console.log('Recording... Press Enter to stop.');
-    
+
     // Set raw mode to handle Enter key properly
     process.stdin.setRawMode(true);
     process.stdin.resume();
     process.stdin.setEncoding('utf8');
 
     const recorder = spawn('pw-record', [outputPath]);
-    
+
     await new Promise((resolve, reject) => {
         process.stdin.on('data', (key) => {
             // ctrl-c or Enter
@@ -91,7 +90,7 @@ async function transcribe(audioPath) {
     });
 
     const data = await response.json();
-    
+
     if (!data.text) {
         throw new Error('Failed to get transcription: ' + JSON.stringify(data));
     }
@@ -138,7 +137,7 @@ async function main() {
             message: 'Select a recording:',
             choices: recordings
         }]);
-        
+
         audioPath = selectedFile;
     }
 

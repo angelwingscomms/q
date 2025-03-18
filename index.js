@@ -361,7 +361,7 @@ For Section C (essay questions):
 - Each question should require detailed explanation
 
 do EVERY single question
-EVERY question must be numbered
+number unnumbered questions
 
 Text to create quiz from:
 """
@@ -548,63 +548,28 @@ async function generateMultipleQuizzes({ c, g, file }) {
       try {
         // Use the sanitizeJsonResponse helper function to parse the AI response
         exams = sanitizeJsonResponse(aiResponse);
-      } catch (parseError) {
-        throw 'nonJSON response'
-        console.error(`JSON parsing error: ${parseError.message}`);
-        console.log("Raw response excerpt (first 500 chars):");
-        console.log(aiResponse.substring(0, 500));
-        console.log("...");
-        console.log("Raw response excerpt (last 500 chars):");
-        console.log(aiResponse.substring(Math.max(0, aiResponse.length - 500)));
-
-        // Try a more aggressive approach for JSON extraction
-        console.log("Attempting more aggressive JSON extraction...");
-
-        // Look for array-like structures
-        const arrayMatch = aiResponse.match(/\[\s*\{[\s\S]*\}\s*\]/);
-        if (arrayMatch) {
-          try {
-            exams = JSON.parse(arrayMatch[0]);
-            console.log("Successfully extracted JSON array using regex");
-          } catch (regexError) {
-            console.error(`Regex extraction failed: ${regexError.message}`);
-
-            // Last resort: try to manually extract subjects and content
-            console.log("Attempting manual extraction of subjects and content...");
-            exams = manuallyExtractExams(aiResponse, subjects);
-
-            if (!exams || exams.length === 0) {
-              throw parseError; // Rethrow the original error if manual extraction fails
-            }
-          }
-        } else {
-          // Try manual extraction as a last resort
-          console.log("No JSON array found. Attempting manual extraction...");
-          exams = manuallyExtractExams(aiResponse, subjects);
-
-          if (!exams || exams.length === 0) {
-            throw parseError; // Rethrow the original error if manual extraction fails
-          }
+        
+        // Validate the parsed exams
+        if (!Array.isArray(exams)) {
+          throw new Error("Parsed result is not an array");
         }
+
+        // Ensure each exam has the required properties
+        exams = exams.filter(exam => exam && typeof exam === 'object' && exam.subject && exam.content);
+
+        if (exams.length === 0) {
+          throw new Error("No valid exams found in the parsed result");
+        }
+
+        writeFileSync(parsedFilePath, JSON.stringify(exams, null, 2));
+        console.log(`Saved parsed exams to ${parsedFilePath}`);
+      } catch (error) {
+        console.error(`Error parsing exams: ${error.message}`);
+        throw new Error(`Failed to parse exams: ${error.message}`);
       }
-
-      // Validate the parsed exams
-      if (!Array.isArray(exams)) {
-        throw new Error("Parsed result is not an array");
-      }
-
-      // Ensure each exam has the required properties
-      exams = exams.filter(exam => exam && typeof exam === 'object' && exam.subject && exam.content);
-
-      if (exams.length === 0) {
-        throw new Error("No valid exams found in the parsed result");
-      }
-
-      writeFileSync(parsedFilePath, JSON.stringify(exams, null, 2));
-      console.log(`Saved parsed exams to ${parsedFilePath}`);
     } catch (error) {
-      console.error(`Error parsing exams: ${error.message}`);
-      throw new Error(`Failed to parse exams: ${error.message}`);
+      console.error(`Error generating or parsing exams: ${error.message}`);
+      throw error;
     }
   }
 
