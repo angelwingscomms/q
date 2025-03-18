@@ -419,11 +419,6 @@ async function generateDoc({ g, t, s }) {
       q: {
         type: PatchType.DOCUMENT,
         children: [
-          // Section A
-          new Paragraph({
-            children: [new TextRun("Section A: Objective Questions")],
-            spacing: { after: 400 }
-          }),
           ...quizContent.A.map((question, index) =>
             new Paragraph({
               children: [new TextRun(`${index + 1}. ${question}`)],
@@ -432,7 +427,7 @@ async function generateDoc({ g, t, s }) {
           ),
           // Section B
           new Paragraph({
-            children: [new TextRun("Section B: Short Answer Questions")],
+            children: [new TextRun("Section B")],
             spacing: { after: 400 }
           }),
           ...quizContent.B.map((question, index) =>
@@ -443,7 +438,7 @@ async function generateDoc({ g, t, s }) {
           ),
           // Section C
           new Paragraph({
-            children: [new TextRun("Section C: Essay Questions")],
+            children: [new TextRun("Section C")],
             spacing: { after: 400 }
           }),
           ...quizContent.C.map((question, index) =>
