@@ -324,7 +324,7 @@ async function createSingleQuiz({ t }) {
   try {
     const result =
       await singleQuizModel.generateContent(`Perfectly following the format of the first quiz, edit the second quiz while retaining all questions.
-Rephrase each question to maintain the same meaning, tone, and English language level as the original, but improve grammar and clarity.
+Rephrase each question to maintain the same meaning, tone, and English language level as the original, but use different words to ask the same question, and improve grammar and clarity.
 Within each section (objective, Section B, Section C), randomize the order of questions while keeping them within their respective sections.
 Make all concise.
 
@@ -336,10 +336,9 @@ For objective questions:
 - Questions may end with question marks
 
 For Section B and C:
-- Keep original blank format (_________)
-- Maintain the original simple English level
+- Use 9 underscores (_________) for each blank
 
-Respond with ONLY the edited version of the second quiz as plain text
+Respond with ONLY the edited version of the second quiz as plain text, not as JSON.
 
 The first quiz:
 """
