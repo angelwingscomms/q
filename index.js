@@ -384,7 +384,7 @@ ${t}
 
 async function generateDoc({ g, t, s }) {
   const q = await createSingleQuiz({ t });
-  const { patchDocument, PatchType, TextRun } = require("docx");
+  const { patchDocument, PatchType, TextRun, Paragraph } = require("docx");
   
   let quizContent;
   try {
@@ -417,9 +417,7 @@ async function generateDoc({ g, t, s }) {
       q: {
         type: PatchType.PARAGRAPH,
         children: quizContent.reduce((acc, e) => {
-          acc.push(new TextRun(e));
-          acc.push(new TextRun({ break: 1 }));
-          // acc.push(new TextRun({ break: 1 }));
+          acc.push(new Paragraph({children: [new TextRun(e)], spacing: {after: 200}}));
           return acc;
         }, []),
       },
