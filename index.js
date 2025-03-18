@@ -419,7 +419,7 @@ async function generateDoc({ g, t, s }) {
         children: quizContent.reduce((acc, e) => {
           acc.push(new TextRun(e));
           acc.push(new TextRun({ break: 1 }));
-          acc.push(new TextRun({ break: 1 }));
+          // acc.push(new TextRun({ break: 1 }));
           return acc;
         }, []),
       },
@@ -513,8 +513,8 @@ async function generateMultipleQuizzes({ c, g, file }) {
       try {
         // Use the sanitizeJsonResponse helper function to parse the AI response
         exams = sanitizeJsonResponse(aiResponse);
-        throw 'nonJSON response'
       } catch (parseError) {
+        throw 'nonJSON response'
         console.error(`JSON parsing error: ${parseError.message}`);
         console.log("Raw response excerpt (first 500 chars):");
         console.log(aiResponse.substring(0, 500));
