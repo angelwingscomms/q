@@ -11,27 +11,27 @@ require("dotenv").config();
 function manuallyExtractExams(text, subjectList) {
   console.log("Manually extracting exams from text...");
   const exams = [];
-  
+
   // Try to identify subject headers and their content
   // This assumes the text has subject headers followed by content
   let currentSubject = null;
   let currentContent = [];
-  
+
   // Split the text into lines for processing
   const lines = text.split(/\r?\n/);
-  
+
   for (let i = 0; i < lines.length; i++) {
     const line = lines[i].trim();
-    
+
     // Skip empty lines
     if (!line) continue;
-    
+
     // Check if this line is a subject header
-    const subjectMatch = subjectList.find(subject => 
-      line.toUpperCase().includes(subject.toUpperCase()) || 
+    const subjectMatch = subjectList.find(subject =>
+      line.toUpperCase().includes(subject.toUpperCase()) ||
       line.toUpperCase() === subject.toUpperCase()
     );
-    
+
     if (subjectMatch) {
       // If we already have a subject, save the previous one
       if (currentSubject && currentContent.length > 0) {
@@ -41,14 +41,14 @@ function manuallyExtractExams(text, subjectList) {
         });
         currentContent = [];
       }
-      
+
       currentSubject = subjectMatch;
     } else if (currentSubject) {
       // Add this line to the current content
       currentContent.push(line);
     }
   }
-  
+
   // Add the last subject if there is one
   if (currentSubject && currentContent.length > 0) {
     exams.push({
@@ -56,23 +56,23 @@ function manuallyExtractExams(text, subjectList) {
       content: currentContent.join('\n')
     });
   }
-  
+
   // If we couldn't find any subjects using the above method,
   // try a more aggressive approach by splitting the text into equal chunks
   if (exams.length === 0 && subjectList.length > 0) {
     console.log("No subjects found using header detection. Trying chunk-based extraction...");
-    
+
     // Remove any markdown or code block markers
     const cleanText = text.replace(/```[\s\S]*?```/g, '');
-    
+
     // Split the text into roughly equal chunks based on the number of subjects
     const chunkSize = Math.ceil(cleanText.length / subjectList.length);
-    
+
     for (let i = 0; i < subjectList.length; i++) {
       const startPos = i * chunkSize;
       const endPos = Math.min(startPos + chunkSize, cleanText.length);
       const chunk = cleanText.substring(startPos, endPos);
-      
+
       if (chunk.trim()) {
         exams.push({
           subject: subjectList[i],
@@ -81,7 +81,7 @@ function manuallyExtractExams(text, subjectList) {
       }
     }
   }
-  
+
   console.log(`Manually extracted ${exams.length} exams`);
   return exams;
 }
@@ -93,7 +93,7 @@ function sanitizeJsonResponse(response) {
     return JSON.parse(response);
   } catch (error) {
     console.log(`JSON parse error: ${error.message}`);
-    
+
     // Check if the response starts with markdown code block
     const markdownMatch = response.match(/```(?:json)?\s*([\s\S]*?)```/);
     if (markdownMatch) {
@@ -104,7 +104,7 @@ function sanitizeJsonResponse(response) {
         console.log(`Markdown extraction failed: ${markdownError.message}`);
       }
     }
-    
+
     // Try to extract a valid JSON array using regex
     try {
       const jsonArrayMatch = response.match(/\[\s*\{[\s\S]*?\}\s*\]/);
@@ -115,7 +115,7 @@ function sanitizeJsonResponse(response) {
     } catch (regexError) {
       console.log(`Regex extraction failed: ${regexError.message}`);
     }
-    
+
     // Try to fix common JSON issues
     try {
       console.log("Attempting to sanitize and fix JSON");
@@ -127,21 +127,21 @@ function sanitizeJsonResponse(response) {
         .replace(/[\r\n]+/g, " ") // Replace newlines with spaces
         .replace(/,\s*]/g, "]") // Remove trailing commas in arrays
         .replace(/,\s*}/g, "}"); // Remove trailing commas in objects
-      
+
       // Try to find the beginning and end of a JSON array
       const startIdx = sanitized.indexOf('[');
       const endIdx = sanitized.lastIndexOf(']');
-      
+
       if (startIdx !== -1 && endIdx !== -1 && startIdx < endIdx) {
         sanitized = sanitized.substring(startIdx, endIdx + 1);
         console.log("Extracted JSON array by finding brackets");
         return JSON.parse(sanitized);
       }
-      
+
       // If we can't find an array, try to find an object
       const objStartIdx = sanitized.indexOf('{');
       const objEndIdx = sanitized.lastIndexOf('}');
-      
+
       if (objStartIdx !== -1 && objEndIdx !== -1 && objStartIdx < objEndIdx) {
         sanitized = sanitized.substring(objStartIdx, objEndIdx + 1);
         console.log("Extracted JSON object by finding braces");
@@ -152,24 +152,24 @@ function sanitizeJsonResponse(response) {
     } catch (sanitizeError) {
       console.log(`Sanitization failed: ${sanitizeError.message}`);
     }
-    
+
     // Last resort: try to manually construct a valid array from the content
     try {
       console.log("Attempting manual JSON construction as last resort");
-      
+
       // Look for patterns that might indicate subject/content pairs
       const subjects = response.match(/["']subject["']\s*:\s*["']([^"']+)["']/g) || [];
       const contents = response.match(/["']content["']\s*:\s*["']([^"']+)["']/g) || [];
-      
+
       if (subjects.length > 0 && contents.length > 0) {
         console.log(`Found ${subjects.length} subjects and ${contents.length} contents`);
-        
+
         // Try to construct a simple array of objects
         const manualArray = [];
         for (let i = 0; i < Math.min(subjects.length, contents.length); i++) {
           const subjectMatch = subjects[i].match(/["']subject["']\s*:\s*["']([^"']+)["']/);
           const contentMatch = contents[i].match(/["']content["']\s*:\s*["']([^"']+)["']/);
-          
+
           if (subjectMatch && contentMatch) {
             manualArray.push({
               subject: subjectMatch[1],
@@ -177,7 +177,7 @@ function sanitizeJsonResponse(response) {
             });
           }
         }
-        
+
         if (manualArray.length > 0) {
           console.log(`Manually constructed ${manualArray.length} exam objects`);
           return manualArray;
@@ -186,7 +186,7 @@ function sanitizeJsonResponse(response) {
     } catch (manualError) {
       console.log(`Manual construction failed: ${manualError.message}`);
     }
-    
+
     // If all else fails, throw the original error
     throw new Error(`Failed to parse JSON response: ${error.message}`);
   }
@@ -203,18 +203,18 @@ const grades = {
 };
 //const grades = ["ONE", "TWO", "THREE", "FOUR", "FIVE"];
 const subjects = [
- "Math",
- "English Language",
- "Basic Science and Technology",
- "Computer",
- "History",
- "Physical and Health Education",
- "National Values",
- "Cultural and Creative Arts",
- "PreVocational Studies",
- "French",
- "Religion Studies",
- "Music",
+  "Math",
+  "English Language",
+  "Basic Science and Technology",
+  "Computer",
+  "History",
+  "Physical and Health Education",
+  "National Values",
+  "Cultural and Creative Arts",
+  "PreVocational Studies",
+  "French",
+  "Religion Studies",
+  "Music",
 ];
 
 // Map grade names to todolist section names
@@ -229,31 +229,31 @@ const gradeToSectionMap = {
 // Function to update todolist-data.json
 function updateTodolistData(subject, grade) {
   const todolistDataPath = path.join(__dirname, 'todolist-data.json');
-  
+
   // Check if todolist-data.json exists
   if (!existsSync(todolistDataPath)) {
     console.log("todolist-data.json not found. No update performed.");
     return;
   }
-  
+
   try {
     // Read the current todolist data
     const todoData = JSON.parse(readFileSync(todolistDataPath, 'utf8'));
-    
+
     // Map the grade to the corresponding section
     const section = gradeToSectionMap[grade];
-    
+
     // If the section is not mapped, log a warning and return
     if (!section) {
       console.log(`Warning: Grade ${grade} does not map to a known section. No update performed.`);
       return;
     }
-    
+
     // Check if the subject exists in the todolist data
     if (todoData[subject] && todoData[subject][section]) {
       // Update the 'done' status to true
       todoData[subject][section].done = true;
-      
+
       // Write the updated data back to the file
       writeFileSync(todolistDataPath, JSON.stringify(todoData, null, 2));
       console.log(`Updated todolist-data.json: Marked ${subject} (${section}) as done.`);
@@ -360,12 +360,15 @@ For Section C (essay questions):
 - Maintain academic language level
 - Each question should require detailed explanation
 
+do EVERY single question
+EVERY question must be numbered
+
 Text to create quiz from:
 """
 ${t}
 """
 `);
-    
+
     const responseText = result.response.text();
     return responseText;
   } catch (error) {
@@ -377,7 +380,7 @@ ${t}
 async function generateDoc({ g, t, s }) {
   const q = await createSingleQuiz({ t });
   const { patchDocument, PatchType, TextRun, Paragraph } = require("docx");
-  
+
   let quizContent;
   try {
     quizContent = JSON.parse(q);
@@ -389,7 +392,7 @@ async function generateDoc({ g, t, s }) {
   // Get grade number and create json folder path
   const gradeNum = Object.keys(grades).find(key => grades[key] === g);
   const jsonDir = `./files/output/g${gradeNum}/json`;
-  
+
   // Create json directory if it doesn't exist
   if (!existsSync(jsonDir)) {
     mkdirSync(jsonDir, { recursive: true });
@@ -399,10 +402,10 @@ async function generateDoc({ g, t, s }) {
   const jsonPath = `${jsonDir}/${s}.json`;
   writeFileSync(jsonPath, JSON.stringify(quizContent, null, 2));
   console.log(`Saved quiz JSON to: ${jsonPath}`);
-  
+
   const doc = await patchDocument({
     data: readFileSync(`./files/template${g === "ONE" ? "-cc" : ""}.docx`),
-    outputType: "nodebuffer", 
+    outputType: "nodebuffer",
     keepOriginalStyles: true,
     patches: {
       s: {
@@ -421,7 +424,7 @@ async function generateDoc({ g, t, s }) {
             children: [new TextRun("Section A: Objective Questions")],
             spacing: { after: 400 }
           }),
-          ...quizContent.A.map((question, index) => 
+          ...quizContent.A.map((question, index) =>
             new Paragraph({
               children: [new TextRun(`${index + 1}. ${question}`)],
               spacing: { after: 300 }
@@ -432,7 +435,7 @@ async function generateDoc({ g, t, s }) {
             children: [new TextRun("Section B: Short Answer Questions")],
             spacing: { after: 400 }
           }),
-          ...quizContent.B.map((question, index) => 
+          ...quizContent.B.map((question, index) =>
             new Paragraph({
               children: [new TextRun(`${index + 1}. ${question}`)],
               spacing: { after: 300 }
@@ -443,7 +446,7 @@ async function generateDoc({ g, t, s }) {
             children: [new TextRun("Section C: Essay Questions")],
             spacing: { after: 400 }
           }),
-          ...quizContent.C.map((question, index) => 
+          ...quizContent.C.map((question, index) =>
             new Paragraph({
               children: [new TextRun(`${index + 1}. ${question}`)],
               spacing: { after: 300 }
@@ -480,19 +483,19 @@ async function generateSingleQuiz({ g, t, s }) {
   // Get the grade number from the grade name
   const gradeNum = Object.keys(grades).find(key => grades[key] === g);
   const outputPath = `./files/output/g${gradeNum}/${s}.docx`;
-  
+
   // Ensure the directory exists
   const outputDir = path.dirname(outputPath);
   if (!existsSync(outputDir)) {
     mkdirSync(outputDir, { recursive: true });
   }
-  
+
   writeFileSync(outputPath, doc);
   console.log(`Quiz generated: ${outputPath}`);
-  
+
   // Update todolist-data.json after generating the quiz
   updateTodolistData(s, g);
-  
+
   // Run git commands
   try {
     await runGitCommands();
@@ -509,7 +512,7 @@ async function generateMultipleQuizzes({ c, g, file }) {
   // Get grade number for the json directory path
   const currentGradeNum = Object.keys(grades).find(key => grades[key] === g);
   const jsonDir = `./files/output/g${currentGradeNum}/json`;
-  
+
   // Create json directory if it doesn't exist
   if (!existsSync(jsonDir)) {
     mkdirSync(jsonDir, { recursive: true });
@@ -558,10 +561,10 @@ async function generateMultipleQuizzes({ c, g, file }) {
         console.log("...");
         console.log("Raw response excerpt (last 500 chars):");
         console.log(aiResponse.substring(Math.max(0, aiResponse.length - 500)));
-        
+
         // Try a more aggressive approach for JSON extraction
         console.log("Attempting more aggressive JSON extraction...");
-        
+
         // Look for array-like structures
         const arrayMatch = aiResponse.match(/\[\s*\{[\s\S]*\}\s*\]/);
         if (arrayMatch) {
@@ -570,11 +573,11 @@ async function generateMultipleQuizzes({ c, g, file }) {
             console.log("Successfully extracted JSON array using regex");
           } catch (regexError) {
             console.error(`Regex extraction failed: ${regexError.message}`);
-            
+
             // Last resort: try to manually extract subjects and content
             console.log("Attempting manual extraction of subjects and content...");
             exams = manuallyExtractExams(aiResponse, subjects);
-            
+
             if (!exams || exams.length === 0) {
               throw parseError; // Rethrow the original error if manual extraction fails
             }
@@ -583,7 +586,7 @@ async function generateMultipleQuizzes({ c, g, file }) {
           // Try manual extraction as a last resort
           console.log("No JSON array found. Attempting manual extraction...");
           exams = manuallyExtractExams(aiResponse, subjects);
-          
+
           if (!exams || exams.length === 0) {
             throw parseError; // Rethrow the original error if manual extraction fails
           }
@@ -594,10 +597,10 @@ async function generateMultipleQuizzes({ c, g, file }) {
       if (!Array.isArray(exams)) {
         throw new Error("Parsed result is not an array");
       }
-      
+
       // Ensure each exam has the required properties
       exams = exams.filter(exam => exam && typeof exam === 'object' && exam.subject && exam.content);
-      
+
       if (exams.length === 0) {
         throw new Error("No valid exams found in the parsed result");
       }
@@ -631,7 +634,7 @@ async function generateMultipleQuizzes({ c, g, file }) {
       console.error(`Error parsing quiz content: ${error.message}`);
       quizContent = [quiz];
     }
-    
+
     if (!Array.isArray(quizContent)) {
       quizContent = [quizContent];
     }
@@ -646,17 +649,17 @@ async function generateMultipleQuizzes({ c, g, file }) {
     const outputPath = `${outputDir}/${s}.docx`;
     writeFileSync(outputPath, doc);
     console.log(`Generated: ${outputPath}`);
-    
+
     // Update todolist-data.json after generating each quiz
     updateTodolistData(s, g);
-    
+
     // Run git commands after each quiz
     try {
       await runGitCommands();
     } catch (error) {
       console.error("Failed to run git commands:", error);
     }
-    
+
     await new Promise((r) => setTimeout(r, 27000));
   }
 }
@@ -668,7 +671,7 @@ async function displayMenu(items, prompt) {
     items.forEach((item, index) => {
       console.log(`${index + 1}. ${item}`);
     });
-    
+
     rl.question("Enter your selection (number): ", (answer) => {
       const selection = parseInt(answer);
       if (!isNaN(selection) && selection >= 1 && selection <= items.length) {
@@ -704,7 +707,7 @@ async function main() {
         Object.keys(grades).forEach(key => {
           console.log(`${key}. Grade ${grades[key]}`);
         });
-        
+
         rl.question("Enter grade number (1-5): ", (answer) => {
           const gradeNum = parseInt(answer);
           if (!isNaN(gradeNum) && grades[gradeNum]) {
@@ -750,7 +753,7 @@ async function main() {
         Object.keys(grades).forEach(key => {
           console.log(`${key}. Grade ${grades[key]}`);
         });
-        
+
         rl.question("Enter grade number (1-5): ", (answer) => {
           const gradeNum = parseInt(answer);
           if (!isNaN(gradeNum) && grades[gradeNum]) {
