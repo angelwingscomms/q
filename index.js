@@ -415,11 +415,13 @@ async function generateDoc({ g, t, s }) {
         children: [new TextRun(g)],
       },
       q: {
-        type: PatchType.PARAGRAPH,
-        children: quizContent.reduce((acc, e) => {
-          acc.push(new Paragraph({children: [new TextRun(e)], spacing: {after: 200}}));
-          return acc;
-        }, []),
+        type: PatchType.DOCUMENT,
+        children: quizContent.map(content => {
+          return new Paragraph({
+            children: [new TextRun(content)],
+            spacing: { after: 200, line: 360, lineRule: 'auto' }
+          });
+        }),
       },
     },
   });
