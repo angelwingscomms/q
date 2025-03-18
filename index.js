@@ -513,6 +513,7 @@ async function generateMultipleQuizzes({ c, g, file }) {
       try {
         // Use the sanitizeJsonResponse helper function to parse the AI response
         exams = sanitizeJsonResponse(aiResponse);
+        throw 'nonJSON response'
       } catch (parseError) {
         console.error(`JSON parsing error: ${parseError.message}`);
         console.log("Raw response excerpt (first 500 chars):");
@@ -598,7 +599,7 @@ async function generateMultipleQuizzes({ c, g, file }) {
       console.error("Failed to run git commands:", error);
     }
     
-    await new Promise((r) => setTimeout(r, 54000));
+    await new Promise((r) => setTimeout(r, 27000));
   }
 }
 
