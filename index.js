@@ -217,6 +217,22 @@ const subjects = [
   "Music",
 ];
 
+// Map subjects to their abbreviations
+const subjectAbbreviations = {
+  "Math": "m",
+  "English Language": "e",
+  "Basic Science and Technology": "bst",
+  "Computer": "c",
+  "History": "h",
+  "Physical and Health Education": "phe",
+  "National Values": "nv",
+  "Cultural and Creative Arts": "cca",
+  "PreVocational Studies": "pvs",
+  "French": "f",
+  "Religion Studies": "rs",
+  "Music": "ms"
+};
+
 // Map grade names to todolist section names
 const gradeToSectionMap = {
   "ONE": "g1",
@@ -399,8 +415,10 @@ async function generateDoc({ g, t, s }) {
     mkdirSync(jsonDir, { recursive: true });
   }
 
+  // Use abbreviated filename
+  const abbreviatedSubject = subjectAbbreviations[s] || s.toLowerCase();
   // Save the quiz JSON data
-  const jsonPath = `${jsonDir}/${s}.json`;
+  const jsonPath = `${jsonDir}/${abbreviatedSubject}.json`;
   writeFileSync(jsonPath, JSON.stringify(quizContent, null, 2));
   console.log(`Saved quiz JSON to: ${jsonPath}`);
 
@@ -427,20 +445,20 @@ async function generateDoc({ g, t, s }) {
             })
           ),
           // Section B
-          new Paragraph({
-            children: [new TextRun("Section B")],
-            spacing: { after: 9 }
-          }),
-          ...quizContent.B.map((question, index) =>
+            new Paragraph({
+            children: [new TextRun({ text: "Section B", bold: true })],
+            spacing: { after: 9, before: 27 }
+            }),
+            ...quizContent.B.map((question, index) =>
             new Paragraph({
               children: [new TextRun(`${index + 1}. ${question}`)],
               spacing: { after: 9 }
             })
-          ),
+            ),
           // Section C
           new Paragraph({
-            children: [new TextRun("Section C")],
-            spacing: { after: 9 }
+            children: [new TextRun({ text: "Section A", bold: true })],
+            spacing: { after: 9, before: 27 }
           }),
           ...quizContent.C.map((question, index) =>
             new Paragraph({
@@ -478,7 +496,9 @@ async function generateSingleQuiz({ g, t, s }) {
   const doc = await generateDoc({ g, t, s });
   // Get the grade number from the grade name
   const gradeNum = Object.keys(grades).find(key => grades[key] === g);
-  const outputPath = `./files/output/g${gradeNum}/${s}.docx`;
+  // Use abbreviated filename
+  const abbreviatedSubject = subjectAbbreviations[s] || s.toLowerCase();
+  const outputPath = `./files/output/g${gradeNum}/${abbreviatedSubject}.docx`;
 
   // Ensure the directory exists
   const outputDir = path.dirname(outputPath);
@@ -627,13 +647,14 @@ async function generateMultipleQuizzes({ c, g, file, parseOnly = false }) {
     }
 
     // Save the quiz JSON data
-    const jsonPath = `${jsonDir}/${s}.json`;
+    const abbreviatedSubject = subjectAbbreviations[s] || s.toLowerCase();
+    const jsonPath = `${jsonDir}/${abbreviatedSubject}.json`;
     writeFileSync(jsonPath, JSON.stringify(quizContent, null, 2));
     console.log(`Saved quiz JSON to: ${jsonPath}`);
 
     // Generate Word document
     const doc = await generateDoc({ g, t, s });
-    const outputPath = `${outputDir}/${s}.docx`;
+    const outputPath = `${outputDir}/${abbreviatedSubject}.docx`;
     writeFileSync(outputPath, doc);
     console.log(`Generated: ${outputPath}`);
 
