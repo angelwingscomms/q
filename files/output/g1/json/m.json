@@ -1,21 +1,13 @@
 {
   "A": [
-    "12 = _________+ 8 (a) 4 (b) 6 (c) 8",
+    "12 = _________ + 8 (a) 4 (b) 6 (c) 8",
     "9 balloons, 4 blew away. How many left? _________ (a) 5 (b) 6 (c) 7",
     "Fifteen = (a) 50 (b) 5 (c) 15",
     "Ninety = (a) 90 (b) 19 (c) 91",
     "Sixtyone = (a) 60 (b) 16 (c) 61",
-    "Pencil N20, sweet N10. Total spent?_________ (a) N20 (b) N25 (c) N30",
+    "Pencil N20, sweet N10. How much spent? _________ (a) N20 (b) N25 (c) N30",
     "Ten more than two? (a) 10 (b) 12 (c) 22",
     "4 buns, Joe ate 2. How many left? (a) 2 (b) 6 (c) 8",
-    "I had 30 ribbons, used 10cm. How much left? (a) 10cm (b) 20cm (c) 40cm",
-    "23 pupils, 3 sick. How many in class? (a) 20 (b) 21 (c) 22",
-    "8 buttons, half blue. How many blue?_________ (a) 5 (b) 6 (c) 4",
-    "A triangle has _____ sides (a) 2 (b) 3 (c) 5",
-    "A square has ______ sides (a) 4 (b) 8 (c) 2",
-    "A circle is ___________ (a) Long (b) Short (c) Round"
-  ],
-  "B": [
     "5 + 17 = _________",
     "76 - 36 = _________",
     "6 + 14 = _________",
@@ -24,14 +16,24 @@
     "10 + 15 = _________",
     "10 + 10 = _________",
     "14 + 12 + 36 = _________",
-    "22, 23, _______, 25, _________, 26, 27, _______, _________",
-    "17 = s___v__nteen",
-    "16 = si___teen"
+    "I had 30 ribbons, used 10cm. How much left? (a) 10cm (b) 20cm (c) 40cm",
+    "23 pupils, 3 sick. How many in class? (a) 20 (b) 21 (c) 22",
+    "8 buttons, half blue. How many blue? _________ (a) 5 (b) 6 (c) 4",
+    "A triangle has _____ sides. (a) 2 (b) 3 (c) 5",
+    "A square has ______ sides. (a) 4 (b) 8 (c) 2",
+    "A circle is ___________. (a) Long (b) Short (c) Round"
+  ],
+  "B": [
+    "34 46 49 35 31 _________ _________",
+    "12 31 41 21 42 _________ _________",
+    "37 73 38 53 43 _________ _________",
+    "56 47 86 38 87 _________ _________",
+    "89 50 61 87 62 _________ _________",
+    "17 = s_________v_________nteen",
+    "16 = si_________teen"
   ],
   "C": [
-    "Write out two numbers that follows: 12, 31, 41, 21, 42, ____, ____",
-    "Write out two numbers that follows: 37, 73, 38, 53, 43, ____, ____",
-    "Write out two numbers that follows: 56, 47, 86, 38, 87, _____, ____",
-    "Write out two numbers that follows: 89, 50, 61, 87, 62, _____, ____"
+    "Write the missing numbers: 22, 23, _______, 25, _________, 26, 27, _______, _________",
+    "13 = thirteen, explain the pattern"
   ]
 }

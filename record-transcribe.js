@@ -6,6 +6,13 @@ const path = require('path');
 const os = require('os');
 const inquirer = require('inquirer');
 const { format } = require('date-fns');
+const { GoogleGenerativeAI } = require("@google/generative-ai");
+require('dotenv').config();
+
+// Initialize Gemini
+const genAI = new GoogleGenerativeAI(process.env.G);
+const model = genAI.getGenerativeModel({ model: "gemini-pro" });
+
 const TEMP_DIR = path.join(os.tmpdir(), 'voice-recordings');
 
 // Ensure temp directory exists
@@ -98,6 +105,19 @@ async function transcribe(audioPath) {
     return data.text;
 }
 
+async function chat(text) {
+    if (!process.env.G) {
+        throw new Error('G environment variable (Gemini API key) is not set');
+    }
+    try {
+        const result = await model.generateContent(text);
+        const response = await result.response;
+        return response.text();
+    } catch (error) {
+        throw new Error('Failed to get chat response: ' + error.message);
+    }
+}
+
 async function copyToClipboard(text) {
     execSync('xclip -selection clipboard', { input: text });
 }
@@ -108,6 +128,12 @@ async function main() {
         execSync('which pw-record xclip');
     } catch (error) {
         console.error('Error: Required commands (pw-record, xclip) are not installed');
+        process.exit(1);
+    }
+
+    // Check for required API keys
+    if (!process.env.GROQ || !process.env.G) {
+        console.error('Error: Required environment variables (GROQ and G) are not set');
         process.exit(1);
     }
 
@@ -144,11 +170,17 @@ async function main() {
     console.log('Transcribing audio...');
     try {
         const text = await transcribe(audioPath);
-        await copyToClipboard(text);
         console.log('Transcribed text:', text);
-        console.log('Text copied to clipboard!');
+        
+        console.log('\nGetting response from Gemini...');
+        const chatResponse = await chat(text);
+        console.log('\nGemini response:', chatResponse);
+        
+        // Copy the chat response to clipboard instead of the transcription
+        await copyToClipboard(chatResponse);
+        console.log('\nResponse copied to clipboard!');
     } catch (error) {
-        console.error('Transcription failed:', error.message);
+        console.error('Error:', error.message);
     }
 }
 
