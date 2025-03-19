@@ -271,7 +271,7 @@ const rl = readline.createInterface({
 });
 
 const singleQuizModel = genAI.getGenerativeModel({
-  model: "gemini-2.0-flash",
+  model: "gemini-2.0-pro-exp-02-05",
   generationConfig: {
     temperature: 0.7,
     topP: 0.95,
@@ -303,7 +303,7 @@ const singleQuizModel = genAI.getGenerativeModel({
 });
 
 const multiQuizModel = genAI.getGenerativeModel({
-  model: "gemini-2.0-flash",
+  model: "gemini-2.0-pro-exp-02-05",
   generationConfig: {
     temperature: 0.7,
     topP: 0.95,
