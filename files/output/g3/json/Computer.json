@@ -1,28 +1,48 @@
 {
   "A": [
-    "14. Was the prophecy of Isaiah concerning Jesus fulfilled? (a) Yes, it was (b) No, it wasn't",
-    "15. After the Apostles were filled with the Holy Spirit, did they receive the power to kill their enemies? (a) True (b) False",
-    "17. Is a born again someone who lives a Christ-like life, following all the principles and laws of Jesus Christ? (a) True (b) False",
-    "18. Jesus said, 'I am the way, the truth and the life, no man cometh unto the Father, but by me.' Where can you find this statement? (a) John 3:16 (b) Acts 4:12 (c) John 14:6",
-    "19. Which disciple of Jesus asked where He would be going and how they could know the way? (a) Judas Iscariot (b) Simon Peter (c) Thomas",
-    "20. According to the material, is Jesus the way to the Father? (a) True (b) False",
-    "21. Can we see God, the Father, except we believe in Jesus? (a) True (b) False",
-    "24. A good _____________ is one who looks after a flock of sheep and gives his life for the sheep. (a) Shepherd (b) Sheep (c) Military",
-    "25. Which of these is NOT a quality of a good shepherd? (a) Kindness (b) Protection (c) Fear",
-    "26. Who is a good shepherd? (a) Jesus (b) Thomas (c) Judas",
-    "27. \"I am a good shepherd; a good shepherd giveth his life for the sheep.\" Who made this statement? (a) Aboki (b) Jesus (c) Soldier",
-    "28. The bread of life is __________ who came from God to this world. (a) Jesus (b) Manna (c) Loaf",
-    "29. When we eat the physical bread, we get hungry again, but when we have Jesus, the bread of life, we will be given spiritual satisfaction all the time. (a) True (b) False"
+    "What is the full meaning of CPU? (a) Computer Provide Unit (b) Central Providing Unit (c) Central Processing Unit",
+    "All the following are early counting devices, Except _________ (a) Stick (b) Beads (c) Abacus",
+    "Pascal calculator was invented by _________ (a) John Napier (b) Blaise Pascal (c) Leibnitz",
+    "Leibnitz calculator can perform all of the following except (a) Washing (b) Addition and subtraction",
+    "How many buttons does a mouse have? (a) 2 (b) 3 (c) More than 3",
+    "The part of the computer that helps us see what is inside is called _________ (a) Input devices (b) Output devices (c) Microscope",
+    "A common computer pointing device is _________ (a) Keyboard (b) Camera (c) Mouse",
+    "All of these are input devices Except _________ (a) Printer (b) Keyboard (c) Scanner",
+    "The part of the computer used in sending data into the computer is called _________ (a) Input device (b) Output device (c) Messenger",
+    "Which of these are input devices? (a) Joystick (b) Light pen (c) Both a and b",
+    "All of these are the types of keys on a keyboard Except _________ (a) Operation keys (b) Numeric keys (c) Alphabet keys",
+    "Apart from abacus, which other device was the first mechanical counting device? (a) Phone (b) Computer (c) Calculator",
+    "When was Jacquard's Loom invented? (a) 1888 (b) 1980 (c) 1801",
+    "The later development of counting devices were mechanical devices such as _________ and _________ (a) Stones and pebbles (b) Abacus and calculator (c) Fingers and toes",
+    "When was Napier's bone invented? (a) 1617 (b) 1716 (c) 1960",
+    "_________ is a small object that has two buttons and wire that looks like a tail (a) Monkey (b) Mouse (c) Rat",
+    "Who invented Jacquard's Loom? (a) Nicolas Jaguar (b) Joseph Marie Jacquard (c) Jacquard Loomba",
+    "The electronic machine which receives data, store data and process data to produce information is known as _________ (a) Motorcycle (b) Computer (c) Grinding machine",
+    "Charles Babbage Difference Engine can perform _________ (a) Logarithm (b) Addition and subtraction (c) Fabrics creation",
+    "The Leibnitz multiplier can perform _________ (a) Fabrics (b) Drawing (c) Multiplication and division",
+    "Input devices are used to enter data such as text, pictures and sounds into the computer (a) True (b) False",
+    "All other devices like the keyboard, mouse, printer and monitor are connected to the system unit to function together (a) True (b) False",
+    "What is used to transfer data such as text, pictures, and sounds from the computer to the outside world? (a) Input device (b) Output device (c) POS",
+    "The _________ has letter keys, number keys and symbol keys (a) Mouse (b) Printer (c) Keyboard",
+    "Which device is used to play computer games? (a) Joystick (b) Plotter (c) Keyboard",
+    "Which device is used to drag items on the screen using a button? (a) Microphone (b) Speaker (c) Mouse",
+    "Which of these statements is true about the mouse? (a) A mouse is used to point to items on the screen using the button (b) A mouse is used to boot the computer (c) A mouse can shut down a computer",
+    "The _________ has a rectangular screen (face) like a television. It is used to show words, pictures and films from the computer (a) Compact Disc (b) Monitor (c) Webcam",
+    "A _________ is used to transfer sounds from the computer. It can be used to listen to music from the computer (a) Microphone (b) Speaker (c) MP3",
+    "A mouse is used to move the page up or down by using the button or wheel (a) True (b) False"
   ],
   "B": [
-    "13.  And in _________ _________ _________ _________ _________ _________ _________ _________ _________",
-    "16.  To be born again means one should be _________ _________ _________ _________ _________ _________ _________ _________ _________",
-    "22.   Jesus said one cannot see God except one is _________ _________ _________ _________ _________ _________ _________ _________ _________",
-    "23.   We can become born by _________ _________ _________ _________ _________ _________ _________ _________ _________"
+    "Input devices are used to enter _________ such as _________, _________ and sound into the computer",
+    "A system unit has a _________ shape",
+    "A system unit contains the processing parts that make the computer _________",
+    "The system unit consists of the major _________ that make the computer work",
+    "CPU is often referred to as the _________ of the computer"
   ],
   "C": [
-    "30. Explain the concept of Jesus as the 'Living Bread of Life' and its significance for spiritual sustenance.",
-    "31. Discuss the role and responsibilities of a shepherd in biblical context, and how it relates to Jesus.",
-    "32. Elaborate on the meaning of being 'born again' and its importance in Christian theology."
+    "Describe a system unit and its primary function",
+    "List the main parts of the CPU and briefly explain their roles",
+    "Mention two mechanical counting devices and their inventors",
+    "State the meaning of input devices and provide three examples",
+    "State the meaning of output devices and provide three examples"
   ]
 }
