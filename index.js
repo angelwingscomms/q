@@ -424,6 +424,17 @@ async function displayMenu(items, prompt) {
   });
 }
 
+// Add helper function to get subject from abbreviation
+function getSubjectFromAbbreviation(abbr) {
+  abbr = abbr.toLowerCase();
+  for (const [subject, abbreviation] of Object.entries(subjectAbbreviations)) {
+    if (abbreviation === abbr) {
+      return subject;
+    }
+  }
+  return null;
+}
+
 async function main() {
   try {
     const mode = await new Promise((resolve) => {
@@ -463,8 +474,32 @@ async function main() {
         });
       });
 
-      // Subject selection as a menu
-      const subject = await displayMenu(subjects, "Select a subject:");
+      // Subject selection by abbreviation
+      const subject = await new Promise((resolve) => {
+        // Show available subjects and their abbreviations
+        console.log("\nAvailable subjects (use abbreviation to select):");
+        Object.entries(subjectAbbreviations).forEach(([subject, abbr]) => {
+          console.log(`${abbr}: ${subject}`);
+        });
+
+        rl.question("\nEnter subject abbreviation: ", (answer) => {
+          const selectedSubject = getSubjectFromAbbreviation(answer.trim());
+          if (selectedSubject) {
+            resolve(selectedSubject);
+          } else {
+            console.log("Invalid subject abbreviation. Please try again.");
+            rl.question("Enter subject abbreviation: ", (retryAnswer) => {
+              const retrySubject = getSubjectFromAbbreviation(retryAnswer.trim());
+              if (retrySubject) {
+                resolve(retrySubject);
+              } else {
+                console.log("Invalid subject abbreviation again. Defaulting to Math.");
+                resolve("Math");
+              }
+            });
+          }
+        });
+      });
 
       // Check for existing JSON data first
       const gradeNum = Object.keys(grades).find(key => grades[key] === gradeSelection);
@@ -476,6 +511,7 @@ async function main() {
         t: null,
         s: subject,
       });
+
     } else if (mode === "2") {
       // Grade selection as a menu of numbers
       const gradeSelection = await new Promise((resolve) => {
