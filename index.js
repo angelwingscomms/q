@@ -579,22 +579,14 @@ async function generateMultipleQuizzes({ c, g, file, parseOnly = false }) {
   const parsedFilePath = `./files/input/${currentGradeNum}.json`;
 
   let exams;
-  let useExistingJson = false;
 
-  if (existsSync(parsedFilePath)) {
-    // Check if we should use existing parsed data
-    console.log(`Found existing parsed data at ${parsedFilePath}`);
-    try {
-      exams = JSON.parse(readFileSync(parsedFilePath, "utf8"));
-      useExistingJson = true;
-    } catch (error) {
-      console.error(`Error reading cached data: ${error.message}`);
-      console.log("Will need to reparse data...");
-    }
-  }
-
-  if (!useExistingJson) {
-    console.log("Parsing exams...");
+  // Try to parse as JSON first
+  try {
+    exams = JSON.parse(c);
+    console.log("Successfully loaded existing JSON data");
+  } catch (error) {
+    // Only try AI parsing if the content isn't valid JSON
+    console.log("Content is not valid JSON, attempting to parse with AI...");
     try {
       exams = await parseExams(c);
       // Save parsed data
@@ -827,19 +819,12 @@ async function main() {
       // Read the content from the grade's JSON file
       const content = readFileSync(jsonPath, "utf8");
 
-      // Ask if user wants to only parse or also generate quizzes
-      const parseOnly = await new Promise((resolve) => {
-        rl.question("Do you want to (1) only parse the file or (2) parse and generate quizzes? [1/2]: ", (answer) => {
-          resolve(answer === "1");
-        });
-      });
-
-      console.log(parseOnly ? "Parsing file only..." : "Parsing and generating quizzes...");
+      console.log("Generating multiple quizzes...");
       await generateMultipleQuizzes({
         c: content,
         g: gradeSelection,
         file: gradeNum.toString(),
-        parseOnly: parseOnly
+        parseOnly: false
       });
     } else {
       throw new Error("Invalid mode selection");
