@@ -522,25 +522,38 @@ async function generateMultipleQuizzes({ c, g, file }) {
   }
   
   let exams;
+  let useExistingJson = false;
 
   if (existsSync(parsedFilePath)) {
-    console.log(`Using cached parsed data from ${parsedFilePath}`);
-    try {
-      exams = JSON.parse(readFileSync(parsedFilePath, "utf8"));
-    } catch (error) {
-      console.error(`Error reading cached data: ${error.message}`);
-      console.log("Regenerating parsed data...");
-      // Continue to regenerate the data
+    const answer = await new Promise((resolve) => {
+      rl.question(`Found existing parsed data at ${parsedFilePath}. Use it? [y/N]: `, (ans) => {
+        resolve(ans.toLowerCase());
+      });
+    });
+
+    useExistingJson = answer === 'y';
+    
+    if (useExistingJson) {
+      console.log(`Using cached parsed data from ${parsedFilePath}`);
+      try {
+        exams = JSON.parse(readFileSync(parsedFilePath, "utf8"));
+      } catch (error) {
+        console.error(`Error reading cached data: ${error.message}`);
+        console.log("Will need to reparse data...");
+        useExistingJson = false;
+      }
+    } else {
+      console.log("Reparsing quizzes...");
     }
   }
 
-  if (!exams) {
+  if (!useExistingJson) {
     console.log("Parsing exams...");
     try {
       const aiResponse = (
         await multiQuizModel.generateContent(
           `return a JSON array of EACH AND EVERY exam given, where each exam object has 'subject' and 'content', the subject being that exam's subject, and the content being the exam's content as a string. Use exactly these subjects were relevant: ${JSON.stringify(subjects)}
-                Include EVERY subject.
+                Include EVERY subject. Make sure to include all the exams in the text below. Do not leave out any exams.
                 The exams:
                 ${c}
                 `,
