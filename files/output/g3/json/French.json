@@ -1,23 +1,47 @@
 {
   "A": [
-    "What is the capital of France (a) Berlin (b) Paris (c) Rome (d) Madrid",
-    "What is the chemical symbol for water (a) H2O (b) CO2 (c) NaCl (d) O2",
-    "Which planet is known as the Red Planet (a) Jupiter (b) Mars (c) Venus (d) Saturn",
-    "What is the largest mammal in the world (a) Elephant (b) Blue Whale (c) Giraffe (d) Polar Bear",
-    "Who painted the Mona Lisa (a) Michelangelo (b) Leonardo da Vinci (c) Raphael (d) Donatello"
+    "What is \"MY MOUTH\" called in French? (a) Mon next (b) Ma bouche (c) Ma tête",
+    "What do you call \"MY NOSE\" in French? (a) Mon nex (b) Mon nez (c) Mon cou",
+    "What do you call \"MY EYEBROW\" in French? (a) Mon oeil (b) Mon front (c) Mon sourcil",
+    "Comment s'appelle \"Mon cou\" en Anglais? (a) My mouth (b) My chin (c) My neck",
+    "Comment s'appelle \"Mon menton\" en Anglais? (a) My mouth (b) My leg (c) My chin",
+    "What do you call \"MY HAIR\" in French? (a) Mes cheveux (b) Ma tête (c) Mon front",
+    "Comment s'appelle \"FRIDAY\" en Français? (a) Lundi (b) Mecredi (c) Vendredi",
+    "What do you call \"MY FOREHEAD\" in French? (a) Mon sourcil (b) Mon front (c) Mon cou",
+    "Bon après midi means _ (a) Good morning (b) Good afternoon (c) Good evening",
+    "To say \"We are delighted to see you\" in French, you can simply say _ (a) Nous sommes enchantés de Vous voir (b) Je suis occupé maintenant (c) Je suis ravi de te voir",
+    "In French, \"ENVIE\" actually means _ (a) Happy (b) Desire (c) Appreciation",
+    "What does \"TRE BIEN DORMIE?\" mean? (a) Good to see you (b) Hope you're doing well (c) Did you sleep well?",
+    "What does \"BONJOUR PROFESSEUR\" mean? (a) Good morning friends (b) Good morning teachers (c) Good morning Madam",
+    "What does \"BONJOUR MONSIEUR\" mean? (a) Good afternoon Sir! (b) Good evening Sir! (c) Good morning Sir!",
+    "What does \"À REVOIR LA CLASSE\" mean? (a) Good evening class (b) Good night class (c) Good bye class",
+    "How do you say \"I am delighted to see you\" in French? (a) Nous sommes enchantés de te voir (b) Nous sommes enchantés de vous voir (c) Je suis ravi de te voir",
+    "Levez-vous la classe means what? (a) Class greet (b) Class stand (c) Class sit",
+    "Merci beaucoup means _ (a) Thank you very much (b) Welcome (c) Good night",
+    "À revoir Monsieur means _ (a) Thank you very much Sir (b) Good morning Sir (c) Good bye Sir",
+    "Bonjour mes amies means _ (a) Good morning children (b) Good morning teachers (c) Good morning friends",
+    "What does \"Donc aide-moi Dieu\" mean? (a) So help me God (b) Trust and obey (c) I am a Nigerian",
+    "What does the sentence \"Le Nigeria ne te saluons\" mean? (a) I love Nigeria (b) I am a Nigerian (c) Nigeria we hail thee",
+    "What does the sentence \"Notra drapeau sera symbole\" mean? (a) I can't see the symbol (b) Our flag shall be a symbol (c) I want to draw a symbol",
+    "What is \"Comme-ci comme-ca\" in English? (a) Like this like that (b) Like that like this (c) Like this like this",
+    "To say \"Good morning friends\" in French you can simply say_ (a) Bonjour petit (b) Bonjour mes Amie's (c) Bonjour monsieur",
+    "To say \"Did you sleep well\" in French you can simply say _ (a) Tre Bien dormie? (b) Comment ça va? (c) Comment se passé ke travail?",
+    "What is \"Ferme ta bouche\" in English? (a) Close your mouth (b) Open your mouth (c) Clear the bush",
+    "\"Repetez encore\" means _ (a) Repeat after me (b) Repeat it again (c) Stand still",
+    "\"Oh Dieu de la création\" means what in English? (a) Nigeria is a great nation (b) Oh God of all creation (c) We are His creation",
+    "What does comment tu t'apelle? mean in English? (a) What is her name? (b) What is his name? (c) What is your name?",
+    "What does the sentence \"Donc aide moi Dieu\" mean? (a) Praise the Lord (b) To God be the glory (c) So help me God"
   ],
   "B": [
-    "The powerhouse of the cell is called the _________",
-    "The chemical symbol for gold is _________",
-    "The process by which plants convert light energy into chemical energy is called _________",
-    "The capital of Japan is _________",
-    "The force that opposes motion is called _________"
+    "Le Nigeria ne te _________",
+    "Mes cheveux means _________",
+    "\"My mouth\" is called _________ in French",
+    "\"Nigeria soit beni\" means _________________________________ in English",
+    "What does the sentence \" Qu' est-ce que TU aimes\" mean? _________"
   ],
   "C": [
-    "Explain the theory of relativity and its implications",
-    "Describe the process of photosynthesis in detail",
-    "Discuss the causes and consequences of the French Revolution",
-    "Explain the concept of supply and demand in economics",
-    "Describe the major components of a computer system and their functions"
+    "Write any one stanza of the Nigeria national anthem in French",
+    "Translate the following school greetings into French: Good morning Mr. Christopher!, Good morning Teachers!, Good morning Friends!, We are delighted to see you, Did you sleep well?",
+    "Explain the differences in usage between 'vous' and 'tu' when addressing someone in French, providing examples to illustrate your points"
   ]
 }
