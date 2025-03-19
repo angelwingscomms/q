@@ -7,191 +7,6 @@ const path = require("path");
 const { exec } = require("child_process");
 require("dotenv").config();
 
-// Function to manually extract exams from text when JSON parsing fails
-function manuallyExtractExams(text, subjectList) {
-  console.log("Manually extracting exams from text...");
-  const exams = [];
-
-  // Try to identify subject headers and their content
-  // This assumes the text has subject headers followed by content
-  let currentSubject = null;
-  let currentContent = [];
-
-  // Split the text into lines for processing
-  const lines = text.split(/\r?\n/);
-
-  for (let i = 0; i < lines.length; i++) {
-    const line = lines[i].trim();
-
-    // Skip empty lines
-    if (!line) continue;
-
-    // Check if this line is a subject header
-    const subjectMatch = subjectList.find(subject =>
-      line.toUpperCase().includes(subject.toUpperCase()) ||
-      line.toUpperCase() === subject.toUpperCase()
-    );
-
-    if (subjectMatch) {
-      // If we already have a subject, save the previous one
-      if (currentSubject && currentContent.length > 0) {
-        exams.push({
-          subject: currentSubject,
-          content: currentContent.join('\n')
-        });
-        currentContent = [];
-      }
-
-      currentSubject = subjectMatch;
-    } else if (currentSubject) {
-      // Add this line to the current content
-      currentContent.push(line);
-    }
-  }
-
-  // Add the last subject if there is one
-  if (currentSubject && currentContent.length > 0) {
-    exams.push({
-      subject: currentSubject,
-      content: currentContent.join('\n')
-    });
-  }
-
-  // If we couldn't find any subjects using the above method,
-  // try a more aggressive approach by splitting the text into equal chunks
-  if (exams.length === 0 && subjectList.length > 0) {
-    console.log("No subjects found using header detection. Trying chunk-based extraction...");
-
-    // Remove any markdown or code block markers
-    const cleanText = text.replace(/```[\s\S]*?```/g, '');
-
-    // Split the text into roughly equal chunks based on the number of subjects
-    const chunkSize = Math.ceil(cleanText.length / subjectList.length);
-
-    for (let i = 0; i < subjectList.length; i++) {
-      const startPos = i * chunkSize;
-      const endPos = Math.min(startPos + chunkSize, cleanText.length);
-      const chunk = cleanText.substring(startPos, endPos);
-
-      if (chunk.trim()) {
-        exams.push({
-          subject: subjectList[i],
-          content: chunk.trim()
-        });
-      }
-    }
-  }
-
-  console.log(`Manually extracted ${exams.length} exams`);
-  return exams;
-}
-
-// Helper function to sanitize and parse JSON responses from AI models
-function sanitizeJsonResponse(response) {
-  // First try direct parsing
-  try {
-    return JSON.parse(response);
-  } catch (error) {
-    console.log(`JSON parse error: ${error.message}`);
-
-    // Check if the response starts with markdown code block
-    const markdownMatch = response.match(/```(?:json)?\s*([\s\S]*?)```/);
-    if (markdownMatch) {
-      try {
-        console.log("Found markdown code block, attempting to parse its contents");
-        return JSON.parse(markdownMatch[1]);
-      } catch (markdownError) {
-        console.log(`Markdown extraction failed: ${markdownError.message}`);
-      }
-    }
-
-    // Try to extract a valid JSON array using regex
-    try {
-      const jsonArrayMatch = response.match(/\[\s*\{[\s\S]*?\}\s*\]/);
-      if (jsonArrayMatch) {
-        console.log("Found JSON array pattern, attempting to parse");
-        return JSON.parse(jsonArrayMatch[0]);
-      }
-    } catch (regexError) {
-      console.log(`Regex extraction failed: ${regexError.message}`);
-    }
-
-    // Try to fix common JSON issues
-    try {
-      console.log("Attempting to sanitize and fix JSON");
-      // Replace common problematic characters
-      let sanitized = response
-        .replace(/[\u0000-\u001F\u007F-\u009F]/g, "") // Remove control characters
-        .replace(/\\(?!["\\/bfnrt])/g, "\\\\") // Escape backslashes not followed by valid escape chars
-        .replace(/(?<!\\)"/g, '\\"') // Escape unescaped quotes
-        .replace(/[\r\n]+/g, " ") // Replace newlines with spaces
-        .replace(/,\s*]/g, "]") // Remove trailing commas in arrays
-        .replace(/,\s*}/g, "}"); // Remove trailing commas in objects
-
-      // Try to find the beginning and end of a JSON array
-      const startIdx = sanitized.indexOf('[');
-      const endIdx = sanitized.lastIndexOf(']');
-
-      if (startIdx !== -1 && endIdx !== -1 && startIdx < endIdx) {
-        sanitized = sanitized.substring(startIdx, endIdx + 1);
-        console.log("Extracted JSON array by finding brackets");
-        return JSON.parse(sanitized);
-      }
-
-      // If we can't find an array, try to find an object
-      const objStartIdx = sanitized.indexOf('{');
-      const objEndIdx = sanitized.lastIndexOf('}');
-
-      if (objStartIdx !== -1 && objEndIdx !== -1 && objStartIdx < objEndIdx) {
-        sanitized = sanitized.substring(objStartIdx, objEndIdx + 1);
-        console.log("Extracted JSON object by finding braces");
-        const parsedObj = JSON.parse(sanitized);
-        // If we found an object but need an array, wrap it
-        return Array.isArray(parsedObj) ? parsedObj : [parsedObj];
-      }
-    } catch (sanitizeError) {
-      console.log(`Sanitization failed: ${sanitizeError.message}`);
-    }
-
-    // Last resort: try to manually construct a valid array from the content
-    try {
-      console.log("Attempting manual JSON construction as last resort");
-
-      // Look for patterns that might indicate subject/content pairs
-      const subjects = response.match(/["']subject["']\s*:\s*["']([^"']+)["']/g) || [];
-      const contents = response.match(/["']content["']\s*:\s*["']([^"']+)["']/g) || [];
-
-      if (subjects.length > 0 && contents.length > 0) {
-        console.log(`Found ${subjects.length} subjects and ${contents.length} contents`);
-
-        // Try to construct a simple array of objects
-        const manualArray = [];
-        for (let i = 0; i < Math.min(subjects.length, contents.length); i++) {
-          const subjectMatch = subjects[i].match(/["']subject["']\s*:\s*["']([^"']+)["']/);
-          const contentMatch = contents[i].match(/["']content["']\s*:\s*["']([^"']+)["']/);
-
-          if (subjectMatch && contentMatch) {
-            manualArray.push({
-              subject: subjectMatch[1],
-              content: contentMatch[1]
-            });
-          }
-        }
-
-        if (manualArray.length > 0) {
-          console.log(`Manually constructed ${manualArray.length} exam objects`);
-          return manualArray;
-        }
-      }
-    } catch (manualError) {
-      console.log(`Manual construction failed: ${manualError.message}`);
-    }
-
-    // If all else fails, throw the original error
-    throw new Error(`Failed to parse JSON response: ${error.message}`);
-  }
-}
-
 const G = process.env.G || "YOUR_API_KEY_HERE";
 const genAI = new GoogleGenerativeAI(G);
 const grades = {
@@ -314,38 +129,6 @@ const singleQuizModel = genAI.getGenerativeModel({
         }
       },
       required: ["A", "B", "C"]
-    },
-  },
-});
-
-const multiQuizModel = genAI.getGenerativeModel({
-  model: "gemini-2.0-pro-exp-02-05",
-  generationConfig: {
-    temperature: 0.7,
-    topP: 0.95,
-    topK: 64,
-    maxOutputTokens: 999999,
-    responseMimeType: "application/json",
-    responseSchema: {
-      description: "list of exams",
-      type: "ARRAY",
-      items: {
-        description: "an exam object",
-        type: "OBJECT",
-        properties: {
-          subject: {
-            type: "STRING",
-            description: "this exam's subject",
-            nullable: false,
-          },
-          content: {
-            type: "STRING",
-            description: "this exam's content",
-            nullable: false,
-          },
-        },
-        required: ["subject", "content"],
-      },
     },
   },
 });
@@ -516,23 +299,23 @@ async function generateSingleQuiz({ g, t, s }) {
   // Get the grade number from the grade name
   const gradeNum = Object.keys(grades).find(key => grades[key] === g);
   
-  // First check for existing JSON data using simplified path
+  // Check for existing JSON data
   const jsonPath = `./files/input/${gradeNum}.json`;
-  if (!t && existsSync(jsonPath)) {
-    try {
-      const jsonData = JSON.parse(readFileSync(jsonPath, "utf8"));
-      const subjectData = jsonData.find(exam => exam.subject === s);
-      if (subjectData) {
-        t = subjectData.content;
-        console.log(`Found existing content for ${s} in grade ${gradeNum}`);
-      }
-    } catch (error) {
-      console.error(`Error reading JSON data: ${error.message}`);
-    }
+  if (!existsSync(jsonPath)) {
+    throw new Error(`No JSON file found for grade ${gradeNum}. Please ensure the file exists at ${jsonPath}`);
   }
 
-  if (!t) {
-    throw new Error("No content found and no text provided");
+  try {
+    const jsonData = JSON.parse(readFileSync(jsonPath, "utf8"));
+    const subjectData = jsonData.find(exam => exam.subject === s);
+    
+    if (!subjectData) {
+      throw new Error(`No content found for subject ${s} in grade ${gradeNum}`);
+    }
+    
+    t = subjectData.content;
+  } catch (error) {
+    throw new Error(`Error reading JSON data: ${error.message}`);
   }
 
   const doc = await generateDoc({ g, t, s });
@@ -561,123 +344,63 @@ async function generateSingleQuiz({ g, t, s }) {
 }
 
 // Change generateMultipleQuizzes function to use simplified paths
-async function generateMultipleQuizzes({ c, g, file, parseOnly = false }) {
-  if (!existsSync("./files/input")) {
-    mkdirSync("./files/input", { recursive: true });
-  }
-
-  // Get grade number for the json directory path
-  const currentGradeNum = Object.keys(grades).find(key => grades[key] === g);
-  const jsonDir = `./files/output/g${currentGradeNum}/json`;
-
-  // Create json directory if it doesn't exist
-  if (!existsSync(jsonDir)) {
-    mkdirSync(jsonDir, { recursive: true });
-  }
-
-  // Simplified path - just use grade number
-  const parsedFilePath = `./files/input/${currentGradeNum}.json`;
-
-  let exams;
-
-  // Try to parse as JSON first
-  try {
-    exams = JSON.parse(c);
-    console.log("Successfully loaded existing JSON data");
-  } catch (error) {
-    // Only try AI parsing if the content isn't valid JSON
-    console.log("Content is not valid JSON, attempting to parse with AI...");
-    try {
-      exams = await parseExams(c);
-      // Save parsed data
-      writeFileSync(parsedFilePath, JSON.stringify(exams, null, 2));
-      console.log(`Saved parsed exams to ${parsedFilePath}`);
-    } catch (error) {
-      console.error(`Error generating or parsing exams: ${error.message}`);
-      throw error;
-    }
-  }
-
-  if (parseOnly) {
-    console.log("Parse-only mode: Finished parsing exams. Skipping quiz generation.");
-    rl.close();
-    return;
-  }
-
-  console.log(`Found ${exams.length} exams to generate`);
-
-  // Get the grade number from the grade name
+async function generateMultipleQuizzes({ g }) {
+  // Get grade number for paths
   const gradeNum = Object.keys(grades).find(key => grades[key] === g);
+  const jsonPath = `./files/input/${gradeNum}.json`;
   const outputDir = `./files/output/g${gradeNum}`;
-  if (!existsSync(outputDir)) {
-    mkdirSync(outputDir, { recursive: true });
+  const jsonDir = `${outputDir}/json`;
+
+  // Ensure directories exist
+  [outputDir, jsonDir].forEach(dir => {
+    if (!existsSync(dir)) {
+      mkdirSync(dir, { recursive: true });
+    }
+  });
+
+  // Check if the JSON file exists
+  if (!existsSync(jsonPath)) {
+    throw new Error(`No JSON file found for grade ${gradeNum} at ${jsonPath}`);
   }
 
-  for (const { subject: s, content: t } of exams) {
-    console.log(`Generating quiz for ${s}...`);
-
-    // First get the quiz content
-    const quiz = await createSingleQuiz({ t });
-    let quizContent;
-    try {
-      quizContent = JSON.parse(quiz);
-    } catch (error) {
-      console.error(`Error parsing quiz content: ${error.message}`);
-      quizContent = [quiz];
-    }
-
-    if (!Array.isArray(quizContent)) {
-      quizContent = [quizContent];
-    }
-
-    // Save the quiz JSON data
-    const abbreviatedSubject = subjectAbbreviations[s] || s.toLowerCase();
-    const jsonPath = `${jsonDir}/${abbreviatedSubject}.json`;
-    writeFileSync(jsonPath, JSON.stringify(quizContent, null, 2));
-    console.log(`Saved quiz JSON to: ${jsonPath}`);
-
-    // Generate Word document
-    const doc = await generateDoc({ g, t, s });
-    const outputPath = `${outputDir}/${abbreviatedSubject}.docx`;
-    writeFileSync(outputPath, doc);
-    console.log(`Generated: ${outputPath}`);
-
-    // Update todolist-data.json after generating each quiz
-    updateTodolistData(s, g);
-
-    // Run git commands after each quiz
-    try {
-      await runGitCommands();
-    } catch (error) {
-      console.error("Failed to run git commands:", error);
-    }
-
-    await new Promise((r) => setTimeout(r, 27000));
-  }
-}
-
-// Add function to parse exams with error handling
-async function parseExams(content) {
+  // Read and parse the JSON file
   try {
-    const aiResponse = (
-      await multiQuizModel.generateContent(
-        `from the following exams, make a JSON array of JSON objects, each object has the properties {subject, content} where subject is the name of the exam (e.g History) and content is all the full text of that exam. use these subject names: ${JSON.stringify(subjects)}
-        Include EVERY subject. Make sure to include all the exams in the text below. Do not leave out any exams.
-        The exams:
-        ${content}
-        `,
-      )
-    ).response.text();
+    const exams = JSON.parse(readFileSync(jsonPath, "utf8"));
+    console.log(`Found ${exams.length} exams to generate`);
 
-    const exams = sanitizeJsonResponse(aiResponse);
-    if (!Array.isArray(exams) || exams.length === 0) {
-      throw new Error("Failed to parse exams into valid array");
+    for (const { subject: s, content: t } of exams) {
+      console.log(`Generating quiz for ${s}...`);
+
+      // Generate the quiz
+      const quiz = await createSingleQuiz({ t });
+      const quizContent = JSON.parse(quiz);
+
+      // Save the quiz JSON data
+      const abbreviatedSubject = subjectAbbreviations[s] || s.toLowerCase();
+      const jsonPath = `${jsonDir}/${abbreviatedSubject}.json`;
+      writeFileSync(jsonPath, JSON.stringify(quizContent, null, 2));
+      console.log(`Saved quiz JSON to: ${jsonPath}`);
+
+      // Generate Word document
+      const doc = await generateDoc({ g, t, s });
+      const outputPath = `${outputDir}/${abbreviatedSubject}.docx`;
+      writeFileSync(outputPath, doc);
+      console.log(`Generated: ${outputPath}`);
+
+      // Update todolist-data.json after generating each quiz
+      updateTodolistData(s, g);
+
+      // Run git commands after each quiz
+      try {
+        await runGitCommands();
+      } catch (error) {
+        console.error("Failed to run git commands:", error);
+      }
+
+      await new Promise((r) => setTimeout(r, 27000));
     }
-
-    return exams.filter(exam => exam && typeof exam === 'object' && exam.subject && exam.content);
   } catch (error) {
-    console.error(`Error parsing exams: ${error.message}`);
-    throw error;
+    throw new Error(`Error processing JSON file: ${error.message}`);
   }
 }
 
@@ -746,36 +469,11 @@ async function main() {
       // Check for existing JSON data first
       const gradeNum = Object.keys(grades).find(key => grades[key] === gradeSelection);
       const jsonPath = `./files/input/${gradeNum}.json`;
-      let text;
-
-      if (existsSync(jsonPath)) {
-        try {
-          const jsonData = JSON.parse(readFileSync(jsonPath, "utf8"));
-          const subjectData = jsonData.find(exam => exam.subject === subject);
-          console.log('subject is', subject, 'path is', jsonPath);
-          if (subjectData) {
-            text = subjectData.content;
-            console.log(`Found existing content for ${subject} in grade ${gradeNum}`);
-          }
-        } catch (error) {
-          console.error(`Error reading JSON data: ${error.message}`);
-        }
-      }
-
-      // If no existing data found, ask for source file
-      if (!text) {
-        const file = await new Promise((resolve) => {
-          rl.question("No existing content found. Please provide source file (e.g., grade1.txt): ", (answer) =>
-            resolve(answer),
-          );
-        });
-        text = readFileSync(`./files/input/${file}`, "utf8");
-      }
 
       console.log("Generating single quiz...");
       await generateSingleQuiz({
         g: gradeSelection,
-        t: text,
+        t: null,
         s: subject,
       });
     } else if (mode === "2") {
@@ -808,24 +506,8 @@ async function main() {
         });
       });
 
-      const gradeNum = Object.keys(grades).find(key => grades[key] === gradeSelection);
-      const jsonPath = `./files/input/${gradeNum}.json`;
-
-      // Check if the JSON file exists for this grade
-      if (!existsSync(jsonPath)) {
-        throw new Error(`No JSON file found for grade ${gradeNum} at ${jsonPath}`);
-      }
-
-      // Read the content from the grade's JSON file
-      const content = readFileSync(jsonPath, "utf8");
-
       console.log("Generating multiple quizzes...");
-      await generateMultipleQuizzes({
-        c: content,
-        g: gradeSelection,
-        file: gradeNum.toString(),
-        parseOnly: false
-      });
+      await generateMultipleQuizzes({ g: gradeSelection });
     } else {
       throw new Error("Invalid mode selection");
     }
