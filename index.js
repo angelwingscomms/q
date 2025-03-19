@@ -361,7 +361,7 @@ For Section C (essay questions):
 - Each question should require detailed explanation
 
 do EVERY single question
-number unnumbered questions
+let the questions not be numbered
 
 Text to create quiz from:
 """
@@ -422,29 +422,29 @@ async function generateDoc({ g, t, s }) {
           ...quizContent.A.map((question, index) =>
             new Paragraph({
               children: [new TextRun(`${index + 1}. ${question}`)],
-              spacing: { after: 300 }
+              spacing: { after: 9 }
             })
           ),
           // Section B
           new Paragraph({
             children: [new TextRun("Section B")],
-            spacing: { after: 400 }
+            spacing: { after: 9 }
           }),
           ...quizContent.B.map((question, index) =>
             new Paragraph({
               children: [new TextRun(`${index + 1}. ${question}`)],
-              spacing: { after: 300 }
+              spacing: { after: 9 }
             })
           ),
           // Section C
           new Paragraph({
             children: [new TextRun("Section C")],
-            spacing: { after: 400 }
+            spacing: { after: 9 }
           }),
           ...quizContent.C.map((question, index) =>
             new Paragraph({
               children: [new TextRun(`${index + 1}. ${question}`)],
-              spacing: { after: 300 }
+              spacing: { after: 9 }
             })
           )
         ],
@@ -514,6 +514,13 @@ async function generateMultipleQuizzes({ c, g, file }) {
   }
 
   const parsedFilePath = `./files/input/parsed/${file}.json`;
+  
+  // Create grade-specific parsed directory if it doesn't exist
+  const parsedGradeDir = `./files/input/parsed/${file.charAt(file.length - 1)}`;
+  if (!existsSync(parsedGradeDir)) {
+    mkdirSync(parsedGradeDir, { recursive: true });
+  }
+  
   let exams;
 
   if (existsSync(parsedFilePath)) {
