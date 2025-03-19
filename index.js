@@ -348,12 +348,13 @@ Format requirements:
 
 For Section A (objective questions):
 - Never end with a full stop
+- Use 1 underscore for blanks
 - Use brackets for options (e.g., (a)...) and place questions and options on same line
 - Fix bad questions by removing or replacing options to ensure one correct answer
 - Questions may end with question marks
 
 For Section B (short answer questions):
-- Use exactly 9 underscores (_________) for fill in the blanks
+- Use 9 underscores for blanks
 
 For Section C (essay questions):
 - Make questions clear and concise
