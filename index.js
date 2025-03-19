@@ -287,7 +287,7 @@ const rl = readline.createInterface({
 });
 
 const singleQuizModel = genAI.getGenerativeModel({
-  model: "gemini-2.0-pro-exp-02-05",
+  model: "gemini-2.0-flash",
   generationConfig: {
     temperature: 0.7,
     topP: 0.95,
@@ -364,20 +364,20 @@ async function createSingleQuiz({ t }) {
 
   For Section A (objective questions):
   - Never end with a full stop
-  - Use 1 underscore for blanks
+  - Use 1 underscore (_) for blanks
   - Use brackets for options (e.g., (a)...) and place questions and options on same line
   - Fix bad questions by removing or replacing options to ensure one correct answer
   - Questions may end with question marks
 
   For Section B (short answer questions):
-  - Use 9 underscores for blanks
+  - Use 9 underscores (_________) for blanks
 
   For Section C (essay questions):
   - Make questions clear and concise
   - Maintain academic language level
   - Each question should require detailed explanation
 
-  See this example of how concise the questions should be:
+  edit all questions and options to be extremely concise, like this:
   """
   1. When you take care of your body you will look attractive (a) True (b) False
 
@@ -398,7 +398,6 @@ async function createSingleQuiz({ t }) {
   9. _ is called the light of the body (a) Hand (b) Mouth (c) Eyes
   """
 
-  do EVERY single question
   let the questions not be numbered
 
   Text to create quiz from:
@@ -468,7 +467,7 @@ async function generateDoc({ g, t, s }) {
           // Section B
           new Paragraph({
             children: [new TextRun({ text: "Section B", bold: true })],
-            spacing: { after: 9, before: 27 }
+            spacing: { after: 9, before: 54 }
           }),
           ...quizContent.B.map((question, index) =>
             new Paragraph({
@@ -478,8 +477,8 @@ async function generateDoc({ g, t, s }) {
           ),
           // Section C
           new Paragraph({
-            children: [new TextRun({ text: "Section A", bold: true })],
-            spacing: { after: 9, before: 27 }
+            children: [new TextRun({ text: "Section C", bold: true })],
+            spacing: { after: 9, before: 54 }
           }),
           ...quizContent.C.map((question, index) =>
             new Paragraph({
@@ -514,9 +513,29 @@ function runGitCommands() {
 }
 
 async function generateSingleQuiz({ g, t, s }) {
-  const doc = await generateDoc({ g, t, s });
   // Get the grade number from the grade name
   const gradeNum = Object.keys(grades).find(key => grades[key] === g);
+  
+  // First check for existing JSON data using simplified path
+  const jsonPath = `./files/input/${gradeNum}.json`;
+  if (!t && existsSync(jsonPath)) {
+    try {
+      const jsonData = JSON.parse(readFileSync(jsonPath, "utf8"));
+      const subjectData = jsonData.find(exam => exam.subject === s);
+      if (subjectData) {
+        t = subjectData.content;
+        console.log(`Found existing content for ${s} in grade ${gradeNum}`);
+      }
+    } catch (error) {
+      console.error(`Error reading JSON data: ${error.message}`);
+    }
+  }
+
+  if (!t) {
+    throw new Error("No content found and no text provided");
+  }
+
+  const doc = await generateDoc({ g, t, s });
   // Use abbreviated filename
   const abbreviatedSubject = subjectAbbreviations[s] || s.toLowerCase();
   const outputPath = `./files/output/g${gradeNum}/${abbreviatedSubject}.docx`;
@@ -541,9 +560,10 @@ async function generateSingleQuiz({ g, t, s }) {
   }
 }
 
+// Change generateMultipleQuizzes function to use simplified paths
 async function generateMultipleQuizzes({ c, g, file, parseOnly = false }) {
-  if (!existsSync("./files/input/parsed")) {
-    mkdirSync("./files/input/parsed", { recursive: true });
+  if (!existsSync("./files/input")) {
+    mkdirSync("./files/input", { recursive: true });
   }
 
   // Get grade number for the json directory path
@@ -555,80 +575,31 @@ async function generateMultipleQuizzes({ c, g, file, parseOnly = false }) {
     mkdirSync(jsonDir, { recursive: true });
   }
 
-  const parsedFilePath = `./files/input/parsed/${file}.json`;
-
-  // Create grade-specific parsed directory if it doesn't exist
-  const parsedGradeDir = `./files/input/parsed/${file.charAt(file.length - 1)}`;
-  if (!existsSync(parsedGradeDir)) {
-    mkdirSync(parsedGradeDir, { recursive: true });
-  }
+  // Simplified path - just use grade number
+  const parsedFilePath = `./files/input/${currentGradeNum}.json`;
 
   let exams;
   let useExistingJson = false;
 
   if (existsSync(parsedFilePath)) {
-    const answer = await new Promise((resolve) => {
-      rl.question(`Found existing parsed data at ${parsedFilePath}. Use it? [y/N]: `, (ans) => {
-        resolve(ans.toLowerCase());
-      });
-    });
-
-    useExistingJson = answer === 'y';
-
-    if (useExistingJson) {
-      console.log(`Using cached parsed data from ${parsedFilePath}`);
-      try {
-        exams = JSON.parse(readFileSync(parsedFilePath, "utf8"));
-      } catch (error) {
-        console.error(`Error reading cached data: ${error.message}`);
-        console.log("Will need to reparse data...");
-        useExistingJson = false;
-      }
-    } else {
-      console.log("Reparsing quizzes...");
+    // Check if we should use existing parsed data
+    console.log(`Found existing parsed data at ${parsedFilePath}`);
+    try {
+      exams = JSON.parse(readFileSync(parsedFilePath, "utf8"));
+      useExistingJson = true;
+    } catch (error) {
+      console.error(`Error reading cached data: ${error.message}`);
+      console.log("Will need to reparse data...");
     }
   }
 
   if (!useExistingJson) {
     console.log("Parsing exams...");
     try {
-      const aiResponse = (
-        await multiQuizModel.generateContent(
-          `from the following exams, make a JSON array of JSON objects, each object has the properties {subject, content} where subject is the name of the exam (e.g History) and content is all the full text of that exam. use these subject names: ${JSON.stringify(subjects)}
-                Include EVERY subject. Make sure to include all the exams in the text below. Do not leave out any exams.
-                The exams:
-                ${c}
-                `,
-        )
-      ).response.text();
-
-      // Save the raw response for debugging
-      const debugFilePath = `./files/input/parsed/${file}-raw-response.txt`;
-      writeFileSync(debugFilePath, aiResponse);
-      console.log(`Saved raw AI response to ${debugFilePath} for debugging`);
-
-      try {
-        // Use the sanitizeJsonResponse helper function to parse the AI response
-        exams = sanitizeJsonResponse(aiResponse);
-
-        // Validate the parsed exams
-        if (!Array.isArray(exams)) {
-          throw new Error("Parsed result is not an array");
-        }
-
-        // Ensure each exam has the required properties
-        exams = exams.filter(exam => exam && typeof exam === 'object' && exam.subject && exam.content);
-
-        if (exams.length === 0) {
-          throw new Error("No valid exams found in the parsed result");
-        }
-
-        writeFileSync(parsedFilePath, JSON.stringify(exams, null, 2));
-        console.log(`Saved parsed exams to ${parsedFilePath}`);
-      } catch (error) {
-        console.error(`Error parsing exams: ${error.message}`);
-        throw new Error(`Failed to parse exams: ${error.message}`);
-      }
+      exams = await parseExams(c);
+      // Save parsed data
+      writeFileSync(parsedFilePath, JSON.stringify(exams, null, 2));
+      console.log(`Saved parsed exams to ${parsedFilePath}`);
     } catch (error) {
       console.error(`Error generating or parsing exams: ${error.message}`);
       throw error;
@@ -690,6 +661,31 @@ async function generateMultipleQuizzes({ c, g, file, parseOnly = false }) {
     }
 
     await new Promise((r) => setTimeout(r, 27000));
+  }
+}
+
+// Add function to parse exams with error handling
+async function parseExams(content) {
+  try {
+    const aiResponse = (
+      await multiQuizModel.generateContent(
+        `from the following exams, make a JSON array of JSON objects, each object has the properties {subject, content} where subject is the name of the exam (e.g History) and content is all the full text of that exam. use these subject names: ${JSON.stringify(subjects)}
+        Include EVERY subject. Make sure to include all the exams in the text below. Do not leave out any exams.
+        The exams:
+        ${content}
+        `,
+      )
+    ).response.text();
+
+    const exams = sanitizeJsonResponse(aiResponse);
+    if (!Array.isArray(exams) || exams.length === 0) {
+      throw new Error("Failed to parse exams into valid array");
+    }
+
+    return exams.filter(exam => exam && typeof exam === 'object' && exam.subject && exam.content);
+  } catch (error) {
+    console.error(`Error parsing exams: ${error.message}`);
+    throw error;
   }
 }
 
@@ -757,7 +753,7 @@ async function main() {
 
       // Check for existing JSON data first
       const gradeNum = Object.keys(grades).find(key => grades[key] === gradeSelection);
-      const jsonPath = `./files/input/${gradeSelection}/a.json`;
+      const jsonPath = `./files/input/${gradeNum}.json`;
       let text;
 
       if (existsSync(jsonPath)) {
@@ -791,13 +787,6 @@ async function main() {
         s: subject,
       });
     } else if (mode === "2") {
-      const file = await new Promise((resolve) => {
-        rl.question("What file? (e.g., grade1.txt): ", (answer) =>
-          resolve(answer),
-        );
-      });
-      const content = readFileSync(`./files/input/${file}`, "utf8");
-
       // Grade selection as a menu of numbers
       const gradeSelection = await new Promise((resolve) => {
         console.log("Which grade?");
@@ -827,6 +816,17 @@ async function main() {
         });
       });
 
+      const gradeNum = Object.keys(grades).find(key => grades[key] === gradeSelection);
+      const jsonPath = `./files/input/${gradeNum}.json`;
+
+      // Check if the JSON file exists for this grade
+      if (!existsSync(jsonPath)) {
+        throw new Error(`No JSON file found for grade ${gradeNum} at ${jsonPath}`);
+      }
+
+      // Read the content from the grade's JSON file
+      const content = readFileSync(jsonPath, "utf8");
+
       // Ask if user wants to only parse or also generate quizzes
       const parseOnly = await new Promise((resolve) => {
         rl.question("Do you want to (1) only parse the file or (2) parse and generate quizzes? [1/2]: ", (answer) => {
@@ -838,7 +838,7 @@ async function main() {
       await generateMultipleQuizzes({
         c: content,
         g: gradeSelection,
-        file: file.split(".")[0],
+        file: gradeNum.toString(),
         parseOnly: parseOnly
       });
     } else {
