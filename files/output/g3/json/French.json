@@ -1,17 +1,23 @@
 {
   "A": [
-    "What is the French word for 'hello'? (a) Bonjour (b) Au revoir (c) Merci",
-    "Which of these is a fruit in French? (a) Une table (b) Une pomme (c) Un livre",
-    "What color is 'bleu'? (a) Red (b) Blue (c) Green"
+    "What is the capital of France (a) Berlin (b) Paris (c) Rome (d) Madrid",
+    "What is the chemical symbol for water (a) H2O (b) CO2 (c) NaCl (d) O2",
+    "Which planet is known as the Red Planet (a) Jupiter (b) Mars (c) Venus (d) Saturn",
+    "What is the largest mammal in the world (a) Elephant (b) Blue Whale (c) Giraffe (d) Polar Bear",
+    "Who painted the Mona Lisa (a) Michelangelo (b) Leonardo da Vinci (c) Raphael (d) Donatello"
   ],
   "B": [
-    "The French word for 'thank you' is _________ _________ .",
-    "To say 'goodbye' in French, you can say Au _________ _________ .",
-    "The number 'one' in French is _________ . "
+    "The powerhouse of the cell is called the _________",
+    "The chemical symbol for gold is _________",
+    "The process by which plants convert light energy into chemical energy is called _________",
+    "The capital of Japan is _________",
+    "The force that opposes motion is called _________"
   ],
   "C": [
-    "Explain the importance of learning French vocabulary for effective communication.",
-    "Describe the role of French grammar in constructing grammatically correct sentences.",
-    "Discuss the cultural significance of the French language and its impact on global society."
+    "Explain the theory of relativity and its implications",
+    "Describe the process of photosynthesis in detail",
+    "Discuss the causes and consequences of the French Revolution",
+    "Explain the concept of supply and demand in economics",
+    "Describe the major components of a computer system and their functions"
   ]
 }
