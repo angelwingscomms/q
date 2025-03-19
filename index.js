@@ -276,7 +276,7 @@ const singleQuizModel = genAI.getGenerativeModel({
     temperature: 0.7,
     topP: 0.95,
     topK: 64,
-    maxOutputTokens: 65536,
+    maxOutputTokens: 999999,
     responseMimeType: "application/json",
     responseSchema: {
       type: "OBJECT",
@@ -499,7 +499,7 @@ async function generateSingleQuiz({ g, t, s }) {
   }
 }
 
-async function generateMultipleQuizzes({ c, g, file }) {
+async function generateMultipleQuizzes({ c, g, file, parseOnly = false }) {
   if (!existsSync("./files/input/parsed")) {
     mkdirSync("./files/input/parsed", { recursive: true });
   }
@@ -552,7 +552,7 @@ async function generateMultipleQuizzes({ c, g, file }) {
     try {
       const aiResponse = (
         await multiQuizModel.generateContent(
-          `return a JSON array of EACH AND EVERY exam given, where each exam object has 'subject' and 'content', the subject being that exam's subject, and the content being the exam's content as a string. Use exactly these subjects were relevant: ${JSON.stringify(subjects)}
+          `from the following exams, make a JSON array of JSON objects, each object has the properties {subject, content} where subject is the name of the exam (e.g History) and content is all the full text of that exam. use these subject names: ${JSON.stringify(subjects)}
                 Include EVERY subject. Make sure to include all the exams in the text below. Do not leave out any exams.
                 The exams:
                 ${c}
@@ -591,6 +591,12 @@ async function generateMultipleQuizzes({ c, g, file }) {
       console.error(`Error generating or parsing exams: ${error.message}`);
       throw error;
     }
+  }
+
+  if (parseOnly) {
+    console.log("Parse-only mode: Finished parsing exams. Skipping quiz generation.");
+    rl.close();
+    return;
   }
 
   console.log(`Found ${exams.length} exams to generate`);
@@ -756,11 +762,19 @@ async function main() {
         });
       });
 
-      console.log("Generating multiple quizzes...");
+      // Ask if user wants to only parse or also generate quizzes
+      const parseOnly = await new Promise((resolve) => {
+        rl.question("Do you want to (1) only parse the file or (2) parse and generate quizzes? [1/2]: ", (answer) => {
+          resolve(answer === "1");
+        });
+      });
+
+      console.log(parseOnly ? "Parsing file only..." : "Parsing and generating quizzes...");
       await generateMultipleQuizzes({
         c: content,
         g: gradeSelection,
         file: file.split(".")[0],
+        parseOnly: parseOnly
       });
     } else {
       throw new Error("Invalid mode selection");
@@ -768,7 +782,9 @@ async function main() {
   } catch (error) {
     console.error("Error:", error.message);
   } finally {
-    rl.close();
+    if (!rl.closed) {
+      rl.close();
+    }
   }
 }
 
