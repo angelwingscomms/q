@@ -191,8 +191,8 @@ async function createSingleQuiz({ t }) {
   9. _ is called the light of the body (a) Hand (b) Mouth (c) Eyes
   """
 
-  let the questions not be numbered
-  some sections may have subsections, with headings, instructions for the questions that follow perhaps, e.g "Write the short form of the following words". Remember to include such headings
+  let the questions be numbered
+  some sections may have subsections, with headings, instructions for the questions that follow perhaps, e.g "Write the short form of the following words". Add such subheadings as an unnumbered question.
 
   Text to create quiz from:
   """
@@ -268,9 +268,9 @@ async function generateDoc({ g, t, s }) {
       q: {
         type: PatchType.DOCUMENT,
         children: [
-          ...quizContent.A.map((question, index) =>
+          ...quizContent.A.map((question) =>
             new Paragraph({
-              children: [new TextRun(`${index + 1}. ${question}`)],
+              children: [new TextRun(question)],
               spacing: { after: 9 }
             })
           ),
@@ -279,9 +279,9 @@ async function generateDoc({ g, t, s }) {
             children: [new TextRun({ text: "Section B", bold: true })],
             spacing: { after: 9, before: 54 }
           }),
-          ...quizContent.B.map((question, index) =>
+          ...quizContent.B.map((question) =>
             new Paragraph({
-              children: [new TextRun(`${index + 1}. ${question}`)],
+              children: [new TextRun(question)],
               spacing: { after: 9 }
             })
           ),
@@ -290,9 +290,9 @@ async function generateDoc({ g, t, s }) {
             children: [new TextRun({ text: "Section C", bold: true })],
             spacing: { after: 9, before: 54 }
           }),
-          ...quizContent.C.map((question, index) =>
+          ...quizContent.C.map((question) =>
             new Paragraph({
-              children: [new TextRun(`${index + 1}. ${question}`)],
+              children: [new TextRun(question)],
               spacing: { after: 9 }
             })
           )
