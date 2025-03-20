@@ -170,7 +170,7 @@ async function createSingleQuiz({ t }) {
   - Maintain academic language level
   - Each question should require detailed explanation
 
-  edit all questions and options to be extremely concise, like this:
+  edit all questions and options to be short, like this:
   """
   1. When you take care of your body you will look attractive (a) True (b) False
 
