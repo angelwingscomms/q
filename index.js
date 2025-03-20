@@ -184,11 +184,11 @@ async function createSingleQuiz({ t }) {
 
   6. How many eyes do you have? (a) 4 (b) 1 (c) 2
 
-  7. Use _ to remove dirt from your nose (a) Stick (b) Hand (c) Cotton bud
+  7. The capital of Ameria is _________
 
-  8. _ part of the body is used for seeing (a) Nose (b) Eyes (c) Ears
-
-  9. _ is called the light of the body (a) Hand (b) Mouth (c) Eyes
+  8. The capital of China is _________
+  
+  9. The capital of Nigeria is _________
   """
 
   let the questions be numbered
@@ -275,10 +275,10 @@ async function generateDoc({ g, t, s }) {
             })
           ),
           // Section B
-          new Paragraph({
-            children: [new TextRun({ text: "Section B", bold: true })],
-            spacing: { after: 9, before: 54 }
-          }),
+          // new Paragraph({
+          //   children: [new TextRun({ text: "Section B", bold: true })],
+          //   spacing: { after: 9, before: 54 }
+          // }),
           ...quizContent.B.map((question) =>
             new Paragraph({
               children: [new TextRun(question)],
@@ -286,10 +286,10 @@ async function generateDoc({ g, t, s }) {
             })
           ),
           // Section C
-          new Paragraph({
-            children: [new TextRun({ text: "Section C", bold: true })],
-            spacing: { after: 9, before: 54 }
-          }),
+          // new Paragraph({
+          //   children: [new TextRun({ text: "Section C", bold: true })],
+          //   spacing: { after: 9, before: 54 }
+          // }),
           ...quizContent.C.map((question) =>
             new Paragraph({
               children: [new TextRun(question)],
