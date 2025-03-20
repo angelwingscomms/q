@@ -7,7 +7,7 @@ const path = require("path");
 const { exec } = require("child_process");
 require("dotenv").config();
 
-const G = process.env.G || "YOUR_API_KEY_HERE";
+const G = process.env.G || "API_KEY";
 const genAI = new GoogleGenerativeAI(G);
 const grades = {
   1: "ONE",
@@ -104,7 +104,7 @@ const rl = readline.createInterface({
 const singleQuizModel = genAI.getGenerativeModel({
   model: "gemini-2.0-pro-exp-02-05",
   generationConfig: {
-    temperature: 0.7,
+    temperature: 0,
     topP: 0.95,
     topK: 64,
     maxOutputTokens: 999999,
@@ -183,6 +183,7 @@ async function createSingleQuiz({ t }) {
 
   rearrange the order of the questions
   rephrase the questions, preserving the meaning
+  for fractions, use the correct unicode symbols, e.g What is ⅛ of 16? (a) 4 (b) 2 (c) 6
   let the questions not be numbered
 
   Text to create quiz from:
