@@ -192,7 +192,7 @@ async function createSingleQuiz({ t }) {
   """
 
   let the questions be numbered
-  some sections may have subsections, with headings, instructions for the questions that follow perhaps, or passages, or just such parts that are not really questions in themselves, e.g "Write the short form of the following words". Add such parts as unnumbered questions.
+  sections may have subsections, with headings, instructions for the questions that follow perhaps, or passages, or just such parts that are not really questions in themselves, e.g "Write the short form of the following words". Add such parts as unnumbered questions, except for mainsections A, B and C.
 
   Text to create quiz from:
   """
@@ -275,10 +275,10 @@ async function generateDoc({ g, t, s }) {
             })
           ),
           // Section B
-          // new Paragraph({
-          //   children: [new TextRun({ text: "Section B", bold: true })],
-          //   spacing: { after: 9, before: 54 }
-          // }),
+          new Paragraph({
+            children: [new TextRun("Section B")],
+            spacing: { after: 9, before: 54 }
+          }),
           ...quizContent.B.map((question) =>
             new Paragraph({
               children: [new TextRun(question)],
@@ -286,10 +286,10 @@ async function generateDoc({ g, t, s }) {
             })
           ),
           // Section C
-          // new Paragraph({
-          //   children: [new TextRun({ text: "Section C", bold: true })],
-          //   spacing: { after: 9, before: 54 }
-          // }),
+          new Paragraph({
+            children: [new TextRun("Section C")],
+            spacing: { after: 9, before: 54 }
+          }),
           ...quizContent.C.map((question) =>
             new Paragraph({
               children: [new TextRun(question)],
