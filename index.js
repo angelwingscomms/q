@@ -192,6 +192,7 @@ async function createSingleQuiz({ t }) {
   """
 
   let the questions not be numbered
+  some sections may have subsections, with headings, instructions for the questions that follow perhaps, e.g "Write the short form of the following words". Remember to include such headings
 
   Text to create quiz from:
   """
