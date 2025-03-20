@@ -183,7 +183,7 @@ async function createSingleQuiz({ t }) {
 
   rearrange the order of the questions
   rephrase the questions to sound different, while preserving their content and meaning
-  for fractions, use the correct unicode symbols, e.g What is ⅛ of 16? (a) 4 (b) 2 (c) 6
+  for fractions, use the correct unicode symbols, e.g 1. Convert ²⁵⁄₄ to a mixed number (a) 6¼ (b) 4⅙ (c) 1⁴⁄₆
   let the questions not be numbered
 
   Text to create quiz from:
