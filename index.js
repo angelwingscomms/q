@@ -192,7 +192,7 @@ async function createSingleQuiz({ t }) {
   """
 
   let the questions be numbered
-  some sections may have subsections, with headings, instructions for the questions that follow perhaps, or passages, or just such parts that are not really questions in themselves, e.g "Write the short form of the following words". Add such subheadings as an unnumbered question.
+  some sections may have subsections, with headings, instructions for the questions that follow perhaps, or passages, or just such parts that are not really questions in themselves, e.g "Write the short form of the following words". Add such parts as unnumbered questions.
 
   Text to create quiz from:
   """
