@@ -7,7 +7,7 @@ const path = require("path");
 const { exec } = require("child_process");
 require("dotenv").config();
 
-const G = process.env.G || "API_KEY";
+const G = process.env.G || "YOUR_API_KEY_HERE";
 const genAI = new GoogleGenerativeAI(G);
 const grades = {
   1: "ONE",
@@ -102,9 +102,9 @@ const rl = readline.createInterface({
 });
 
 const singleQuizModel = genAI.getGenerativeModel({
-  model: "gemini-2.0-pro-exp-02-05",
+  model: "gemini-2.0-flash",
   generationConfig: {
-    temperature: 0,
+    temperature: 0.7,
     topP: 0.95,
     topK: 64,
     maxOutputTokens: 999999,
@@ -126,9 +126,19 @@ const singleQuizModel = genAI.getGenerativeModel({
           type: "ARRAY",
           items: { type: "STRING" },
           description: "Section C: Theory questions"
+        },
+        answers_A: {
+          type: "ARRAY",
+          items: { type: "STRING" },
+          description: "Answers for Section A objective questions"
+        },
+        answers_B: {
+          type: "ARRAY",
+          items: { type: "STRING" },
+          description: "Answers for Section B short answer questions"
         }
       },
-      required: ["A", "B", "C"]
+      required: ["A", "B", "C", "answers_A", "answers_B"]
     },
   },
 });
@@ -181,9 +191,6 @@ async function createSingleQuiz({ t }) {
   9. _ is called the light of the body (a) Hand (b) Mouth (c) Eyes
   """
 
-  rearrange the order of the questions
-  rephrase the questions to sound different, while preserving their content and meaning
-  for fractions, use the correct unicode symbols, e.g 1. Convert ²⁵⁄₄ to a mixed number (a) 6¼ (b) 4⅙ (c) 1⁴⁄₆
   let the questions not be numbered
 
   Text to create quiz from:
@@ -215,18 +222,34 @@ async function generateDoc({ g, t, s }) {
   // Get grade number and create json folder path
   const gradeNum = Object.keys(grades).find(key => grades[key] === g);
   const jsonDir = `./files/output/g${gradeNum}/json`;
+  const answersDir = `./files/output/g${gradeNum}/answers`;
 
-  // Create json directory if it doesn't exist
-  if (!existsSync(jsonDir)) {
-    mkdirSync(jsonDir, { recursive: true });
-  }
+  // Create directories if they don't exist
+  [jsonDir, answersDir].forEach(dir => {
+    if (!existsSync(dir)) {
+      mkdirSync(dir, { recursive: true });
+    }
+  });
 
   // Use abbreviated filename
   const abbreviatedSubject = subjectAbbreviations[s] || s.toLowerCase();
+  
   // Save the quiz JSON data
   const jsonPath = `${jsonDir}/${abbreviatedSubject}.json`;
   writeFileSync(jsonPath, JSON.stringify(quizContent, null, 2));
   console.log(`Saved quiz JSON to: ${jsonPath}`);
+
+  // Save answers to text file
+  const answersPath = `${answersDir}/${abbreviatedSubject}.txt`;
+  const answersContent = [
+    'Section A (Objective) Answers:',
+    ...quizContent.answers_A.map((answer, i) => `${i + 1}. ${answer}`),
+    '',
+    'Section B (Short Answer) Answers:',
+    ...quizContent.answers_B.map((answer, i) => `${i + 1}. ${answer}`),
+  ].join('\n');
+  writeFileSync(answersPath, answersContent);
+  console.log(`Saved answers to: ${answersPath}`);
 
   const doc = await patchDocument({
     data: readFileSync(`./files/template${g === "ONE" ? "-cc" : ""}.docx`),
@@ -253,7 +276,7 @@ async function generateDoc({ g, t, s }) {
           // Section B
           new Paragraph({
             children: [new TextRun({ text: "Section B", bold: true })],
-            spacing: { after: 9 }
+            spacing: { after: 9, before: 54 }
           }),
           ...quizContent.B.map((question, index) =>
             new Paragraph({
@@ -264,7 +287,7 @@ async function generateDoc({ g, t, s }) {
           // Section C
           new Paragraph({
             children: [new TextRun({ text: "Section C", bold: true })],
-            spacing: { after: 9}
+            spacing: { after: 9, before: 54 }
           }),
           ...quizContent.C.map((question, index) =>
             new Paragraph({
@@ -353,9 +376,10 @@ async function generateMultipleQuizzes({ g }) {
   const jsonPath = `./files/input/${gradeNum}.json`;
   const outputDir = `./files/output/g${gradeNum}`;
   const jsonDir = `${outputDir}/json`;
+  const answersDir = `${outputDir}/answers`;
 
   // Ensure directories exist
-  [outputDir, jsonDir].forEach(dir => {
+  [outputDir, jsonDir, answersDir].forEach(dir => {
     if (!existsSync(dir)) {
       mkdirSync(dir, { recursive: true });
     }
@@ -383,6 +407,18 @@ async function generateMultipleQuizzes({ g }) {
       const jsonPath = `${jsonDir}/${abbreviatedSubject}.json`;
       writeFileSync(jsonPath, JSON.stringify(quizContent, null, 2));
       console.log(`Saved quiz JSON to: ${jsonPath}`);
+
+      // Save answers to text file
+      const answersPath = `${answersDir}/${abbreviatedSubject}.txt`;
+      const answersContent = [
+        'Section A (Objective) Answers:',
+        ...quizContent.answers_A.map((answer, i) => `${i + 1}. ${answer}`),
+        '',
+        'Section B (Short Answer) Answers:',
+        ...quizContent.answers_B.map((answer, i) => `${i + 1}. ${answer}`),
+      ].join('\n');
+      writeFileSync(answersPath, answersContent);
+      console.log(`Saved answers to: ${answersPath}`);
 
       // Generate Word document
       const doc = await generateDoc({ g, t, s });
