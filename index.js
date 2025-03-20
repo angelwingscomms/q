@@ -181,6 +181,8 @@ async function createSingleQuiz({ t }) {
   9. _ is called the light of the body (a) Hand (b) Mouth (c) Eyes
   """
 
+  rearrange the order of the questions
+  rephrase the questions, preserving the meaning
   let the questions not be numbered
 
   Text to create quiz from:

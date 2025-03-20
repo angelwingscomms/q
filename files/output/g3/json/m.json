@@ -1,0 +1,42 @@
+{
+  "A": [
+    "8 is in the _ place in 581 (a) Unit (b) Hundred (c) Tens",
+    "9 is in the _ place in 983 (a) Thousand (b) Hundred (c) Tens",
+    "1 is in the _ place in 981 (a) Units (b) Tens (c) Hundreds",
+    "If Ciara had 12 party friends, and half were girls, how many girls? (a) 12 (b) 6 (c) 3",
+    "If 6 girls were at the party, how many boys? (a) 6 (b) 7 (c) 12",
+    "If half the boys wore black socks, how many boys wore black socks? (a) 6 (b) 3 (c) 8",
+    "If all 6 boys ate two sausages each, how many sausages? (a) 24 (b) 12 (c) 6",
+    "If 1/4 of Ciara's 12 friends were 8 years old, how many were 8? (a) 6 (b) 3 (c) 2",
+    "If a party lasted from 3:00 p.m to 5:00 p.m, how many minutes? (a) 60 (b) 90 (c) 120",
+    "If a boy left 30 minutes before 5:00 p.m, when did he leave? (a) 3:30 (b) 4:30 (c) 4:35",
+    "25k + 31k equals? (a) 66k (b) 56k (c) 65k",
+    "45 exceeds 39 by how much? (a) 6 (b) 14 (c) 16",
+    "Jim was 11 two years ago; his age now? (a) 9 (b) 13 (c) 22",
+    "Eva had #70, spent #20 and #40; how much left? (a) 10.00 (b) 20.00 (c) 30.00",
+    "Six children, two copybooks each; total copybooks? (a) 26 (b) 12 (c) 13",
+    "Three packets of 8 sausages each; total sausages? (a) 20 (b) 22 (c) 24",
+    "Molly woke at 8:35, breakfast 10 minutes later; what time? (a) 9:35 (b) 8:45 (c) 8:25",
+    "23 pupils, 3 got off, then 4; how many left? (a) 21 (b) 19 (c) 16",
+    "18 pupils divided into 3 groups; how many per group? (a) 8 (b) 6 (c) 7",
+    "Spring months have 28, 31, and 30 days; total days? (a) 87 (b) 88 (c) 89",
+    "1/2 of 16 marbles are yellow; how many yellow? (a) 8 (b) 9 (c) 7",
+    "1/4 of 16 marbles are green; how many green? (a) 6 (b) 4 (c) 5",
+    "If 8 marbles are yellow, and 4 are green, how many are neither? (a) 4 (b) 9 (c) 6",
+    "Of 16 marbles, 1 is black, rest blue; how many blue? (a) 15 (b) 3 (c) 4",
+    "1/10 of 60 is? (a) 10 (b) 6 (c) 5",
+    "1/4 of 32 is? (a) 8 (b) 9 (c) 6",
+    "1/8 of 16 is? (a) 4 (b) 2 (c) 6",
+    "How many 4s in 20? (a) 4 (b) 5 (c) 6",
+    "46 exceeds 29 by? (a) 13 (b) 17 (c) 23",
+    "8 chairs need how many legs? (a) 12 (b) 24 (c) 32"
+  ],
+  "B": [
+    "Among the numbers 1 to 81, the odd numbers are: _________",
+    "Among the numbers 1 to 30, the even numbers are: _________"
+  ],
+  "C": [
+    "Explain how to solve a 4x4 Sudoku puzzle, outlining the rules and strategies",
+    "Describe the process of identifying even and odd numbers within a given set"
+  ]
+}
