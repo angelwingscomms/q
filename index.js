@@ -252,7 +252,7 @@ async function generateDoc({ g, t, s }) {
           ),
           // Section B
           new Paragraph({
-            children: [new TextRun({break: 1}),new TextRun({ text: "Section B", bold: true })],
+            children: [new TextRun({ text: "Section B", bold: true })],
             spacing: { after: 9 }
           }),
           ...quizContent.B.map((question, index) =>
@@ -263,7 +263,7 @@ async function generateDoc({ g, t, s }) {
           ),
           // Section C
           new Paragraph({
-            children: [new TextRun({break: 1}),new TextRun({ text: "Section C", bold: true })],
+            children: [new TextRun({ text: "Section C", bold: true })],
             spacing: { after: 9}
           }),
           ...quizContent.C.map((question, index) =>
