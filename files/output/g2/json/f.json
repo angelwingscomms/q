@@ -1,0 +1,59 @@
+{
+  "A": [
+    "1. \"Good morning\" in French is (a) Bonjour (b) Bon après midi (c) Bon soir",
+    "2. \"Good evening\" in French is (a) Bonjour (b) Bon soir (c) Bon Nuit",
+    "3. Bonjour la classe means _ (a) Good morning class (b) Good evening class (c) Good night class",
+    "4. \"MY MOUTH\" in French is (a) Ma bouche (b) Mon nez (c) Mon cou",
+    "5. \"MY EYE\" in French is (a) Mon nez (b) Mon oreille (c) Mon oeil",
+    "6. Bon après midi means _ (a) Good evening (b) Good afternoon (c) Good night",
+    "7. Merci beaucoup means _ (a) Welcome (b) Goodbye (c) Thank you very much",
+    "8. Je m' appelle Christopher means _ (a) My name is Christopher (b) Her name is Christopher (c) Their name is Christopher",
+    "9. Àu revoir la classe means _ (a) Class greet (b) Welcome class (c) Goodbye class",
+    "10. Comment tu t' appelle? Means _ (a) What is her name? (b) What is my name? (c) What is your name?",
+    "11. \"MY HEAD\" in French is (a) Ma bouche (b) Ma tète (c) Mon front",
+    "12. \"MY FOREHEAD\" in French is (a) Mon cou (b) Ma bouche (c) Mon front",
+    "13. \"MY HAIR\" in French is (a) Mes cheveux (b) Ma tète (c) Ma bouche",
+    "14. Monday in French is (a) Vendredi (b) Mecredi (c) Lundi",
+    "15. \"FRIDAY\" in French is (a) Lundi (b) Jeudi (c) Vendredi",
+    "16. Dansez means dance (a) True (b) False",
+    "17. What is levez-vous la classe? (a) Class stand (b) Class sit (c) Class greet",
+    "18. Mon Professeur means _ (a) My teacher (b) His teacher (c) Their teacher",
+    "19. Écoutez la radio means _ (a) Look at the radio (b) Listen to the radio (c) Sell the radio",
+    "20. Comment ça va? means _ (a) How are you? (b) Who are you? (c) Where are you?"
+  ],
+  "B": [
+    "Instructions: Answer all the questions from this section.",
+    "Translate the following words into English",
+    "1. Bonjour _________",
+    "2. Bon aprés midi _________",
+    "3. Comment çava? _________"
+  ],
+  "C": [],
+  "answers_A": [
+    "a",
+    "b",
+    "a",
+    "a",
+    "c",
+    "b",
+    "c",
+    "a",
+    "c",
+    "c",
+    "b",
+    "c",
+    "a",
+    "c",
+    "c",
+    "a",
+    "a",
+    "a",
+    "b",
+    "a"
+  ],
+  "answers_B": [
+    "Hello/Good morning",
+    "Good afternoon",
+    "How are you?"
+  ]
+}
