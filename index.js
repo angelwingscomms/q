@@ -112,9 +112,20 @@ const singleQuizModel = genAI.getGenerativeModel({
     responseSchema: {
       type: "OBJECT",
       properties: {
-        quiz: {
-          type: "STRING",
-          description: "The complete quiz with all sections A, B, and C combined"
+        A: {
+          type: "ARRAY",
+          items: { type: "STRING" },
+          description: "Section A: Objective questions"
+        },
+        B: {
+          type: "ARRAY",
+          items: { type: "STRING" },
+          description: "Section B: Short answer questions"
+        },
+        C: {
+          type: "ARRAY",
+          items: { type: "STRING" },
+          description: "Section C: Theory questions"
         },
         answers_A: {
           type: "ARRAY",
@@ -127,30 +138,25 @@ const singleQuizModel = genAI.getGenerativeModel({
           description: "Answers for Section B short answer questions"
         }
       },
-      required: ["quiz", "answers_A", "answers_B"]
+      required: ["A", "B", "C", "answers_A", "answers_B"]
     },
   },
 });
 
 async function createSingleQuiz({ t }) {
   try {
-    const result = 
-      await singleQuizModel.generateContent(`Create a quiz with sections A, B, and C as a single combined string with proper section headers and numbering.
+    const result =
+      await singleQuizModel.generateContent(`Create a quiz with three sections (A, B, C) in JSON format.
+  Each section should be an array of strings containing the questions for that section.
 
-  The quiz should have:
-  Section A with objective questions (multiple choice)
-  Section B with short answer questions
-  Section C with essay/theory questions
+  Section A should contain objective questions (multiple choice).
+  Section B should contain short answer questions.
+  Section C should contain essay/theory questions.
 
   Format requirements:
 
-  General formatting:
-  - Add two newlines between each question/item
-  - Add two newlines between sections
-  - Questions should be properly numbered within each section
-
   For Section A (objective questions):
-  - Never end with a full stop 
+  - Never end with a full stop
   - Use 1 underscore (_) for blanks
   - Use brackets for options (e.g., (a)...) and place questions and options on same line
   - Fix bad questions by removing or replacing options to ensure one correct answer
@@ -159,14 +165,13 @@ async function createSingleQuiz({ t }) {
   For Section B (short answer questions):
   - Use 9 underscores (_________) for blanks
 
-  For Section C (essay questions): 
+  For Section C (essay questions):
   - Make questions clear and concise
   - Maintain academic language level
   - Each question should require detailed explanation
 
   edit all questions and options to be short, like this:
   """
-  Section A
   1. When you take care of your body you will look attractive (a) True (b) False
 
   2. How many noses do you have? (a) 2 (b) 1 (c) 3
@@ -177,27 +182,17 @@ async function createSingleQuiz({ t }) {
 
   5. _ is used for breathing (a) Ear (b) Eyes (c) Nose
 
-  Section B
-  1. How many eyes do you have? _________
+  6. How many eyes do you have? (a) 4 (b) 1 (c) 2
 
-  2. The capital of America is _________
+  7. The capital of Ameria is _________
+
+  8. The capital of China is _________
   
-  3. The capital of Nigeria is _________
-
-  Section C
-  1. Explain the importance of personal hygiene.
-
-  2. Describe the functions of the nose.
+  9. The capital of Nigeria is _________
   """
 
-  Sections should have headers (Section A, Section B, Section C).
-  Questions should be properly numbered within each section.
-  Sections may have subsections, with headings, instructions for the questions that follow perhaps, or passages, or just such parts that are not really questions in themselves, e.g "Write the short form of the following words". Add such parts as unnumbered questions.
-
-  The response should return:
-  1. The complete quiz as a single string with all sections
-  2. An array of answers for Section A questions
-  3. An array of answers for Section B questions
+  let the questions be numbered
+  sections may have subsections, with headings, instructions for the questions that follow perhaps, or passages, or just such parts that are not really questions in themselves, e.g "Write the short form of the following words". Add such parts as unnumbered questions, except for mainsections A, B and C.
 
   Text to create quiz from:
   """
@@ -273,10 +268,34 @@ async function generateDoc({ g, t, s }) {
       q: {
         type: PatchType.DOCUMENT,
         children: [
+          ...quizContent.A.map((question) =>
+            new Paragraph({
+              children: [new TextRun(question)],
+              spacing: { after: 9 }
+            })
+          ),
+          // Section B
           new Paragraph({
-            children: [new TextRun(quizContent.quiz)],
-            spacing: { after: 9 }
-          })
+            children: [new TextRun("Section B")],
+            spacing: { after: 9, before: 54 }
+          }),
+          ...quizContent.B.map((question) =>
+            new Paragraph({
+              children: [new TextRun(question)],
+              spacing: { after: 9 }
+            })
+          ),
+          // Section C
+          new Paragraph({
+            children: [new TextRun("Section C")],
+            spacing: { after: 9, before: 54 }
+          }),
+          ...quizContent.C.map((question) =>
+            new Paragraph({
+              children: [new TextRun(question)],
+              spacing: { after: 9 }
+            })
+          )
         ],
       },
     },
