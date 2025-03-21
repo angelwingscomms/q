@@ -102,7 +102,7 @@ const rl = readline.createInterface({
 });
 
 const singleQuizModel = genAI.getGenerativeModel({
-  model: "gemini-2.0-flash",
+  model: "gemini-2.0-pro-exp-02-05",
   generationConfig: {
     temperature: 0.7,
     topP: 0.95,
@@ -170,7 +170,9 @@ async function createSingleQuiz({ t }) {
   - Maintain academic language level
   - Each question should require detailed explanation
 
-  rephrase questions to sound different, while preserving their original content and meaning
+  rephrase questions to sound different, while preserving their originalcreate-answers.js, input grade-number, input subject-abbreviation, gets quiz from files/output/{grade-number}/json/{subject-abbreviation}.docx, creates answers using Gemini APi (temperature 0), saves answers to files/output/{grade-number}/answers/{grade-abbreviation}.txt
+
+ content and meaning
 
   edit all questions and options to be short, like this:
   """
@@ -493,12 +495,110 @@ async function main() {
   try {
     const mode = await new Promise((resolve) => {
       rl.question(
-        "Generate (1) single quiz or (2) multiple quizzes? [1/2]: ",
+        "Select mode: (1) single quiz (2) multiple quizzes (3) create answers: ",
         (answer) => resolve(answer),
       );
     });
 
-    if (mode === "1") {
+    if (mode === "3") {
+      // Grade selection
+      const gradeSelection = await new Promise((resolve) => {
+        console.log("Which grade?");
+        Object.keys(grades).forEach(key => {
+          console.log(`${key}. Grade ${grades[key]}`);
+        });
+
+        rl.question("Enter grade number (1-5): ", (answer) => {
+          const gradeNum = parseInt(answer);
+          if (!isNaN(gradeNum) && grades[gradeNum]) {
+            resolve(gradeNum);
+          } else {
+            console.log("Invalid grade. Defaulting to 1");
+            resolve(1);
+          }
+        });
+      });
+
+      // Subject selection by abbreviation
+      const subjectAbbr = await new Promise((resolve) => {
+        console.log("\nAvailable subjects (use abbreviation to select):");
+        Object.entries(subjectAbbreviations).forEach(([subject, abbr]) => {
+          console.log(`${abbr}: ${subject}`);
+        });
+
+        const promptForSubject = () => {
+          rl.question("\nEnter subject abbreviation: ", (answer) => {
+            const trimmedAnswer = answer.trim().toLowerCase();
+            if (!trimmedAnswer) {
+              console.log("Subject abbreviation cannot be empty. Please try again.");
+              promptForSubject();
+              return;
+            }
+            if (!Object.values(subjectAbbreviations).includes(trimmedAnswer)) {
+              console.log("Invalid subject abbreviation. Please try again.");
+              promptForSubject();
+              return;
+            }
+            resolve(trimmedAnswer);
+          });
+        };
+        
+        promptForSubject();
+      });
+
+      // Read quiz JSON
+      const jsonPath = `./files/output/g${gradeSelection}/json/${subjectAbbr}.json`;
+      if (!existsSync(jsonPath)) {
+        throw new Error(`Quiz JSON not found: ${jsonPath}`);
+      }
+
+      const quiz = JSON.parse(readFileSync(jsonPath, 'utf8'));
+
+      // Generate answers using Gemini
+      const answerModel = genAI.getGenerativeModel({
+        model: "gemini-2.0-pro-exp-02-05",  // Updated to correct model name
+        generationConfig: {
+          temperature: 0,
+          topP: 1,
+          topK: 1,
+          maxOutputTokens: 2048,
+        }
+      });
+
+      // Create prompt for answers
+      let prompt = "Answer these questions accurately and concisely:\n\n";
+      
+      // Add Section A questions
+      prompt += "Section A:\n";
+      quiz.A.forEach((q, i) => {
+        prompt += `${i + 1}. ${q}\n`;
+      });
+
+      // Add Section B questions if they exist
+      if (quiz.B && quiz.B.length > 0) {
+        prompt += "\nSection B:\n";
+        quiz.B.forEach((q, i) => {
+          prompt += `${i + 1}. ${q}\n`;
+        });
+      }
+
+      try {
+        const result = await answerModel.generateContent(prompt);
+        const responseText = result.response.text();
+        
+        // Save answers to file
+        const answersPath = `./files/output/g${gradeSelection}/answers/${subjectAbbr}.txt`;
+        writeFileSync(answersPath, responseText);
+        console.log(`Answers saved to: ${answersPath}`);
+
+        // Run git commands
+        await runGitCommands();
+      } catch (error) {
+        console.error(`Error generating answers: ${error.message}`);
+        throw error;
+      }
+
+    } else if (mode === "1") {
       // Grade selection as a menu of numbers
       const gradeSelection = await new Promise((resolve) => {
         console.log("Which grade?");
