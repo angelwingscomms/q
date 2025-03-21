@@ -1,0 +1,67 @@
+{
+  "A": [
+    "1. Insects damaging farm crops are called _ (a) Useful (b) Harmful (c) Pests",
+    "2. Farm insects include _ and _ (a) Weevil, Mosquitoes (b) Ants, Cockroach (c) Locust, Termites",
+    "3. What causes sickness to animals? (a) Typhoid (b) Malaria (c) Harmful insects",
+    "4. Some pests are parasites (a) True (b) False",
+    "5. Pests affect _ (a) Crops, Animals (b) Humans (c) Classrooms",
+    "6. Pests causing crop damage are _ and _ (a) Rodents, Beetles (b) Frog, Toad (c) Lion, Elephant",
+    "7. Some pests damage crops on the _ (a) Road (b) Farm (c) Grass",
+    "8. Some pests attack stored _ (a) Crops (b) Books (c) Desk",
+    "9. A _ lives on other organisms (a) Solid food (b) Other organisms (c) Fats and oil",
+    "10. They live on their _ (a) Guests (b) Visitors (c) Hosts",
+    "11. Their _ suffers and may die (a) Passenger (b) Hosts (c) Hostess",
+    "12. Parasites include _ and _ (a) Lice, Tsetse fly (b) Mosquitoes, Fly (c) Wall gecko, electric ant",
+    "13. _ farm products before storing (a) Air fry (b) Dry (c) Fan",
+    "14. Prevent _ water around the house (a) Rain (b) Well (c) Stagnant",
+    "15. _ our surroundings to keep it clean (a) Destroy (b) Kill (c) Clear",
+    "16. An _ lives inside the soil (a) Earthworm (b) Guinea fowl (c) Hippopotamus",
+    "17. _ is known as a farmer's friend (a) Dog (b) Earthworm (c) Lion",
+    "18. _ and _ are farmer's enemies (a) Turkey, chicken (b) Moth, caterpillar (c) Rodents, birds",
+    "19. Rodents include _ and _ (a) Grass cutter, Rats (b) Cockroach, Insects (c) Lion, Scorpion",
+    "20. Birds include _ (a) Orangutan (b) Hawk (c) Rats"
+  ],
+  "B": [
+    "1. Some pests are parasites. True/False: _________",
+    "2. Parasites live on other organisms. True/False: _________",
+    "3. Parasites feed on their hosts. True/False: _________",
+    "4. Earthworms are farmer's friends. True/False: _________",
+    "5. Earthworms live in the soil. True/False: _________"
+  ],
+  "C": [
+    "1. What is an Earthworm?",
+    "2. What is Exercise?",
+    "3. Mention three types of exercise.",
+    "4. Give three benefits of exercise.",
+    "5. What is Jogging?"
+  ],
+  "answers_A": [
+    "b",
+    "c",
+    "c",
+    "a",
+    "a",
+    "a",
+    "b",
+    "a",
+    "b",
+    "c",
+    "b",
+    "a",
+    "b",
+    "c",
+    "c",
+    "a",
+    "b",
+    "c",
+    "a",
+    "b"
+  ],
+  "answers_B": [
+    "True",
+    "True",
+    "True",
+    "True",
+    "False"
+  ]
+}
