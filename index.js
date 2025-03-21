@@ -327,29 +327,41 @@ function runGitCommands() {
 async function generateSingleQuiz({ g, t, s }) {
   // Get the grade number from the grade name
   const gradeNum = Object.keys(grades).find(key => grades[key] === g);
+  const abbreviatedSubject = subjectAbbreviations[s] || s.toLowerCase();
   
-  // Check for existing JSON data
-  const jsonPath = `./files/input/${gradeNum}.json`;
-  if (!existsSync(jsonPath)) {
-    throw new Error(`No JSON file found for grade ${gradeNum}. Please ensure the file exists at ${jsonPath}`);
-  }
-
-  try {
-    const jsonData = JSON.parse(readFileSync(jsonPath, "utf8"));
-    const subjectData = jsonData.find(exam => exam.subject === s);
-    
-    if (!subjectData) {
-      throw new Error(`No content found for subject ${s} in grade ${gradeNum}`);
+  if (!t) { // If no content was provided, try to find it
+    // Check for existing JSON data first
+    const jsonPath = `./files/input/${gradeNum}.json`;
+    if (existsSync(jsonPath)) {
+      try {
+        const jsonData = JSON.parse(readFileSync(jsonPath, "utf8"));
+        const subjectData = jsonData.find(exam => exam.subject === s);
+        
+        if (subjectData) {
+          t = subjectData.content;
+        }
+      } catch (error) {
+        console.log(`Warning: Error reading JSON data: ${error.message}`);
+      }
     }
-    
-    t = subjectData.content;
-  } catch (error) {
-    throw new Error(`Error reading JSON data: ${error.message}`);
+
+    // If still no content, check the subject-specific file
+    if (!t) {
+      const subjectFilePath = `./files/input/${gradeNum}/${abbreviatedSubject}`;
+      if (existsSync(subjectFilePath)) {
+        try {
+          t = readFileSync(subjectFilePath, "utf8");
+          console.log(`Found quiz content in: ${subjectFilePath}`);
+        } catch (error) {
+          throw new Error(`Error reading subject file: ${error.message}`);
+        }
+      } else {
+        throw new Error(`No content found for subject ${s} in grade ${gradeNum}. Checked:\n- ${jsonPath}\n- ${subjectFilePath}`);
+      }
+    }
   }
 
   const doc = await generateDoc({ g, t, s });
-  // Use abbreviated filename
-  const abbreviatedSubject = subjectAbbreviations[s] || s.toLowerCase();
   const outputPath = `./files/output/g${gradeNum}/${abbreviatedSubject}.docx`;
 
   // Ensure the directory exists
