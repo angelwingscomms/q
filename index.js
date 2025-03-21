@@ -144,6 +144,11 @@ async function createSingleQuiz({ t }) {
 
   Format requirements:
 
+  General formatting:
+  - Add an empty line between each question/item
+  - Add two empty lines between sections
+  - Questions should be properly numbered within each section
+
   For Section A (objective questions):
   - Never end with a full stop 
   - Use 1 underscore (_) for blanks
@@ -162,6 +167,7 @@ async function createSingleQuiz({ t }) {
   edit all questions and options to be short, like this:
   """
   Section A
+
   1. When you take care of your body you will look attractive (a) True (b) False
 
   2. How many noses do you have? (a) 2 (b) 1 (c) 3
@@ -172,21 +178,24 @@ async function createSingleQuiz({ t }) {
 
   5. _ is used for breathing (a) Ear (b) Eyes (c) Nose
 
+
   Section B
+
   1. How many eyes do you have? _________
 
   2. The capital of America is _________
   
   3. The capital of Nigeria is _________
 
+
   Section C
+
   1. Explain the importance of personal hygiene.
 
   2. Describe the functions of the nose.
   """
 
   Sections should have headers (Section A, Section B, Section C).
-  Questions should be properly numbered within each section.
   Sections may have subsections, with headings, instructions for the questions that follow perhaps, or passages, or just such parts that are not really questions in themselves, e.g "Write the short form of the following words". Add such parts as unnumbered questions.
 
   The response should return:
