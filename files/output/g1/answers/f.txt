@@ -1,26 +1,32 @@
-Section A (Objective) Answers:
-1. a
-2. b
-3. a
-4. a
-5. c
-6. b
-7. c
-8. a
-9. c
-10. c
-11. b
-12. c
-13. a
-14. c
-15. c
-16. a
-17. a
-18. a
-19. b
-20. a
+Here are the answers to your questions:
 
-Section B (Short Answer) Answers:
-1. Hello/Good morning
-2. Good afternoon
-3. How are you?
+**Section A:**
+
+1.  (a) Bonjour
+2.  (b) Bon soir
+3.  (a) Good morning class
+4.  (a) Ma bouche
+5.  (c) Mon oeil
+6.  (b) Good afternoon
+7.  (c) Thank you very much
+8.  (a) My name is Christopher
+9.  (c) Good bye class
+10. (c) What is your name?
+11. (b) Ma tète
+12. (c) Mon front
+13. (a) Mes cheveux
+14. (c) Lundi
+15. (c) Vendredi
+16. (a) True
+17. (a) Class stand
+18. (a) My teacher
+19. (b) Listen to the radio
+20. (a) How are you?
+
+**Section B:**
+
+1.  Instructions: (Not a question, just a statement)
+2.  Translate Instructions: (Not a question, just a statement)
+3.  1. Bonjour: **Good morning** (or Hello)
+4.  2. Bon après-midi: **Good afternoon**
+5.  3. Comment ça va?: **How are you?** (or How's it going?)

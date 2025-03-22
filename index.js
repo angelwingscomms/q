@@ -1,7 +1,7 @@
 const { GoogleGenerativeAI } = require("@google/generative-ai");
 //const { SchemaType } = require("@google/generative-ai/server");
 //const { patchDocument, PatchType, TextRun } = require("docx");
-const { readFileSync, writeFileSync, existsSync, mkdirSync } = require("fs");
+const { readFileSync, writeFileSync, existsSync, mkdirSync, readdirSync } = require("fs");
 const readline = require("readline");
 const path = require("path");
 const { exec } = require("child_process");
@@ -491,16 +491,228 @@ function getSubjectFromAbbreviation(abbr) {
   return null;
 }
 
+async function generateAllAnswers({ gradeNum, redoExisting = false }) {
+  const jsonDir = `./files/output/g${gradeNum}/json`;
+  const answersDir = `./files/output/g${gradeNum}/answers`;
+
+  // Ensure directories exist
+  if (!existsSync(jsonDir)) {
+    throw new Error(`JSON directory not found: ${jsonDir}`);
+  }
+  if (!existsSync(answersDir)) {
+    mkdirSync(answersDir, { recursive: true });
+  }
+
+  // Get all JSON files
+  const files = readdirSync(jsonDir).filter(file => file.endsWith('.json'));
+  console.log(`Found ${files.length} quiz files in grade ${gradeNum}`);
+
+  // Generate answers using Gemini
+  const answerModel = genAI.getGenerativeModel({
+    model: "gemini-2.0-pro-exp-02-05",  // Updated model name
+    generationConfig: {
+      temperature: 0,
+      topP: 1,
+      topK: 1,
+      maxOutputTokens: 2048,
+    }
+  });
+
+  for (const file of files) {
+    const subjectAbbr = file.replace('.json', '');
+    const answerPath = `${answersDir}/${subjectAbbr}.txt`;
+    
+    // Skip if answer exists and we're not redoing
+    if (!redoExisting && existsSync(answerPath)) {
+      console.log(`Skipping ${subjectAbbr} - answer file already exists`);
+      continue;
+    }
+
+    console.log(`Processing ${subjectAbbr}...`);
+    
+    try {
+      // Read quiz JSON
+      const quiz = JSON.parse(readFileSync(`${jsonDir}/${file}`, 'utf8'));
+
+      // Create prompt for answers
+      let prompt = "Answer these questions accurately and concisely:\n\n";
+      
+      // Add Section A questions
+      prompt += "Section A:\n";
+      quiz.A.forEach((q, i) => {
+        prompt += `${i + 1}. ${q}\n`;
+      });
+
+      // Add Section B questions if they exist
+      if (quiz.B && quiz.B.length > 0) {
+        prompt += "\nSection B:\n";
+        quiz.B.forEach((q, i) => {
+          prompt += `${i + 1}. ${q}\n`;
+        });
+      }
+
+      const result = await answerModel.generateContent(prompt);
+      const responseText = result.response.text();
+      
+      // Save answers to file
+      writeFileSync(answerPath, responseText);
+      console.log(`Answers saved to: ${answerPath}`);
+
+      // Wait a bit between requests to avoid rate limiting
+      await new Promise(r => setTimeout(r, 2000));
+    } catch (error) {
+      console.error(`Error processing ${subjectAbbr}: ${error.message}`);
+      continue;
+    }
+  }
+
+  // Run git commands after all answers are generated
+  try {
+    await runGitCommands();
+  } catch (error) {
+    console.error("Failed to run git commands:", error);
+  }
+}
+
+async function generateAnswersForAllGrades(redoExisting = false) {
+  // Process each grade
+  for (const [gradeNum, gradeName] of Object.entries(grades)) {
+    console.log(`\nProcessing Grade ${gradeName}...`);
+    
+    const jsonDir = `./files/output/g${gradeNum}/json`;
+    const answersDir = `./files/output/g${gradeNum}/answers`;
+
+    // Skip if JSON directory doesn't exist
+    if (!existsSync(jsonDir)) {
+      console.log(`Skipping Grade ${gradeName} - no JSON directory found`);
+      continue;
+    }
+
+    // Ensure answers directory exists
+    if (!existsSync(answersDir)) {
+      mkdirSync(answersDir, { recursive: true });
+    }
+
+    // Get all JSON files
+    const files = readdirSync(jsonDir).filter(file => file.endsWith('.json'));
+    console.log(`Found ${files.length} quiz files in Grade ${gradeName}`);
+
+    // Generate answers using Gemini
+    const answerModel = genAI.getGenerativeModel({
+      model: "gemini-2.0-pro-exp-02-05",
+      generationConfig: {
+        temperature: 0,
+        topP: 1,
+        topK: 1,
+        maxOutputTokens: 2048,
+      }
+    });
+
+    for (const file of files) {
+      const subjectAbbr = file.replace('.json', '');
+      const answerPath = `${answersDir}/${subjectAbbr}.txt`;
+      
+      // Skip if answer exists and we're not redoing
+      if (!redoExisting && existsSync(answerPath)) {
+        console.log(`Skipping ${subjectAbbr} - answer file already exists`);
+        continue;
+      }
+      
+      console.log(`Processing ${subjectAbbr}...`);
+      
+      try {
+        // Read quiz JSON
+        const quiz = JSON.parse(readFileSync(`${jsonDir}/${file}`, 'utf8'));
+
+        // Create prompt for answers
+        let prompt = "Answer these questions accurately and concisely:\n\n";
+        
+        // Add Section A questions
+        prompt += "Section A:\n";
+        quiz.A.forEach((q, i) => {
+          prompt += `${i + 1}. ${q}\n`;
+        });
+
+        // Add Section B questions if they exist
+        if (quiz.B && quiz.B.length > 0) {
+          prompt += "\nSection B:\n";
+          quiz.B.forEach((q, i) => {
+            prompt += `${i + 1}. ${q}\n`;
+          });
+        }
+
+        const result = await answerModel.generateContent(prompt);
+        const responseText = result.response.text();
+        
+        // Save answers to file
+        writeFileSync(answerPath, responseText);
+        console.log(`Answers saved to: ${answerPath}`);
+
+        // Wait a bit between requests to avoid rate limiting
+        await new Promise(r => setTimeout(r, 2000));
+      } catch (error) {
+        console.error(`Error processing ${subjectAbbr}: ${error.message}`);
+        continue;
+      }
+    }
+  }
+
+  // Run git commands after all answers are generated
+  try {
+    await runGitCommands();
+  } catch (error) {
+    console.error("Failed to run git commands:", error);
+  }
+}
+
 async function main() {
   try {
     const mode = await new Promise((resolve) => {
       rl.question(
-        "Select mode: (1) single quiz (2) multiple quizzes (3) create answers: ",
+        "Select mode: (1) single quiz (2) multiple quizzes (3) create answers (4) create all answers for one grade (5) create all answers for all grades: ",
         (answer) => resolve(answer),
       );
     });
 
-    if (mode === "3") {
+    if (mode === "5") {
+      // Ask about redoing existing answers
+      const redoExisting = await new Promise((resolve) => {
+        rl.question("Redo existing answers? (y/N): ", (answer) => {
+          resolve(answer.toLowerCase() === 'y');
+        });
+      });
+
+      console.log("Generating answers for all grades and subjects...");
+      await generateAnswersForAllGrades(redoExisting);
+    } else if (mode === "4") {
+      // Grade selection
+      const gradeSelection = await new Promise((resolve) => {
+        console.log("Which grade?");
+        Object.keys(grades).forEach(key => {
+          console.log(`${key}. Grade ${grades[key]}`);
+        });
+
+        rl.question("Enter grade number (1-5): ", (answer) => {
+          const gradeNum = parseInt(answer);
+          if (!isNaN(gradeNum) && grades[gradeNum]) {
+            resolve(gradeNum);
+          } else {
+            console.log("Invalid grade. Defaulting to 1");
+            resolve(1);
+          }
+        });
+      });
+
+      // Ask about redoing existing answers
+      const redoExisting = await new Promise((resolve) => {
+        rl.question("Redo existing answers? (y/N): ", (answer) => {
+          resolve(answer.toLowerCase() === 'y');
+        });
+      });
+
+      await generateAllAnswers({ gradeNum: gradeSelection, redoExisting });
+
+    } else if (mode === "3") {
       // Grade selection
       const gradeSelection = await new Promise((resolve) => {
         console.log("Which grade?");
