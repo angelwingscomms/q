@@ -150,14 +150,15 @@ async function createSingleQuiz({ t }) {
   Each section should be an array of strings containing the questions for that section.
 
   Section A should contain objective questions (multiple choice).
-  Section B should contain short answer questions.
-  Section C should contain essay/theory questions.
+  Section B should contain short answer questions. (only if a section B or short answer questions' section is defined in the source text)
+  Section C should contain essay/theory questions. (only if a section C or essay questions' section is defined in the source text)
 
   Format requirements:
 
   For Section A (objective questions):
   - Never end with a full stop
   - Use 1 underscore (_) for blanks
+  - Never end a question with a blank
   - Use brackets for options (e.g., (a)...) and place questions and options on same line
   - Fix bad questions by removing or replacing options to ensure one correct answer
   - Questions may end with question marks
@@ -170,11 +171,9 @@ async function createSingleQuiz({ t }) {
   - Maintain academic language level
   - Each question should require detailed explanation
 
-  rephrase questions to sound different, while preserving their originalcreate-answers.js, input grade-number, input subject-abbreviation, gets quiz from files/output/{grade-number}/json/{subject-abbreviation}.docx, creates answers using Gemini APi (temperature 0), saves answers to files/output/{grade-number}/answers/{grade-abbreviation}.txt
+  rephrase questions to sound different, while preserving their original content and meaning
 
- content and meaning
-
-  edit all questions and options to be short, like this:
+  examples:
   """
   1. When you take care of your body you will look attractive (a) True (b) False
 
@@ -182,7 +181,7 @@ async function createSingleQuiz({ t }) {
 
   3. How many nostrils do you have? (a) 1 (b) 2 (c) 3
 
-  4. The two holes in your nose are called _ (a) Nose holes (b) Nostrils (c) Nose cover
+  4. The two holes in your nose are called (a) Nose holes (b) Nostrils (c) Nose cover
 
   5. _ is used for breathing (a) Ear (b) Eyes (c) Nose
 
