@@ -7,7 +7,7 @@ const path = require("path");
 const { exec } = require("child_process");
 require("dotenv").config();
 
-const G = process.env.G || "YOUR_API_KEY_HERE";
+const G = process.env.GEMINI || "YOUR_API_KEY_HERE";
 const genAI = new GoogleGenerativeAI(G);
 const grades = {
   1: "ONE",
