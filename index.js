@@ -152,12 +152,17 @@ async function createSingleQuiz({ t }) {
   try {
     let extra_instructions = `if section A's questions are not up to 20, create extra questions to make them 20`
     const result =
-      await singleQuizModel.generateContent(`Create a quiz with three sections (A, B, C) in JSON format.
+      await singleQuizModel.generateContent(`
+  Create a quiz with:
+  Section A,
+  Section B, IF AND ONLY IF a section B or short answer questions' section is defined in the source text
+  Section C, IF AND ONLY IF a section C or essay questions' section is defined in the source text.
+  
   Each section should be an array of strings containing the questions for that section.
 
   Section A should contain objective questions (multiple choice).
-  Section B should contain short answer questions. (only if a section B or short answer questions' section is defined in the source text)
-  Section C should contain essay/theory questions. (only if a section C or essay questions' section is defined in the source text)
+  Section B should contain short answer questions. (IF AND ONLY IF a section B or short answer questions' section is defined in the source text)
+  Section C should contain essay/theory questions. (IF AND ONLY IF a section C or essay questions' section is defined in the source text)
 
   IMPORTANT: Provide answers for all questions in each section in the corresponding answers_A, answers_B, and answers_C arrays.
 
@@ -180,8 +185,6 @@ async function createSingleQuiz({ t }) {
   - Make questions clear and concise
   - Maintain academic language level
   - For answers_C, provide brief model answers or key points
-
-  rephrase questions to sound different, while preserving their original content and meaning
 
   examples:
   """
