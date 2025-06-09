@@ -89,7 +89,7 @@
       "printed": false
     }
   },
-  "Computer Science": {
+  "Computer": {
     "n1": {
       "done": false,
       "printed": false
@@ -99,19 +99,19 @@
       "printed": false
     },
     "g1": {
-      "done": false,
+      "done": true,
       "printed": false
     },
     "g2": {
-      "done": false,
+      "done": true,
       "printed": false
     },
     "g3": {
-      "done": false,
+      "done": true,
       "printed": false
     },
     "g4": {
-      "done": false,
+      "done": true,
       "printed": false
     },
     "g5": {
