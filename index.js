@@ -150,6 +150,7 @@ const singleQuizModel = genAI.getGenerativeModel({
 
 async function createSingleQuiz({ t }) {
   try {
+    let extra_instructions = `if section A's questions are not up to 20, create extra questions to make them 20`
     const result =
       await singleQuizModel.generateContent(`Create a quiz with three sections (A, B, C) in JSON format.
   Each section should be an array of strings containing the questions for that section.
@@ -205,6 +206,7 @@ async function createSingleQuiz({ t }) {
 
   let the questions be numbered
   sections may have subsections, with headings, instructions for the questions that follow perhaps, or passages, or just such parts that are not really questions in themselves, e.g "Write the short form of the following words". Add such parts as unnumbered questions, except for mainsections A, B and C.
+  ${extra_instructions}
 
   Text to create quiz from:
   """
@@ -502,12 +504,7 @@ async function generateMultipleQuizzes({ g }) {
         // Update todolist-data.json after generating each quiz
         updateTodolistData(s, g);
 
-        // Run git commands after each quiz
-        try {
-          await runGitCommands();
-        } catch (error) {
-          console.error("Failed to run git commands:", error);
-        }
+        // Removed git commands from here
 
         await new Promise((r) => setTimeout(r, 27000));
       }
@@ -577,12 +574,7 @@ async function generateMultipleQuizzes({ g }) {
         // Update todolist-data.json after generating each quiz
         updateTodolistData(subject, g);
         
-        // Run git commands after each quiz
-        try {
-          await runGitCommands();
-        } catch (error) {
-          console.error("Failed to run git commands:", error);
-        }
+        // Removed git commands from here
         
         await new Promise((r) => setTimeout(r, 27000));
       } catch (error) {
@@ -592,6 +584,14 @@ async function generateMultipleQuizzes({ g }) {
     }
   } else {
     throw new Error(`No data found for grade ${gradeNum}. Looked in:\n- ${jsonPath}\n- ${folderPath}`);
+  }
+  
+  // Run git commands once after all quizzes have been generated
+  try {
+    console.log("Running git commands for all generated quizzes...");
+    await runGitCommands();
+  } catch (error) {
+    console.error("Failed to run git commands:", error);
   }
 }
 

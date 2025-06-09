@@ -1,0 +1,33 @@
+Section A (Objective) Answers:
+1. a
+2. b
+3. b
+4. b
+5. b
+6. b
+7. b
+8. b
+9. b
+10. b
+11. b
+12. b
+13. c
+14. b
+15. b
+16. a
+17. c
+18. a
+19. b
+20. c
+
+Section B (Short Answer) Answers:
+1. Divide both the numerator and the denominator by their greatest common divisor.
+2. 3/4
+3. Find a common denominator, convert fractions, then add or subtract numerators.
+4. 1.7 meters
+5. A common multiple of the denominators of two or more fractions.
+
+Section C (Theory) Answers:
+1. Fractions: Cooking recipes (e.g., 1/2 cup flour), measuring fabric (e.g., 3/4 yard). Decimals: Money (e.g., $5.25), athletic timing (e.g., 9.8 seconds for a race).
+2. Multiplication: Multiply numerators and denominators directly. Division: Invert the divisor (second fraction) and then multiply. Key difference: Division requires an extra step of inversion before multiplication.
+3. Place value assigns a value to each digit based on its position relative to the decimal point. It's crucial for correctly aligning numbers in addition/subtraction and understanding magnitude in multiplication/division, ensuring accurate calculations.
