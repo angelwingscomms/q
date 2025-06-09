@@ -120,12 +120,12 @@ const singleQuizModel = genAI.getGenerativeModel({
         B: {
           type: "ARRAY",
           items: { type: "STRING" },
-          description: "Section B: Short answer questions"
+          description: "Section B: Short answer questions (if a Section B is specified in the source text)"
         },
         C: {
           type: "ARRAY",
           items: { type: "STRING" },
-          description: "Section C: Theory questions"
+          description: "Section C: Theory questions (if a Section C is specified in the source text)"
         },
         answers_A: {
           type: "ARRAY",
@@ -135,10 +135,15 @@ const singleQuizModel = genAI.getGenerativeModel({
         answers_B: {
           type: "ARRAY",
           items: { type: "STRING" },
-          description: "Answers for Section B short answer questions"
+          description: "Answers for Section B short answer questions (if a Section B is specified in the source text)"
+        },
+        answers_C: {
+          type: "ARRAY",
+          items: { type: "STRING" },
+          description: "Answers for Section C theory questions (if a Section C is specified in the source text)"
         }
       },
-      required: ["A", "B", "C", "answers_A", "answers_B"]
+      required: ["A", "answers_A"]
     },
   },
 });
@@ -153,6 +158,8 @@ async function createSingleQuiz({ t }) {
   Section B should contain short answer questions. (only if a section B or short answer questions' section is defined in the source text)
   Section C should contain essay/theory questions. (only if a section C or essay questions' section is defined in the source text)
 
+  IMPORTANT: Provide answers for all questions in each section in the corresponding answers_A, answers_B, and answers_C arrays.
+
   Format requirements:
 
   For Section A (objective questions):
@@ -162,14 +169,16 @@ async function createSingleQuiz({ t }) {
   - Use brackets for options (e.g., (a)...) and place questions and options on same line
   - Fix bad questions by removing or replacing options to ensure one correct answer
   - Questions may end with question marks
+  - For answers_A, provide only the letter of the correct option (a, b, c, etc.) or the word that fills the blank
 
   For Section B (short answer questions):
   - Use 9 underscores (_________) for blanks
+  - For answers_B, provide concise answers
 
   For Section C (essay questions):
   - Make questions clear and concise
   - Maintain academic language level
-  - Each question should require detailed explanation
+  - For answers_C, provide brief model answers or key points
 
   rephrase questions to sound different, while preserving their original content and meaning
 
@@ -218,6 +227,38 @@ async function generateDoc({ g, t, s }) {
   let quizContent;
   try {
     quizContent = JSON.parse(q);
+    
+    // Validate that required sections exist
+    if (!quizContent.A || !Array.isArray(quizContent.A) || quizContent.A.length === 0) {
+      throw new Error("Section A is missing or empty in quiz content");
+    }
+    
+    if (!quizContent.answers_A || !Array.isArray(quizContent.answers_A)) {
+      console.warn("Section A answers are missing or not an array. Creating empty array.");
+      quizContent.answers_A = [];
+    }
+    
+    // Initialize empty arrays for missing sections
+    if (!quizContent.B || !Array.isArray(quizContent.B)) {
+      console.log("Section B is not present in the response, initializing as empty array");
+      quizContent.B = [];
+    }
+    
+    if (!quizContent.C || !Array.isArray(quizContent.C)) {
+      console.log("Section C is not present in the response, initializing as empty array");
+      quizContent.C = [];
+    }
+    
+    if (!quizContent.answers_B || !Array.isArray(quizContent.answers_B)) {
+      console.log("Section B answers are not present in the response, initializing as empty array");
+      quizContent.answers_B = [];
+    }
+    
+    if (!quizContent.answers_C || !Array.isArray(quizContent.answers_C)) {
+      console.log("Section C answers are not present in the response, initializing as empty array");
+      quizContent.answers_C = [];
+    }
+    
   } catch (error) {
     console.error(`Error parsing quiz content: ${error.message}`);
     throw error;
@@ -248,9 +289,16 @@ async function generateDoc({ g, t, s }) {
   const answersContent = [
     'Section A (Objective) Answers:',
     ...quizContent.answers_A.map((answer, i) => `${i + 1}. ${answer}`),
-    '',
-    'Section B (Short Answer) Answers:',
-    ...quizContent.answers_B.map((answer, i) => `${i + 1}. ${answer}`),
+    ...(quizContent.answers_B && quizContent.answers_B.length > 0 ? [
+      '',
+      'Section B (Short Answer) Answers:',
+      ...quizContent.answers_B.map((answer, i) => `${i + 1}. ${answer}`)
+    ] : []),
+    ...(quizContent.answers_C && quizContent.answers_C.length > 0 ? [
+      '',
+      'Section C (Theory) Answers:',
+      ...quizContent.answers_C.map((answer, i) => `${i + 1}. ${answer}`)
+    ] : [])
   ].join('\n');
   writeFileSync(answersPath, answersContent);
   console.log(`Saved answers to: ${answersPath}`);
@@ -277,28 +325,32 @@ async function generateDoc({ g, t, s }) {
               spacing: { after: 9 }
             })
           ),
-          // Section B
-          new Paragraph({
-            children: [new TextRun("Section B")],
-            spacing: { after: 9, before: 54 }
-          }),
-          ...quizContent.B.map((question) =>
+          // Section B - only include if it has content
+          ...(quizContent.B && quizContent.B.length > 0 ? [
             new Paragraph({
-              children: [new TextRun(question)],
-              spacing: { after: 9 }
-            })
-          ),
-          // Section C
-          new Paragraph({
-            children: [new TextRun("Section C")],
-            spacing: { after: 9, before: 54 }
-          }),
-          ...quizContent.C.map((question) =>
+              children: [new TextRun("Section B")],
+              spacing: { after: 9, before: 54 }
+            }),
+            ...quizContent.B.map((question) =>
+              new Paragraph({
+                children: [new TextRun(question)],
+                spacing: { after: 9 }
+              })
+            )
+          ] : []),
+          // Section C - only include if it has content
+          ...(quizContent.C && quizContent.C.length > 0 ? [
             new Paragraph({
-              children: [new TextRun(question)],
-              spacing: { after: 9 }
-            })
-          )
+              children: [new TextRun("Section C")],
+              spacing: { after: 9, before: 54 }
+            }),
+            ...quizContent.C.map((question) =>
+              new Paragraph({
+                children: [new TextRun(question)],
+                spacing: { after: 9 }
+              })
+            )
+          ] : [])
         ],
       },
     },
@@ -390,6 +442,7 @@ async function generateMultipleQuizzes({ g }) {
   // Get grade number for paths
   const gradeNum = Object.keys(grades).find(key => grades[key] === g);
   const jsonPath = `./files/input/${gradeNum}.json`;
+  const folderPath = `./files/input/${gradeNum}`;
   const outputDir = `./files/output/g${gradeNum}`;
   const jsonDir = `${outputDir}/json`;
   const answersDir = `${outputDir}/answers`;
@@ -402,60 +455,143 @@ async function generateMultipleQuizzes({ g }) {
   });
 
   // Check if the JSON file exists
-  if (!existsSync(jsonPath)) {
-    throw new Error(`No JSON file found for grade ${gradeNum} at ${jsonPath}`);
-  }
+  if (existsSync(jsonPath)) {
+    // Process the JSON file
+    try {
+      const exams = JSON.parse(readFileSync(jsonPath, "utf8"));
+      console.log(`Found ${exams.length} exams to generate from JSON file`);
 
-  // Read and parse the JSON file
-  try {
-    const exams = JSON.parse(readFileSync(jsonPath, "utf8"));
-    console.log(`Found ${exams.length} exams to generate`);
+      for (const { subject: s, content: t } of exams) {
+        console.log(`Generating quiz for ${s}...`);
 
-    for (const { subject: s, content: t } of exams) {
-      console.log(`Generating quiz for ${s}...`);
+        // Generate the quiz
+        const quiz = await createSingleQuiz({ t });
+        const quizContent = JSON.parse(quiz);
 
-      // Generate the quiz
-      const quiz = await createSingleQuiz({ t });
-      const quizContent = JSON.parse(quiz);
+        // Save the quiz JSON data
+        const abbreviatedSubject = subjectAbbreviations[s] || s.toLowerCase();
+        const jsonPath = `${jsonDir}/${abbreviatedSubject}.json`;
+        writeFileSync(jsonPath, JSON.stringify(quizContent, null, 2));
+        console.log(`Saved quiz JSON to: ${jsonPath}`);
 
-      // Save the quiz JSON data
-      const abbreviatedSubject = subjectAbbreviations[s] || s.toLowerCase();
-      const jsonPath = `${jsonDir}/${abbreviatedSubject}.json`;
-      writeFileSync(jsonPath, JSON.stringify(quizContent, null, 2));
-      console.log(`Saved quiz JSON to: ${jsonPath}`);
+        // Save answers to text file
+        const answersPath = `${answersDir}/${abbreviatedSubject}.txt`;
+        const answersContent = [
+          'Section A (Objective) Answers:',
+          ...quizContent.answers_A.map((answer, i) => `${i + 1}. ${answer}`),
+          ...(quizContent.answers_B && quizContent.answers_B.length > 0 ? [
+            '',
+            'Section B (Short Answer) Answers:',
+            ...quizContent.answers_B.map((answer, i) => `${i + 1}. ${answer}`)
+          ] : []),
+          ...(quizContent.answers_C && quizContent.answers_C.length > 0 ? [
+            '',
+            'Section C (Theory) Answers:',
+            ...quizContent.answers_C.map((answer, i) => `${i + 1}. ${answer}`)
+          ] : [])
+        ].join('\n');
+        writeFileSync(answersPath, answersContent);
+        console.log(`Saved answers to: ${answersPath}`);
 
-      // Save answers to text file
-      const answersPath = `${answersDir}/${abbreviatedSubject}.txt`;
-      const answersContent = [
-        'Section A (Objective) Answers:',
-        ...quizContent.answers_A.map((answer, i) => `${i + 1}. ${answer}`),
-        '',
-        'Section B (Short Answer) Answers:',
-        ...quizContent.answers_B.map((answer, i) => `${i + 1}. ${answer}`),
-      ].join('\n');
-      writeFileSync(answersPath, answersContent);
-      console.log(`Saved answers to: ${answersPath}`);
+        // Generate Word document
+        const doc = await generateDoc({ g, t, s });
+        const outputPath = `${outputDir}/${abbreviatedSubject}.docx`;
+        writeFileSync(outputPath, doc);
+        console.log(`Generated: ${outputPath}`);
 
-      // Generate Word document
-      const doc = await generateDoc({ g, t, s });
-      const outputPath = `${outputDir}/${abbreviatedSubject}.docx`;
-      writeFileSync(outputPath, doc);
-      console.log(`Generated: ${outputPath}`);
+        // Update todolist-data.json after generating each quiz
+        updateTodolistData(s, g);
 
-      // Update todolist-data.json after generating each quiz
-      updateTodolistData(s, g);
+        // Run git commands after each quiz
+        try {
+          await runGitCommands();
+        } catch (error) {
+          console.error("Failed to run git commands:", error);
+        }
 
-      // Run git commands after each quiz
-      try {
-        await runGitCommands();
-      } catch (error) {
-        console.error("Failed to run git commands:", error);
+        await new Promise((r) => setTimeout(r, 27000));
       }
-
-      await new Promise((r) => setTimeout(r, 27000));
+    } catch (error) {
+      throw new Error(`Error processing JSON file: ${error.message}`);
     }
-  } catch (error) {
-    throw new Error(`Error processing JSON file: ${error.message}`);
+  } 
+  // Check for a folder with the grade number
+  else if (existsSync(folderPath) && readdirSync(folderPath).length > 0) {
+    const files = readdirSync(folderPath);
+    console.log(`Found ${files.length} files in folder ${folderPath}`);
+    
+    for (const file of files) {
+      // Use the filename as the subject code
+      const subjectCode = file;
+      
+      // Look up the full subject name from the abbreviation
+      let subject = getSubjectFromAbbreviation(subjectCode);
+      
+      // If no match found, use the subject code as is
+      if (!subject) {
+        console.log(`Warning: No matching subject found for code '${subjectCode}'. Using code as subject name.`);
+        subject = subjectCode;
+      }
+      
+      console.log(`Generating quiz for ${subject} (code: ${subjectCode})...`);
+      
+      try {
+        // Read the file content
+        const filePath = path.join(folderPath, file);
+        const content = readFileSync(filePath, "utf8");
+        
+        // Generate the quiz
+        const quiz = await createSingleQuiz({ t: content });
+        const quizContent = JSON.parse(quiz);
+        
+        // Save the quiz JSON data
+        const jsonPath = `${jsonDir}/${subjectCode}.json`;
+        writeFileSync(jsonPath, JSON.stringify(quizContent, null, 2));
+        console.log(`Saved quiz JSON to: ${jsonPath}`);
+        
+        // Save answers to text file
+        const answersPath = `${answersDir}/${subjectCode}.txt`;
+        const answersContent = [
+          'Section A (Objective) Answers:',
+          ...quizContent.answers_A.map((answer, i) => `${i + 1}. ${answer}`),
+          ...(quizContent.answers_B && quizContent.answers_B.length > 0 ? [
+            '',
+            'Section B (Short Answer) Answers:',
+            ...quizContent.answers_B.map((answer, i) => `${i + 1}. ${answer}`)
+          ] : []),
+          ...(quizContent.answers_C && quizContent.answers_C.length > 0 ? [
+            '',
+            'Section C (Theory) Answers:',
+            ...quizContent.answers_C.map((answer, i) => `${i + 1}. ${answer}`)
+          ] : [])
+        ].join('\n');
+        writeFileSync(answersPath, answersContent);
+        console.log(`Saved answers to: ${answersPath}`);
+        
+        // Generate Word document
+        const doc = await generateDoc({ g, t: content, s: subject });
+        const outputPath = `${outputDir}/${subjectCode}.docx`;
+        writeFileSync(outputPath, doc);
+        console.log(`Generated: ${outputPath}`);
+        
+        // Update todolist-data.json after generating each quiz
+        updateTodolistData(subject, g);
+        
+        // Run git commands after each quiz
+        try {
+          await runGitCommands();
+        } catch (error) {
+          console.error("Failed to run git commands:", error);
+        }
+        
+        await new Promise((r) => setTimeout(r, 27000));
+      } catch (error) {
+        console.error(`Error processing file ${file}: ${error.message}`);
+        continue; // Continue with next file even if this one fails
+      }
+    }
+  } else {
+    throw new Error(`No data found for grade ${gradeNum}. Looked in:\n- ${jsonPath}\n- ${folderPath}`);
   }
 }
 
