@@ -1,33 +1,33 @@
 {
   "A": [
-    "1. An abacus is primarily known as _ (a) a contemporary computing device (b) an age-old calculation tool (c) a modern arithmetic machine",
-    "2. Among these, which one exemplifies an early instrument for counting (a) Calculator (b) Computer (c) Abacus",
-    "3. An output device is fundamentally a tool that _ (a) transmits data to the computer (b) presents or generates information from the computer (c) saves digital content",
-    "4. Identify an example of an output peripheral from the list below (a) Monitor (b) Keyboard (c) Mouse",
-    "5. An input device serves to _ (a) exhibit processed information (b) relay data into the computer (c) retain digital content",
-    "6. Which of these is considered an input mechanism (a) Speaker (b) Keyboard (c) Monitor",
-    "7. The system unit refers to the computer component responsible for _ (a) showing results (b) handling data operations (c) preserving information",
-    "8. Key internal components of the system unit include the _ (a) Monitor and keyboard (b) CPU, motherboard, and RAM (c) Speaker and mouse",
-    "9. The acronym CPU represents _ (a) Central Processing Unit (b) Central Power Unit (c) Computer Performance Unit",
-    "10. The primary role of RAM within the system unit is to offer _ (a) enduring data retention (b) information processing capabilities (c) transient data storage",
-    "11. The component within the system unit primarily tasked with information processing is the _ (a) RAM (b) CPU (c) Hard drive",
-    "12. The motherboard's main function in a system unit is to _ (a) facilitate interconnection among hardware parts (b) present visual data (c) hold digital information",
-    "13. An input device commonly utilized for interactive gaming is a _ (a) Monitor (b) Speaker (c) Joystick",
-    "14. A printer is categorized as what type of peripheral (a) Input device (b) Output device (c) Storage device",
-    "15. The significance of the system unit in a computer lies in its ability to _ (a) render visual information (b) execute data processing and computations (c) provide persistent data storage",
-    "16. Select the item that is NOT typically found as an internal component of the system unit (a) CPU (b) RAM (c) Monitor",
-    "17. The hard drive within the system unit is primarily used for _ (a) handling data operations (b) offering short-term data retention (c) storing information long-term",
-    "18. The peripheral that enables text entry into a computer is the _ (a) Mouse (b) Keyboard (c) Monitor",
-    "19. The power supply unit (PSU) in a system unit serves to _ (a) manage data processing (b) retain digital content (c) deliver electrical power to system components",
-    "20. Careful handling of the system unit is crucial because it ensures _ (a) its aesthetic appeal (b) enhanced processing speed (c) its longevity and correct operation"
+    "1. What is an abacus? (a) A modern computer (b) An ancient counting device (c) A type of calculator",
+    "2. Which of the following is an example of an early counting device? (a) Abacus (b) Calculator (c) Computer",
+    "3. What is an output device? (a) A device that sends information to the computer (b) A device that displays or produces output from the computer (c) A device that stores data",
+    "4. Which of the following is an example of an output device? (a) Keyboard (b) Monitor (c) Mouse",
+    "5. What is an input device? (a) A device that displays output (b) A device that sends information to the computer (c) A device that stores data",
+    "6. Which of the following is an example of an input device? (a) Speaker (b) Monitor (c) Keyboard",
+    "7. What is the system unit? (a) The part of the computer that displays output (b) The part of the computer that processes information (c) The part of the computer that stores data",
+    "8. What is inside the system unit? (a) Monitor and keyboard (b) CPU, motherboard, and RAM (c) Speaker and mouse",
+    "9. What does CPU stand for? (a) Central Processing Unit (b) Central Power Unit (c) Computer Processing Unit",
+    "10. What is the function of RAM in the system unit? (a) To store data permanently (b) To process information (c) To provide temporary storage for data",
+    "11. Which component of the system unit is responsible for processing information? (a) RAM (b) CPU (c) Hard drive",
+    "12. What is the purpose of the motherboard in the system unit? (a) To connect all the hardware components together (b) To display output (c) To store data",
+    "13. Which of the following is an example of an input device used for gaming? (a) Monitor (b) Speaker (c) Joystick",
+    "14. What type of device is a printer? (a) Input device (b) Output device (c) Storage device",
+    "15. Why is the system unit important in a computer? (a) It displays output (b) It processes information and performs calculations (c) It stores data permanently",
+    "16. Which of the following is NOT a component of the system unit? (a) CPU (b) RAM (c) Monitor",
+    "17. What does the hard drive in the system unit do? (a) Processes information (b) Provides temporary storage for data (c) Stores data permanently",
+    "18. Which device allows you to type information into the computer? (a) Mouse (b) Keyboard (c) Monitor",
+    "19. What is the function of the power supply unit in the system unit? (a) To process information (b) To store data (c) To provide power to the computer components",
+    "20. Why is it important to handle the system unit with care? (a) So it looks good (b) So it can process information faster (c) So it can last longer and function properly"
   ],
   "answers_A": [
-    "b",
-    "c",
     "b",
     "a",
     "b",
     "b",
+    "b",
+    "c",
     "b",
     "b",
     "a",
@@ -43,28 +43,8 @@
     "c",
     "c"
   ],
-  "B": [
-    "1. Briefly explain the difference between hardware and software in a computer system_________",
-    "2. Name two common types of computer storage devices_________",
-    "3. What is the primary role of an operating system in a computer_________",
-    "4. Give an example of an application software and its use_________",
-    "5. How does a computer mouse function as an input device_________"
-  ],
-  "C": [
-    "1. Discuss the significance of the Central Processing Unit (CPU) as the 'brain' of a computer system, outlining its key functions.",
-    "2. Explain the concept of data storage in computers, differentiating between volatile and non-volatile memory.",
-    "3. Describe the general process of how an input device interacts with the system unit to process user commands."
-  ],
-  "answers_B": [
-    "Hardware is physical components, software is programs and data",
-    "Hard Drive, Solid State Drive (SSD), USB Flash Drive",
-    "To manage computer hardware and software resources, providing common services for computer programs",
-    "Microsoft Word for word processing, Google Chrome for web browsing",
-    "It detects movement and clicks, translating them into signals for the computer"
-  ],
-  "answers_C": [
-    "The CPU executes instructions, performs arithmetic, logic, and control operations. It's crucial for all computations, dictating the computer's overall speed and ability to run software.",
-    "Data storage refers to saving digital information. Volatile memory (e.g., RAM) requires power to maintain stored data, used for temporary working data. Non-volatile memory (e.g., hard drives, SSDs) retains data without power, used for permanent storage of files and programs.",
-    "An input device (e.g., keyboard, mouse) converts user actions into electrical signals. These signals are sent to the system unit, where the operating system and relevant drivers interpret them into commands or data that the CPU can process. The processed information then leads to an action or output."
-  ]
+  "B": [],
+  "C": [],
+  "answers_B": [],
+  "answers_C": []
 }

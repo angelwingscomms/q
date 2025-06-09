@@ -1,10 +1,10 @@
 Section A (Objective) Answers:
 1. b
-2. c
+2. a
 3. b
-4. a
+4. b
 5. b
-6. b
+6. c
 7. b
 8. b
 9. a
@@ -19,15 +19,3 @@ Section A (Objective) Answers:
 18. b
 19. c
 20. c
-
-Section B (Short Answer) Answers:
-1. Hardware is physical components, software is programs and data
-2. Hard Drive, Solid State Drive (SSD), USB Flash Drive
-3. To manage computer hardware and software resources, providing common services for computer programs
-4. Microsoft Word for word processing, Google Chrome for web browsing
-5. It detects movement and clicks, translating them into signals for the computer
-
-Section C (Theory) Answers:
-1. The CPU executes instructions, performs arithmetic, logic, and control operations. It's crucial for all computations, dictating the computer's overall speed and ability to run software.
-2. Data storage refers to saving digital information. Volatile memory (e.g., RAM) requires power to maintain stored data, used for temporary working data. Non-volatile memory (e.g., hard drives, SSDs) retains data without power, used for permanent storage of files and programs.
-3. An input device (e.g., keyboard, mouse) converts user actions into electrical signals. These signals are sent to the system unit, where the operating system and relevant drivers interpret them into commands or data that the CPU can process. The processed information then leads to an action or output.

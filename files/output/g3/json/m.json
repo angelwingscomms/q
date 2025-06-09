@@ -1,25 +1,25 @@
 {
   "A": [
-    "1. The sum of one-quarter and one-quarter is _ (a) 1/2 (b) 1/4 (c) 3/4",
-    "2. Sally initially possesses 0.5 kg of apples and acquires an additional 0.2 kg; her total apple weight is now _ (a) 0.3 kg (b) 0.7 kg (c) 0.5 kg",
-    "3. Subtracting one-sixth from three-sixths yields _ (a) 1/6 (b) 1/3 (c) 2/3",
-    "4. Painting a small chair requires 0.8 liters of paint, and a small table needs 0.2 liters; the combined paint required is _ (a) 0.6 liters (b) 1 liter (c) 0.9 liters",
-    "5. The product of one-half and three-quarters is _ (a) 1/4 (b) 3/8 (c) 1/2",
-    "6. To bake four cakes, given that each cake requires 0.6 kg of sugar, the total sugar amount needed is _ (a) 1.2 kg (b) 2.4 kg (c) 0.6 kg",
-    "7. The result of multiplying three-quarters by one-half is _ (a) 1 1/2 (b) 3/8 (c) 1/2",
-    "8. A bookshelf measuring 1.8 meters in length is partitioned into three equal sections; the length of each section is _ (a) 0.4 meters (b) 0.6 meters (c) 0.9 meters",
-    "9. Tom possesses half of a pizza, which originally contains 8 slices when whole; he has _ (a) 2 slices (b) 4 slices (c) 6 slices",
-    "10. A water bottle has a capacity of 1.5 liters and currently contains 0.5 liters; the additional volume of water that can be added is _ (a) 0.5 liters (b) 1 liter (c) 1.5 liters",
-    "11. A bakery sells 0.8 kg of bread hourly; over a 5-hour operational period, the total bread sold will be _ (a) 3 kg (b) 4 kg (c) 4.5 kg",
-    "12. Determine two-thirds of a dozen pencils _ (a) 6 pencils (b) 8 pencils (c) 10 pencils",
-    "13. A single pencil measures 0.15 meters in length; the combined length of six such pencils is _ (a) 0.6 meters (b) 0.8 meters (c) 0.9 meters",
-    "14. Calculate three-quarters of sixteen crayons _ (a) 10 crayons (b) 12 crayons (c) 14 crayons",
-    "15. A jar initially holds 0.25 kg of jam, with 0.05 kg added daily; after four days, the total jam in the jar will be _ (a) 0.35 kg (b) 0.45 kg (c) 0.55 kg",
-    "16. The sum of one-half and one-quarter is _ (a) 3/4 (b) 1/2 (c) 1/4",
-    "17. Given that one toy car weighs 0.3 kg, the cumulative weight of five toy cars is _ (a) 1 kg (b) 1.2 kg (c) 1.5 kg",
-    "18. The difference between two-thirds and one-third is _ (a) 1/3 (b) 1/2 (c) 2/3 (d) 1",
-    "19. A group of six friends desires to evenly distribute 1.8 kg of candy among themselves; the amount of candy each friend receives is _ (a) 0.2 kg (b) 0.3 kg (c) 0.4 kg",
-    "20. Calculate the product of two-thirds and three-quarters _ (a) 8/9 (b) 6/8 (c) 1/2"
+    "1. What is 1/4 + 1/4? (a) 1/2 (b) 1/4 (c) 3/4",
+    "2. If Sally has 0.5 kg of apples and she adds 0.2 kg more, how many kilograms of apples does Sally have now? (a) 0.3 kg (b) 0.7 kg (c) 0.5 kg",
+    "3. What is 3/6 - 1/6? (a) 1/6 (b) 1/3 (c) 2/3",
+    "4. If it takes 0.8 liters of paint to paint a small chair and 0.2 liters to paint a small table, how many liters of paint are needed in total? (a) 0.6 liters (b) 1 liter (c) 0.9 liters",
+    "5. What is 1/2 \b 3/4? (a) 1/4 (b) 3/8 (c) 1/2",
+    "6. If 0.6 kg of sugar is needed to make one cake, how many kilograms of sugar are needed to make 4 cakes? (a) 1.2 kg (b) 2.4 kg (c) 0.6 kg",
+    "7. What is 3/4 \b 1/2? (a) 1 1/2 (b) 3/8 (c) 1/2",
+    "8. If a bookshelf is 1.8 meters long and it is divided into 3 sections, how long is each section? (a) 0.4 meters (b) 0.6 meters (c) 0.9 meters",
+    "9. Tom has 1/2 of a pizza that is divided into 8 slices. How many slices does Tom have? (a) 2 slices (b) 4 slices (c) 6 slices",
+    "10. A water bottle can hold 1.5 liters of water. If 0.5 liters of water is already in the bottle, how much more water can be added? (a) 0.5 liters (b) 1 liter (c) 1.5 liters",
+    "11. A bakery sells 0.8 kg of bread per hour. If it operates for 5 hours, how many kilograms of bread are sold? (a) 3 kg (b) 4 kg (c) 4.5 kg",
+    "12. What is 2/3 of 12 pencils? (a) 6 pencils (b) 8 pencils (c) 10 pencils",
+    "13. If a pencil is 0.15 meters long, how many meters long are 6 pencils? (a) 0.6 meters (b) 0.8 meters (c) 0.9 meters",
+    "14. What is 3/4 of 16 crayons? (a) 10 crayons (b) 12 crayons (c) 14 crayons",
+    "15. A jar contains 0.25 kg of jam. If 0.05 kg of jam is added each day, how many kilograms of jam will the jar have after 4 days? (a) 0.35 kg (b) 0.45 kg (c) 0.55 kg",
+    "16. What is 1/2 + 1/4? (a) 3/4 (b) 1/2 (c) 1/4",
+    "17. If a toy car weighs 0.3 kg, how many kilograms do 5 toy cars weigh? (a) 1 kg (b) 1.2 kg (c) 1.5 kg",
+    "18. What is 2/3 - 1/3? (a) 1/3 (b) 1/2 (c) 2/3 (d) 1",
+    "19. If a group of friends want to share some candy equally and they have 1.8 kg of candy, how many kilograms of candy will each friend get if there are 6 friends? (a) 0.2 kg (b) 0.3 kg (c) 0.4 kg",
+    "20. What is 2/3 \b 3/4? (a) 8/9 (b) 6/8 (c) 1/2"
   ],
   "answers_A": [
     "a",
@@ -28,7 +28,7 @@
     "b",
     "b",
     "b",
-    "b",
+    "a",
     "b",
     "b",
     "b",
@@ -43,28 +43,8 @@
     "b",
     "c"
   ],
-  "B": [
-    "1. Explain how to simplify a fraction to its lowest terms._________",
-    "2. Convert the decimal 0.75 into its equivalent fraction._________",
-    "3. State the rule for adding or subtracting fractions with different denominators._________",
-    "4. If you have 2.5 meters of rope and cut off 0.8 meters, how much rope remains?_________",
-    "5. Define what a common denominator is in the context of fractions._________"
-  ],
-  "C": [
-    "1. Discuss the practical applications of fractions and decimals in everyday life, providing at least two distinct examples for each.",
-    "2. Compare and contrast the operations of multiplication and division when applied to fractions, highlighting any key differences in methodology.",
-    "3. Explain the significance of place value in understanding decimal numbers and how it relates to performing arithmetic operations with them."
-  ],
-  "answers_B": [
-    "Divide both the numerator and the denominator by their greatest common divisor.",
-    "3/4",
-    "Find a common denominator, convert fractions, then add or subtract numerators.",
-    "1.7 meters",
-    "A common multiple of the denominators of two or more fractions."
-  ],
-  "answers_C": [
-    "Fractions: Cooking recipes (e.g., 1/2 cup flour), measuring fabric (e.g., 3/4 yard). Decimals: Money (e.g., $5.25), athletic timing (e.g., 9.8 seconds for a race).",
-    "Multiplication: Multiply numerators and denominators directly. Division: Invert the divisor (second fraction) and then multiply. Key difference: Division requires an extra step of inversion before multiplication.",
-    "Place value assigns a value to each digit based on its position relative to the decimal point. It's crucial for correctly aligning numbers in addition/subtraction and understanding magnitude in multiplication/division, ensuring accurate calculations."
-  ]
+  "B": [],
+  "C": [],
+  "answers_B": [],
+  "answers_C": []
 }

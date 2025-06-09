@@ -1,25 +1,25 @@
 {
   "A": [
-    "1. A red traffic light indicates what action? (a) Proceed (b) Halt (c) Pause",
-    "2. A sign showing a pedestrian crossing signifies (a) a safe zone for road crossing (b) an area for recreation (c) a spot for resting",
-    "3. Drug abuse is defined as the use of substances in a manner that is (a) medically approved (b) detrimental to health (c) athletic",
-    "4. The primary reason drug abuse is harmful is because it (a) enhances physical strength (b) induces euphoria (c) damages physical and mental well-being",
-    "5. Individuals who abuse drugs may exhibit behavior such as being (a) consistently joyful and lively (b) reclusive and secretive (c) extremely sociable and outgoing",
-    "6. A potential consequence for someone engaged in drug abuse is the development of (a) improved health (b) increased self-assurance (c) various health issues",
-    "7. Avoiding drug abuse is crucial for the purpose of (a) social acceptance among peers (b) maintaining well-being and security (c) achieving academic success",
-    "8. If approached with an offer of drugs, the appropriate response is to (a) accept them (b) decline and depart (c) inquire about their nature",
-    "9. To ensure safety from drug abuse, one should (a) experiment with novel experiences (b) remain knowledgeable and make sound decisions (c) emulate friends' actions",
-    "10. A common indicator of drug abuse includes (a) enhanced physical condition (b) superior academic performance (c) shifts in conduct or emotional state",
-    "11. A green traffic light signals (a) cease movement (b) proceed forward (c) remain stationary",
-    "12. A warning sign featuring a pedestrian symbol alerts drivers to (a) an area for children to play (b) a designated safe crossing point (c) the presence of pedestrians nearby",
-    "13. The impact of drug abuse on the brain can involve (a) sharpening focus and attention (b) boosting recall and learning abilities (c) modifying brain activity and conduct",
-    "14. Seeking assistance for someone struggling with drug abuse is vital so they can (a) conceal their habit more effectively (b) gain acceptance among peers (c) receive necessary aid to cease use",
-    "15. Drug abuse has the potential to influence personal relationships by (a) making them stronger (b) having no discernible effect (c) causing tension or harm",
-    "16. A frequent indicator of drug abuse often includes (a) enhanced physical well-being (b) elevated energy and drive (c) alterations in physical appearance or personal cleanliness",
-    "17. Resisting peer pressure to consume drugs is important to (a) assimilate with social circles (b) exercise personal judgment and make educated choices (c) defy established rules",
-    "18. Prolonged drug abuse can lead to outcomes such as (a) the onset of health complications (b) an increase in self-assurance (c) improved academic performance",
-    "19. To assist an individual coping with drug abuse, one should (a) disregard their predicament (b) pass judgment on them (c) provide aid and positive reinforcement",
-    "20. Staying knowledgeable about drug abuse is essential for the purpose of (a) exploring novel experiences (b) integrating into social groups (c) making educated choices and ensuring personal safety"
+    "1. What does a red traffic light mean (a) Go (b) Stop (c) Wait",
+    "2. What does a pedestrian crossing sign indicate (a) A place to cross the road safely (b) A place to play (c) A place to stop and rest",
+    "3. What is drug abuse (a) Using medicine as prescribed (b) Using substances in a way that's harmful (c) Playing sports",
+    "4. Why is drug abuse bad (a) It makes us strong (b) It makes us happy (c) It harms our bodies and minds",
+    "5. How might someone who abuses drugs behave (a) They might be happy and energetic all the time (b) They might be secretive and withdrawn (c) They might be very outgoing and social",
+    "6. What can happen to someone who abuses drugs (a) They might become healthier (b) They might become more confident (c) They might experience health problems",
+    "7. Why is it important to avoid drug abuse (a) So we can fit in with our friends (b) So we can stay healthy and safe (c) So we can get good grades",
+    "8. What should you do if someone offers you drugs (a) Take them (b) Refuse them and walk away (c) Ask them what it is",
+    "9. How can we stay safe from drug abuse (a) By trying new things (b) By staying informed and making good choices (c) By following our friends",
+    "10. What is a sign of drug abuse (a) Improved health (b) Better grades (c) Changes in behavior or mood",
+    "11. What does a green traffic light mean (a) Stop (b) Go (c) Wait",
+    "12. What does a warning sign with a pedestrian symbol indicate (a) A place to play (b) A place to cross the road safely (c) A warning about pedestrians in the area",
+    "13. What is the effect of drug abuse on the brain (a) It improves focus and concentration (b) It enhances memory and learning (c) It can alter brain function and behavior",
+    "14. Why is it important to seek help if someone is abusing drugs (a) So they can hide it better (b) So they can fit in with their friends (c) So they can get the support they need to stop",
+    "15. How might drug abuse affect someone's relationships (a) It can strengthen relationships (b) It can have no impact on relationships (c) It can strain or damage relationships",
+    "16. What is a common sign of drug abuse (a) Improved physical health (b) Increased energy and motivation (c) Changes in appearance or hygiene",
+    "17. Why should we avoid peer pressure to use drugs (a) So we can fit in with our friends (b) So we can make our own informed decisions (c) So we can rebel against authority",
+    "18. What can happen if someone abuses drugs over a long period (a) They might experience health problems (b) They might become more confident (c) They might get better grades",
+    "19. How can we support someone who is struggling with drug abuse (a) By ignoring the problem (b) By being judgmental (c) By offering support and encouragement",
+    "20. Why is it important to stay informed about drug abuse (a) So we can try new things (b) So we can fit in with our friends (c) So we can make informed decisions and stay safe"
   ],
   "answers_A": [
     "b",
@@ -43,19 +43,8 @@
     "c",
     "c"
   ],
-  "B": [
-    "1. The main function of a traffic light is to _________.",
-    "2. Two detrimental effects of drug abuse on a person's physical health are _________ and _________.",
-    "3. A 'Stop' sign on the road mandates that drivers _________."
-  ],
-  "answers_B": [
-    "regulate traffic flow",
-    "organ damage, weakened immune system",
-    "come to a complete halt"
-  ],
-  "answers_C": [
-    "Increased crime rates, healthcare burden, reduced productivity, breakdown of families, strain on public services.",
-    "Develop strong self-esteem, practice refusal skills, choose supportive friends, understand consequences of drug use, seek trusted adult advice."
-  ],
-  "C": []
+  "B": [],
+  "C": [],
+  "answers_B": [],
+  "answers_C": []
 }
