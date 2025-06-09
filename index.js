@@ -102,7 +102,7 @@ const rl = readline.createInterface({
 });
 
 const singleQuizModel = genAI.getGenerativeModel({
-  model: "gemini-2.0-pro-exp-02-05",
+  model: "gemini-2.5-flash-preview-05-20",
   generationConfig: {
     temperature: 0.7,
     topP: 0.95,
@@ -508,7 +508,7 @@ async function generateAllAnswers({ gradeNum, redoExisting = false }) {
 
   // Generate answers using Gemini
   const answerModel = genAI.getGenerativeModel({
-    model: "gemini-2.0-pro-exp-02-05",  // Updated model name
+    model: "gemini-2.5-flash-preview-05-20",  // Updated model name
     generationConfig: {
       temperature: 0,
       topP: 1,
@@ -598,7 +598,7 @@ async function generateAnswersForAllGrades(redoExisting = false) {
 
     // Generate answers using Gemini
     const answerModel = genAI.getGenerativeModel({
-      model: "gemini-2.0-pro-exp-02-05",
+      model: "gemini-2.5-flash-preview-05-20",
       generationConfig: {
         temperature: 0,
         topP: 1,
@@ -767,7 +767,7 @@ async function main() {
 
       // Generate answers using Gemini
       const answerModel = genAI.getGenerativeModel({
-        model: "gemini-2.0-pro-exp-02-05",  // Updated to correct model name
+        model: "gemini-2.5-flash-preview-05-20",  // Updated to correct model name
         generationConfig: {
           temperature: 0,
           topP: 1,
