@@ -18,7 +18,7 @@ const subjects = [
  "Cultural and Creative Arts",
  "PreVocational Studies",
  "French",
- "Religion Studies",
+ "Religious Studies",
  "Music",
 ];
 

@@ -28,7 +28,7 @@ const subjects = [
   "Cultural and Creative Arts",
   "PreVocational Studies",
   "French",
-  "Religion Studies",
+  "Religious Studies",
   "Music",
 ];
 
@@ -44,7 +44,7 @@ const subjectAbbreviations = {
   "Cultural and Creative Arts": "cca",
   "PreVocational Studies": "pvs",
   "French": "f",
-  "Religion Studies": "rs",
+  "Religious Studies": "rs",
   "Music": "ms"
 };
 
