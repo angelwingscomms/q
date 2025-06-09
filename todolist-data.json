@@ -13,49 +13,49 @@
       "printed": false
     },
     "g2": {
-      "done": true,
+      "done": false,
       "printed": false
     },
     "g3": {
-      "done": true,
+      "done": false,
       "printed": false
     },
     "g4": {
-      "done": true,
+      "done": false,
       "printed": false
     },
     "g5": {
-      "done": true,
+      "done": false,
       "printed": false
     }
   },
   "English Language": {
     "n1": {
-      "done": true,
+      "done": false,
       "printed": false
     },
     "n2": {
-      "done": true,
+      "done": false,
       "printed": false
     },
     "g1": {
       "done": true,
-      "printed": true
+      "printed": false
     },
     "g2": {
-      "done": true,
-      "printed": true
+      "done": false,
+      "printed": false
     },
     "g3": {
-      "done": true,
+      "done": false,
       "printed": false
     },
     "g4": {
-      "done": true,
+      "done": false,
       "printed": false
     },
     "g5": {
-      "done": true,
+      "done": false,
       "printed": false
     }
   },
@@ -66,7 +66,7 @@
     },
     "n2": {
       "done": false,
-      "printed": true
+      "printed": false
     },
     "g1": {
       "done": true,
@@ -77,15 +77,15 @@
       "printed": false
     },
     "g3": {
-      "done": true,
+      "done": false,
       "printed": false
     },
     "g4": {
-      "done": true,
+      "done": false,
       "printed": false
     },
     "g5": {
-      "done": true,
+      "done": false,
       "printed": false
     }
   },
@@ -137,15 +137,15 @@
       "printed": false
     },
     "g3": {
-      "done": true,
+      "done": false,
       "printed": false
     },
     "g4": {
-      "done": true,
+      "done": false,
       "printed": false
     },
     "g5": {
-      "done": true,
+      "done": false,
       "printed": false
     }
   },
@@ -167,15 +167,15 @@
       "printed": false
     },
     "g3": {
-      "done": true,
+      "done": false,
       "printed": false
     },
     "g4": {
-      "done": true,
+      "done": false,
       "printed": false
     },
     "g5": {
-      "done": true,
+      "done": false,
       "printed": false
     }
   },
@@ -189,33 +189,33 @@
       "printed": false
     },
     "g1": {
-      "done": true,
+      "done": false,
       "printed": false
     },
     "g2": {
-      "done": true,
+      "done": false,
       "printed": false
     },
     "g3": {
-      "done": true,
+      "done": false,
       "printed": false
     },
     "g4": {
-      "done": true,
+      "done": false,
       "printed": false
     },
     "g5": {
-      "done": true,
+      "done": false,
       "printed": false
     }
   },
   "Cultural and Creative Arts": {
     "n1": {
       "done": false,
-      "printed": true
+      "printed": false
     },
     "n2": {
-      "done": true,
+      "done": false,
       "printed": false
     },
     "g1": {
@@ -227,15 +227,15 @@
       "printed": false
     },
     "g3": {
-      "done": true,
+      "done": false,
       "printed": false
     },
     "g4": {
-      "done": true,
+      "done": false,
       "printed": false
     },
     "g5": {
-      "done": true,
+      "done": false,
       "printed": false
     }
   },
@@ -253,19 +253,19 @@
       "printed": false
     },
     "g2": {
-      "done": true,
+      "done": false,
       "printed": false
     },
     "g3": {
-      "done": true,
+      "done": false,
       "printed": false
     },
     "g4": {
-      "done": true,
+      "done": false,
       "printed": false
     },
     "g5": {
-      "done": true,
+      "done": false,
       "printed": false
     }
   },
@@ -279,15 +279,15 @@
       "printed": false
     },
     "g1": {
-      "done": true,
+      "done": false,
       "printed": false
     },
     "g2": {
-      "done": true,
+      "done": false,
       "printed": false
     },
     "g3": {
-      "done": true,
+      "done": false,
       "printed": false
     },
     "g4": {
@@ -313,19 +313,19 @@
       "printed": false
     },
     "g2": {
-      "done": true,
+      "done": false,
       "printed": false
     },
     "g3": {
-      "done": true,
+      "done": false,
       "printed": false
     },
     "g4": {
-      "done": true,
+      "done": false,
       "printed": false
     },
     "g5": {
-      "done": true,
+      "done": false,
       "printed": false
     }
   },
@@ -339,23 +339,23 @@
       "printed": false
     },
     "g1": {
-      "done": true,
+      "done": false,
       "printed": false
     },
     "g2": {
-      "done": true,
+      "done": false,
       "printed": false
     },
     "g3": {
-      "done": true,
+      "done": false,
       "printed": false
     },
     "g4": {
-      "done": true,
+      "done": false,
       "printed": false
     },
     "g5": {
-      "done": true,
+      "done": false,
       "printed": false
     }
   }

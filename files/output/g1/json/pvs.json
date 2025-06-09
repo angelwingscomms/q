@@ -1,25 +1,25 @@
 {
   "A": [
-    "1. A bedroom is primarily used for _ (a) preparing meals (b) sleeping and relaxation (c) recreational activities",
-    "2. The area of a house designated for meal preparation is the _ (a) sleeping quarter (b) common area (c) kitchen",
-    "3. The main function of a living room is to provide a space for _ (a) slumber (b) culinary activities (c) unwinding and social interaction",
-    "4. It is crucial to cleanse our hands following toilet use to prevent the _ (a) acceleration of eating (b) extension of playtime (c) dissemination of pathogens",
-    "5. To maintain toilet cleanliness, one should _ (a) activate the flush mechanism frequently (b) neglect its sanitation (c) engage in recreational use of toilet paper",
-    "6. Avoid direct contact with toilet handles using bare hands to _ (a) conserve energy (b) inhibit germ transmission (c) reduce water consumption",
-    "7. The primary utility of a bathroom is for _ (a) food preparation (b) resting (c) personal ablutions and hygiene upkeep",
-    "8. Food items are typically stored in the _ area of a home (a) sleeping (b) communal (c) designated storage area",
-    "9. Maintaining a clean household is essential to _ (a) enhance aesthetic appeal (b) ensure pleasant odors (c) minimize health risks",
-    "10. To uphold proper toilet hygiene, one must _ (a) perform routine cleaning (b) disregard its condition (c) misuse toilet paper",
-    "11. The use of toilet paper is vital for _ (a) water conservation (b) extending leisure time (c) upholding personal cleanliness",
-    "12. A dining room serves the purpose of _ (a) slumbering (b) preparing food (c) consuming meals",
-    "13. Refraining from littering indoors is important so that _ (a) financial resources are preserved (b) recreational activities can be extended (c) the dwelling remains immaculate",
-    "14. To ensure a neat bedroom, one should _ (a) arrange the bed and store playthings (b) permit disarray (c) continuously engage with toys",
-    "15. A clean and organized living space is significant because it _ (a) enhances visual appeal (b) promotes a pleasant aroma (c) encompasses all of the aforementioned benefits",
-    "16. The primary function of a door is to _ (a) supply illumination (b) facilitate air circulation (c) enable ingress and egress from a dwelling",
-    "17. Securing doors and windows is essential for _ (a) energy conservation (b) ensuring household security (c) allowing ambient air entry",
-    "18. To uphold the cleanliness of our residence, one should _ (a) conduct periodic cleaning (b) disregard its state (c) engage in unsanitary play",
-    "19. Adequate illumination within a home is crucial for _ (a) conserving power (b) ensuring visual clarity (c) disregarding visibility",
-    "20. To maintain an orderly home, it is advisable to _ (a) properly store toys and literature (b) allow items to remain haphazardly dispersed (c) disregard tidiness"
+    "1. What is the purpose of a bedroom? (a) To cook food (b) To sleep and rest (c) To play games",
+    "2. Which room is used for cooking food? (a) Bedroom (b) Living room (c) Kitchen",
+    "3. What is the function of a living room? (a) To sleep (b) To cook (c) To relax and socialize",
+    "4. Why is it important to wash our hands after using the toilet? (a) So we can eat faster (b) So we can play more (c) So we don't spread germs",
+    "5. What should we do to keep the toilet clean? (a) Flush it regularly (b) Leave it dirty (c) Play with toilet paper",
+    "6. Why should we not touch toilet handles with bare hands? (a) So we don't get tired (b) So we don't spread germs (c) So we can save water",
+    "7. What is the purpose of a bathroom? (a) To cook food (b) To sleep (c) To bathe and maintain personal hygiene",
+    "8. Which part of the home is used for storing food? (a) Bedroom (b) Living room (c) store",
+    "9. Why is it important to keep our home clean? (a) So it looks good (b) So it smells good (c) So we're less likely to get sick",
+    "10. What should we do to maintain toilet hygiene? (a) Clean it regularly (b) Ignore it (c) Play with toilet paper",
+    "11. Why is it important to use toilet paper? (a) So we can save water (b) So we can play more (c) So we maintain personal hygiene",
+    "12. What is the function of a dining room? (a) To sleep (b) To cook (c) To eat meals",
+    "13. Why should we not litter in our home? (a) So we can save money (b) So we can play more (c) So our home stays clean",
+    "14. What should we do to keep our bedroom tidy? (a) Make our bed and put away toys (b) Leave it messy (c) Play with toys all day",
+    "15. Why is it important to have a clean and organized home? (a) So it looks good (b) So it smells good (c) All of the above",
+    "16. What is the purpose of a door? (a) To provide light (b) To provide ventilation (c) To enter and exit the home",
+    "17. Why should we lock doors and windows? (a) To save energy (b) To keep our home safe (c) To let in fresh air",
+    "18. What should we do to maintain our home's cleanliness? (a) Clean it regularly (b) Ignore it (c) Play in the dirt",
+    "19. Why is it important to have good lighting in our home? (a) So we can save energy (b) So we can see clearly (c) So we can ignore visibility",
+    "20. What should we do to keep our home tidy? (a) Put away toys and books (b) Leave them scattered (c) Ignore cleanliness"
   ],
   "answers_A": [
     "b",
@@ -43,28 +43,8 @@
     "b",
     "a"
   ],
-  "B": [
-    "1. The two main areas for personal hygiene in a home are the bathroom and the _________.",
-    "2. What is the common name for the room where family members gather to watch TV or relax? _________",
-    "3. Name one benefit of regularly cleaning your house. _________",
-    "4. What is the primary purpose of a 'store' room in a house? _________",
-    "5. List one item commonly found in a bedroom that helps maintain tidiness. _________"
-  ],
-  "C": [
-    "1. Discuss the broader implications of maintaining a clean and organized home beyond just aesthetics.",
-    "2. Explain why personal hygiene practices, such as hand washing, are integral to household health.",
-    "3. Describe the importance of securing a home's entry points like doors and windows."
-  ],
-  "answers_B": [
-    "toilet",
-    "living room",
-    "prevents illness",
-    "storage",
-    "bed"
-  ],
-  "answers_C": [
-    "Reduces spread of germs, improves mental well-being, prevents pests, creates a safe environment.",
-    "Prevents cross-contamination, stops germ spread from person to person and surface to person, reduces incidence of infectious diseases.",
-    "Ensures safety from intruders, protects possessions, provides peace of mind, can also contribute to energy efficiency."
-  ]
+  "B": [],
+  "C": [],
+  "answers_B": [],
+  "answers_C": []
 }
