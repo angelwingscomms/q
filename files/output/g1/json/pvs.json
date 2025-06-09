@@ -1,0 +1,70 @@
+{
+  "A": [
+    "1. A bedroom is primarily used for _ (a) preparing meals (b) sleeping and relaxation (c) recreational activities",
+    "2. The area of a house designated for meal preparation is the _ (a) sleeping quarter (b) common area (c) kitchen",
+    "3. The main function of a living room is to provide a space for _ (a) slumber (b) culinary activities (c) unwinding and social interaction",
+    "4. It is crucial to cleanse our hands following toilet use to prevent the _ (a) acceleration of eating (b) extension of playtime (c) dissemination of pathogens",
+    "5. To maintain toilet cleanliness, one should _ (a) activate the flush mechanism frequently (b) neglect its sanitation (c) engage in recreational use of toilet paper",
+    "6. Avoid direct contact with toilet handles using bare hands to _ (a) conserve energy (b) inhibit germ transmission (c) reduce water consumption",
+    "7. The primary utility of a bathroom is for _ (a) food preparation (b) resting (c) personal ablutions and hygiene upkeep",
+    "8. Food items are typically stored in the _ area of a home (a) sleeping (b) communal (c) designated storage area",
+    "9. Maintaining a clean household is essential to _ (a) enhance aesthetic appeal (b) ensure pleasant odors (c) minimize health risks",
+    "10. To uphold proper toilet hygiene, one must _ (a) perform routine cleaning (b) disregard its condition (c) misuse toilet paper",
+    "11. The use of toilet paper is vital for _ (a) water conservation (b) extending leisure time (c) upholding personal cleanliness",
+    "12. A dining room serves the purpose of _ (a) slumbering (b) preparing food (c) consuming meals",
+    "13. Refraining from littering indoors is important so that _ (a) financial resources are preserved (b) recreational activities can be extended (c) the dwelling remains immaculate",
+    "14. To ensure a neat bedroom, one should _ (a) arrange the bed and store playthings (b) permit disarray (c) continuously engage with toys",
+    "15. A clean and organized living space is significant because it _ (a) enhances visual appeal (b) promotes a pleasant aroma (c) encompasses all of the aforementioned benefits",
+    "16. The primary function of a door is to _ (a) supply illumination (b) facilitate air circulation (c) enable ingress and egress from a dwelling",
+    "17. Securing doors and windows is essential for _ (a) energy conservation (b) ensuring household security (c) allowing ambient air entry",
+    "18. To uphold the cleanliness of our residence, one should _ (a) conduct periodic cleaning (b) disregard its state (c) engage in unsanitary play",
+    "19. Adequate illumination within a home is crucial for _ (a) conserving power (b) ensuring visual clarity (c) disregarding visibility",
+    "20. To maintain an orderly home, it is advisable to _ (a) properly store toys and literature (b) allow items to remain haphazardly dispersed (c) disregard tidiness"
+  ],
+  "answers_A": [
+    "b",
+    "c",
+    "c",
+    "c",
+    "a",
+    "b",
+    "c",
+    "c",
+    "c",
+    "a",
+    "c",
+    "c",
+    "c",
+    "a",
+    "c",
+    "c",
+    "b",
+    "a",
+    "b",
+    "a"
+  ],
+  "B": [
+    "1. The two main areas for personal hygiene in a home are the bathroom and the _________.",
+    "2. What is the common name for the room where family members gather to watch TV or relax? _________",
+    "3. Name one benefit of regularly cleaning your house. _________",
+    "4. What is the primary purpose of a 'store' room in a house? _________",
+    "5. List one item commonly found in a bedroom that helps maintain tidiness. _________"
+  ],
+  "C": [
+    "1. Discuss the broader implications of maintaining a clean and organized home beyond just aesthetics.",
+    "2. Explain why personal hygiene practices, such as hand washing, are integral to household health.",
+    "3. Describe the importance of securing a home's entry points like doors and windows."
+  ],
+  "answers_B": [
+    "toilet",
+    "living room",
+    "prevents illness",
+    "storage",
+    "bed"
+  ],
+  "answers_C": [
+    "Reduces spread of germs, improves mental well-being, prevents pests, creates a safe environment.",
+    "Prevents cross-contamination, stops germ spread from person to person and surface to person, reduces incidence of infectious diseases.",
+    "Ensures safety from intruders, protects possessions, provides peace of mind, can also contribute to energy efficiency."
+  ]
+}

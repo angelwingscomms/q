@@ -1,0 +1,70 @@
+{
+  "A": [
+    "1. You possess 3 pencils, and an additional 2 are given to you by a friend. What is your total pencil count now? (a) 3 (b) 5 (c) 2",
+    "2. A tree initially holds 5 birds. If 4 more birds join them, how many birds are present in the tree? (a) 5 (b) 9 (c) 3",
+    "3. You own 4 toys. Your mother then purchases 1 additional toy for you. How many toys do you currently possess? (a) 3 (b) 4 (c) 5",
+    "4. Starting with 8 crayons, you decide to give 2 to your sister. How many crayons remain with you? (a) 6 (b) 8 (c) 10",
+    "5. A basket contains 9 balls. If 3 balls are removed, what number of balls are left in the basket? (a) 6 (b) 9 (c) 12",
+    "6. You possess 7 books. After lending 1 book to a friend, how many books do you have remaining? (a) 6 (b) 7 (c) 8",
+    "7. Consider having 2 sets, with each set containing 3 pencils. What is the total quantity of pencils? (a) 2 (b) 3 (c) 6",
+    "8. A park initially has 5 dogs. If 2 additional dogs arrive, what is the new total number of dogs in the park? (a) 5 (b) 7 (c) 3",
+    "9. You own 9 stickers. After giving 4 stickers to your brother, how many stickers do you still possess? (a) 5 (b) 9 (c) 13",
+    "10. If you start with 1 pencil and acquire 4 more, what is your current count of pencils? (a) 1 (b) 4 (c) 5",
+    "11. From 8 children playing in a playground, 2 depart for home. How many children remain in the playground? (a) 6 (b) 8 (c) 10",
+    "12. You have 6 marbles. If you misplace 1 marble, how many marbles are you left with? (a) 5 (b) 6 (c) 7",
+    "13. You possess 3 balls. A friend then provides you with 2 additional balls. What is the total number of balls you now have? (a) 3 (b) 5 (c) 2",
+    "14. A box contains 9 pencils. When 3 pencils are removed, how many pencils are still inside the box? (a) 6 (b) 9 (c) 12",
+    "15. You have 5 naira. Your mother provides you with an additional 2 naira. What is your total amount of money? (a) 5 naira (b) 7 naira (c) 3 naira",
+    "16. Complete the equation: 2 + _ = 5 (a) 1 (b) 2 (c) 3",
+    "17. Identify the missing number: _ + 1 = 4 (a) 2 (b) 3 (c) 4",
+    "18. Fill in the blank: 5 = 2 + _ (a) 1 (b) 2 (c) 3",
+    "19. Determine the unknown value: _ + 3 = 6 (a) 2 (b) 3 (c) 4",
+    "20. What number completes the sum: 4 + _ = 7 (a) 2 (b) 3 (c) 4"
+  ],
+  "answers_A": [
+    "b",
+    "b",
+    "c",
+    "a",
+    "a",
+    "a",
+    "c",
+    "b",
+    "a",
+    "c",
+    "a",
+    "a",
+    "b",
+    "a",
+    "b",
+    "c",
+    "b",
+    "c",
+    "b",
+    "b"
+  ],
+  "B": [
+    "1. Briefly describe the fundamental principle of addition._________",
+    "2. Define subtraction in simple terms._________",
+    "3. You begin with 10 apples and consume 3. How many apples remain?_________",
+    "4. In the context of a mathematical word problem, what is the meaning of the term 'total'?_________"
+  ],
+  "C": [
+    "1. Elaborate on the significance of comprehending fundamental arithmetic operations like addition and subtraction for everyday situations.",
+    "2. Explain how creating a mental or drawn representation of a mathematical problem can aid in its resolution.",
+    "3. Justify the importance of verifying solutions to mathematical problems.",
+    "4. Why is it important to check your answers in mathematical problems?"
+  ],
+  "answers_B": [
+    "Addition is the process of combining two or more numbers or quantities to find their total sum.",
+    "Subtraction is the process of finding the difference between two numbers.",
+    "7",
+    "'Total' refers to the sum or complete amount when all quantities are combined, or the final result of an operation like addition or multiplication"
+  ],
+  "answers_C": [
+    "Basic arithmetic is crucial for managing finances, telling time, cooking, shopping, and general problem-solving, enabling informed decisions and practical calculations.",
+    "Visualizing a problem helps break it down, identify knowns and unknowns, simplify complex scenarios, and often reveals the correct operation or path to a solution.",
+    "Verifying solutions ensures accuracy, helps identify errors, reinforces understanding of the concepts, and builds confidence in mathematical abilities.",
+    "Checking answers ensures accuracy, helps identify errors, reinforces understanding of the concepts, and builds confidence in mathematical abilities."
+  ]
+}

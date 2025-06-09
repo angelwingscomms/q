@@ -1,0 +1,66 @@
+{
+  "A": [
+    "1. What is the primary reason for consistently brushing one's teeth (a) to enhance one's appearance (b) to foster a sense of well-being (c) to prevent dental decay",
+    "2. Which practice contributes most significantly to maintaining overall health (a) consuming large quantities of unhealthy snacks (b) engaging in constant recreational activities (c) regularly washing one's hands",
+    "3. Why is obtaining sufficient sleep crucial for the body (a) to allow for extended playtime (b) to facilitate more television viewing (c) to enable bodily recuperation",
+    "4. Before consuming food, what is the essential hygiene step to take (a) to accelerate eating speed (b) to improve taste perception (c) to avoid illness",
+    "5. To ensure bodily cleanliness, what action should be performed routinely (a) taking regular baths (b) wearing soiled garments (c) engaging in muddy play",
+    "6. What is the importance of wearing clean attire (a) to present a pleasing appearance (b) to experience comfort (c) to maintain good health",
+    "7. Upon sustaining a minor laceration, what immediate action is recommended (a) disregarding the injury (b) cleansing it with soap and water (c) applying soil to the affected area",
+    "8. What is the main purpose of covering a wound with a bandage (a) to improve its aesthetic (b) to safeguard it from contaminants and microorganisms (c) to accelerate its healing process",
+    "9. If an individual is experiencing bleeding, what immediate action should be taken (a) applying direct pressure to the wound (b) ignoring the situation (c) allowing the bleeding to continue unchecked",
+    "10. Why is it important to inform a trusted adult when feeling unwell (a) so they can disregard the complaint (b) so they can administer medication (c) so they can facilitate recovery",
+    "11. What measure helps prevent the dissemination of germs (a) sharing personal belongings and food (b) washing hands frequently (c) touching all surfaces indiscriminately",
+    "12. What is the rationale for covering one's mouth during a cough (a) to prevent the spread of pathogens (b) to allow for greater food intake (c) to enable more playtime",
+    "13. In the event of a burn injury, what is the recommended immediate treatment (a) applying ice to the area (b) applying heat to the area (c) cooling it with water",
+    "14. Why is maintaining cleanliness in one's immediate environment crucial (a) for aesthetic appeal (b) for pleasant aroma (c) to reduce susceptibility to illness",
+    "15. If someone collapses and loses consciousness, what is the appropriate response (a) leaving them unattended (b) gently attempting to rouse them (c) splashing water on them",
+    "16. Why is it advisable to avoid sharing personal items such as towels (a) to conserve financial resources (b) to foster sharing among friends (c) to inhibit germ transmission",
+    "17. What is the primary benefit of consistent physical activity (a) to enhance physical appearance (b) to promote emotional well-being (c) to sustain good health",
+    "18. For what reason should one refrain from touching their face (a) to prevent fatigue (b) to avoid spreading germs (c) to facilitate increased food consumption",
+    "19. What is the initial medical intervention provided to an injured individual (a) primary assistance (b) secondary assistance (c) tertiary assistance",
+    "20. The provision of initial care to an injured individual is considered important (a) True (b) False"
+  ],
+  "answers_A": [
+    "c",
+    "c",
+    "c",
+    "c",
+    "a",
+    "c",
+    "b",
+    "b",
+    "a",
+    "c",
+    "b",
+    "a",
+    "c",
+    "c",
+    "b",
+    "c",
+    "c",
+    "b",
+    "a",
+    "a"
+  ],
+  "B": [
+    "1. Identify three key components of a balanced diet._________",
+    "2. What is the primary function of white blood cells in the human body?_________",
+    "3. List two common ways to prevent the spread of colds and flu._________",
+    "4. How many liters of water should an average adult consume daily?_________",
+    "5. Name one significant benefit of regular dental check-ups._________"
+  ],
+  "answers_B": [
+    "Carbohydrates, proteins, fats",
+    "Fighting infection",
+    "Hand washing, avoiding close contact",
+    "2-3 liters",
+    "Early detection of cavities"
+  ],
+  "answers_C": [
+    "Personal hygiene prevents spread of disease, reduces public health burden, and promotes social acceptance. It contributes to a healthier, more productive community and reduces strain on healthcare systems.",
+    "Proper nutrition provides essential vitamins, minerals, and macronutrients that are crucial for the development and function of immune cells and antibodies. Deficiencies can weaken the immune response, making individuals more susceptible to infections.",
+    "Mental well-being is integral to overall health as it affects physical health, daily functioning, and quality of life. Stress and anxiety can lead to physical ailments, while positive mental health enhances coping mechanisms, decision-making, and social interactions."
+  ],
+  "C": []
+}

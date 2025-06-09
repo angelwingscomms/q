@@ -1,0 +1,68 @@
+{
+  "A": [
+    "1. A simple machine is best described as a tool that _ (a) makes work easier (b) complicates tasks (c) is easily broken",
+    "2. Among the options, which one exemplifies a simple machine? (a) Car (b) Bicycle (c) Scissors",
+    "3. The primary function of scissors is to _ (a) push objects (b) cut materials (c) pull items",
+    "4. Simple machines are utilized to (a) increase difficulty (b) simplify tasks (c) consume time unnecessarily",
+    "5. A significant advantage of employing a lever is that it (a) is prone to breaking (b) amplifies effort (c) aids in lifting substantial weights",
+    "6. A wheelbarrow facilitates work by (a) increasing weight (b) transporting heavy materials (c) being fragile",
+    "7. Which material is frequently employed in the construction of simple machines? (a) Paper (b) Wood (c) Fabric",
+    "8. Metals are frequently chosen for simple machine construction due to their (a) softness (b) strength and durability (c) considerable weight",
+    "9. For crafting a broom, what kind of material would be appropriate? (a) Rubber (b) Raffia (c) Paper",
+    "10. A cutlass assists us by (a) impeding object movement (b) simplifying the clearing or cutting of items (c) being susceptible to damage",
+    "11. The primary benefit of utilizing a wheel and axle is that it (a) increases object weight (b) complicates object movement (c) simplifies object displacement",
+    "12. Simple machines hold significance because they (a) are intricate devices (b) facilitate tasks (c) are exclusively for grown-ups",
+    "13. Which simple machine is commonly employed for severing objects? (a) Lever (b) Pulley (c) Cutlass (d) Screw",
+    "14. A screw simplifies work by (a) adding weight to objects (b) securing components together (c) being fragile",
+    "15. What material would be fitting for constructing a catapult? (a) Paper (b) Wood (c) Rubber",
+    "16. In everyday life, why do we employ simple machines? (a) To complicate chores (b) To streamline tasks (c) To squander time",
+    "17. What advantage does using a broom offer? (a) It increases the weight of items (b) It hinders object movement (c) It facilitates the movement of debris",
+    "18. Which simple machine assists in raising heavy items? (a) Lever (b) Pulley (c) Both a and b",
+    "19. Simple machines are constructed to be robust primarily so they can (a) be fragile (b) endure repeated usage (c) serve a single purpose",
+    "20. The significance of simple machines in our daily existence is that they (a) complicate tasks (b) simplify labor (c) are exclusively for mature individuals"
+  ],
+  "answers_A": [
+    "a",
+    "c",
+    "b",
+    "b",
+    "c",
+    "b",
+    "b",
+    "b",
+    "b",
+    "b",
+    "c",
+    "b",
+    "c",
+    "b",
+    "b",
+    "b",
+    "c",
+    "c",
+    "b",
+    "b"
+  ],
+  "B": [
+    "1. Name three common types of simple machines._________",
+    "2. Explain how a wedge functions to split objects._________",
+    "3. What is the primary difference between a simple machine and a complex machine?_________",
+    "4. Provide an example of a simple machine used in your home and describe its function._________"
+  ],
+  "C": [
+    "1. Discuss the historical significance of simple machines in human development and technological advancement.",
+    "2. Analyze how different simple machines can be combined to form more complex tools, providing examples.",
+    "3. Evaluate the role of simple machines in modern industrial and everyday applications, highlighting their continued relevance."
+  ],
+  "answers_B": [
+    "Lever, Pulley, Wheel and Axle, Inclined Plane, Wedge, Screw (any three)",
+    "A wedge uses force applied to its blunt end to separate or hold objects apart, converting vertical force into horizontal splitting force.",
+    "A simple machine has few or no moving parts and changes the direction or magnitude of a force, while a complex machine combines two or more simple machines.",
+    "Example: A doorknob (wheel and axle) allows us to easily open and close doors by rotating a small force over a larger distance to turn the latch mechanism."
+  ],
+  "answers_C": [
+    "Key points: Early tools (lever, wedge) for hunting, building, agriculture. Enabled construction of pyramids, ancient technologies. Foundation for industrial revolution. Allowed humans to amplify force, change direction, and move heavy objects, leading to societal progress.",
+    "Key points: Complex machines are combinations of simple machines. Examples: Bicycle (wheel and axle, lever, gears which are modified wheels), Scissors (two levers, two wedges), Wheelbarrow (wheel and axle, lever). Explain how each simple machine contributes to the overall function.",
+    "Key points: Still fundamental in modern society despite advanced technology. Examples: Cranes (pulleys, levers), car jacks (screws, levers), door hinges (levers), ramps (inclined planes), zippers (wedges, inclined planes). They provide mechanical advantage, reduce effort, and are cost-effective, durable solutions in various industries and household tasks."
+  ]
+}
