@@ -440,7 +440,7 @@ async function generateSingleQuiz({ g, t, s }) {
 }
 
 // Change generateMultipleQuizzes function to use simplified paths
-async function generateMultipleQuizzes({ g }) {
+async function generateMultipleQuizzes({ g, skipExisting = false }) {
   // Get grade number for paths
   const gradeNum = Object.keys(grades).find(key => grades[key] === g);
   const jsonPath = `./files/input/${gradeNum}.json`;
@@ -464,17 +464,28 @@ async function generateMultipleQuizzes({ g }) {
       console.log(`Found ${exams.length} exams to generate from JSON file`);
 
       for (const { subject: s, content: t } of exams) {
-        console.log(`Generating quiz for ${s}...`);
+        console.log(`Processing quiz for ${s}...`);
+        
+        // Check if output files already exist
+        const abbreviatedSubject = subjectAbbreviations[s] || s.toLowerCase();
+        const outputPath = `${outputDir}/${abbreviatedSubject}.docx`;
+        const jsonOutputPath = `${jsonDir}/${abbreviatedSubject}.json`;
+        
+        // Skip if files exist and skipExisting is true
+        if (skipExisting && existsSync(outputPath) && existsSync(jsonOutputPath)) {
+          console.log(`Skipping ${s} - output files already exist`);
+          continue;
+        }
 
+        console.log(`Generating quiz for ${s}...`);
+        
         // Generate the quiz
         const quiz = await createSingleQuiz({ t });
         const quizContent = JSON.parse(quiz);
 
         // Save the quiz JSON data
-        const abbreviatedSubject = subjectAbbreviations[s] || s.toLowerCase();
-        const jsonPath = `${jsonDir}/${abbreviatedSubject}.json`;
-        writeFileSync(jsonPath, JSON.stringify(quizContent, null, 2));
-        console.log(`Saved quiz JSON to: ${jsonPath}`);
+        writeFileSync(jsonOutputPath, JSON.stringify(quizContent, null, 2));
+        console.log(`Saved quiz JSON to: ${jsonOutputPath}`);
 
         // Save answers to text file
         const answersPath = `${answersDir}/${abbreviatedSubject}.txt`;
@@ -497,7 +508,6 @@ async function generateMultipleQuizzes({ g }) {
 
         // Generate Word document
         const doc = await generateDoc({ g, t, s });
-        const outputPath = `${outputDir}/${abbreviatedSubject}.docx`;
         writeFileSync(outputPath, doc);
         console.log(`Generated: ${outputPath}`);
 
@@ -530,6 +540,18 @@ async function generateMultipleQuizzes({ g }) {
         subject = subjectCode;
       }
       
+      console.log(`Processing quiz for ${subject} (code: ${subjectCode})...`);
+      
+      // Check if output files already exist
+      const outputPath = `${outputDir}/${subjectCode}.docx`;
+      const jsonOutputPath = `${jsonDir}/${subjectCode}.json`;
+      
+      // Skip if files exist and skipExisting is true
+      if (skipExisting && existsSync(outputPath) && existsSync(jsonOutputPath)) {
+        console.log(`Skipping ${subject} (code: ${subjectCode}) - output files already exist`);
+        continue;
+      }
+      
       console.log(`Generating quiz for ${subject} (code: ${subjectCode})...`);
       
       try {
@@ -542,9 +564,8 @@ async function generateMultipleQuizzes({ g }) {
         const quizContent = JSON.parse(quiz);
         
         // Save the quiz JSON data
-        const jsonPath = `${jsonDir}/${subjectCode}.json`;
-        writeFileSync(jsonPath, JSON.stringify(quizContent, null, 2));
-        console.log(`Saved quiz JSON to: ${jsonPath}`);
+        writeFileSync(jsonOutputPath, JSON.stringify(quizContent, null, 2));
+        console.log(`Saved quiz JSON to: ${jsonOutputPath}`);
         
         // Save answers to text file
         const answersPath = `${answersDir}/${subjectCode}.txt`;
@@ -567,7 +588,6 @@ async function generateMultipleQuizzes({ g }) {
         
         // Generate Word document
         const doc = await generateDoc({ g, t: content, s: subject });
-        const outputPath = `${outputDir}/${subjectCode}.docx`;
         writeFileSync(outputPath, doc);
         console.log(`Generated: ${outputPath}`);
         
@@ -804,12 +824,44 @@ async function main() {
   try {
     const mode = await new Promise((resolve) => {
       rl.question(
-        "Select mode: (1) single quiz (2) multiple quizzes (3) create answers (4) create all answers for one grade (5) create all answers for all grades: ",
+        "Select mode: (1) single quiz (2) multiple quizzes (3) create answers (4) create all answers for one grade (5) create all answers for all grades (6) multiple quizzes (skip existing): ",
         (answer) => resolve(answer),
       );
     });
 
-    if (mode === "5") {
+    if (mode === "6") {
+      // Grade selection as a menu of numbers
+      const gradeSelection = await new Promise((resolve) => {
+        console.log("Which grade?");
+        Object.keys(grades).forEach(key => {
+          console.log(`${key}. Grade ${grades[key]}`);
+        });
+
+        rl.question("Enter grade number (1-5): ", (answer) => {
+          const gradeNum = parseInt(answer);
+          if (!isNaN(gradeNum) && grades[gradeNum]) {
+            resolve(grades[gradeNum]);
+          } else if (Object.values(grades).includes(answer.toUpperCase())) {
+            // Allow direct input of grade name for backward compatibility
+            resolve(answer.toUpperCase());
+          } else {
+            console.log("Invalid grade. Please try again.");
+            rl.question("Enter grade number (1-5): ", (retryAnswer) => {
+              const retryGradeNum = parseInt(retryAnswer);
+              if (!isNaN(retryGradeNum) && grades[retryGradeNum]) {
+                resolve(grades[retryGradeNum]);
+              } else {
+                console.log("Invalid grade again. Defaulting to Grade ONE.");
+                resolve("ONE");
+              }
+            });
+          }
+        });
+      });
+
+      console.log("Generating multiple quizzes (skipping existing)...");
+      await generateMultipleQuizzes({ g: gradeSelection, skipExisting: true });
+    } else if (mode === "5") {
       // Ask about redoing existing answers
       const redoExisting = await new Promise((resolve) => {
         rl.question("Redo existing answers? (y/N): ", (answer) => {
@@ -945,6 +997,38 @@ async function main() {
         throw error;
       }
 
+    } else if (mode === "2") {
+      // Grade selection as a menu of numbers
+      const gradeSelection = await new Promise((resolve) => {
+        console.log("Which grade?");
+        Object.keys(grades).forEach(key => {
+          console.log(`${key}. Grade ${grades[key]}`);
+        });
+
+        rl.question("Enter grade number (1-5): ", (answer) => {
+          const gradeNum = parseInt(answer);
+          if (!isNaN(gradeNum) && grades[gradeNum]) {
+            resolve(grades[gradeNum]);
+          } else if (Object.values(grades).includes(answer.toUpperCase())) {
+            // Allow direct input of grade name for backward compatibility
+            resolve(answer.toUpperCase());
+          } else {
+            console.log("Invalid grade. Please try again.");
+            rl.question("Enter grade number (1-5): ", (retryAnswer) => {
+              const retryGradeNum = parseInt(retryAnswer);
+              if (!isNaN(retryGradeNum) && grades[retryGradeNum]) {
+                resolve(grades[retryGradeNum]);
+              } else {
+                console.log("Invalid grade again. Defaulting to Grade ONE.");
+                resolve("ONE");
+              }
+            });
+          }
+        });
+      });
+
+      console.log("Generating multiple quizzes...");
+      await generateMultipleQuizzes({ g: gradeSelection, skipExisting: false });
     } else if (mode === "1") {
       // Grade selection as a menu of numbers
       const gradeSelection = await new Promise((resolve) => {
@@ -1013,38 +1097,6 @@ async function main() {
         s: subject,
       });
 
-    } else if (mode === "2") {
-      // Grade selection as a menu of numbers
-      const gradeSelection = await new Promise((resolve) => {
-        console.log("Which grade?");
-        Object.keys(grades).forEach(key => {
-          console.log(`${key}. Grade ${grades[key]}`);
-        });
-
-        rl.question("Enter grade number (1-5): ", (answer) => {
-          const gradeNum = parseInt(answer);
-          if (!isNaN(gradeNum) && grades[gradeNum]) {
-            resolve(grades[gradeNum]);
-          } else if (Object.values(grades).includes(answer.toUpperCase())) {
-            // Allow direct input of grade name for backward compatibility
-            resolve(answer.toUpperCase());
-          } else {
-            console.log("Invalid grade. Please try again.");
-            rl.question("Enter grade number (1-5): ", (retryAnswer) => {
-              const retryGradeNum = parseInt(retryAnswer);
-              if (!isNaN(retryGradeNum) && grades[retryGradeNum]) {
-                resolve(grades[retryGradeNum]);
-              } else {
-                console.log("Invalid grade again. Defaulting to Grade ONE.");
-                resolve("ONE");
-              }
-            });
-          }
-        });
-      });
-
-      console.log("Generating multiple quizzes...");
-      await generateMultipleQuizzes({ g: gradeSelection });
     } else {
       throw new Error("Invalid mode selection");
     }

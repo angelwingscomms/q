@@ -1,0 +1,70 @@
+{
+  "A": [
+    "1. When playing racket games, what type of footwear is recommended (a) Sandals (b) Sneakers (c) Gloves",
+    "2. Before engaging in racket games, why is a warm-up crucial (a) To induce fatigue (b) To avoid injuries (c) To ensure defeat",
+    "3. Identify the four fundamental swimming strokes (a) Front crawl, backstroke, breaststroke, and butterfly (b) Running, jumping, and skipping (c) Hiking, biking, and swimming",
+    "4. The swimming stroke commonly referred to as freestyle is the (a) Backstroke (b) Breaststroke (c) Front crawl",
+    "5. Noise pollution is best described as (a) Loud musical compositions (b) Unwanted or disagreeable auditory input (c) Pleasing acoustic experiences",
+    "6. Which of the following are significant contributors to noise pollution (a) Avian vocalizations (b) Vehicle horns, building sites, and high-volume audio (c) Atmospheric air currents",
+    "7. To mitigate noise pollution, one should (a) Amplify musical output (b) Utilize auditory protective devices (c) Be conscious of sound volume and employ noise reduction techniques",
+    "8. Effective strategies to lessen noise pollution within a community include (a) Increasing tree density (b) Opting for communal transit (c) Both A and B are correct",
+    "9. The primary reason for swimming with a companion is (a) To engage in competitive activity (b) To provide mutual assistance during unforeseen circumstances (c) To exhibit personal proficiencies",
+    "10. Prior to entering a pool or ocean for swimming, what actions are advisable (a) Rapidly enter the water (b) Verify aquatic conditions and swim accompanied by an adult (c) Engage in solitary swimming",
+    "11. The paramount safety guideline in swimming is to (a) Achieve high speeds (b) Engage in isolated swimming (c) Swim with an adult or a peer",
+    "12. The potential health impacts of noise pollution include (a) Enhanced auditory acuity (b) Induction of stress and auditory impairment (c) Augmentation of physical resilience",
+    "13. Should fatigue occur during swimming, the appropriate response is to (a) Continue swimming (b) Assume a supine floating position or move towards the edge (c) Submerge oneself",
+    "14. Adhering to safety regulations in racket games is essential for (a) Securing victory (b) Enjoyment (c) Injury prevention and personal safety",
+    "15. To minimize noise pollution within a residential setting, one could (a) Play music at high volumes (b) Employ sound-absorbing materials and regulate noise output (c) Engage in vociferous discussions",
+    "16. For individuals new to swimming, the most suitable stroke is typically the (a) Butterfly (b) Front crawl (c) Breaststroke",
+    "17. Upon observing an individual in distress in an aquatic environment, the correct course of action is to (a) Disregard the situation (b) Seek assistance or inform an adult (c) Attempt a personal rescue",
+    "18. In the event of an injury sustained during a racket game, one should (a) Continue participation (b) Cease play and report to an adult (c) Endure the discomfort and persist",
+    "19. Respecting one's adversary in racket games is vital for (a) Achieving triumph (b) Displaying one's abilities (c) Upholding proper sportsmanship and enjoyment",
+    "20. A primary advantage of a pre-game warm-up in racket sports is that it (a) Induces fatigue (b) Aids in injury prevention and enhances athletic output (c) Leads to defeat"
+  ],
+  "answers_A": [
+    "b",
+    "b",
+    "a",
+    "c",
+    "b",
+    "b",
+    "c",
+    "c",
+    "b",
+    "b",
+    "c",
+    "b",
+    "b",
+    "c",
+    "b",
+    "c",
+    "b",
+    "b",
+    "c",
+    "b"
+  ],
+  "B": [
+    "1. List two safety precautions one should take before entering a swimming pool or ocean. _________ _________",
+    "2. Name one adverse health effect of prolonged exposure to noise pollution. _________",
+    "3. Explain why warming up is crucial before engaging in physical activities like racket games. _________",
+    "4. Identify one common source of noise pollution in urban areas. _________",
+    "5. What is the primary benefit of swimming with a companion? _________",
+    "6. State one method to reduce noise pollution within a household environment. _________",
+    "7. Which swimming stroke is often recommended for novice swimmers? _________"
+  ],
+  "answers_B": [
+    "Check water conditions, swim with a grown-up/buddy",
+    "Stress or hearing problems",
+    "Prevents injuries, improves performance",
+    "Cars honking, construction sites, loud music",
+    "Mutual assistance in emergencies",
+    "Using noise-reducing materials, mindful noise levels",
+    "Breaststroke"
+  ],
+  "answers_C": [
+    "1. Discuss the comprehensive benefits of adhering to safety protocols in recreational sports such as racket games and swimming.",
+    "2. Elaborate on the environmental and health implications of noise pollution and propose actionable strategies for its mitigation at community and individual levels.",
+    "3. Compare and contrast the four basic swimming strokes, highlighting their unique characteristics and applications."
+  ],
+  "C": []
+}

@@ -1,0 +1,61 @@
+{
+  "A": [
+    "1. A red traffic light indicates what action? (a) Proceed (b) Halt (c) Pause",
+    "2. A sign showing a pedestrian crossing signifies (a) a safe zone for road crossing (b) an area for recreation (c) a spot for resting",
+    "3. Drug abuse is defined as the use of substances in a manner that is (a) medically approved (b) detrimental to health (c) athletic",
+    "4. The primary reason drug abuse is harmful is because it (a) enhances physical strength (b) induces euphoria (c) damages physical and mental well-being",
+    "5. Individuals who abuse drugs may exhibit behavior such as being (a) consistently joyful and lively (b) reclusive and secretive (c) extremely sociable and outgoing",
+    "6. A potential consequence for someone engaged in drug abuse is the development of (a) improved health (b) increased self-assurance (c) various health issues",
+    "7. Avoiding drug abuse is crucial for the purpose of (a) social acceptance among peers (b) maintaining well-being and security (c) achieving academic success",
+    "8. If approached with an offer of drugs, the appropriate response is to (a) accept them (b) decline and depart (c) inquire about their nature",
+    "9. To ensure safety from drug abuse, one should (a) experiment with novel experiences (b) remain knowledgeable and make sound decisions (c) emulate friends' actions",
+    "10. A common indicator of drug abuse includes (a) enhanced physical condition (b) superior academic performance (c) shifts in conduct or emotional state",
+    "11. A green traffic light signals (a) cease movement (b) proceed forward (c) remain stationary",
+    "12. A warning sign featuring a pedestrian symbol alerts drivers to (a) an area for children to play (b) a designated safe crossing point (c) the presence of pedestrians nearby",
+    "13. The impact of drug abuse on the brain can involve (a) sharpening focus and attention (b) boosting recall and learning abilities (c) modifying brain activity and conduct",
+    "14. Seeking assistance for someone struggling with drug abuse is vital so they can (a) conceal their habit more effectively (b) gain acceptance among peers (c) receive necessary aid to cease use",
+    "15. Drug abuse has the potential to influence personal relationships by (a) making them stronger (b) having no discernible effect (c) causing tension or harm",
+    "16. A frequent indicator of drug abuse often includes (a) enhanced physical well-being (b) elevated energy and drive (c) alterations in physical appearance or personal cleanliness",
+    "17. Resisting peer pressure to consume drugs is important to (a) assimilate with social circles (b) exercise personal judgment and make educated choices (c) defy established rules",
+    "18. Prolonged drug abuse can lead to outcomes such as (a) the onset of health complications (b) an increase in self-assurance (c) improved academic performance",
+    "19. To assist an individual coping with drug abuse, one should (a) disregard their predicament (b) pass judgment on them (c) provide aid and positive reinforcement",
+    "20. Staying knowledgeable about drug abuse is essential for the purpose of (a) exploring novel experiences (b) integrating into social groups (c) making educated choices and ensuring personal safety"
+  ],
+  "answers_A": [
+    "b",
+    "a",
+    "b",
+    "c",
+    "b",
+    "c",
+    "b",
+    "b",
+    "b",
+    "c",
+    "b",
+    "c",
+    "c",
+    "c",
+    "c",
+    "c",
+    "b",
+    "a",
+    "c",
+    "c"
+  ],
+  "B": [
+    "1. The main function of a traffic light is to _________.",
+    "2. Two detrimental effects of drug abuse on a person's physical health are _________ and _________.",
+    "3. A 'Stop' sign on the road mandates that drivers _________."
+  ],
+  "answers_B": [
+    "regulate traffic flow",
+    "organ damage, weakened immune system",
+    "come to a complete halt"
+  ],
+  "answers_C": [
+    "Increased crime rates, healthcare burden, reduced productivity, breakdown of families, strain on public services.",
+    "Develop strong self-esteem, practice refusal skills, choose supportive friends, understand consequences of drug use, seek trusted adult advice."
+  ],
+  "C": []
+}
