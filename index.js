@@ -150,7 +150,7 @@ const singleQuizModel = genAI.getGenerativeModel({
 
 async function createSingleQuiz({ t }) {
   try {
-    let extra_instructions = `create ONLY 20 objective questions, and let those be the only questions created, and the only section created`
+    let alpha_instructions = `create ONLY section A, with ONLY 20 objective questions, and STOP AT THAT`
     const result =
       await singleQuizModel.generateContent(`
   Create a quiz with:
@@ -210,8 +210,9 @@ async function createSingleQuiz({ t }) {
   let the questions be numbered
   sections may have subsections, with headings, instructions for the questions that follow perhaps, or passages, or just such parts that are not really questions in themselves, e.g "Write the short form of the following words". Add such parts as unnumbered questions, except for mainsections A, B and C.
   
-  here are some extra instructions, ignore any previous instructions that conflict the extra instructions, else normally follow the extra instructions:
-  ${extra_instructions}
+  here are the alpha instructions, if any previous instructions conflict with the alpha instructions, ignore them:
+  ALPHA INSTRUCTIONS:
+  ${alpha_instructions}
   
   ---
   
