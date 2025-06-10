@@ -204,10 +204,6 @@ async function createSingleQuiz({ t }) {
   let the questions be numbered
   sections may have subsections, with headings, instructions for the questions that follow perhaps, or passages, or just such parts that are not really questions in themselves, e.g "Write the short form of the following words". Add such parts as unnumbered questions, except for mainsections A, B and C.
   
-  here are the alpha instructions, if any previous instructions conflict with the alpha instructions, ignore them:
-  ALPHA INSTRUCTIONS:
-  ${alpha_instructions}
-  
   ---
   
   Text to create quiz from:
