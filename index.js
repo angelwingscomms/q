@@ -199,12 +199,6 @@ async function createSingleQuiz({ t }) {
   5. _ is used for breathing (a) Ear (b) Eyes (c) Nose
 
   6. How many eyes do you have? (a) 4 (b) 1 (c) 2
-
-  7. The capital of Ameria is _________
-
-  8. The capital of China is _________
-  
-  9. The capital of Nigeria is _________
   """
 
   let the questions be numbered
