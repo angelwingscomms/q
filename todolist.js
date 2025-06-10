@@ -11,8 +11,7 @@ const subjects = [
  "Math",
  "English Language",
  "Basic Science and Technology",
- "Computer
- ",
+ "Computer",
  "History",
  "Physical and Health Education",
  "National Values",
