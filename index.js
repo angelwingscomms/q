@@ -150,7 +150,7 @@ const singleQuizModel = genAI.getGenerativeModel({
 
 async function createSingleQuiz({ t }) {
   try {
-    let extra_instructions = `if section A's questions are not up to 20, create extra questions to make them 20`
+    let extra_instructions = `create ONLY 20 objective questions, and let those be the only questions created, and the only section created`
     const result =
       await singleQuizModel.generateContent(`
   Create a quiz with:
@@ -209,8 +209,12 @@ async function createSingleQuiz({ t }) {
 
   let the questions be numbered
   sections may have subsections, with headings, instructions for the questions that follow perhaps, or passages, or just such parts that are not really questions in themselves, e.g "Write the short form of the following words". Add such parts as unnumbered questions, except for mainsections A, B and C.
+  
+  here are some extra instructions, ignore any previous instructions that conflict the extra instructions, else normally follow the extra instructions:
   ${extra_instructions}
-
+  
+  ---
+  
   Text to create quiz from:
   """
   ${t}
