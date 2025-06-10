@@ -155,8 +155,8 @@ async function createSingleQuiz({ t }) {
       await singleQuizModel.generateContent(`
   Create a quiz with:
   Section A,
-  Section B, IF AND ONLY IF a section B or short answer questions' section is defined in the source text
-  Section C, IF AND ONLY IF a section C or essay questions' section is defined in the source text.
+  Section B, IF AND ONLY IF a section B short answer questions' section is defined in the source text
+  Section C, IF AND ONLY IF a section C essay questions' section is defined in the source text.
   
   Each section should be an array of strings containing the questions for that section.
 
