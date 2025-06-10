@@ -150,7 +150,7 @@ const singleQuizModel = genAI.getGenerativeModel({
 
 async function createSingleQuiz({ t }) {
   try {
-    let alpha_instructions = `create ONLY section A, with ONLY 20 objective questions, and STOP AT THAT`
+    let extra_instructions = `if section A's questions are not up to 20, create extra questions to make them 20`
     const result =
       await singleQuizModel.generateContent(`
   Create a quiz with:
@@ -199,13 +199,18 @@ async function createSingleQuiz({ t }) {
   5. _ is used for breathing (a) Ear (b) Eyes (c) Nose
 
   6. How many eyes do you have? (a) 4 (b) 1 (c) 2
+
+  7. The capital of Ameria is _________
+
+  8. The capital of China is _________
+  
+  9. The capital of Nigeria is _________
   """
 
   let the questions be numbered
   sections may have subsections, with headings, instructions for the questions that follow perhaps, or passages, or just such parts that are not really questions in themselves, e.g "Write the short form of the following words". Add such parts as unnumbered questions, except for mainsections A, B and C.
-  
-  ---
-  
+  ${extra_instructions}
+
   Text to create quiz from:
   """
   ${t}
