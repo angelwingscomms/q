@@ -16,6 +16,22 @@ const grades = {
   4: "FOUR",
   5: "FIVE",
 };
+
+const subjectAbbreviations = {
+   "Math": "m",
+    "English Language": "e",
+    "Basic Science and Technology": "bst",
+    "Computer": "c",
+    "History": "h",
+    "Physical and Health Education": "phe",
+    "National Values": "nv",
+    "Cultural and Creative Arts": "cca",
+    "PreVocational Studies": "pvs",
+    "French": "f",
+    "Religious Studies": "rs",
+    "Music": "ms"
+}
+
 //const grades = ["ONE", "TWO", "THREE", "FOUR", "FIVE"];
 const subjects = [
   "Math",
@@ -33,20 +49,7 @@ const subjects = [
 ];
 
 // Map subjects to their abbreviations
-const subjectAbbreviations = {
-  "Math": "m",
-  "English Language": "e",
-  "Basic Science and Technology": "bst",
-  "Computer": "c",
-  "History": "h",
-  "Physical and Health Education": "phe",
-  "National Values": "nv",
-  "Cultural and Creative Arts": "cca",
-  "PreVocational Studies": "pvs",
-  "French": "f",
-  "Religious Studies": "rs",
-  "Music": "ms"
-};
+5
 
 // Map grade names to todolist section names
 const gradeToSectionMap = {
