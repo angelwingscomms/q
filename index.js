@@ -29,7 +29,8 @@ const subjectAbbreviations = {
     "PreVocational Studies": "pvs",
     "French": "f",
     "Religious Studies": "rs",
-    "Music": "ms"
+    "Music": "ms",
+    "Civic Education": "ce"
 }
 
 //const grades = ["ONE", "TWO", "THREE", "FOUR", "FIVE"];
