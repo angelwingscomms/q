@@ -152,9 +152,46 @@ const singleQuizModel = genAI.getGenerativeModel({
   },
 });
 
-async function createSingleQuiz({ t }) {
+async function createSingleQuiz({ t, selectedClass, examType }) {
   try {
-    let extra_instructions = `if section A's questions are not up to 20, create extra questions to make them 20`
+    let obj = 0;
+    let sa = 0;
+    let essay = 0;
+
+    if (examType === "Midterm") {
+      obj = 20;
+      sa = 0;
+      essay = 0;
+    } else if (examType === "End of Term") {
+      sa = 5;
+      essay = 5;
+      if (selectedClass === "Grade 1" || selectedClass === "Grade 2") {
+        obj = 20;
+      } else if (selectedClass === "Grade 3") {
+        obj = 30;
+      } else if (selectedClass === "Grade 4") {
+        obj = 40;
+      } else if (selectedClass === "Grade 5") {
+        obj = 50;
+      } else {
+        obj = sa = essay = 0; // For Pre-Nursery, Nursery 1/2, Foundation
+      }
+    }
+
+    let extra_instructions = ``;
+    if (obj > 0) {
+      extra_instructions += `Section A should contain exactly ${obj} objective questions.`;
+    }
+    if (sa > 0) {
+      extra_instructions += ` Section B should contain exactly ${sa} short-answer questions.`;
+    }
+    if (essay > 0) {
+      extra_instructions += ` Section C should contain exactly ${essay} essay/theory questions.`;
+    }
+    if (obj === 0 && sa === 0 && essay === 0) {
+      extra_instructions = `Do not generate any questions for this class and exam type.`;
+    }
+
     const result =
       await singleQuizModel.generateContent(`
   Create a quiz with:
@@ -165,9 +202,8 @@ async function createSingleQuiz({ t }) {
   Each section should be an array of strings containing the questions for that section.
 
   Section A should contain objective questions (multiple choice).
-  Section B should contain short answer questions. (IF AND ONLY IF a section B or short answer questions' section is defined in the source text)
-  Section C should contain essay/theory questions. (IF AND ONLY IF a section C or essay questions' section is defined in the source text)
-
+   Section B should contain short answer questions.
+   Section C should contain essay/theory questions.
   IMPORTANT: Provide answers for all questions in each section in the corresponding answers_A, answers_B, and answers_C arrays.
 
   Format requirements:
@@ -836,6 +872,13 @@ async function main() {
       );
     });
 
+    const examTypes = ["Midterm", "End of Term"];
+    let selectedExamType = null;
+
+    if (mode === "1" || mode === "2" || mode === "6") {
+      selectedExamType = await displayMenu(examTypes, "Select exam type:");
+    }
+
     if (mode === "6") {
       // Grade selection as a menu of numbers
       const gradeSelection = await new Promise((resolve) => {
@@ -867,7 +910,7 @@ async function main() {
       });
 
       console.log("Generating multiple quizzes (skipping existing)...");
-      await generateMultipleQuizzes({ g: gradeSelection, skipExisting: true });
+      await generateMultipleQuizzes({ g: gradeSelection, skipExisting: true, selectedClass: gradeSelection, examType: selectedExamType });
     } else if (mode === "5") {
       // Ask about redoing existing answers
       const redoExisting = await new Promise((resolve) => {
@@ -1035,7 +1078,7 @@ async function main() {
       });
 
       console.log("Generating multiple quizzes...");
-      await generateMultipleQuizzes({ g: gradeSelection, skipExisting: false });
+      await generateMultipleQuizzes({ g: gradeSelection, skipExisting: false, selectedClass: gradeSelection, examType: selectedExamType });
     } else if (mode === "1") {
       // Grade selection as a menu of numbers
       const gradeSelection = await new Promise((resolve) => {
