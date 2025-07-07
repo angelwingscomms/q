@@ -194,64 +194,64 @@ async function createSingleQuiz({ t, selectedClass, examType }) {
 
     const result =
       await singleQuizModel.generateContent(`
-  Create a quiz with:
-  Section A,
-  Section B, IF AND ONLY IF a section B short answer questions' section is defined in the source text
-  Section C, IF AND ONLY IF a section C essay questions' section is defined in the source text.
-  
-  Each section should be an array of strings containing the questions for that section.
+        Create a quiz with:
+        Section A,
+        ${examType === "End of Term" ? "Section B, IF AND ONLY IF a section B short answer questions' section is defined in the source text" : ""}
+        ${examType === "End of Term" ? "Section C, IF AND ONLY IF a section C essay questions' section is defined in the source text." : ""}
 
-  Section A should contain objective questions (multiple choice).
-   Section B should contain short answer questions.
-   Section C should contain essay/theory questions.
-  IMPORTANT: Provide answers for all questions in each section in the corresponding answers_A, answers_B, and answers_C arrays.
+        Each section should be an array of strings containing the questions for that section.
 
-  Format requirements:
+        Section A should contain objective questions (multiple choice).
+        ${examType === "End of Term" ? "Section B should contain short answer questions." : ""}
+        ${examType === "End of Term" ? "Section C should contain essay/theory questions." : ""}
+        IMPORTANT: Provide answers for all questions in each section in the corresponding answers_A, answers_B, and answers_C arrays.
 
-  For Section A (objective questions):
-  - Never end with a full stop
-  - Use 1 underscore (_) for blanks
-  - Never end a question with a blank
-  - Use brackets for options (e.g., (a)...) and place questions and options on same line
-  - Fix bad questions by removing or replacing options to ensure one correct answer
-  - Questions may end with question marks
-  - For answers_A, provide only the letter of the correct option (a, b, c, etc.) or the word that fills the blank
+        Format requirements:
 
-  For Section B (short answer questions):
-  - Use 9 underscores (_________) for blanks
-  - For answers_B, provide concise answers
+        For Section A (objective questions):
+        - Never end with a full stop
+        - Use 1 underscore (_) for blanks
+        - Never end a question with a blank
+        - Use brackets for options (e.g., (a)...) and place questions and options on same line
+        - Fix bad questions by removing or replacing options to ensure one correct answer
+        - Questions may end with question marks
+        - For answers_A, provide only the letter of the correct option (a, b, c, etc.) or the word that fills the blank
 
-  For Section C (essay questions):
-  - Make questions clear and concise
-  - Maintain academic language level
-  - For answers_C, provide brief model answers or key points
+        ${examType === "End of Term" ? `For Section B (short answer questions):
+        - Use 9 underscores (_________) for blanks
+        - For answers_B, provide concise answers
 
-  examples:
-  """
-  1. When you take care of your body you will look attractive (a) True (b) False
+        For Section C (essay questions):
+        - Make questions clear and concise
+        - Maintain academic language level
+        - For answers_C, provide brief model answers or key points` : ""}
 
-  2. How many noses do you have? (a) 2 (b) 1 (c) 3
+        examples:
+        """
+        1. When you take care of your body you will look attractive (a) True (b) False
 
-  3. How many nostrils do you have? (a) 1 (b) 2 (c) 3
+        2. How many noses do you have? (a) 2 (b) 1 (c) 3
 
-  4. The two holes in your nose are called (a) Nose holes (b) Nostrils (c) Nose cover
+        3. How many nostrils do you have? (a) 1 (b) 2 (c) 3
 
-  5. _ is used for breathing (a) Ear (b) Eyes (c) Nose
+        4. The two holes in your nose are called (a) Nose holes (b) Nostrils (c) Nose cover
 
-  6. How many eyes do you have? (a) 4 (b) 1 (c) 2
+        5. _ is used for breathing (a) Ear (b) Eyes (c) Nose
 
-  7. The capital of Ameria is _________
+        6. How many eyes do you have? (a) 4 (b) 1 (c) 2
 
-  8. The capital of China is _________
-  
-  9. The capital of Nigeria is _________
-  """
+        7. The capital of Ameria is _________
 
-  let the questions be numbered
-  sections may have subsections, with headings, instructions for the questions that follow perhaps, or passages, or just such parts that are not really questions in themselves, e.g "Write the short form of the following words". Add such parts as unnumbered questions, except for mainsections A, B and C.
-  ${extra_instructions}
+        8. The capital of China is _________
 
-  Text to create quiz from:
+        9. The capital of Nigeria is _________
+        """
+
+        let the questions be numbered
+        sections may have subsections, with headings, instructions for the questions that follow perhaps, or passages, or just such parts that are not really questions in themselves, e.g "Write the short form of the following words". Add such parts as unnumbered questions, except for mainsections A, B and C.
+        ${extra_instructions}
+
+        Text to create quiz from:
   """
   ${t}
   """
