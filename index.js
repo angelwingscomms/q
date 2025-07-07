@@ -180,13 +180,13 @@ async function createSingleQuiz({ t, selectedClass, examType }) {
 
     let extra_instructions = ``;
     if (obj > 0) {
-      extra_instructions += `Section A should contain exactly ${obj} objective questions.`;
+      extra_instructions += `Let section A  contain exactly ${obj} objective questions.`;
     }
     if (sa > 0) {
-      extra_instructions += ` Section B should contain exactly ${sa} short-answer questions.`;
+      extra_instructions += ` Let section B  contain exactly ${sa} short-answer questions.`;
     }
     if (essay > 0) {
-      extra_instructions += ` Section C should contain exactly ${essay} essay/theory questions.`;
+      extra_instructions += ` Let section C  contain exactly ${essay} essay/theory questions.`;
     }
     if (obj === 0 && sa === 0 && essay === 0) {
       extra_instructions = `Do not generate any questions for this class and exam type.`;
