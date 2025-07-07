@@ -1,0 +1,58 @@
+{
+  "A": [
+    "1. Drugs keep people _",
+    "2. Food and other substances keep hunger _",
+    "3. People take soft drinks for (a) health (b) enjoyment (c) energy",
+    "4. Some people take substances because they see others (a) avoiding (b) taking (c) selling them",
+    "5. Some people take some substances out of (a) habit (b) curiosity (c) necessity",
+    "6. Overdose means to take _ food or drink",
+    "7. Overdose is a (a) good (b) healthy (c) bad habit that a good pupil must avoid",
+    "8. Which of these is a sign of overdose? (a) Happiness (b) Stooling (c) Energy",
+    "9. Vomiting is a sign of (a) hunger (b) thirst (c) overdose",
+    "10. When a person faints, it can be a sign of (a) overdose (b) excitement (c) rest",
+    "11. Sleeplessness can be a sign of (a) overdose (b) being awake (c) being tired",
+    "12. A common sign of overdose is (a) Stomach-pain (b) Head-ache (c) Back-pain",
+    "13. When a person drinks too much, he _ frequently",
+    "14. A child who drinks too much water before going to bed usually (a) wakes up (b) bed-wets (c) feels thirsty",
+    "15. An adult who drinks too much alcohol becomes (a) sober (b) drunk (c) hungry",
+    "16. Too much smoke can make someone (a) strong (b) faint (c) hungry",
+    "17. Food is what we eat to grow, stay alive, and have _",
+    "18. We get our food from the (a) shop (b) farm (c) factory",
+    "19. We buy some food items in the _",
+    "20. We get meat from (a) plants (b) animals (c) minerals"
+  ],
+  "answers_A": [
+    "alive",
+    "away",
+    "b",
+    "b",
+    "b",
+    "too much",
+    "c",
+    "b",
+    "c",
+    "a",
+    "a",
+    "a",
+    "urinates",
+    "b",
+    "b",
+    "b",
+    "energy",
+    "b",
+    "market",
+    "b"
+  ],
+  "C": [
+    "1. What are the effects of drinking too much?",
+    "2. What happens to a person who inhales too much smoke?",
+    "3. How can you help people who suffer from the effects of too much eating, drinking and inhaling smoke?"
+  ],
+  "answers_C": [
+    "Frequent urination; bed-wetting (for children); becoming drunk (for adults).",
+    "They can faint.",
+    "Take them to the hospital immediately; apply first aid if they faint; report children who smoke or drink alcohol to teachers and parents."
+  ],
+  "B": [],
+  "answers_B": []
+}
