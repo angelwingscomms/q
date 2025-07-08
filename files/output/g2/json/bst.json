@@ -1,0 +1,74 @@
+{
+  "A": [
+    "1. A device that makes work faster and easier is called a _ (a) tool (b) machine (c) gadget",
+    "2. Which of the following is an example of a simple machine (a) computer (b) spoon (c) car",
+    "3. A bottle opener is an example of a simple _ (a) tool (b) machine (c) device",
+    "4. Broom, hammer, and cutlass are all examples of _ machines (a) complex (b) simple (c) electronic",
+    "5. One advantage of using a simple machine is that it makes work _ (a) difficult (b) slow (c) fast",
+    "6. Simple machines help to save _ (a) money (b) time (c) effort",
+    "7. Using a simple machine helps to save _ (a) space (b) energy (c) food",
+    "8. Simple machines enable us to do _ work (a) less (b) more (c) zero",
+    "9. When using a knife, one should always use it _ (a) carelessly (b) carefully (c) quickly",
+    "10. To give a pair of scissors to someone, you should do it _ (a) carelessly (b) quickly (c) carefully",
+    "11. Scissors are typically made from metal and _ (a) wood (b) plastic (c) rubber",
+    "12. A broom is commonly made from _ (a) steel (b) raffia (c) plastic",
+    "13. A catapult is made from wood and _ (a) metal (b) plastic (c) rubber",
+    "14. The ability to do work is known as _ (a) power (b) energy (c) strength",
+    "15. We need energy to perform daily activities like washing clothes and _ (a) sleeping (b) running (c) cooking",
+    "16. Which of these items uses energy (a) rock (b) stove (c) cloud",
+    "17. A television is an example of something that uses _ (a) water (b) energy (c) sound",
+    "18. Energy is used for lifting _ objects (a) light (b) heavy (c) small",
+    "19. Fetching water from a well uses _ (a) gravity (b) energy (c) pressure",
+    "20. A fridge uses energy to keep food _ (a) warm (b) cold (c) fresh"
+  ],
+  "answers_A": [
+    "b",
+    "b",
+    "b",
+    "b",
+    "c",
+    "b",
+    "b",
+    "b",
+    "b",
+    "c",
+    "b",
+    "b",
+    "c",
+    "b",
+    "c",
+    "b",
+    "b",
+    "b",
+    "b",
+    "b"
+  ],
+  "B": [
+    "1. State the meaning of energy._________",
+    "2. Name four items that make use of energy._________",
+    "3. Name three materials used for making simple machines._________",
+    "4. List two examples of simple machines mentioned in the text._________",
+    "5. What is one important safety rule when using a knife?_________"
+  ],
+  "C": [
+    "1. Discuss the primary advantages of utilizing simple machines in daily tasks.",
+    "2. Explain the importance of safe handling practices when operating simple machines, providing examples from the text.",
+    "3. Describe how different materials contribute to the functionality of various simple machines, citing examples.",
+    "4. Define energy and elaborate on its fundamental role in human activities, referencing examples from the provided text.",
+    "5. Identify and categorize common household items that consume energy, explaining their basic function in relation to energy use."
+  ],
+  "answers_B": [
+    "Energy is the ability to do work.",
+    "Stove, heater, torch, fridge (or bulb, television, fan).",
+    "Steel, wood, plastic (or rope, rubber).",
+    "Spoon, Bottle Opener (or Broom, Hammer, Cutlass, Pliers, Forks, Sickle, Windlass, Wheel barrow).",
+    "Use a knife carefully (or Do not use a knife carelessly, Hold the knife the correct way)."
+  ],
+  "answers_C": [
+    "Simple machines make work faster and easier, save time and energy, and help individuals accomplish more work efficiently.",
+    "Safe handling prevents accidents and injuries. Examples include using a knife carefully, holding it correctly, and carefully passing scissors to others. Carelessness can lead to harm.",
+    "Different materials are chosen based on the machine's purpose and required properties. For instance, scissors use metal for cutting blades and plastic for handles (grip/insulation), a broom uses raffia for sweeping, and a catapult uses wood for structure and rubber for elasticity.",
+    "Energy is the ability to do work. It is crucial for almost all human activities, enabling us to perform tasks like washing clothes, working on the farm, carrying loads, cooking, walking, and bathing. Without energy, these actions would be impossible.",
+    "Common household items that consume energy include stoves (for heating/cooking), heaters (for warmth), torches (for light), fridges (for cooling/preservation), bulbs (for light), televisions (for entertainment/information), and fans (for cooling/air circulation). Each utilizes energy to perform its specific function."
+  ]
+}

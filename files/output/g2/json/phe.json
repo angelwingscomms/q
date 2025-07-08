@@ -1,0 +1,77 @@
+{
+  "A": [
+    "Section A: Objective questions",
+    "1. Rest is the period that a person is _ doing anything (a) not (b) always (c) sometimes",
+    "2. When the body works for a long period of time it needs rest so as to _ the muscles (a) strain (b) relax (c) strengthen",
+    "3. Too much work for a long period of time _ the body (a) helps (b) harms (c) builds",
+    "4. Rest helps both children and adolescent to _ (a) grow (b) play (c) learn",
+    "5. Rest refreshes the mind and the body _ (a) muscles (b) organs (c) cells",
+    "6. Rest helps us to concentrate better at _ or work (a) home (b) school (c) play",
+    "7. Rest helps the brain and the heart to _ well (a) stop (b) function (c) weaken",
+    "8. Sleeping is when a person lies down with his eyes closed while the mind and body are _ (a) active (b) busy (c) inactive",
+    "9. People should sleep in a _ room (a) noisy (b) comfortable (c) cold",
+    "10. People should sleep in a well _ room (a) furnished (b) ventilated (c) decorated",
+    "11. The beddings should be clean and _ (a) hard (b) rough (c) comfortable",
+    "12. One should avoid _ of people on the same bed (a) separation (b) overcrowding (c) few",
+    "13. One should avoid overcrowding of people in the same _ (a) house (b) room (c) building",
+    "14. First aid is the _ assistance given to an injured or sick person (a) second (b) first (c) last",
+    "15. The purpose of first aid is to ease the victim's _ (a) joy (b) pains (c) hunger",
+    "16. First aid aims to prevent a victim's condition from getting _ (a) better (b) worse (c) stable",
+    "17. Bleeding occurs when blood flows out of the blood _ (a) cells (b) vessels (c) organs",
+    "18. Bleeding can be internal or _ (a) external (b) minor (c) severe",
+    "19. When stopping bleeding, one should _ the bleeding part of the body (a) lower (b) raise (c) cover",
+    "20. To prevent fainting, raise the foot of the bed to allow more blood to flow to the _ (a) legs (b) heart (c) brain"
+  ],
+  "answers_A": [
+    "a",
+    "b",
+    "b",
+    "a",
+    "b",
+    "b",
+    "b",
+    "c",
+    "b",
+    "b",
+    "c",
+    "b",
+    "b",
+    "b",
+    "b",
+    "b",
+    "b",
+    "a",
+    "b",
+    "c"
+  ],
+  "B": [
+    "Section B: Short answer questions",
+    "1. Name two importances of resting._________",
+    "2. Sleeping is when a person lies down with his eyes closed while the mind and body are _________.",
+    "3. List two best conditions for sleeping._________",
+    "4. First aid is the first assistance given to an injured or sick person before the arrival of a _________.",
+    "5. What is the primary purpose of first aid?_________"
+  ],
+  "C": [
+    "Section C: Theory questions",
+    "1. Explain the various importances of resting as described in the text.",
+    "2. Describe the ideal conditions for sleeping to ensure proper rest.",
+    "3. Define first aid and discuss its main objectives.",
+    "4. Outline the sequential steps involved in stopping severe bleeding according to the provided text.",
+    "5. Based on the text, what is fainting and what are its potential causes?"
+  ],
+  "answers_B": [
+    "It helps children and adolescents to grow; It refreshes the mind and body organs.",
+    "inactive",
+    "Comfortable room; Well-ventilated room",
+    "medical doctor",
+    "To ease the victim's pains and to prevent his or her condition from getting worse."
+  ],
+  "answers_C": [
+    "Resting is important as it helps children/adolescents grow, refreshes mind/body organs, improves concentration at school/work, and helps brain/heart function well.",
+    "Ideal sleeping conditions include a comfortable, well-ventilated room, clean and comfortable beddings, and avoiding overcrowding of people on the same bed or in the same room.",
+    "First aid is the initial assistance given to an injured or sick person before medical help arrives. Its main objectives are to ease the victim's pains and prevent their condition from worsening.",
+    "Steps to stop severe bleeding: 1. Calm the patient and lay them flat. 2. Reassure the patient to prevent fear. 3. Loosen clothes around neck/waist for easy breathing. 4. Raise the bleeding part to reduce blood flow. 5. Raise the foot of the bed to increase blood flow to the brain and prevent fainting.",
+    "Fainting is a temporary loss of consciousness where a person loses touch with their surroundings. It may occur due to insufficient supply of air or blood to the brain."
+  ]
+}

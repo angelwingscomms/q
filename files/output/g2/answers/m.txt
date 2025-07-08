@@ -1,0 +1,35 @@
+Section A (Objective) Answers:
+1. b
+2. a
+3. b
+4. b
+5. b
+6. b
+7. b
+8. b
+9. b
+10. b
+11. b
+12. b
+13. b
+14. c
+15. b
+16. b
+17. b
+18. c
+19. c
+20. b
+
+Section B (Short Answer) Answers:
+1. The minute hand tells the number of minutes past or to the hour.
+2. The hour hand indicates the current hour, while the minute hand indicates the minutes within that hour.
+3. 5:30
+4. The hour hand is pointing at 4, and the minute hand is pointing at 12.
+5. Digital time represents time using numerical digits, typically in an HH:MM format.
+
+Section C (Theory) Answers:
+1. Analogue time uses a clock face with hands (hour, minute) to show time, relying on position. Digital time uses numerical digits. Analogue might be preferred for visualizing time passage (e.g., how much time is left until the minute hand reaches 12), while digital is preferred for precise, quick reading (e.g., 5:30 on a phone).
+2. The 12-hour clock system divides the day into two 12-hour periods (AM and PM). The hour hand completes two full rotations in 24 hours, indicating the hour of the day or night, while the minute hand indicates minutes within that hour, completing 12 rotations for each hour hand rotation.
+3. The hour hand points to the hour, and the minute hand points to the minutes. For 'o'clock', the minute hand is at 12, and the hour hand is directly on the number for the hour. For 'half past', the minute hand is at 6 (indicating 30 minutes), and the hour hand is halfway between the current hour and the next.
+4. Precise time-telling is crucial for scheduling appointments, catching transportation, managing work deadlines, and coordinating social events. For example, missing a train by a minute can cause significant delays, or arriving late for an appointment can be disrespectful.
+5. To teach a young child, focus on identifying the 'short hand' (hour) and 'long hand' (minute). Start with 'o'clock' times, explaining that when the long hand is at 12, the short hand tells the hour. Then introduce 'half past' by showing the long hand at 6 and explaining it means 30 minutes past the hour.

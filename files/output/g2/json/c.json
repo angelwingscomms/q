@@ -1,0 +1,80 @@
+{
+  "A": [
+    "Section A: Objective Questions",
+    "1. What are IT devices used for? (a) Cooking (b) Passing information (c) Playing games",
+    "2. Which of the following is an example of an IT device? (a) Spoon (b) Radio (c) Shoe",
+    "3. A television allows us to watch _ and news (a) Movies (b) Cartoons (c) Books",
+    "4. The buttons on a television are used for changing channels and the _ (a) Color (b) Size (c) Volume",
+    "5. A radio passes _ sound programmes and messages to the public (a) Video (b) Audio (c) Silent",
+    "6. The _ on a radio is for receiving sound messages (a) Knob (b) Speaker (c) Antenna",
+    "7. A calculator performs addition and _ of numbers (a) Multiplication (b) Division (c) Subtraction",
+    "8. You see numbers pressed on a calculator's _ (a) Keypad (b) Small screen (c) Button",
+    "9. A computer is an _ device (a) Mechanical (b) Electronic (c) Manual",
+    "10. A computer processes data and gives _ (a) Problems (b) Information (c) Food",
+    "11. The _ on a computer shows what has been entered from the keyboard (a) System unit (b) Monitor (c) Mouse",
+    "12. The system unit connects all other _ to the computer (a) People (b) Devices (c) Wires",
+    "13. A digital wristwatch displays the time in _ (a) Pictures (b) Letters (c) Numbers",
+    "14. A wristwatch shows the hour, the minute, and the _ (a) Day (b) Second (c) Year",
+    "15. A mobile phone is used to _ among people at long distances (a) Sleep (b) Communicate (c) Eat",
+    "16. A mobile phone has a small screen and a number of _ to dial phone numbers (a) Wires (b) Buttons (c) Keys",
+    "17. Which of these is NOT listed as an IT device in the text? (a) Digital camera (b) Refrigerator (c) Calculator",
+    "18. The device that displays time in numbers is a _ wristwatch (a) Analog (b) Digital (c) Mechanical",
+    "19. A radio has a _ through which sound is passed (a) Antenna (b) Knob (c) Speaker",
+    "20. IT devices are used to pass information from one person to another and from one place to _ (a) Home (b) Another (c) School"
+  ],
+  "answers_A": [
+    "b",
+    "b",
+    "b",
+    "c",
+    "b",
+    "c",
+    "c",
+    "b",
+    "b",
+    "b",
+    "b",
+    "b",
+    "c",
+    "b",
+    "b",
+    "c",
+    "b",
+    "b",
+    "c",
+    "b"
+  ],
+  "B": [
+    "Section B: Short Answer Questions",
+    "1. What is the main purpose of Information Technology (IT) devices?",
+    "2. Name three examples of common Information Technology devices mentioned in the text.",
+    "3. What are the two main functions a calculator performs?",
+    "4. Besides changing channels, what other function do buttons on a television serve?",
+    "5. What is the primary function of a mobile GSM phone?"
+  ],
+  "C": [
+    "Section C: Theory Questions",
+    "1. Explain how a radio works to transmit information to the public, detailing its key components.",
+    "2. Describe the main functions and components of a computer system as outlined in the text.",
+    "3. Compare and contrast the communication methods of a mobile phone and a radio based on the provided text.",
+    "4. Discuss the role of a digital wristwatch in daily life, focusing on its display features.",
+    "5. Elaborate on the general significance of IT devices in facilitating information exchange, drawing examples from the text.",
+    " "
+  ],
+  "answers_B": [
+    "To pass information from one person to another and from one place to another.",
+    "Calculator, Radio, Television",
+    "Addition and subtraction of numbers.",
+    "Changing the volume.",
+    "To communicate among people at long distances.",
+    " "
+  ],
+  "answers_C": [
+    "A radio passes audio sound programmes and messages to the public. It uses an antenna to receive sound messages, a knob to tune to different stations, and a speaker through which the sound is finally passed to the listener.",
+    "A computer is an electronic device designed to process data and provide information. It consists of a monitor, which displays the input from the keyboard, and a system unit, which is crucial for connecting all other peripheral devices.",
+    "Both mobile phones and radios are IT devices used for communication. A radio primarily transmits audio sound programmes and messages to the public in a broadcast manner, while a mobile phone is a small radio telephone used for direct, long-distance communication between individuals, involving dialing numbers.",
+    "A digital wristwatch is worn on the wrist and serves to display time. Its key feature is showing the time in numbers, specifically indicating the hour, minute, and second, providing a quick and clear reference for time.",
+    "IT devices are fundamental in enabling information exchange from person to person and place to place. For instance, televisions provide visual news and entertainment, radios broadcast audio messages, and mobile phones facilitate long-distance verbal communication. Computers process data into usable information, and calculators aid in numerical tasks, all contributing to efficient information handling.",
+    " "
+  ]
+}

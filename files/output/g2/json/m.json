@@ -1,0 +1,74 @@
+{
+  "A": [
+    "1. The long hand on a clock face is called the _ hand. (a) hour (b) minute (c) second",
+    "2. The short hand on a clock face is called the _ hand. (a) hour (b) minute (c) second",
+    "3. The minute hand tells the number of _ past or to the hour. (a) hours (b) minutes (c) seconds",
+    "4. A typical clock face shows _-hour clock times. (a) 6 (b) 12 (c) 24",
+    "5. If the hour hand points to 4 and the minute hand points to 12, the time is _ o'clock. (a) 12 (b) 4 (c) 8",
+    "6. If the hour hand points to 8 and the minute hand points to 12, the time is _ o'clock. (a) 4 (b) 8 (c) 12",
+    "7. Analogue time is typically displayed using a _ face. (a) digital (b) clock (c) stopwatch",
+    "8. Digital time is typically displayed using _. (a) hands (b) numbers (c) pictures",
+    "9. 5:00 in analogue time is referred to as _ o'clock. (a) half past five (b) five (c) quarter past five",
+    "10. Half past 5 in digital time is written as _. (a) 5:00 (b) 5:30 (c) 6:00",
+    "11. The hand that indicates the hour is the _ hand. (a) long (b) short (c) minute",
+    "12. The hand that sweeps around the clock face faster is the _ hand. (a) hour (b) minute (c) second",
+    "13. When the minute hand is at the 12, it indicates the start of a new _. (a) minute (b) hour (c) day",
+    "14. If a clock shows 5:00, the minute hand is pointing at _. (a) 5 (b) 6 (c) 12",
+    "15. If a clock shows 5:30, the minute hand is pointing at _. (a) 5 (b) 6 (c) 12",
+    "16. The time 'half past 5' means 30 minutes _ 5 o'clock. (a) before (b) past (c) exactly at",
+    "17. The clock face is used to show _ time. (a) digital (b) analogue (c) binary",
+    "18. The number of minutes past the hour is told by the _ hand. (a) hour (b) short (c) minute",
+    "19. If the hour hand is exactly on a number, and the minute hand is on 12, the time is _ o'clock. (a) half past (b) quarter past (c) exactly",
+    "20. The purpose of the minute hand is to indicate _. (a) hours (b) minutes (c) seconds"
+  ],
+  "answers_A": [
+    "b",
+    "a",
+    "b",
+    "b",
+    "b",
+    "b",
+    "b",
+    "b",
+    "b",
+    "b",
+    "b",
+    "b",
+    "b",
+    "c",
+    "b",
+    "b",
+    "b",
+    "c",
+    "c",
+    "b"
+  ],
+  "B": [
+    "1. What is the primary function of the minute hand on a clock face? _________",
+    "2. How does the hour hand differ in function from the minute hand? _________",
+    "3. Convert 'half past 5' into digital time. _________",
+    "4. If an analogue clock shows 4 o'clock, where are the hour and minute hands positioned? _________",
+    "5. Briefly define what 'digital time' refers to. _________"
+  ],
+  "C": [
+    "1. Discuss the fundamental differences between analogue and digital time displays, and provide a scenario where one might be preferred over the other.",
+    "2. Explain the significance of the 12-hour clock system as depicted on a clock face, detailing how it represents a full day.",
+    "3. Describe the relationship between the hour hand and the minute hand in indicating time, particularly how they work together to show 'o'clock' and 'half past' times.",
+    "4. Analyze the importance of precise time-telling in everyday activities, giving examples where understanding time is crucial.",
+    "5. Propose a simple method for a young child to learn how to tell time using an analogue clock, based on the information provided about clock hands."
+  ],
+  "answers_B": [
+    "The minute hand tells the number of minutes past or to the hour.",
+    "The hour hand indicates the current hour, while the minute hand indicates the minutes within that hour.",
+    "5:30",
+    "The hour hand is pointing at 4, and the minute hand is pointing at 12.",
+    "Digital time represents time using numerical digits, typically in an HH:MM format."
+  ],
+  "answers_C": [
+    "Analogue time uses a clock face with hands (hour, minute) to show time, relying on position. Digital time uses numerical digits. Analogue might be preferred for visualizing time passage (e.g., how much time is left until the minute hand reaches 12), while digital is preferred for precise, quick reading (e.g., 5:30 on a phone).",
+    "The 12-hour clock system divides the day into two 12-hour periods (AM and PM). The hour hand completes two full rotations in 24 hours, indicating the hour of the day or night, while the minute hand indicates minutes within that hour, completing 12 rotations for each hour hand rotation.",
+    "The hour hand points to the hour, and the minute hand points to the minutes. For 'o'clock', the minute hand is at 12, and the hour hand is directly on the number for the hour. For 'half past', the minute hand is at 6 (indicating 30 minutes), and the hour hand is halfway between the current hour and the next.",
+    "Precise time-telling is crucial for scheduling appointments, catching transportation, managing work deadlines, and coordinating social events. For example, missing a train by a minute can cause significant delays, or arriving late for an appointment can be disrespectful.",
+    "To teach a young child, focus on identifying the 'short hand' (hour) and 'long hand' (minute). Start with 'o'clock' times, explaining that when the long hand is at 12, the short hand tells the hour. Then introduce 'half past' by showing the long hand at 6 and explaining it means 30 minutes past the hour."
+  ]
+}
