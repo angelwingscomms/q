@@ -1,0 +1,76 @@
+{
+  "A": [
+    "1. The Joystick is used to play computer _ (a) board games (b) video games (c) computer games",
+    "2. The Joystick is an _ device (a) output (b) input (c) processing",
+    "3. A Joystick is used to select and control _ and images of computer games (a) sounds (b) items (c) colors",
+    "4. The monitor screen is like a _ (a) radio (b) television (c) phone",
+    "5. The monitor is used to show words, pictures and _ from the computer (a) music (b) films (c) games",
+    "6. Which of these is an output device that shows images? (a) Printer (b) Speaker (c) Monitor",
+    "7. The printer is an _ device (a) input (b) output (c) storage",
+    "8. A printer is used to transfer data from the computer to _ (a) screen (b) paper (c) speaker",
+    "9. Which of these can transfer text and pictures to paper? (a) Monitor (b) Speaker (c) Printer",
+    "10. A speaker is used to transfer _ from the computer (a) images (b) sound (c) data",
+    "11. You can listen to music from computers using a _ (a) printer (b) speaker (c) monitor",
+    "12. The system unit is chiefly made up of CPU, disk drive and _ (a) keyboard (b) mouse (c) motherboard",
+    "13. The system unit is often called _ (a) ALU (b) RAM (c) CPU",
+    "14. Which of these is NOT a drive found in the CPU? (a) CD/DVD disk drive (b) Floppy disk (c) USB printer",
+    "15. The CPU consists of CU, RAM and _ (a) ROM (b) ALU (c) GPU",
+    "16. RAM stands for random access _ (a) memory (b) module (c) media",
+    "17. What makes the computer work? (a) Monitor (b) Speaker (c) CPU",
+    "18. The CPU stores data in the _ unit (a) storage (b) memory (c) processing",
+    "19. Which unit performs arithmetic calculations? (a) CU (b) RAM (c) ALU",
+    "20. Devices that store data for future use are called _ devices (a) input (b) output (c) storage"
+  ],
+  "answers_A": [
+    "c",
+    "b",
+    "b",
+    "b",
+    "b",
+    "c",
+    "b",
+    "b",
+    "c",
+    "b",
+    "b",
+    "c",
+    "c",
+    "c",
+    "b",
+    "a",
+    "c",
+    "b",
+    "c",
+    "c"
+  ],
+  "B": [
+    "1. The Joystick is an _________ device.",
+    "2. The monitor is used to show words, pictures, and _________ from the computer.",
+    "3. A printer is used to transfer data from the computer to _________.",
+    "4. A speaker is used to transfer _________ from the computer.",
+    "5. Name two types of disk drives found in the system unit. _________ and _________"
+  ],
+  "C": [
+    "1. Explain the primary function of a Joystick in relation to computer usage.",
+    "2. Describe the role of a monitor as an output device.",
+    "3. What is a printer and what kind of data can it transfer?",
+    "4. List and briefly describe the main components that make up the CPU.",
+    "5. Define storage devices and provide three examples from the text.",
+    "6. What is the difference between a storage drive and a storage disk?"
+  ],
+  "answers_B": [
+    "input",
+    "films",
+    "paper",
+    "sound",
+    "CD/DVD disk drive, floppy disk"
+  ],
+  "answers_C": [
+    "A Joystick is an input device primarily used for playing computer games. Its function is to allow users to select and control items and images within these games.",
+    "A monitor is an output device with a screen, similar to a television. Its role is to display visual information from the computer, such as words, pictures, and films, making it visible to the user.",
+    "A printer is an output device shaped like a box, used to transfer digital data from a computer to physical paper. It can transfer various types of data including text, pictures, charts, tables, and sketches.",
+    "The CPU (Central Processing Unit) is made up of three main components: the Control Unit (CU), which controls all activities; Random Access Memory (RAM), which is a type of memory; and the Arithmetic and Logic Unit (ALU), which performs calculations and logical operations.",
+    "Storage devices are computer hardware components designed to store data and information persistently for future retrieval and use. Examples include Flash drive, Hard disk, and Compact disk (CD).",
+    "A storage drive uses electricity to read/write data, while a storage disk does not use electricity to store the information itself."
+  ]
+}

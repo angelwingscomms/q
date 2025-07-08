@@ -1,0 +1,82 @@
+{
+  "A": [
+    "1. Any substance apart from food and water, that when taken can change the normal physical and mental functions of the body is called _ (a) Food (b) Water (c) Drugs",
+    "2. Drugs are normally used to cure _ (a) hunger (b) illness (c) thirst",
+    "3. Which drug is used to treat headache and pain? (a) Nivaquine (b) Aspirin (c) Daga",
+    "4. Daga is used to treat all of the following except _ (a) headache (b) body pains (c) malaria",
+    "5. Nivaquine is used to treat _ (a) headache (b) toothache (c) malaria",
+    "6. Panadol is primarily used for (a) malaria (b) headache and body ache (c) toothache",
+    "7. Both Panadol and Paracetamol are used to treat _ (a) malaria (b) toothache (c) headache and body pain",
+    "8. Traditional herbal drugs are also called _ drugs (a) synthetic (b) naturally occurring (c) processed",
+    "9. Traditional herbal drugs are derived from natural substances such as _ (a) plants (b) animals (c) both plants and animals",
+    "10. Which of the following is not a form of drug? (a) Syrup (b) Food (c) Tablet",
+    "11. Traditional drugs are usually served in their _ form (a) refined (b) processed (c) natural",
+    "12. Traditional drugs often come from _ (a) chemicals (b) laboratories (c) leaves and roots of trees",
+    "13. Modern drugs are _ processed (a) naturally (b) artificially (c) chemically",
+    "14. Traditional drugs are usually administered in their _ (a) processed state (b) natural state (c) synthetic state",
+    "15. Which type of drug normally comes in doses? (a) Herbal (b) Traditional (c) Modern",
+    "16. For traditional drugs, the _ plant is used for medicinal purposes (a) active ingredient of the (b) entire (c) processed part of the",
+    "17. Modern drugs contain _ substances (a) natural (b) herbal (c) synthetic",
+    "18. Traditional drugs are usually preserved _ (a) artificially (b) naturally (c) with chemicals",
+    "19. Which type of drug usually has an expiry date? (a) Herbal (b) Traditional (c) Modern",
+    "20. Most herbal drugs do not have a specific _ date (a) manufacturing (b) expiry (c) packaging"
+  ],
+  "answers_A": [
+    "c",
+    "b",
+    "b",
+    "c",
+    "c",
+    "b",
+    "c",
+    "b",
+    "c",
+    "b",
+    "c",
+    "c",
+    "b",
+    "b",
+    "c",
+    "b",
+    "c",
+    "b",
+    "c",
+    "b"
+  ],
+  "B": [
+    "1. Define drugs.",
+    "2. What is the primary purpose of drugs?",
+    "3. Name three common drugs mentioned in the text.",
+    "4. From what natural substances are traditional herbal drugs derived?",
+    "5. List four common forms of drugs.",
+    "The capital of Ameria is _________",
+    "The capital of China is _________",
+    "The capital of Nigeria is _________"
+  ],
+  "C": [
+    "1. Explain the general definition of drugs and briefly mention their dual nature regarding use and abuse.",
+    "2. Describe what traditional herbal drugs are and provide examples of their sources.",
+    "3. Discuss how traditional drugs are typically prepared and administered compared to modern drugs.",
+    "4. Compare and contrast modern (synthetic) drugs and traditional (herbal) drugs based on their processing and dosage compliance.",
+    "5. Explain the differences between modern and traditional drugs regarding their active ingredients, synthetic content, and expiry dates.",
+    "Write the short form of the following words"
+  ],
+  "answers_B": [
+    "Any substance apart from food and water that, when taken, can change the normal physical and mental functions of the body.",
+    "To cure illness.",
+    "Aspirin, Nivaquine, Panadol.",
+    "Plants, animals, chalk, and charcoal.",
+    "Syrup, Ointment, Injection, Tablet.",
+    "Washington DC",
+    "Beijing",
+    "Abuja"
+  ],
+  "answers_C": [
+    "Drugs are substances, excluding food and water, that alter the body's physical and mental functions. While primarily used to cure illness, they can also be abused for other purposes.",
+    "Traditional herbal drugs are naturally occurring substances derived from natural sources like plants (leaves, roots, barks), animals, chalk, and charcoal, often used in their natural form.",
+    "Traditional drugs are usually served in their natural form, often as leaves, roots, or barks of trees, and are typically administered without strict dosage compliance. Modern drugs, conversely, are processed, refined, and come in specific doses.",
+    "Modern drugs are artificially processed and come in specific doses. Traditional drugs occur naturally, are administered in their natural state, and often lack strict dosage compliance.",
+    "Modern drugs extract active ingredients, contain synthetic substances (chemicals, preservatives), and have expiry dates. Traditional drugs use the entire plant, are preserved naturally, and usually lack specific expiry dates.",
+    "This is not a question, so no answer is required."
+  ]
+}

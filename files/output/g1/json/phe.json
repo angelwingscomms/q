@@ -1,0 +1,71 @@
+{
+  "A": [
+    "1. Before starting a ball game, you must always inspect the play _ (a) area (b) equipment (c) opponent)",
+    "2. It is important to always use the right sports _ for each ball game (a) equipment (b) wear (c) rules)",
+    "3. Playing on slippery ground or wet floor is _ (a) safe (b) encouraged (c) discouraged)",
+    "4. While playing, you should not chew _ or have anything in your mouth like toothpick (a) gum (b) water (c) snacks)",
+    "5. Getting involved in a fight with other teams or players is _ (a) allowed (b) prohibited (c) sometimes okay)",
+    "6. You must _ before you start the game (a) rest (b) warm-up (c) eat)",
+    "7. If you get tired during a game, you should _ (a) continue playing (b) come out (c) try harder)",
+    "8. If you feel pain in your joints or muscles, you should _ (a) ignore it (b) stop playing right away (c) play through it)",
+    "9. The first safety rule mentioned for ball and racket games is to use the right sports _ (a) shoes (b) wear (c) racket)",
+    "10. Inspecting the play area before a game is a _ rule (a) optional (b) safety (c) general)",
+    "11. Pollution occurs when the environment is filled with _ substances (a) natural (b) harmless (c) harmful)",
+    "12. Noise pollution is a sound that is loud, surprising, irritating or _ (a) wanted (b) pleasant (c) unwanted)",
+    "13. Any noise that is unpleasant, undesirable and irritating to the human ear is called _ pollution (a) air (b) noise (c) water)",
+    "14. To prevent noise pollution, car horns should not be used _ (a) necessarily (b) unnecessarily (c) rarely)",
+    "15. Music should not be played at a _ volume to prevent noise pollution (a) low (b) moderate (c) high)",
+    "16. Government should put in place _ that bans noise pollution (a) suggestions (b) laws (c) recommendations)",
+    "17. Cars and motorcycle engines should be turned off when they are not in _ (a) repair (b) use (c) garage)",
+    "18. Grinding machines and generators should be kept far from where people _ (a) work (b) live (c) play)",
+    "19. Chemical pollution is the release of dangerous materials or substances into the _ (a) atmosphere (b) environment (c) water bodies)",
+    "20. Smoke from factories and cars is an example of a substance that causes _ pollution (a) noise (b) chemical (c) air)"
+  ],
+  "answers_A": [
+    "a",
+    "b",
+    "c",
+    "a",
+    "b",
+    "b",
+    "b",
+    "b",
+    "b",
+    "b",
+    "c",
+    "c",
+    "b",
+    "b",
+    "c",
+    "b",
+    "b",
+    "b",
+    "b",
+    "b"
+  ],
+  "B": [
+    "Write short answers for the following questions.",
+    "1. List two safety rules to follow in ball and racket games.",
+    "2. What should you do if you feel pain in your joints or muscles during a game?",
+    "3. Define noise pollution.",
+    "4. Name two ways to prevent noise pollution related to vehicles.",
+    "5. Give two examples of substances that cause chemical pollution by filling the blanks: Smoke from factories, homes, cars, and generators are examples of substances that cause chemical pollution, as well as burning refuse and _________ of gases. "
+  ],
+  "answers_B": [
+    "No answer for instruction",
+    "Always use the right sports wear; Inspect the play area.",
+    "Stop playing right away.",
+    "Noise pollution is a loud, surprising, irritating or unwanted sound.",
+    "Car horns should not be used unnecessarily; Cars and motorcycle engines should be turned off when not in use.",
+    "flaring"
+  ],
+  "answers_C": [
+    "No answer for instruction",
+    "Warming up prepares the body for physical activity, increasing blood flow to muscles, improving flexibility, and reducing the risk of injuries like strains or sprains during the game.",
+    "Noise pollution can lead to various health issues such as hearing loss, sleep disturbances, increased stress levels, high blood pressure, and cardiovascular problems. It can also affect mental well-being, leading to irritability and reduced concentration.",
+    "The government plays a crucial role by enacting and enforcing laws and regulations that ban or limit noise pollution, such as setting noise limits for industries, vehicles, and public events, and promoting urban planning that separates residential areas from noisy zones.",
+    "Chemical pollution is the release of dangerous materials or substances into the environment that are harmful to people and animals. Sources include smoke from factories, homes, cars, generators, burning refuse, and the flaring of gases.",
+    "Comprehensive strategies include public awareness campaigns through media and educational programs in schools, community workshops, and accessible information dissemination. These should highlight the dangers, promote sustainable practices, and encourage individual and collective responsibility in preventing all forms of pollution."
+  ],
+  "C": []
+}

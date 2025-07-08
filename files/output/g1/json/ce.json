@@ -1,0 +1,75 @@
+{
+  "A": [
+    "Highway codes are rules that help us stay _ on the roads (a) hungry (b) safe (c) tired",
+    "Highway codes are rules, regulations, and _ designed to ensure safety on our roads (a) signs (b) symbols (c) lights",
+    "State whether the following statements about road safety are true or false",
+    "1. Before crossing the road, you should look left, right, and left again (a) True (b) False",
+    "2. It is important to use designated _ or pedestrian crossings to cross the road (a) crosswalks (b) pavements (c) sidewalks",
+    "3. When walking on the road or crossing, especially if you're a kid, you should hold someone's _ (a) bag (b) hand (c) phone",
+    "4. To be seen by drivers, pedestrians should wear _ or reflective clothing (a) dark (b) bright (c) dull",
+    "5. In traffic lights, red means _ (a) Go (b) Stop (c) Get ready",
+    "6. In traffic lights, green means _ (a) Stop (b) Go (c) Get ready",
+    "7. In traffic lights, yellow means _ (a) Go (b) Stop (c) Get ready to stop",
+    "8. Highway codes help to safeguard _ and property on our roads (a) animals (b) lives (c) vehicles",
+    "9. Highway codes help to promote responsible and _ use of the roads (a) disorderly (b) orderly (c) reckless",
+    "10. Highway codes guide drivers, cyclists, and other road users on _ use of our roads (a) improper (b) proper (c) random",
+    "11. Highway codes help to ensure that reckless drivers are arrested and _ (a) rewarded (b) praised (c) punished",
+    "12. Another name for Pedestrian Crossing is _ (a) Zebra Crossing (b) Lion Crossing (c) Tiger Crossing",
+    "13. The Pedestrian Crossing sign means that all vehicles should stop and give way for _ road users (a) animal (b) pedestrian (c) vehicle",
+    "14. The 'NO ENTRY' sign is used to inform road users that they are on the _ way (a) right (b) wrong (c) correct",
+    "15. The 'NO ENTRY' sign also helps to indicate that a road is _ way only (a) two (b) three (c) one",
+    "16. Security refers to safety, well-being, freedom, and _ (a) war (b) peace (c) danger",
+    "17. Security is the protection from dangers to life and _ (a) money (b) property (c) friends",
+    "18. Without security, it would be difficult for people to properly carry out their economic, social, and _ activities (a) political (b) recreational (c) leisure"
+  ],
+  "answers_A": [
+    "b",
+    "b",
+    "a",
+    "a",
+    "a",
+    "b",
+    "b",
+    "b",
+    "c",
+    "b",
+    "b",
+    "b",
+    "c",
+    "a",
+    "b",
+    "b",
+    "c",
+    "b",
+    "b",
+    "a"
+  ],
+  "B": [
+    "1. What are highway codes?_________",
+    "2. List three road-safety rules._________",
+    "3. Mention two advantages of highway codes._________",
+    "4. Explain the meaning of the 'NO ENTRY' sign._________",
+    "5. Define security._________"
+  ],
+  "C": [
+    "1. Discuss the importance of wearing bright colors while walking on the road.",
+    "2. Elaborate on how traffic lights contribute to road safety.",
+    "3. Explain in detail how highway codes promote responsible and orderly use of roads.",
+    "4. Describe the significance of the Pedestrian Crossing sign for both drivers and pedestrians.",
+    "5. Analyze the role of security in the development and progress of a nation."
+  ],
+  "answers_B": [
+    "Rules, regulations, and symbols designed to ensure safety on roads and highways.",
+    "Look Left, Right and Left Again; Use crosswalks; Hold Someone's Hand; Wear Bright Colors; Follow Traffic Lights.",
+    "Safeguard lives and property; Promote responsible, orderly use of roads; Guide road users; Ensure reckless drivers are punished.",
+    "It informs road users they are on the wrong way and indicates a road is one-way only.",
+    "Safety, well-being, freedom, and peace; protection from dangers to life and property."
+  ],
+  "answers_C": [
+    "Wearing bright or reflective clothing makes pedestrians more visible to drivers, especially in low light conditions, reducing the risk of accidents.",
+    "Traffic lights regulate the flow of vehicles and pedestrians at intersections. Red means stop, preventing collisions; green means go, allowing movement; yellow warns to prepare to stop, ensuring smooth transitions and preventing sudden braking or acceleration, thus enhancing overall road safety.",
+    "Highway codes provide a standardized set of rules for all road users. By outlining proper conduct (e.g., speed limits, right-of-way, lane discipline), they create predictability and order, reducing chaos and promoting a responsible driving culture. They also include penalties for violations, reinforcing adherence.",
+    "The Pedestrian Crossing (Zebra Crossing) sign is crucial as it designates safe areas for pedestrians to cross. For drivers, it mandates stopping and yielding to pedestrians, prioritizing pedestrian safety. For pedestrians, it indicates a recognized and safer point to cross, reducing risks associated with crossing elsewhere.",
+    "Security is fundamental for national development and progress. Without it, economic activities (trade, investment), social interactions (community building, education), and political processes (governance, elections) are disrupted or impossible. Security creates a stable environment, fostering confidence, attracting investment, and allowing citizens to freely pursue activities that contribute to national growth."
+  ]
+}

@@ -1,0 +1,36 @@
+Section A (Objective) Answers:
+1. c
+2. b
+3. b
+4. b
+5. b
+6. c
+7. b
+8. b
+9. c
+10. b
+11. b
+12. c
+13. c
+14. c
+15. b
+16. a
+17. c
+18. b
+19. c
+20. c
+
+Section B (Short Answer) Answers:
+1. input
+2. films
+3. paper
+4. sound
+5. CD/DVD disk drive, floppy disk
+
+Section C (Theory) Answers:
+1. A Joystick is an input device primarily used for playing computer games. Its function is to allow users to select and control items and images within these games.
+2. A monitor is an output device with a screen, similar to a television. Its role is to display visual information from the computer, such as words, pictures, and films, making it visible to the user.
+3. A printer is an output device shaped like a box, used to transfer digital data from a computer to physical paper. It can transfer various types of data including text, pictures, charts, tables, and sketches.
+4. The CPU (Central Processing Unit) is made up of three main components: the Control Unit (CU), which controls all activities; Random Access Memory (RAM), which is a type of memory; and the Arithmetic and Logic Unit (ALU), which performs calculations and logical operations.
+5. Storage devices are computer hardware components designed to store data and information persistently for future retrieval and use. Examples include Flash drive, Hard disk, and Compact disk (CD).
+6. A storage drive uses electricity to read/write data, while a storage disk does not use electricity to store the information itself.

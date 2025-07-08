@@ -1,0 +1,74 @@
+{
+  "A": [
+    "1. Words that name people, places, things, and animals are called _ (a) Verbs (b) Nouns (c) Adjectives",
+    "2. Which of the following is an example of a person according to the text? (a) book (b) teacher (c) dog",
+    "3. Which of the following is an example of a place according to the text? (a) chair (b) friend (c) School",
+    "4. Which of the following is an example of a thing according to the text? (a) cat (b) park (c) book",
+    "5. Which of the following is an example of an animal according to the text? (a) teacher (b) school (c) dog",
+    "6. Specific names of people or organizations are known as _ Nouns (a) Common (b) Proper (c) Collective",
+    "7. \"John\" is an example of a _ Noun (a) Common (b) Proper (c) Abstract",
+    "8. General names for people, places, or things are called _ Nouns (a) Proper (b) Common (c) Collective",
+    "9. \"Teacher\" is an example of a _ Noun (a) Proper (b) Common (c) Abstract",
+    "10. Groups of people, animals, or things are known as _ Nouns (a) Abstract (b) Common (c) Collective",
+    "11. \"Family\" is an example of a _ Noun (a) Proper (b) Collective (c) Abstract",
+    "12. Nouns that you can't touch or see but can feel are called _ Nouns (a) Proper (b) Common (c) Abstract",
+    "13. \"Love\" is an example of an _ Noun (a) Collective (b) Abstract (c) Proper",
+    "14. In the sentence \"The tall boy pushed his sister\", which word is a noun? (a) tall (b) boy (c) pushed",
+    "15. In the sentence \"We travelled to School in the car\", which word is a noun? (a) travelled (b) car (c) in",
+    "16. In the sentence \"I love going to Wexford on holiday\", which word is a noun? (a) love (b) going (c) Wexford",
+    "17. In the sentence \"I tidied the cushions on the sofa\", which word is a noun? (a) tidied (b) on (c) sofa",
+    "18. In the sentence \"Farmers look after their cattle\", which word is a noun? (a) look (b) Farmers (c) after",
+    "19. Words that take the place of a noun are called _ (a) Verbs (b) Pronouns (c) Adjectives",
+    "20. \"He\" is an example of a _ pronoun (a) Possessive (b) Personal (c) Reflexive"
+  ],
+  "answers_A": [
+    "b",
+    "b",
+    "c",
+    "c",
+    "c",
+    "b",
+    "b",
+    "b",
+    "b",
+    "c",
+    "b",
+    "c",
+    "b",
+    "b",
+    "b",
+    "c",
+    "c",
+    "b",
+    "b",
+    "b"
+  ],
+  "B": [
+    "1. List the four types of nouns mentioned in the text.",
+    "2. Give two examples of Personal Pronouns.",
+    "3. Give two examples of Possessive Pronouns.",
+    "4. Verbs are words that show _________ or what someone or something is doing.",
+    "5. What is the main function of a Pronoun?"
+  ],
+  "C": [
+    "1. Explain the difference between a Proper Noun and a Common Noun, providing an example for each.",
+    "2. Describe what an Abstract Noun is and give two examples.",
+    "3. Discuss the primary role of pronouns in sentence structure, referencing the two types mentioned in the text.",
+    "4. How do Action Verbs differ from Linking Verbs based on the provided text?",
+    "5. Imagine you are teaching a friend about nouns. How would you explain the concept of a \"Collective Noun\" using an original example not found in the text?"
+  ],
+  "answers_B": [
+    "Proper Nouns, Common Nouns, Collective Nouns, Abstract Nouns",
+    "I, you",
+    "Mine, yours",
+    "action",
+    "To take the place of a noun."
+  ],
+  "answers_C": [
+    "Proper Nouns are specific names (e.g., John, London), while Common Nouns are general names (e.g., teacher, city).",
+    "Abstract Nouns are concepts or feelings that cannot be touched or seen, only felt. Examples: Love, peace.",
+    "Pronouns replace nouns to avoid repetition. Personal pronouns replace specific nouns (I, he, she), and possessive pronouns show ownership (mine, yours).",
+    "Action verbs show physical or mental action (run, think), while linking verbs connect the subject to additional information (is, seems).",
+    "Collective nouns refer to a group of people, animals, or things as a single unit. For example, a \"swarm\" of bees or a \"choir\" of singers."
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "A": [
+    "1. Grinding stone is an example of _ technology (a) developed (b) underdeveloped (c) modern",
+    "2. An electric cooker is an example of _ technology (a) advanced (b) primitive (c) underdeveloped",
+    "3. For food processing, a blender is considered a _ technology (a) underdeveloped (b) traditional (c) developed",
+    "4. A mud house or hut represents _ accommodation (a) developed (b) modern (c) underdeveloped",
+    "5. Storey buildings are examples of _ accommodation (a) primitive (b) developed (c) simple",
+    "6. Well water is a source of water considered _ technology (a) developed (b) underdeveloped (c) advanced",
+    "7. Pipe-borne water is an example of _ technology for water supply (a) traditional (b) developed (c) basic",
+    "8. Horse-drawn carriages are a form of _ transportation (a) modern (b) underdeveloped (c) fast",
+    "9. Aircraft represent _ transportation technology (a) slow (b) underdeveloped (c) developed",
+    "10. Gong is an example of _ communication (a) modern (b) developed (c) underdeveloped",
+    "11. Radio is an example of _ communication (a) underdeveloped (b) developed (c) ancient",
+    "12. Plants are living things that can grow, move and _ (a) shrink (b) reproduce (c) sleep",
+    "13. Plants are sensitive to touch or _ (a) darkness (b) cold (c) sunlight",
+    "14. Plants need _ to survive (a) clothes (b) air (c) houses",
+    "15. Plants feed on food substances found in the _ (a) air (b) water (c) soil",
+    "16. Plants have the ability to remove unwanted substances, which is called _ (a) feeding (b) excretion (c) reproduction",
+    "17. Which of these is a reason why plants are living things? (a) They cannot move (b) They need air (c) They do not reproduce",
+    "18. Light energy is a form of energy that _ places (a) darkens (b) illuminates (c) cools",
+    "19. Green plants use light to make their _ (a) water (b) food (c) air",
+    "20. Light travels in a _ line (a) curved (b) straight (c) zigzag"
+  ],
+  "answers_A": [
+    "b",
+    "a",
+    "c",
+    "c",
+    "b",
+    "b",
+    "b",
+    "b",
+    "c",
+    "c",
+    "b",
+    "b",
+    "c",
+    "b",
+    "c",
+    "b",
+    "b",
+    "b",
+    "b",
+    "b"
+  ],
+  "B": [
+    "1. Give one example of an underdeveloped technology for food processing. _________",
+    "2. What is a developed technology for cooking food? _________",
+    "3. Name two things plants need to survive. _________",
+    "4. What is an object that gives light called? _________",
+    "5. Name one natural source of light energy. _________"
+  ],
+  "C": [
+    "1. Compare and contrast underdeveloped and developed technologies, providing an example for each from the text.",
+    "2. Discuss at least three reasons why plants are classified as living things based on the provided text.",
+    "3. Explain the importance of light energy for green plants.",
+    "4. Differentiate between natural and artificial sources of light, providing an example for each category mentioned in the text.",
+    "5. Describe one characteristic of light energy mentioned in the text, and give an example of a source of light energy from the text that exhibits this characteristic.",
+    "SOURCES OF LIGHT"
+  ],
+  "answers_B": [
+    "Grinding stone",
+    "Electric cooker",
+    "Air, food substances (nutrient, water)",
+    "Source of light",
+    "Sun (or Stars)"
+  ],
+  "answers_C": [
+    "Underdeveloped technology is less advanced and often requires more manual effort (e.g., grinding stone), while developed technology is more modern and efficient (e.g., blender).",
+    "Plants are living things because they are sensitive to touch or sunlight, need air to survive, and have the ability to reproduce. They also feed, move parts, and excrete.",
+    "Light energy is crucial for green plants because they use it to make their own food through the process of photosynthesis.",
+    "Natural sources of light are objects that produce light on their own, such as the Sun and stars. Artificial sources are human-made objects that give off light, like gas light or electric bulbs.",
+    "Light travels in a straight line. Sunlight is an example of light energy that demonstrates this characteristic."
+  ]
+}
