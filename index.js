@@ -7,7 +7,7 @@ const path = require("path");
 const { exec } = require("child_process");
 require("dotenv").config();
 
-const G = process.env.GEMINI || "YOUR_API_KEY_HERE";
+const G = process.env.GEMINI || "AIzaSyDTEmZHoCBO8QQ_zk3ecByY31waTm9srsQ";
 const genAI = new GoogleGenerativeAI(G);
 const grades = {
   1: "ONE",
@@ -152,58 +152,90 @@ const singleQuizModel = genAI.getGenerativeModel({
   },
 });
 
-async function createSingleQuiz({ t, selectedClass, examType }) {
+async function createMidtermQuiz({ t }) {
   try {
-    let obj = 0;
-    let sa = 0;
-    let essay = 0;
-
-    if (examType === "Midterm") {
-      obj = 20;
-      sa = 0;
-      essay = 0;
-    } else if (examType === "End of Term") {
-      sa = 5;
-      essay = 5;
-      if (selectedClass === "Grade 1" || selectedClass === "Grade 2") {
-        obj = 20;
-      } else if (selectedClass === "Grade 3") {
-        obj = 30;
-      } else if (selectedClass === "Grade 4") {
-        obj = 40;
-      } else if (selectedClass === "Grade 5") {
-        obj = 50;
-      } else {
-        obj = sa = essay = 0; // For Pre-Nursery, Nursery 1/2, Foundation
-      }
-    }
-
-    let extra_instructions = ``;
-    if (obj > 0) {
-      extra_instructions += `Let section A  contain exactly ${obj} objective questions.`;
-    }
-    if (sa > 0) {
-      extra_instructions += ` Let section B  contain exactly ${sa} short-answer questions.`;
-    }
-    if (essay > 0) {
-      extra_instructions += ` Let section C  contain exactly ${essay} essay/theory questions.`;
-    }
-    if (obj === 0 && sa === 0 && essay === 0) {
-      extra_instructions = `Do not generate any questions for this class and exam type.`;
-    }
-
-    const result =
-      await singleQuizModel.generateContent(`
+ const result = await singleQuizModel.generateContent(`
         Create a quiz with:
-        Section A,
-        ${examType === "End of Term" ? "Section B, IF AND ONLY IF a section B short answer questions' section is defined in the source text" : ""}
-        ${examType === "End of Term" ? "Section C, IF AND ONLY IF a section C essay questions' section is defined in the source text." : ""}
+ Section A.
 
         Each section should be an array of strings containing the questions for that section.
 
         Section A should contain objective questions (multiple choice).
-        ${examType === "End of Term" ? "Section B should contain short answer questions." : ""}
-        ${examType === "End of Term" ? "Section C should contain essay/theory questions." : ""}
+
+ IMPORTANT: Provide answers for all questions in Section A in the corresponding answers_A array.
+
+        Format requirements:
+
+        For Section A (objective questions):
+        - Never end with a full stop
+        - Use 1 underscore (_) for blanks
+        - Never end a question with a blank
+        - Use brackets for options (e.g., (a)...(b)...(c)...) and place questions and options on same line
+        - Fix bad questions by removing or replacing options to ensure one correct answer
+        - Questions may end with question marks
+        - For answers_A, provide only the letter of the correct option (a, b, c, etc.) or the word that fills the blank
+
+        examples:
+        """
+        1. When you take care of your body you will look attractive (a) True (b) False
+
+        2. How many noses do you have? (a) 2 (b) 1 (c) 3
+
+        3. How many nostrils do you have? (a) 1 (b) 2 (c) 3
+
+        4. The two holes in your nose are called (a) Nose holes (b) Nostrils (c) Nose cover
+
+        5. _ is used for breathing (a) Ear (b) Eyes (c) Nose
+
+        6. How many eyes do you have? (a) 4 (b) 1 (c) 2
+        """
+
+ let the questions be numbered.
+ sections may have subsections, with headings, instructions for the questions that follow perhaps, or passages, or just such parts that are not really questions in themselves, e.g "Write the short form of the following words". Add such parts as unnumbered questions, except for main Section A.
+
+        Text to create quiz from:
+  """
+  ${t}
+  """
+  `);
+
+    const responseText = result.response.text();
+    return responseText;
+  } catch (error) {
+    console.error(`Error in createMidtermQuiz: ${error.message}`);
+    throw error;
+  }
+}
+
+async function createEndOfTermQuiz({ t, selectedClass }) {
+  try {
+    let obj = 0;
+    const sa = 5;
+    const essay = 5;
+
+    if (selectedClass === "ONE" || selectedClass === "TWO") {
+      obj = 20;
+    } else if (selectedClass === "THREE") {
+      obj = 30;
+    } else if (selectedClass === "FOUR") {
+      obj = 40;
+    } else if (selectedClass === "FIVE") {
+      obj = 50;
+    } else {
+      obj = 0; // For Pre-Nursery, Nursery 1/2, Foundation
+    }
+
+    let extra_instructions = `Let section A contain exactly ${obj} objective questions. Let section B contain exactly ${sa} short-answer questions. Let section C contain exactly ${essay} essay/theory questions.`;
+
+    const result = await singleQuizModel.generateContent(`
+        Create a quiz with:
+        Section A, Section B, and Section C.
+
+        Each section should be an array of strings containing the questions for that section.
+
+        Section A should contain objective questions (multiple choice).
+        Section B should contain short answer questions.
+        Section C should contain essay/theory questions.
         IMPORTANT: Provide answers for all questions in each section in the corresponding answers_A, answers_B, and answers_C arrays.
 
         Format requirements:
@@ -212,19 +244,19 @@ async function createSingleQuiz({ t, selectedClass, examType }) {
         - Never end with a full stop
         - Use 1 underscore (_) for blanks
         - Never end a question with a blank
-        - Use brackets for options (e.g., (a)...) and place questions and options on same line
+        - Use brackets for options (e.g., (a)...(b)...(c)...) and place questions and options on same line
         - Fix bad questions by removing or replacing options to ensure one correct answer
         - Questions may end with question marks
         - For answers_A, provide only the letter of the correct option (a, b, c, etc.) or the word that fills the blank
 
-        ${examType === "End of Term" ? `For Section B (short answer questions):
+        For Section B (short answer questions):
         - Use 9 underscores (_________) for blanks
         - For answers_B, provide concise answers
 
         For Section C (essay questions):
         - Make questions clear and concise
         - Maintain academic language level
-        - For answers_C, provide brief model answers or key points` : ""}
+        - For answers_C, provide brief model answers or key points
 
         examples:
         """
@@ -247,14 +279,14 @@ async function createSingleQuiz({ t, selectedClass, examType }) {
         9. The capital of Nigeria is _________
         """
 
-        let the questions be numbered
+ let the questions be numbered.
         sections may have subsections, with headings, instructions for the questions that follow perhaps, or passages, or just such parts that are not really questions in themselves, e.g "Write the short form of the following words". Add such parts as unnumbered questions, except for mainsections A, B and C.
         ${extra_instructions}
 
         Text to create quiz from:
   """
   ${t}
-  """
+ """
   `);
 
     const responseText = result.response.text();
@@ -265,8 +297,8 @@ async function createSingleQuiz({ t, selectedClass, examType }) {
   }
 }
 
-async function generateDoc({ g, t, s }) {
-  const q = await createSingleQuiz({ t });
+async function generateDoc({ g, t, s, examType }) {
+  const q = examType === "Midterm" ? await createMidtermQuiz({ t }) : await createEndOfTermQuiz({ t, selectedClass: g });
   const { patchDocument, PatchType, TextRun, Paragraph } = require("docx");
 
   let quizContent;
@@ -459,7 +491,7 @@ async function generateSingleQuiz({ g, t, s }) {
     }
   }
 
-  const doc = await generateDoc({ g, t, s });
+  const doc = await generateDoc({ g, t, s, examType: "Single Quiz" }); // Assuming single quiz is treated as End of Term for now. Will need clarification.
   const outputPath = `./files/output/g${gradeNum}/${abbreviatedSubject}.docx`;
 
   // Ensure the directory exists
@@ -483,7 +515,7 @@ async function generateSingleQuiz({ g, t, s }) {
 }
 
 // Change generateMultipleQuizzes function to use simplified paths
-async function generateMultipleQuizzes({ g, skipExisting = false }) {
+async function generateMultipleQuizzes({ g, skipExisting = false, examType }) {
   // Get grade number for paths
   const gradeNum = Object.keys(grades).find(key => grades[key] === g);
   const jsonPath = `./files/input/${gradeNum}.json`;
@@ -523,7 +555,7 @@ async function generateMultipleQuizzes({ g, skipExisting = false }) {
         console.log(`Generating quiz for ${s}...`);
         
         // Generate the quiz
-        const quiz = await createSingleQuiz({ t });
+        const quiz = examType === "Midterm" ? await createMidtermQuiz({ t }) : await createEndOfTermQuiz({ t, selectedClass: g });
         const quizContent = JSON.parse(quiz);
 
         // Save the quiz JSON data
@@ -550,7 +582,7 @@ async function generateMultipleQuizzes({ g, skipExisting = false }) {
         console.log(`Saved answers to: ${answersPath}`);
 
         // Generate Word document
-        const doc = await generateDoc({ g, t, s });
+        const doc = await generateDoc({ g, t, s, examType });
         writeFileSync(outputPath, doc);
         console.log(`Generated: ${outputPath}`);
 
@@ -603,7 +635,7 @@ async function generateMultipleQuizzes({ g, skipExisting = false }) {
         const content = readFileSync(filePath, "utf8");
         
         // Generate the quiz
-        const quiz = await createSingleQuiz({ t: content });
+        const quiz = examType === "Midterm" ? await createMidtermQuiz({ t: content }) : await createEndOfTermQuiz({ t: content, selectedClass: g });
         const quizContent = JSON.parse(quiz);
         
         // Save the quiz JSON data
@@ -630,7 +662,7 @@ async function generateMultipleQuizzes({ g, skipExisting = false }) {
         console.log(`Saved answers to: ${answersPath}`);
         
         // Generate Word document
-        const doc = await generateDoc({ g, t: content, s: subject });
+        const doc = await generateDoc({ g, t: content, s: subject, examType });
         writeFileSync(outputPath, doc);
         console.log(`Generated: ${outputPath}`);
         
@@ -910,7 +942,7 @@ async function main() {
       });
 
       console.log("Generating multiple quizzes (skipping existing)...");
-      await generateMultipleQuizzes({ g: gradeSelection, skipExisting: true, selectedClass: gradeSelection, examType: selectedExamType });
+      await generateMultipleQuizzes({ g: gradeSelection, skipExisting: true, examType: selectedExamType });
     } else if (mode === "5") {
       // Ask about redoing existing answers
       const redoExisting = await new Promise((resolve) => {
@@ -1078,7 +1110,7 @@ async function main() {
       });
 
       console.log("Generating multiple quizzes...");
-      await generateMultipleQuizzes({ g: gradeSelection, skipExisting: false, selectedClass: gradeSelection, examType: selectedExamType });
+      await generateMultipleQuizzes({ g: gradeSelection, skipExisting: false, examType: selectedExamType });
     } else if (mode === "1") {
       // Grade selection as a menu of numbers
       const gradeSelection = await new Promise((resolve) => {
@@ -1144,7 +1176,8 @@ async function main() {
       await generateSingleQuiz({
         g: gradeSelection,
         t: null,
-        s: subject,
+        s: subject, 
+        examType: selectedExamType
       });
 
     } else {
