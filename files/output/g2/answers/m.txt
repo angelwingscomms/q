@@ -1,35 +1,35 @@
 Section A (Objective) Answers:
 1. b
-2. a
-3. b
+2. b
+3. a
 4. b
-5. b
-6. b
-7. b
+5. a
+6. c
+7. c
 8. b
 9. b
 10. b
 11. b
 12. b
 13. b
-14. c
+14. b
 15. b
 16. b
 17. b
-18. c
-19. c
+18. b
+19. a
 20. b
 
 Section B (Short Answer) Answers:
-1. The minute hand tells the number of minutes past or to the hour.
-2. The hour hand indicates the current hour, while the minute hand indicates the minutes within that hour.
-3. 5:30
-4. The hour hand is pointing at 4, and the minute hand is pointing at 12.
-5. Digital time represents time using numerical digits, typically in an HH:MM format.
+1. The minute hand is long and tells minutes, while the hour hand is short and tells hours.
+2. It is represented by the minutes being 30 (e.g., 5:30).
+3. It signifies that the minute hand is pointing to the 12, indicating an exact hour.
+4. A system where time cycles twice a day (AM/PM) using numbers 1-12.
+5. Analogue time and digital time
 
 Section C (Theory) Answers:
-1. Analogue time uses a clock face with hands (hour, minute) to show time, relying on position. Digital time uses numerical digits. Analogue might be preferred for visualizing time passage (e.g., how much time is left until the minute hand reaches 12), while digital is preferred for precise, quick reading (e.g., 5:30 on a phone).
-2. The 12-hour clock system divides the day into two 12-hour periods (AM and PM). The hour hand completes two full rotations in 24 hours, indicating the hour of the day or night, while the minute hand indicates minutes within that hour, completing 12 rotations for each hour hand rotation.
-3. The hour hand points to the hour, and the minute hand points to the minutes. For 'o'clock', the minute hand is at 12, and the hour hand is directly on the number for the hour. For 'half past', the minute hand is at 6 (indicating 30 minutes), and the hour hand is halfway between the current hour and the next.
-4. Precise time-telling is crucial for scheduling appointments, catching transportation, managing work deadlines, and coordinating social events. For example, missing a train by a minute can cause significant delays, or arriving late for an appointment can be disrespectful.
-5. To teach a young child, focus on identifying the 'short hand' (hour) and 'long hand' (minute). Start with 'o'clock' times, explaining that when the long hand is at 12, the short hand tells the hour. Then introduce 'half past' by showing the long hand at 6 and explaining it means 30 minutes past the hour.
+1. The minute hand (long hand) indicates the number of minutes past or to the hour. The hour hand (short hand) indicates the current hour. Together, they show the precise time.
+2. Analogue time uses hands on a clock face (e.g., 5 o'clock, half past 5). Digital time uses numbers (e.g., 5:00, 5:30). Analogue gives a visual sense of time's progression, while digital provides precise numerical representation.
+3. Advantages: Common, easy to understand for basic hourly readings. Disadvantages: Requires AM/PM distinction to avoid ambiguity, can be less precise for scheduling without context.
+4. Start by identifying the hour hand (short) and minute hand (long). Explain how the hour hand indicates the hour (points to number). Explain how the minute hand indicates minutes by counting in fives around the clock face from 12 (0 minutes) to 6 (30 minutes) etc. Introduce "o'clock" and "half past".
+5. When coordinating with people who use different time displays (e.g., one person has a traditional wall clock, another a digital phone). Or, when needing to quickly grasp the approximate time from an analogue display while also needing precise numerical time for logging or scheduling from a digital display.
