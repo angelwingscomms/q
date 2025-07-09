@@ -1,35 +1,35 @@
 Section A (Objective) Answers:
-1. b
+1. a
 2. c
 3. b
-4. b
-5. d
+4. c
+5. b
 6. b
-7. c
-8. c
+7. b
+8. b
 9. c
 10. b
-11. c
-12. d
-13. b
-14. c
-15. b
-16. c
+11. a
+12. b
+13. c
+14. b
+15. c
+16. b
 17. b
 18. b
 19. c
-20. c
+20. b
 
 Section B (Short Answer) Answers:
-1. Adjectives
-2. -ly
-3. Preposition
-4. singular
-5. Determiners
+1. few, some, many
+2. Adjectives describe or talk about a Noun.
+3. Adverb of manner, Adverb of time, Adverb of place.
+4. in, from
+5. You use 'is' or 'isn't' with singular nouns.
 
 Section C (Theory) Answers:
-1. Determiners (like 'some', 'many') specify quantity or identity of a noun, while adjectives (like 'beautiful', 'greedy') describe the quality of a noun. Example: "Many students (determiner) are here." "The beautiful (adjective) flower bloomed."
-2. Adverbs of manner tell 'how' (e.g., "She sang beautifully"). Adverbs of time tell 'when' (e.g., "They arrived late"). Adverbs of place tell 'where' (e.g., "The cat is upstairs").
-3. Prepositions show the relationship of a noun/pronoun to other words, often indicating location or time. Examples: "The book is on the table" (location). "She arrived after noon" (time).
-4. The verb 'be' (is/are) is fundamental for expressing states of being, identity, or location. 'Is' is used with singular nouns (e.g., "The dog is happy"), and 'are' is used with plural nouns (e.g., "The dogs are happy").
-5. Adjectives are "describing words" for things (nouns), telling us what they are like (e.g., "a big house," "a red apple"). Adverbs are "action words" that tell us more about how an action happens (e.g., "run quickly," "sing loudly").
+1. Determiners introduce a noun and provide information about quantity, possession, or specificity (e.g., 'few' in 'few books').
+2. Adjectives modify or describe nouns, adding detail about their qualities. Example: 'The *red* car.'
+3. Adverbs describe verbs: manner (how, e.g., 'slowly'), time (when, e.g., 'late'), place (where, e.g., 'here'). They clarify action circumstances.
+4. Prepositions show the relationship between a noun/pronoun and other words, indicating location, time, or direction (e.g., 'The cat is *under* the table').
+5. 'Is' is used with singular nouns/pronouns (e.g., 'He *is* happy'). 'Are' is used with plural nouns/pronouns (e.g., 'They *are* friends').

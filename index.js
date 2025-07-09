@@ -190,6 +190,7 @@ async function createMidtermQuiz({ t }) {
         6. How many eyes do you have? (a) 4 (b) 1 (c) 2
         """
 
+ make the questions easy, for kids
  let the questions be numbered.
  sections may have subsections, with headings, instructions for the questions that follow perhaps, or passages, or just such parts that are not really questions in themselves, e.g "Write the short form of the following words". Add such parts as unnumbered questions, except for main Section A.
 

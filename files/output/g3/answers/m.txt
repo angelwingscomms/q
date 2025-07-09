@@ -1,45 +1,45 @@
 Section A (Objective) Answers:
 1. b
-2. a
+2. b
 3. b
-4. b
+4. c
 5. b
-6. b
-7. a
+6. c
+7. b
 8. b
 9. b
-10. a
+10. b
 11. b
-12. b
+12. a
 13. b
-14. b
-15. b
-16. c
-17. b
-18. b
+14. c
+15. a
+16. b
+17. c
+18. a
 19. b
-20. a
+20. b
 21. a
 22. b
 23. b
 24. b
 25. b
 26. b
-27. a
+27. b
 28. b
-29. c
+29. b
 30. b
 
 Section B (Short Answer) Answers:
-1. It tells the number of minutes past or to the hour.
-2. It tells the hour.
-3. Analogue time uses hands on a clock face (e.g., 5 o'clock), while digital time uses numerical digits (e.g., 5:00).
-4. It means 30 minutes past 5 o'clock.
-5. A standard clock face typically displays 12 hours.
+1. Analogue clocks use hands on a dial, while digital clocks display numbers directly.
+2. Two (hour and minute hands).
+3. 7:15
+4. It refers to 30 minutes past the hour.
+5. 12 o'clock (either AM or PM).
 
 Section C (Theory) Answers:
-1. An analogue clock features a clock face, an hour hand (short, indicates hours), and a minute hand (long, indicates minutes). The hour hand points to the current hour, while the minute hand indicates the minutes past or to the hour.
-2. Analogue time is represented visually by hands on a circular clock face, showing the progression of time. Digital time displays time numerically (e.g., HH:MM), providing precise, unambiguous readings. Analogue provides a contextual sense of time, while digital offers precise readings but lacks a visual sense of time passing.
-3. "O'clock" signifies an exact hour when the minute hand points to 12 (e.g., 4 o'clock). "Half past" denotes 30 minutes past the hour, occurring when the minute hand points to 6 (e.g., half past 5 or 5:30).
-4. To interpret 4 o'clock, the hour hand (short) would point to the 4, and the minute hand (long) would point to the 12. Similarly, for 8 o'clock, the hour hand would point to the 8, and the minute hand would point to the 12.
-5. The 12-hour clock system, as seen on a clock face, divides a full day into two 12-hour cycles (AM and PM). This system provides a practical and widely understood method for daily timekeeping, allowing for clear communication of specific times within a day.
+1. The hour hand indicates the hour, moving slowly around the dial. The minute hand indicates minutes, completing a full circle every hour. They work together, with the minute hand's position refining the hour indicated by the hour hand.
+2. Analogue clocks display time using hands on a circular dial, providing a visual representation of time's passage. Digital clocks display time numerically. Advantages of analogue include visual intuitive understanding of time progression; disadvantages include less precision. Advantages of digital include exact precision; disadvantages include less intuitive sense of time flow.
+3. Start by identifying the hour hand (shorter) and minute hand (longer). Explain how the hour hand indicates the hour, reading the numbers 1-12. Then, explain how the minute hand indicates minutes, counting by fives around the dial (e.g., 12=00, 3=15, 6=30, 9=45). Practice with "o'clock", "half past", "quarter past/to".
+4. Accurate timekeeping is crucial for scheduling, coordination, and efficiency in daily life (e.g., appointments, transport). In professional fields like aviation, medicine, and finance, precise timekeeping is critical for safety, operations, and transaction accuracy, preventing errors and ensuring synchronized activities.
+5. I would choose digital clocks. While analogue clocks offer a good visual sense of time, digital clocks provide exact precision, which is more practical for scheduling, appointments, and quick reading, especially in a fast-paced environment. They are also easier for universal understanding without needing to interpret hand positions.
