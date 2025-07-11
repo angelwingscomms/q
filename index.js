@@ -160,7 +160,7 @@ async function createMidtermQuiz({ t, subject, grade }) {
     let exampleQuizPrompt = "";
     if (existsSync(examplePath)) {
       const exampleQuizJson = readFileSync(examplePath, "utf8");
-      exampleQuizPrompt = `Here's an example quiz for ${subject} for year ${grade}:\n\`\`\`json\n${exampleQuizJson}\n\`\`\`\n`;
+      exampleQuizPrompt = `Here's an example quiz for Religious Studies for year ${grade}:\n\`\`\`json\n${exampleQuizJson}\n\`\`\`\n`;
     }
 
     const result = await singleQuizModel.generateContent(`
