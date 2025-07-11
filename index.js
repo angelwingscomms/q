@@ -152,9 +152,19 @@ const singleQuizModel = genAI.getGenerativeModel({
   },
 });
 
-async function createMidtermQuiz({ t }) {
+async function createMidtermQuiz({ t, subject, grade }) {
   try {
- const result = await singleQuizModel.generateContent(`
+    const gradeNum = Object.keys(grades).find((key) => grades[key] === grade);
+    const examplePath = `./files/examples/g${gradeNum}.json`;
+
+    let exampleQuizPrompt = "";
+    if (existsSync(examplePath)) {
+      const exampleQuizJson = readFileSync(examplePath, "utf8");
+      exampleQuizPrompt = `Here's an example quiz for ${subject} for year ${grade}:\n\`\`\`json\n${exampleQuizJson}\n\`\`\`\n`;
+    }
+
+    const result = await singleQuizModel.generateContent(`
+        ${exampleQuizPrompt}
         Create a quiz with:
  Section A.
 
@@ -208,8 +218,19 @@ async function createMidtermQuiz({ t }) {
   }
 }
 
-async function createEndOfTermQuiz({ t, selectedClass }) {
+async function createEndOfTermQuiz({ t, selectedClass, subject, grade }) {
   try {
+    const gradeNum = Object.keys(grades).find((key) => grades[key] === grade);
+    const abbreviatedSubject =
+      subjectAbbreviations[subject] || subject.toLowerCase();
+    const examplePath = `./files/examples/g${gradeNum}/json/${abbreviatedSubject}.json`;
+
+    let exampleQuizPrompt = "";
+    if (existsSync(examplePath)) {
+      const exampleQuizJson = readFileSync(examplePath, "utf8");
+      exampleQuizPrompt = `Here's an example quiz for ${subject} for year ${grade}:\n\`\`\`json\n${exampleQuizJson}\n\`\`\`\n`;
+    }
+
     let obj = 0;
     const sa = 5;
     const essay = 5;
@@ -220,7 +241,8 @@ async function createEndOfTermQuiz({ t, selectedClass }) {
       obj = 30;
     } else if (selectedClass === "FOUR") {
       obj = 40;
-    } else if (selectedClass === "FIVE") {
+    }
+    else if (selectedClass === "FIVE") {
       obj = 50;
     } else {
       obj = 0; // For Pre-Nursery, Nursery 1/2, Foundation
@@ -229,6 +251,7 @@ async function createEndOfTermQuiz({ t, selectedClass }) {
     let extra_instructions = `Let section A contain exactly ${obj} objective questions. Let section B contain exactly ${sa} short-answer questions. Let section C contain exactly ${essay} essay/theory questions.`;
 
     const result = await singleQuizModel.generateContent(`
+        ${exampleQuizPrompt}
         Create a quiz with:
         Section A, Section B, and Section C.
 
@@ -299,8 +322,12 @@ async function createEndOfTermQuiz({ t, selectedClass }) {
 }
 
 async function generateDoc({ g, t, s, examType }) {
-  const q = examType === "Midterm" ? await createMidtermQuiz({ t }) : await createEndOfTermQuiz({ t, selectedClass: g });
+  const q =
+    examType === "Midterm"
+      ? await createMidtermQuiz({ t, subject: s, grade: g })
+      : await createEndOfTermQuiz({ t, selectedClass: g, subject: s, grade: g });
   const { patchDocument, PatchType, TextRun, Paragraph } = require("docx");
+
 
   let quizContent;
   try {
