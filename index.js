@@ -199,7 +199,7 @@ async function createMidtermQuiz({ t, subject, grade }) {
         6. How many eyes do you have? (a) 4 (b) 1 (c) 2
         """
 
- make sure the questions are very easy to answer, especially the essay part, for 9 year olds
+ make sure the questions are very easy to answer, and for the essay part, make sure the questions are so easy they would require easy to write, brief answers
  let the questions be numbered.
  sections may have subsections, with headings, instructions for the questions that follow perhaps, or passages, or just such parts that are not really questions in themselves, e.g "Write the short form of the following words". Add such parts as unnumbered questions, except for main Section A.
 
