@@ -155,7 +155,7 @@ const singleQuizModel = genAI.getGenerativeModel({
 async function createMidtermQuiz({ t, subject, grade }) {
   try {
     const gradeNum = Object.keys(grades).find((key) => grades[key] === grade);
-    const examplePath = `./files/examples/g${gradeNum}.json`;
+    const examplePath = `./files/examples/${gradeNum}.json`;
 
     let exampleQuizPrompt = "";
     if (existsSync(examplePath)) {
@@ -165,6 +165,7 @@ async function createMidtermQuiz({ t, subject, grade }) {
 
     const result = await singleQuizModel.generateContent(`
         ${exampleQuizPrompt}
+
         Create a quiz with:
  Section A.
 
