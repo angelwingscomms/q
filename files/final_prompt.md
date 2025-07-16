@@ -23,10 +23,9 @@ Format requirements:
 - 
 Each question must:
 – Be closed-ended (True/False or Multiple Choice)
-– Ask for a simple fact or basic concept
-– Use simple words and grammar
+– Ask for a very simple fact or basic concept
+– Use extremely simple words and grammar
 – Require one-word or short-phrase answers
-– Avoid explanation, opinion, or complex reasoning
 
 
 # For Section B (short answer questions):
