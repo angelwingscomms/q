@@ -225,7 +225,7 @@ async function createEndOfTermQuiz({ t, selectedClass, subject, grade }) {
     const gradeNum = Object.keys(grades).find((key) => grades[key] === grade);
     const abbreviatedSubject =
       subjectAbbreviations[subject] || subject.toLowerCase();
-    const examplePath = `./files/examples/${grade}.json`;
+    const examplePath = `./files/examples/${gradeNum}.json`;
 
     let exampleQuizPrompt = "";
     if (existsSync(examplePath)) {
