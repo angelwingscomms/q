@@ -283,7 +283,7 @@ async function createEndOfTermQuiz({ t, selectedClass, subject, grade }) {
         - Maintain academic language level
         - For answers_C, provide brief model answers or key points
 
-        Here's an example quiz. Follow the language style, structure, and ease of questions in this example quiz:
+        Here's an example quiz. Follow the exact language style and ease and simplicity of questions in this example quiz:
         \`\`\`json
         ${exampleQuizPrompt}
         \`\`\`
