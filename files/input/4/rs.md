@@ -1,66 +1,4 @@
-
-Create a quiz with:
-Section A, Section B, and Section C.
-
-Each section should be an array of strings containing the questions for that section.
-
-Section A should contain objective questions (multiple choice).
-Section B should contain short answer questions.
-Section C should contain essay/theory questions.
-IMPORTANT: Provide answers for all questions in each section in the corresponding answers_A, answers_B, and answers_C arrays.
-
-Format requirements:
-
-# For Section A (objective questions):
-- Never end with a full stop
-- Use 1 underscore (_) for blanks
-- Never end a question with a blank
-- Use brackets for options (e.g., (a)...(b)...(c)...) and place questions and options on same line
-- Fix bad questions by removing or replacing options to ensure one correct answer
-- Questions may end with question marks
-- For answers_A, provide only the letter of the correct option (a, b, c, etc.) or the word that fills the blank
-
-- 
-Each question must:
-– Be closed-ended (True/False or Multiple Choice)
-– Ask for a very simple fact or basic concept
-– Use extremely simple words and grammar
-– Require one-word or short-phrase answers
-
-
-# For Section B (short answer questions):
-- Use 9 underscores (_________) for blanks
-- For answers_B, provide concise answers
-
-- 
-Each question should:
-– Ask for a specific fact (e.g. person, name, object, place, event)
-– Require a short answer (1–3 words)
-– Be written in plain language (avoid complex phrasing)
-– Avoid “why”, “how”, or any question that needs explanation or opinion
-– Focus on basic recall, not reasoning or values
-
-Do not include:
-– Definitions
-– Moral judgments
-– Personal views or behavior-based questions
-– Multi-part questions
-
-
-# For Section C (essay questions):
-- Make questions clear and concise
-- Maintain academic language level
-- For answers_C, provide brief model answers or key points
-
-- Create simple questions. Each question should ask for a basic fact and require a short, direct answer (like one word or a short phrase). Use only clear, simple language. Avoid explanation or reasoning.
-
-let the questions be numbered.
-sections may have subsections, with headings, instructions for the questions that follow perhaps, or passages, or just such parts that are not really questions in themselves, e.g "Write the short form of the following words". Add such parts as unnumbered questions, except for mainsections A, B and C.
-Let section A contain exactly 40 objective questions. Let section B contain exactly 5 short-answer questions. Let section C contain exactly 5 essay/theory questions.
-
-Text to create quiz from:
-  """
-  ### **WEEK 2: God’s ways of showing love to his people**
+### **WEEK 2: God’s ways of showing love to his people**
 
 The love of God to his people is shown through many way. He provides such needs as food, shelter/house and clothes for his children. He makes the sun to shine both on the good and on evil people. God also sends rain on both the just and the unjust. It is the love of God that brings sinners to repentance.
 
@@ -224,5 +162,3 @@ Jesus stopped right under the tree where the little tax collector was perched an
 But Zacchaeus stood up. He said, “Look, Lord! Here and now I give half of what I own to those who are poor. And if I have cheated anybody out of anything, I will pay it back. I will pay back four times the amount I took.” Jesus said to Zacchaeus, “Today salvation has come to your house... The Son of Man came to look for the lost and save them.”
 
 Zacchaeus was completely changed by his encounter with Jesus. Zacchaeus repented of his sins right there, in front of Jesus and the crowd. True repentance means that you “change your mind” and “turn away from sin.” Zacchaeus demonstrated his repentance by saying he would give half his money to the poor and that he would make things right with anyone he had cheated. He truly became a new man that day. 2 Corinthians 5:17 says, *Anyone who believes in Christ is a new creation. The old is gone! The new has come!* That is what happened to Zacchaeus when he decided to repent and follow Jesus.
- """
-  

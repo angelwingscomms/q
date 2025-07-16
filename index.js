@@ -540,7 +540,7 @@ async function generateSingleQuiz({ g, t, s }) {
 
     // If still no content, check the subject-specific file
     if (!t) {
-      const subjectFilePath = `./files/input/${gradeNum}/${abbreviatedSubject}`;
+      const subjectFilePath = `./files/input/${gradeNum}/${abbreviatedSubject}.md`;
       if (existsSync(subjectFilePath)) {
         try {
           t = readFileSync(subjectFilePath, "utf8");
