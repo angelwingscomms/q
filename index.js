@@ -223,13 +223,11 @@ async function createMidtermQuiz({ t, subject, grade }) {
 async function createEndOfTermQuiz({ t, selectedClass, subject, grade }) {
   try {
     const gradeNum = Object.keys(grades).find((key) => grades[key] === grade);
-    const abbreviatedSubject =
-      subjectAbbreviations[subject] || subject.toLowerCase();
-    const examplePath = `./files/examples/${gradeNum}.json`;
+    const extpath = `./files/ext-prompt/${gradeNum}.md`;
 
-    let exampleQuizPrompt = "";
-    if (existsSync(examplePath)) {
-      exampleQuizPrompt = readFileSync(examplePath, "utf8");
+    let extprompt = "";
+    if (existsSync(extpath)) {
+      extprompt = readFileSync(extpath, "utf8");
       // exampleQuizPrompt = `Here's an example quiz for ${subject} for year ${grade}:\n\`\`\`json\n${exampleQuizJson}\n\`\`\`\n`;
     }
 
@@ -282,16 +280,9 @@ async function createEndOfTermQuiz({ t, selectedClass, subject, grade }) {
         - Make questions clear and concise
         - Maintain academic language level
         - For answers_C, provide brief model answers or key points
-
-        Here's an example quiz. Follow the exact language style and ease and simplicity of questions in this example quiz:
-        \`\`\`json
-        ${exampleQuizPrompt}
-        \`\`\`
+        - ${extprompt}
 
  let the questions be numbered.
- let the questions be extremely easy.
- let the questions be extremely to answer.
- let the questons be very easy for 6 year olds to answer
         sections may have subsections, with headings, instructions for the questions that follow perhaps, or passages, or just such parts that are not really questions in themselves, e.g "Write the short form of the following words". Add such parts as unnumbered questions, except for mainsections A, B and C.
         ${extra_instructions}
 
