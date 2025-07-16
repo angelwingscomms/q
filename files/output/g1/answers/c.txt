@@ -1,35 +1,35 @@
 Section A (Objective) Answers:
-1. b
+1. a
 2. b
 3. c
-4. b
+4. c
 5. b
-6. b
+6. c
 7. b
-8. c
-9. c
-10. b
-11. a
-12. b
+8. b
+9. b
+10. c
+11. d
+12. a
 13. b
-14. b
-15. b
-16. a
+14. d
+15. c
+16. b
 17. b
-18. c
-19. b
+18. b
+19. c
 20. b
 
 Section B (Short Answer) Answers:
 1. Joystick
-2. Rectangular
-3. Printer
+2. Box
+3. CPU, disk drive, motherboard
 4. CPU
-5. Control Unit
+5. Storage devices
 
 Section C (Theory) Answers:
-1. Joystick, Monitor
-2. CPU, disk drive
-3. CD/DVD disk drive, flash drive
-4. Stores data, Controls activities
-5. Flash drive, Hard disk
+1. Stores data
+2. Flash drive
+3. Words
+4. Drive uses electricity
+5. Control Unit

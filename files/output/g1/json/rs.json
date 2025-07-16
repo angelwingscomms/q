@@ -1,25 +1,25 @@
 {
   "A": [
-    "1. Peaceful co-existence means different people living together in _ (a) conflict (b) peace (c) anger)",
-    "2. When people live together without disagreement, there is peaceful _ (a) conflict (b) co-existence (c) hatred)",
-    "3. Jesus taught us to live _ with others (a) angrily (b) peacefully (c) selfishly)",
-    "4. Jesus advised us to _ those who offend us (a) punish (b) forgive (c) ignore)",
-    "5. God wants us to live peacefully with others in the _ (a) house (b) community (c) forest)",
-    "6. Esau and Jacob _ after Jacob took blessings (a) fought (b) reconciled (c) separated)",
-    "7. Abraham prevented a quarrel between him and his nephew _ (a) Esau (b) Lot (c) Isaac)",
-    "8. It is good to show _ to others (a) anger (b) love (c) fear)",
-    "9. Jesus wants us to show love and _ to people (a) hatred (b) hostility (c) hospitality)",
-    "10. We should tell people the _ (a) lies (b) truth (c) stories)",
-    "11. We should be _ to people (a) closed-minded (b) open-minded (c) judgmental)",
-    "12. Jonathan loved David as his own _ (a) body (b) soul (c) friend)",
-    "13. King Saul was Jonathan's _ (a) brother (b) father (c) son)",
-    "14. Jonathan saved David from King Saul's _ (a) gifts (b) plans (c) army)",
-    "15. Jonathan _ David in a place far from Saul (a) found (b) hid (c) met)",
-    "16. Jonathan and David made a _ (a) promise (b) covenant (c) deal)",
-    "17. Pupils should show _ to one another (a) dislike (b) love (c) indifference)",
-    "18. We should give _ to the needy (a) money (b) help (c) food)",
-    "19. We should _ our belongings with others (a) hide (b) keep (c) share)",
-    "20. We should _ one another when there is danger (a) abandon (b) protect (c) blame)"
+    "1. Peaceful Co-existence means different people living together in _ (a) war (b) peace (c) anger)?",
+    "2. Jesus taught us to live _ with others (a) angrily (b) peacefully (c) selfishly)?",
+    "3. If someone offends us, Jesus advised us to _ them (a) fight (b) forgive (c) ignore)?",
+    "4. God wants us to live peacefully with others in the _ (a) desert (b) community (c) mountains)?",
+    "5. Esau and Jacob _ after Jacob took Esau's blessings (a) fought (b) reconciled (c) separated)?",
+    "6. Philemon and Onesimus are examples of people desiring peaceful _ (a) conflict (b) co-existence (c) rivalry)?",
+    "7. Isaac and Abimelech showed a desire for peaceful _ (a) disagreement (b) co-existence (c) argument)?",
+    "8. Abraham prevented a quarrel between him and his nephew _ (a) Cain (b) Abel (c) Lot)?",
+    "9. It is good to show _ to others (a) hatred (b) love (c) indifference)?",
+    "10. Jesus wants us to show love and _ to people (a) hostility (b) hospitality (c) anger)?",
+    "11. We should tell people the _ (a) lies (b) truth (c) stories)?",
+    "12. Jonathan and David showed _ love to each other (a) selfish (b) unselfish (c) false)?",
+    "13. Jonathan loved David as his own _ (a) neighbor (b) brother (c) soul)?",
+    "14. King Saul was Jonathan's _ (a) friend (b) father (c) uncle)?",
+    "15. King Saul planned to _ David (a) help (b) kill (c) praise)?",
+    "16. Jonathan _ David from King Saul's plans (a) joined (b) saved (c) betrayed)?",
+    "17. Jonathan hid David in a place far away from _ sight (a) David's (b) Saul's (c) Jonathan's)?",
+    "18. Jonathan and David made a _ (a) promise (b) covenant (c) agreement)?",
+    "19. Pupils should _ their belongings with others (a) hide (b) share (c) keep)?",
+    "20. We should _ one another when there is danger (a) avoid (b) protect (c) ignore)?"
   ],
   "answers_A": [
     "b",
@@ -29,6 +29,10 @@
     "b",
     "b",
     "b",
+    "c",
+    "b",
+    "b",
+    "b",
     "b",
     "c",
     "b",
@@ -37,38 +41,34 @@
     "b",
     "b",
     "b",
-    "b",
-    "b",
-    "b",
-    "c",
     "b"
   ],
   "B": [
-    "1. Peaceful co-existence means different people living together in _________.",
-    "2. Who advised us to forgive those who offend us? _________",
-    "3. Which nephew did Abraham prevent a quarrel with? _________",
-    "4. Who loved David as his own soul? _________",
-    "5. What should pupils do with their belongings to show love? _________ them."
+    "1. Living together without disagreement is called _________ _________.",
+    "2. Who taught us to live peacefully with others? _________",
+    "3. Which two brothers reconciled after one took the other's blessings? _________ and _________",
+    "4. Who planned to kill David? _________ _________",
+    "5. What did Jonathan and David make together? _________"
   ],
   "C": [
-    "1. Explain the meaning of peaceful co-existence.",
-    "2. List two biblical examples of people desiring peaceful co-existence.",
-    "3. What moral responsibility is associated with showing unselfish love?",
-    "4. Describe how Jonathan demonstrated unselfish love for David.",
-    "5. According to the text, what are two ways pupils can show love to one another?"
+    "1. List two examples of people in the Bible who desired peaceful co-existence.",
+    "2. Who showed unselfish love to David?",
+    "3. What is one way pupils can show love to one another?",
+    "4. What did Jonathan do to save David from Saul's plan?",
+    "5. What is the meaning of Peaceful Co-existence?"
   ],
   "answers_B": [
-    "peace",
+    "Peaceful Co-existence",
     "Jesus",
-    "Lot",
-    "Jonathan",
-    "Share"
+    "Esau, Jacob",
+    "King Saul",
+    "Covenant"
   ],
   "answers_C": [
-    "Peaceful co-existence means different people living together without disagreement or fighting.",
-    "Esau and Jacob; Abraham and Lot.",
-    "We should consider those around us and show them love and hospitality.",
-    "Jonathan saved David from King Saul's plans and hid him.",
-    "Pupils should share their belongings and protect one another in danger."
+    "Esau and Jacob, Abraham and Lot",
+    "Jonathan",
+    "Share belongings",
+    "He told David Saul's plans and hid him",
+    "Different people living together in peace"
   ]
 }
