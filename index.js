@@ -268,47 +268,47 @@ async function createEndOfTermQuiz({ t, selectedClass, subject, grade }) {
     let extra_instructions = `Let section A contain exactly ${obj} objective questions. Let section B contain exactly ${sa} short-answer questions. Let section C contain exactly ${essay} essay/theory questions.`;
 
     const final_prompt = `
-        Create a quiz with:
-        Section A, Section B, and Section C.
+Create a quiz with:
+Section A, Section B, and Section C.
 
-        Each section should be an array of strings containing the questions for that section.
+Each section should be an array of strings containing the questions for that section.
 
-        Section A should contain objective questions (multiple choice).
-        Section B should contain short answer questions.
-        Section C should contain essay/theory questions.
-        IMPORTANT: Provide answers for all questions in each section in the corresponding answers_A, answers_B, and answers_C arrays.
+Section A should contain objective questions (multiple choice).
+Section B should contain short answer questions.
+Section C should contain essay/theory questions.
+IMPORTANT: Provide answers for all questions in each section in the corresponding answers_A, answers_B, and answers_C arrays.
 
-        Format requirements:
+Format requirements:
 
-        # For Section A (objective questions):
-        - Never end with a full stop
-        - Use 1 underscore (_) for blanks
-        - Never end a question with a blank
-        - Use brackets for options (e.g., (a)...(b)...(c)...) and place questions and options on same line
-        - Fix bad questions by removing or replacing options to ensure one correct answer
-        - Questions may end with question marks
-        - For answers_A, provide only the letter of the correct option (a, b, c, etc.) or the word that fills the blank
-        
-        - ${ext[gradeNum].a}
+# For Section A (objective questions):
+- Never end with a full stop
+- Use 1 underscore (_) for blanks
+- Never end a question with a blank
+- Use brackets for options (e.g., (a)...(b)...(c)...) and place questions and options on same line
+- Fix bad questions by removing or replacing options to ensure one correct answer
+- Questions may end with question marks
+- For answers_A, provide only the letter of the correct option (a, b, c, etc.) or the word that fills the blank
 
-        # For Section B (short answer questions):
-        - Use 9 underscores (_________) for blanks
-        - For answers_B, provide concise answers
-        
-        - ${ext[gradeNum].b}
+- ${ext[gradeNum].a}
 
-        # For Section C (essay questions):
-        - Make questions clear and concise
-        - Maintain academic language level
-        - For answers_C, provide brief model answers or key points
-        
-        - ${ext[gradeNum].c}
+# For Section B (short answer questions):
+- Use 9 underscores (_________) for blanks
+- For answers_B, provide concise answers
 
- let the questions be numbered.
-        sections may have subsections, with headings, instructions for the questions that follow perhaps, or passages, or just such parts that are not really questions in themselves, e.g "Write the short form of the following words". Add such parts as unnumbered questions, except for mainsections A, B and C.
-        ${extra_instructions}
+- ${ext[gradeNum].b}
 
-        Text to create quiz from:
+# For Section C (essay questions):
+- Make questions clear and concise
+- Maintain academic language level
+- For answers_C, provide brief model answers or key points
+
+- ${ext[gradeNum].c}
+
+let the questions be numbered.
+sections may have subsections, with headings, instructions for the questions that follow perhaps, or passages, or just such parts that are not really questions in themselves, e.g "Write the short form of the following words". Add such parts as unnumbered questions, except for mainsections A, B and C.
+${extra_instructions}
+
+Text to create quiz from:
   """
   ${t}
  """
