@@ -252,7 +252,7 @@ async function createEndOfTermQuiz({ t, selectedClass, subject, grade }) {
 
     let extra_instructions = `Let section A contain exactly ${obj} objective questions. Let section B contain exactly ${sa} short-answer questions. Let section C contain exactly ${essay} essay/theory questions.`;
 
-    const result = await singleQuizModel.generateContent(`
+    const final_prompt = `
         Create a quiz with:
         Section A, Section B, and Section C.
 
@@ -296,7 +296,9 @@ async function createEndOfTermQuiz({ t, selectedClass, subject, grade }) {
   """
   ${t}
  """
-  `);
+  `;
+    writeFileSync('./files/final_prompt.md', final_prompt)
+    const result = await singleQuizModel.generateContent(final_prompt);
 
     const responseText = result.response.text();
     return responseText;
