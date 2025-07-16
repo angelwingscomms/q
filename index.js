@@ -209,7 +209,7 @@ async function createMidtermQuiz({ t, subject, grade }) {
   """
   `
   
-    writeFileSync('final_prompt.md', final_prompt)
+    writeFileSync('./final_prompt.md', final_prompt)
     const result = await singleQuizModel.generateContent(final_prompt);
 
     const responseText = result.response.text();
