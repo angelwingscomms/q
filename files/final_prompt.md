@@ -11,7 +11,7 @@
 
         Format requirements:
 
-        For Section A (objective questions):
+        # For Section A (objective questions):
         - Never end with a full stop
         - Use 1 underscore (_) for blanks
         - Never end a question with a blank
@@ -19,16 +19,37 @@
         - Fix bad questions by removing or replacing options to ensure one correct answer
         - Questions may end with question marks
         - For answers_A, provide only the letter of the correct option (a, b, c, etc.) or the word that fills the blank
+        
+        - Each question must:
+    – Be closed-ended (True/False or Multiple Choice)
+    – Ask for a simple fact or basic concept
+    – Use simple words and grammar
+    – Require one-word or short-phrase answers
+    – Avoid explanation, opinion, or complex reasoning
 
-        For Section B (short answer questions):
+        # For Section B (short answer questions):
         - Use 9 underscores (_________) for blanks
         - For answers_B, provide concise answers
+        
+        - Each question should:
+    – Ask for a specific fact (e.g. person, name, object, place, event)
+    – Require a short answer (1–3 words)
+    – Be written in plain language (avoid complex phrasing)
+    – Avoid “why”, “how”, or any question that needs explanation or opinion
+    – Focus on basic recall, not reasoning or values
+    
+    Do not include:
+    – Definitions
+    – Moral judgments
+    – Personal views or behavior-based questions
+    – Multi-part questions
 
-        For Section C (essay questions):
+        # For Section C (essay questions):
         - Make questions clear and concise
         - Maintain academic language level
         - For answers_C, provide brief model answers or key points
-        - Generate simple questions. Each question should ask for a basic fact and require a short, direct answer (like one word or a short phrase). Use only clear, simple language. Avoid explanation or reasoning.
+        
+        - Create simple questions. Each question should ask for a basic fact and require a short, direct answer (like one word or a short phrase). Use only clear, simple language. Avoid explanation or reasoning.
 
  let the questions be numbered.
         sections may have subsections, with headings, instructions for the questions that follow perhaps, or passages, or just such parts that are not really questions in themselves, e.g "Write the short form of the following words". Add such parts as unnumbered questions, except for mainsections A, B and C.
