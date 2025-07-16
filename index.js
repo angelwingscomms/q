@@ -164,14 +164,7 @@ async function createMidtermQuiz({ t, subject, grade }) {
     }
 
     const result = await singleQuizModel.generateContent(`
-        ${exampleQuizPrompt}
-
-        ${fs.readFileSync(path.join(__dirname, 'files', 'ext-prompt', `${gradeNum}.md`), 'utf8')}
-
-
         Create a quiz with:
-
-
  Section A.
 
         Each section should be an array of strings containing the questions for that section.
@@ -227,12 +220,14 @@ async function createMidtermQuiz({ t, subject, grade }) {
 async function createEndOfTermQuiz({ t, selectedClass, subject, grade }) {
   try {
     const gradeNum = Object.keys(grades).find((key) => grades[key] === grade);
-    const ext_path = `./files/ext_prompt/${gradeNum}.json`;
+    const abbreviatedSubject =
+      subjectAbbreviations[subject] || subject.toLowerCase();
+    const examplePath = `./files/examples/g${gradeNum}/json/${abbreviatedSubject}.json`;
 
-    let ext_prompt = "";
-    if (existsSync(ext_path)) {
-      const ext_text = readFileSync(ext_path, "utf8");
-      ext_prompt = `For creating the essay section questions, Faithfully and perfectly follow these guidelines:\n\`\`\`markdown\n${ext_text}\n\`\`\`\n`;
+    let exampleQuizPrompt = "";
+    if (existsSync(examplePath)) {
+      const exampleQuizJson = readFileSync(examplePath, "utf8");
+      exampleQuizPrompt = `Here's an example quiz for ${subject} for year ${grade}:\n\`\`\`json\n${exampleQuizJson}\n\`\`\`\n`;
     }
 
     let obj = 0;
@@ -282,29 +277,13 @@ async function createEndOfTermQuiz({ t, selectedClass, subject, grade }) {
 
         For Section C (essay questions):
         - Make questions clear and concise
-        ${ext_prompt}
+        - Maintain academic language level
         - For answers_C, provide brief model answers or key points
 
-        examples:
-        """
-        1. When you take care of your body you will look attractive (a) True (b) False
-
-        2. How many noses do you have? (a) 2 (b) 1 (c) 3
-
-        3. How many nostrils do you have? (a) 1 (b) 2 (c) 3
-
-        4. The two holes in your nose are called (a) Nose holes (b) Nostrils (c) Nose cover
-
-        5. _ is used for breathing (a) Ear (b) Eyes (c) Nose
-
-        6. How many eyes do you have? (a) 4 (b) 1 (c) 2
-
-        7. The capital of Ameria is _________
-
-        8. The capital of China is _________
-
-        9. The capital of Nigeria is _________
-        """
+        Here's an example quiz. Follow the language style, structure, and ease of questions in this example quiz:
+        \`\`\`json
+        ${exampleQuizPrompt}
+        \`\`\`
 
  let the questions be numbered.
         sections may have subsections, with headings, instructions for the questions that follow perhaps, or passages, or just such parts that are not really questions in themselves, e.g "Write the short form of the following words". Add such parts as unnumbered questions, except for mainsections A, B and C.
