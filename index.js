@@ -163,7 +163,7 @@ async function createMidtermQuiz({ t, subject, grade }) {
       exampleQuizPrompt = `Here's an example quiz for Religious Studies for year ${grade}:\n\`\`\`json\n${exampleQuizJson}\n\`\`\`\n`;
     }
 
-    const result = await singleQuizModel.generateContent(`
+    let final_prompt = `
         Create a quiz with:
  Section A.
 
@@ -207,7 +207,11 @@ async function createMidtermQuiz({ t, subject, grade }) {
   """
   ${t}
   """
-  `);
+  `
+  
+  console.log(final_prompt)
+
+    const result = await singleQuizModel.generateContent(final_prompt);
 
     const responseText = result.response.text();
     return responseText;
