@@ -282,6 +282,7 @@ async function createEndOfTermQuiz({ t, selectedClass, subject, grade }) {
 
         For Section C (essay questions):
         - Make questions clear and concise
+        ${ext_prompt}
         - For answers_C, provide brief model answers or key points
 
         examples:
