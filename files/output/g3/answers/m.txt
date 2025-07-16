@@ -1,45 +1,45 @@
 Section A (Objective) Answers:
-1. b
-2. b
+1. a
+2. c
 3. b
-4. b
+4. c
 5. b
-6. b
-7. c
-8. a
-9. b
+6. a
+7. a
+8. b
+9. c
 10. b
 11. b
-12. b
-13. b
-14. b
-15. c
-16. c
-17. b
-18. b
+12. c
+13. a
+14. a
+15. b
+16. b
+17. a
+18. c
 19. b
 20. b
 21. b
-22. b
-23. a
-24. b
-25. a
+22. c
+23. b
+24. a
+25. b
 26. b
 27. b
 28. b
-29. a
+29. b
 30. a
 
 Section B (Short Answer) Answers:
-1. minute hand
-2. hour hand
-3. 12
-4. Digital time
-5. Analogue time
+1. minute
+2. hour
+3. Analogue
+4. Digital
+5. Twelve
 
 Section C (Theory) Answers:
-1. It tells minutes.
-2. It tells hours.
-3. 5:00
-4. 5:30
-5. Analogue clock
+1. Indicates minutes
+2. Indicates the hour
+3. 4 o'clock
+4. 5:00
+5. Twelve
