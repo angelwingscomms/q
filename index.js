@@ -164,7 +164,14 @@ async function createMidtermQuiz({ t, subject, grade }) {
     }
 
     const result = await singleQuizModel.generateContent(`
+        ${exampleQuizPrompt}
+
+        ${fs.readFileSync(path.join(__dirname, 'files', 'ext-prompt', `${gradeNum}.md`), 'utf8')}
+
+
         Create a quiz with:
+
+
  Section A.
 
         Each section should be an array of strings containing the questions for that section.
@@ -220,14 +227,12 @@ async function createMidtermQuiz({ t, subject, grade }) {
 async function createEndOfTermQuiz({ t, selectedClass, subject, grade }) {
   try {
     const gradeNum = Object.keys(grades).find((key) => grades[key] === grade);
-    const abbreviatedSubject =
-      subjectAbbreviations[subject] || subject.toLowerCase();
-    const examplePath = `./files/examples/g${gradeNum}/json/${abbreviatedSubject}.json`;
+    const ext_path = `./files/ext_prompt/${gradeNum}.json`;
 
-    let exampleQuizPrompt = "";
-    if (existsSync(examplePath)) {
-      const exampleQuizJson = readFileSync(examplePath, "utf8");
-      exampleQuizPrompt = `Here's an example quiz for ${subject} for year ${grade}:\n\`\`\`json\n${exampleQuizJson}\n\`\`\`\n`;
+    let ext_prompt = "";
+    if (existsSync(ext_path)) {
+      const ext_text = readFileSync(ext_path, "utf8");
+      ext_prompt = `For creating the essay section questions, Faithfully and perfectly follow these guidelines:\n\`\`\`markdown\n${ext_text}\n\`\`\`\n`;
     }
 
     let obj = 0;
@@ -250,7 +255,6 @@ async function createEndOfTermQuiz({ t, selectedClass, subject, grade }) {
     let extra_instructions = `Let section A contain exactly ${obj} objective questions. Let section B contain exactly ${sa} short-answer questions. Let section C contain exactly ${essay} essay/theory questions.`;
 
     const result = await singleQuizModel.generateContent(`
-        ${exampleQuizPrompt}
         Create a quiz with:
         Section A, Section B, and Section C.
 
@@ -278,7 +282,6 @@ async function createEndOfTermQuiz({ t, selectedClass, subject, grade }) {
 
         For Section C (essay questions):
         - Make questions clear and concise
-        - Maintain academic language level
         - For answers_C, provide brief model answers or key points
 
         examples:
