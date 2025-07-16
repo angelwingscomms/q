@@ -1,35 +1,35 @@
 Section A (Objective) Answers:
 1. b
 2. b
-3. b
-4. b
-5. c
-6. b
+3. c
+4. a
+5. b
+6. c
 7. c
-8. a
-9. b
+8. b
+9. a
 10. b
-11. b
+11. c
 12. b
-13. a
-14. b
-15. c
-16. a
-17. b
-18. c
-19. b
-20. c
+13. b
+14. a
+15. b
+16. b
+17. c
+18. b
+19. a
+20. b
 
 Section B (Short Answer) Answers:
-1. Minute hand
-2. Hour hand
-3. Twelve
-4. Five o'clock
-5. 5:30
+1. minute
+2. hour
+3. 12
+4. analogue
+5. digital
 
 Section C (Theory) Answers:
-1. It tells the number of minutes past or to the hour.
-2. It tells the current hour.
-3. Analogue time uses hands; digital time uses numbers.
-4. 4 o'clock or half past 5.
-5. 5:00 or 5:30.
+1. Minute hand
+2. Hour hand
+3. 12 hours
+4. Analogue time
+5. Digital time
