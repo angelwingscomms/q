@@ -1,35 +1,35 @@
 Section A (Objective) Answers:
-1. information
+1. b
 2. b
-3. antenna
-4. subtraction
-5. electronic
-6. monitor
-7. numbers
-8. communicate
+3. c
+4. c
+5. c
+6. c
+7. c
+8. b
 9. c
-10. speaker
+10. a
 11. b
-12. computer
-13. wrist
-14. dial
-15. True
-16. False
-17. small screen
-18. data
-19. second
-20. b
+12. b
+13. c
+14. c
+15. d
+16. b
+17. b
+18. c
+19. b
+20. c
 
 Section B (Short Answer) Answers:
 1. Radio
-2. Digital wristwatch
-3. Computer
-4. Television
-5. Calculator
+2. Mobile phone
+3. Digital wristwatch
+4. Calculator
+5. System unit
 
 Section C (Theory) Answers:
-1. Calculator, Radio, Television
-2. It allows us to watch cartoons and news.
-3. It has an antenna for receiving sound messages.
-4. Monitor and System unit.
-5. It displays time in numbers, showing the hour, minute, and second.
+1. Calculator, Radio
+2. Pass information
+3. Cartoons and news
+4. Hour, minute, second
+5. Communicate among people

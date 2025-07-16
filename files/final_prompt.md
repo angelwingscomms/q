@@ -61,58 +61,37 @@ Let section A contain exactly 20 objective questions. Let section B contain exac
 
 Text to create quiz from:
   """
-  ### Civic-Education 26/5/2025
+  ### Mathematics
 
-#### HIGH-WAY CODES
+**Time**
+*(Image of a clock face)*
 
-Highway codes are rules that help us stay safe on the roads. These are the rules, regulations and symbols designed to ensure safety on our roads and highways.
+The clock face shows 12-hour clock times. The long hand on the clock face is called minute hand. It tells the number of minutes past or to the hour. The short hand on the clock face is called the hour hand.
 
-#### ROAD-SAFETY RULES
+*(Images of clocks showing 4 o'clock and 8 o'clock)*
+- 4 o'clock
+- 8 o'clock
 
-1.  **Look Left, Right and Left Again**: Before crossing the road, look left, right and left again to make sure no cars are coming.
-2.  **Use crosswalks**: Use designated cross-walks or pedestrian crossings to cross the road.
-3.  **Hold Someone's Hand**: When walking on the road or crossing, hold someone's hand, especially if you're a kid.
-4.  **Wear Bright Colors**: Wear bright or reflective clothing so drivers can see you.
-5.  **Follow Traffic Lights**: Red means Stop, green means go, and yellow means get ready to stop.
+**Classwork**
+Write the following time
+*(Images of clocks for classwork)*
 
----
-
-### N.V (Civic-Education)
-
-#### IMPORTANCE/ADVANTAGES/BENEFITS OF HIGHWAY CODES
-
-1. They safeguard lives and property on our roads.
-2. They help to promote responsible, orderly use of the roads.
-3. They guide drivers, cyclists and other road users on proper use of our roads.
-4. They help to ensure that reckless drivers are arrested and punished.
+**Homework**
+Write the following time
+*(Images of clocks for homework)*
 
 ---
 
-### 6TH WEEK
+### Math
 
-#### N.V (Civic-Education)
+**Analogue and digital time**
 
-#### EXAMPLES OF SIGNS AND MEANING
+*(Image of a clock at 5:00)*
+- Analogue time: 5 o'clock
+- Digital time: 5:00
 
-1. **PEDESTRIAN CROSSING**, ALSO KNOWN AS Zebra Crossing. It is a sign that all vehicles including bicycles, motor-cycles, cars should stop and give way for pedestrian road users.
-2. **NO ENTRY**. It is used to inform road users that they are on the wrong way. It also helps to indicate that a road is one way only.
-
-### 7TH WEEK
-
-#### N.V (CIVIC-EDUCATION)
-
-#### SECURITY
-
-Security refers to safety, well-being, freedom and peace. It is the protection from dangers to life and property.
-
-Security is very important in the development and progress of any nation. Without security, it would be difficult for people to properly carry out their economic, social and political activities.
-
----
-
-### 8TH WEEK
-
-#### N.V (CIVIC-EDUCATION)
-
-####...
+*(Image of a clock at 5:30)*
+- Analogue time: half past 5
+- Digital time: 5:30
  """
   
