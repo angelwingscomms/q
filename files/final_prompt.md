@@ -31,7 +31,46 @@
 
         Here's an example quiz. Follow the language style, structure, and ease of questions in this example quiz:
         ```json
-        
+        Here's an example quiz for Religious Studies for year ONE:
+```json
+{  "A": [
+  "1. God's power is shown by creating all things (a) True (b) False",
+  "2. Where can we read of God's creation? (a) Matthew (b) Numbers (c) Genesis",
+  "3. God gave man power over creation (a) True (b) False",
+  "4. Bringing something to exist is _ (a) Creation (b) Repair (c) Arrange",
+  "5. God created Earth in _ days (a) 5 (b) 6 (c) 8",
+  "6. God created what on day one? (a) Sun (b) Light (c) Water",
+  "7. God created what on day two? (a) Seas (b) Heavens (c) Earth",
+  "8. God created what on day three? (a) Man, woman (b) Sun, moon (c) Seas, land",
+  "9. God created what on day four? (a) Sun, moon, stars (b) Water, plants (c) Humans, animals",
+  "10. God created what on day six? (a) Man (b) Water (c) Books",
+  "11. Who created all things? (a) God (b) Angel (c) Man",
+  "12. Who has the power to do all things? (a) Man (b) God (c) Angels",
+  "13. Where does the Bible mentions God creating the heavens and earth? (a) Genesis (b) Exodus (c) Proverbs",
+  "14. God is everywhere (a) True (b) False",
+  "15. God is invisible (a) True (b) False",
+  "16. To be holy is to be _ (a) Fearful (b) Bad (c) Righteous",
+  "17. God cares for us by giving us food (a) True (b) False",
+  "18. God is a spirit (a) True (b) False",
+  "19. God created all things for his _ (a) Self (b) Glory (c) Use",
+  "20. God created all things for man to use (a) True (b) False"
+],
+"B": [
+  "1. _________ is to bring something into existence.",
+  "2. God created everything on Earth in _________ days.",
+  "3. God rested on the _________ day.",
+  "4. God created _________ on the first day.",
+  "5. God created _________ on the second day."
+],
+"C": [
+  "1. Who gave birth to Jesus?",
+  "2. Who appeared to Mary?",
+  "3. What was the name of the Angel that appeared to Mary?",
+  "4. Who did Mary get married to?",
+  "5. Mary gave birth to who?"
+]}
+```
+
         ```
 
  let the questions be numbered.
