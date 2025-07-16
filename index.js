@@ -305,6 +305,7 @@ Format requirements:
 - ${ext[1].c}
 
 let the questions be numbered.
+refrain from mentioning or referencing the source text that the quiz is made from. Never say something like "according to the text" or "from the text"
 sections may have subsections, with headings, instructions for the questions that follow perhaps, or passages, or just such parts that are not really questions in themselves, e.g "Write the short form of the following words". Add such parts as unnumbered questions, except for mainsections A, B and C.
 ${extra_instructions}
 
@@ -996,11 +997,115 @@ async function generateAnswersForAllGrades(redoExisting = false) {
   }
 }
 
+async function generateAllQuizzesAllGrades({ examType, skipExisting = false }) {
+  console.log(`Starting to generate ${examType} quizzes for all grades...`);
+
+  // First, scan all grades for existing quizzes
+  if (skipExisting) {
+    console.log("\nScanning for existing quizzes...");
+    let totalExisting = 0;
+
+    for (const gradeNum of Object.keys(grades)) {
+      const gradeName = grades[gradeNum];
+      const jsonDir = `./files/output/g${gradeNum}/json`;
+
+      if (existsSync(jsonDir)) {
+        const existingFiles = readdirSync(jsonDir).filter((f) =>
+          f.endsWith(".json"),
+        );
+        if (existingFiles.length > 0) {
+          console.log(
+            `  Grade ${gradeName}: ${existingFiles.length} existing quizzes (${existingFiles.join(", ")})`,
+          );
+          totalExisting += existingFiles.length;
+        } else {
+          console.log(`  Grade ${gradeName}: no existing quizzes`);
+        }
+      } else {
+        console.log(`  Grade ${gradeName}: no output directory yet`);
+      }
+    }
+
+    console.log(`\nTotal existing quizzes found: ${totalExisting}`);
+    console.log(
+      skipExisting
+        ? "Will skip existing files.\n"
+        : "Will overwrite existing files.\n",
+    );
+  }
+
+  const gradeKeys = Object.keys(grades);
+  const totalGrades = gradeKeys.length;
+  let processedGrades = 0;
+
+  for (const gradeNum of gradeKeys) {
+    const gradeName = grades[gradeNum];
+    processedGrades++;
+
+    console.log(
+      `\n=== Processing Grade ${gradeName} (${gradeNum}) [${processedGrades}/${totalGrades}] ===`,
+    );
+
+    // Check what subjects are available for this grade
+    const jsonPath = `./files/input/${gradeNum}.json`;
+    const folderPath = `./files/input/${gradeNum}`;
+
+    let subjectCount = 0;
+    if (existsSync(jsonPath)) {
+      try {
+        const exams = JSON.parse(readFileSync(jsonPath, "utf8"));
+        subjectCount = exams.length;
+        console.log(
+          `Found ${subjectCount} subjects in JSON file for Grade ${gradeName}`,
+        );
+      } catch (error) {
+        console.log(
+          `Could not read JSON file for Grade ${gradeName}: ${error.message}`,
+        );
+      }
+    } else if (existsSync(folderPath)) {
+      const files = readdirSync(folderPath);
+      subjectCount = files.length;
+      console.log(
+        `Found ${subjectCount} subject files in folder for Grade ${gradeName}`,
+      );
+    } else {
+      console.log(`No input data found for Grade ${gradeName}`);
+    }
+
+    try {
+      await generateMultipleQuizzes({
+        g: gradeName,
+        skipExisting: skipExisting,
+        examType: examType,
+      });
+      console.log(
+        `✓ Completed Grade ${gradeName} (${processedGrades}/${totalGrades})`,
+      );
+    } catch (error) {
+      console.error(`✗ Error processing Grade ${gradeName}: ${error.message}`);
+      // Continue with next grade even if this one fails
+    }
+  }
+
+  console.log("\n=== All grades processing complete ===");
+  console.log(`Processed ${totalGrades} grades total.`);
+}
+
 async function main() {
   try {
     const mode = await new Promise((resolve) => {
       rl.question(
-        "Select mode: (1) single quiz (2) multiple quizzes (3) create answers (4) create all answers for one grade (5) create all answers for all grades (6) multiple quizzes (skip existing): ",
+        "Select mode:\n" +
+          "(1) single quiz\n" +
+          "(2) multiple quizzes\n" +
+          "(3) create answers\n" +
+          "(4) create all answers for one grade\n" +
+          "(5) create all answers for all grades\n" +
+          "(6) multiple quizzes (skip existing)\n" +
+          "(7) generate ALL quizzes for ALL grades (overwrite existing)\n" +
+          "(8) generate ALL quizzes for ALL grades (skip existing)\n" +
+          "Enter your choice: ",
         (answer) => resolve(answer),
       );
     });
@@ -1008,11 +1113,33 @@ async function main() {
     const examTypes = ["Midterm", "End of Term"];
     let selectedExamType = null;
 
-    if (mode === "1" || mode === "2" || mode === "6") {
+    if (
+      mode === "1" ||
+      mode === "2" ||
+      mode === "6" ||
+      mode === "7" ||
+      mode === "8"
+    ) {
       selectedExamType = await displayMenu(examTypes, "Select exam type:");
     }
 
-    if (mode === "6") {
+    if (mode === "8") {
+      console.log(
+        "Generating ALL quizzes for ALL grades (skipping existing)...",
+      );
+      await generateAllQuizzesAllGrades({
+        examType: selectedExamType,
+        skipExisting: true,
+      });
+    } else if (mode === "7") {
+      console.log(
+        "Generating ALL quizzes for ALL grades (overwriting existing)...",
+      );
+      await generateAllQuizzesAllGrades({
+        examType: selectedExamType,
+        skipExisting: false,
+      });
+    } else if (mode === "6") {
       // Grade selection as a menu of numbers
       const gradeSelection = await new Promise((resolve) => {
         console.log("Which grade?");
