@@ -1,35 +1,35 @@
 Section A (Objective) Answers:
-1. a
+1. c
 2. b
 3. b
-4. c
+4. b
 5. b
 6. a
-7. c
-8. b
+7. b
+8. c
 9. a
 10. b
-11. a
-12. b
+11. c
+12. c
 13. b
 14. b
-15. b
-16. b
-17. b
-18. a
-19. c
+15. a
+16. c
+17. c
+18. b
+19. b
 20. b
 
 Section B (Short Answer) Answers:
-1. Drugs are substances, other than food and water, that alter the body's physical and mental functions upon consumption.
-2. Aspirin: To treat headache, pain. Daga: To treat headache and body pains, toothache. Nivaquine: Used to treat malaria.
-3. Naturally occurring drugs.
-4. Syrup, Ointment, Injection.
-5. Herbal forms such as leaves, roots, and barks of trees.
+1. drug
+2. Nivaquine
+3. natural
+4. Ointment
+5. Yes
 
 Section C (Theory) Answers:
-1. Modern drugs undergo further processes and refinement of substances, while traditional drugs are typically served in their natural form without extensive processing.
-2. Modern drugs are artificially processed and contain synthetic substances like chemicals, whereas traditional drugs occur naturally and are usually administered in their natural state. Additionally, modern drugs come in doses, while traditional drugs are often administered without strict compliance with dosage.
-3. Modern drugs extract active ingredients from plants for medicinal purposes, while traditional drugs utilize the entire plant. Modern drugs contain synthetic substances and preservatives, while traditional drugs are usually preserved naturally.
-4. Traditional drugs are naturally derived from substances like plants, animals, chalk, and charcoal. A main advantage mentioned is that most herbal drugs do not have a specific expiry date, implying longer shelf life or less concern about degradation over time compared to modern drugs.
-5. Modern drugs normally come in specific doses, implying strict adherence to prescribed amounts. In contrast, traditional drugs are often administered without strict compliance with dosage, suggesting a less precise or regulated approach to the amount given.
+1. Any substance apart from food and water that changes body functions.
+2. Aspirin, Panadol
+3. Modern drugs are artificially processed, while traditional drugs occur naturally.
+4. Modern drugs come in doses, traditional drugs often do not have strict dosage compliance.
+5. Naturally

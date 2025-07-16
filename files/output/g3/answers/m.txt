@@ -2,44 +2,44 @@ Section A (Objective) Answers:
 1. b
 2. b
 3. b
-4. c
+4. b
 5. b
-6. c
-7. b
-8. b
+6. b
+7. c
+8. a
 9. b
 10. b
 11. b
-12. a
+12. b
 13. b
-14. c
-15. a
-16. b
-17. c
-18. a
+14. b
+15. c
+16. c
+17. b
+18. b
 19. b
 20. b
-21. a
+21. b
 22. b
-23. b
+23. a
 24. b
-25. b
+25. a
 26. b
 27. b
 28. b
-29. b
-30. b
+29. a
+30. a
 
 Section B (Short Answer) Answers:
-1. Analogue clocks use hands on a dial, while digital clocks display numbers directly.
-2. Two (hour and minute hands).
-3. 7:15
-4. It refers to 30 minutes past the hour.
-5. 12 o'clock (either AM or PM).
+1. minute hand
+2. hour hand
+3. 12
+4. Digital time
+5. Analogue time
 
 Section C (Theory) Answers:
-1. The hour hand indicates the hour, moving slowly around the dial. The minute hand indicates minutes, completing a full circle every hour. They work together, with the minute hand's position refining the hour indicated by the hour hand.
-2. Analogue clocks display time using hands on a circular dial, providing a visual representation of time's passage. Digital clocks display time numerically. Advantages of analogue include visual intuitive understanding of time progression; disadvantages include less precision. Advantages of digital include exact precision; disadvantages include less intuitive sense of time flow.
-3. Start by identifying the hour hand (shorter) and minute hand (longer). Explain how the hour hand indicates the hour, reading the numbers 1-12. Then, explain how the minute hand indicates minutes, counting by fives around the dial (e.g., 12=00, 3=15, 6=30, 9=45). Practice with "o'clock", "half past", "quarter past/to".
-4. Accurate timekeeping is crucial for scheduling, coordination, and efficiency in daily life (e.g., appointments, transport). In professional fields like aviation, medicine, and finance, precise timekeeping is critical for safety, operations, and transaction accuracy, preventing errors and ensuring synchronized activities.
-5. I would choose digital clocks. While analogue clocks offer a good visual sense of time, digital clocks provide exact precision, which is more practical for scheduling, appointments, and quick reading, especially in a fast-paced environment. They are also easier for universal understanding without needing to interpret hand positions.
+1. It tells minutes.
+2. It tells hours.
+3. 5:00
+4. 5:30
+5. Analogue clock

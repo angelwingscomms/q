@@ -1,45 +1,45 @@
 Section A (Objective) Answers:
 1. c
 2. b
-3. a
+3. b
 4. b
 5. b
 6. b
-7. b
-8. b
-9. b
-10. b
-11. b
+7. a
+8. a
+9. c
+10. a
+11. c
 12. b
-13. b
+13. a
 14. b
-15. a
+15. c
 16. b
 17. b
-18. b
-19. c
-20. a
-21. c
+18. c
+19. b
+20. b
+21. b
 22. b
 23. b
-24. c
-25. c
-26. b
+24. b
+25. b
+26. a
 27. b
 28. b
 29. b
 30. b
 
 Section B (Short Answer) Answers:
-1. few, some, many
-2. To describe or talk about a noun.
-3. Adverb of manner, Adverb of time, Adverb of place.
-4. in, on
-5. 'Is' is used with singular nouns, and 'are' is used with plural nouns and 'you'
+1. Determiners
+2. Noun
+3. verbs/actions
+4. -ly
+5. prepositions
 
 Section C (Theory) Answers:
-1. Determiners specify or quantify nouns. They introduce nouns and provide information such as quantity, possession, or definiteness. Examples: "few students," "some water," "many cars," "much effort," "any question."
-2. Adverbs describe verbs, adjectives, or other adverbs, telling how, when, where, or to what extent an action occurs. Many end in -ly. Adjectives, in contrast, describe nouns. Example: "She sings beautifully" (adverb), "She is a beautiful singer" (adjective).
-3. A preposition is a word that shows the relationship between a noun or pronoun and other words in a sentence, often indicating location, direction, or time. Its primary function is to link. Examples: "The cat is under the table," "She arrived at noon," "He walked across the bridge."
-4. The verb "be" in its 'is' and 'are' forms indicates state of being. 'Is' is used with singular nouns and pronouns (e.g., "The dog is happy," "He is tall"). 'Are' is used with plural nouns and pronouns, and with 'you' (e.g., "The dogs are happy," "They are tall," "You are kind").
-5. Understanding different parts of speech is crucial for constructing grammatically correct and meaningful sentences. Knowing what role each word plays (e.g., whether it describes a noun, modifies a verb, or shows relation) allows for precise expression, proper word order, and the ability to identify and correct grammatical errors, leading to clearer communication.
+1. Adverb of manner, Adverb of time, Adverb of place
+2. It tells where or when something is in relation to something else.
+3. 'is', 'isn't'
+4. few, some, many, much, any
+5. Adjectives describe or talk about a Noun.

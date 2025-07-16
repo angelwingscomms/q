@@ -289,20 +289,20 @@ Format requirements:
 - Questions may end with question marks
 - For answers_A, provide only the letter of the correct option (a, b, c, etc.) or the word that fills the blank
 
-- ${ext[gradeNum].a}
+- ${ext[1].a}
 
 # For Section B (short answer questions):
 - Use 9 underscores (_________) for blanks
 - For answers_B, provide concise answers
 
-- ${ext[gradeNum].b}
+- ${ext[1].b}
 
 # For Section C (essay questions):
 - Make questions clear and concise
 - Maintain academic language level
 - For answers_C, provide brief model answers or key points
 
-- ${ext[gradeNum].c}
+- ${ext[1].c}
 
 let the questions be numbered.
 sections may have subsections, with headings, instructions for the questions that follow perhaps, or passages, or just such parts that are not really questions in themselves, e.g "Write the short form of the following words". Add such parts as unnumbered questions, except for mainsections A, B and C.

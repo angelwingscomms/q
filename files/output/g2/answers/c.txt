@@ -1,35 +1,35 @@
 Section A (Objective) Answers:
-1. b
+1. information
 2. b
-3. b
-4. c
-5. b
-6. b
-7. b
-8. c
-9. b
-10. c
+3. antenna
+4. subtraction
+5. electronic
+6. monitor
+7. numbers
+8. communicate
+9. c
+10. speaker
 11. b
-12. c
-13. c
-14. b
-15. c
-16. b
-17. c
-18. b
-19. b
-20. c
+12. computer
+13. wrist
+14. dial
+15. True
+16. False
+17. small screen
+18. data
+19. second
+20. b
 
 Section B (Short Answer) Answers:
-1. To pass information from one person to another and from one place to another.
-2. Calculator, Radio, Television (or any three from the list provided)
-3. To perform addition and subtraction of numbers.
-4. Through its antenna.
-5. A monitor and a system unit.'
+1. Radio
+2. Digital wristwatch
+3. Computer
+4. Television
+5. Calculator
 
 Section C (Theory) Answers:
-1. A television allows us to watch cartoons and news. It has buttons for changing channels and the volume.
-2. A radio passes audio sound programmes and messages to the public. It has an antenna for receiving sound messages, a knob for turning to different stations, and a speaker through which sound is passed.
-3. A computer is an electronic device that processes data and gives information. It has a monitor where you see what has been entered from the keyboard and a system unit that connects all other devices.
-4. A digital wristwatch is worn on the wrist and displays time in numbers (hour, minute, second). A mobile GSM phone is a small radio telephone used for long-distance communication, having a screen and keys for dialing. The watch is for time display, the phone for communication.
-5. IT devices are used to pass information. Examples like televisions for news/entertainment, radios for audio messages, calculators for arithmetic, computers for data processing, and mobile phones for communication demonstrate their crucial role in facilitating information exchange and various daily tasks.
+1. Calculator, Radio, Television
+2. It allows us to watch cartoons and news.
+3. It has an antenna for receiving sound messages.
+4. Monitor and System unit.
+5. It displays time in numbers, showing the hour, minute, and second.

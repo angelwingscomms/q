@@ -1,35 +1,35 @@
 Section A (Objective) Answers:
 1. b
 2. b
-3. a
+3. b
 4. b
-5. a
-6. c
+5. c
+6. b
 7. c
-8. b
+8. a
 9. b
 10. b
 11. b
 12. b
-13. b
+13. a
 14. b
-15. b
-16. b
+15. c
+16. a
 17. b
-18. b
-19. a
-20. b
+18. c
+19. b
+20. c
 
 Section B (Short Answer) Answers:
-1. The minute hand is long and tells minutes, while the hour hand is short and tells hours.
-2. It is represented by the minutes being 30 (e.g., 5:30).
-3. It signifies that the minute hand is pointing to the 12, indicating an exact hour.
-4. A system where time cycles twice a day (AM/PM) using numbers 1-12.
-5. Analogue time and digital time
+1. Minute hand
+2. Hour hand
+3. Twelve
+4. Five o'clock
+5. 5:30
 
 Section C (Theory) Answers:
-1. The minute hand (long hand) indicates the number of minutes past or to the hour. The hour hand (short hand) indicates the current hour. Together, they show the precise time.
-2. Analogue time uses hands on a clock face (e.g., 5 o'clock, half past 5). Digital time uses numbers (e.g., 5:00, 5:30). Analogue gives a visual sense of time's progression, while digital provides precise numerical representation.
-3. Advantages: Common, easy to understand for basic hourly readings. Disadvantages: Requires AM/PM distinction to avoid ambiguity, can be less precise for scheduling without context.
-4. Start by identifying the hour hand (short) and minute hand (long). Explain how the hour hand indicates the hour (points to number). Explain how the minute hand indicates minutes by counting in fives around the clock face from 12 (0 minutes) to 6 (30 minutes) etc. Introduce "o'clock" and "half past".
-5. When coordinating with people who use different time displays (e.g., one person has a traditional wall clock, another a digital phone). Or, when needing to quickly grasp the approximate time from an analogue display while also needing precise numerical time for logging or scheduling from a digital display.
+1. It tells the number of minutes past or to the hour.
+2. It tells the current hour.
+3. Analogue time uses hands; digital time uses numbers.
+4. 4 o'clock or half past 5.
+5. 5:00 or 5:30.

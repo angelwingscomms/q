@@ -1,35 +1,35 @@
 Section A (Objective) Answers:
-1. a
-2. c
-3. b
-4. c
-5. b
-6. b
-7. b
-8. b
-9. c
-10. b
-11. a
-12. b
-13. c
-14. b
-15. c
-16. b
-17. b
-18. b
-19. c
-20. b
+1. True
+2. determiner
+3. noun
+4. b
+5. verbs
+6. a
+7. how
+8. when
+9. where
+10. adverb
+11. True
+12. after
+13. b
+14. be
+15. singular
+16. True
+17. plural
+18. True
+19. determiner
+20. adjective
 
 Section B (Short Answer) Answers:
-1. few, some, many
-2. Adjectives describe or talk about a Noun.
-3. Adverb of manner, Adverb of time, Adverb of place.
-4. in, from
-5. You use 'is' or 'isn't' with singular nouns.
+1. Determiners
+2. Adjective
+3. Adverb
+4. Preposition
+5. be
 
 Section C (Theory) Answers:
-1. Determiners introduce a noun and provide information about quantity, possession, or specificity (e.g., 'few' in 'few books').
-2. Adjectives modify or describe nouns, adding detail about their qualities. Example: 'The *red* car.'
-3. Adverbs describe verbs: manner (how, e.g., 'slowly'), time (when, e.g., 'late'), place (where, e.g., 'here'). They clarify action circumstances.
-4. Prepositions show the relationship between a noun/pronoun and other words, indicating location, time, or direction (e.g., 'The cat is *under* the table').
-5. 'Is' is used with singular nouns/pronouns (e.g., 'He *is* happy'). 'Are' is used with plural nouns/pronouns (e.g., 'They *are* friends').
+1. few, some
+2. greedy, beautiful
+3. Adverb of manner, Adverb of time, Adverb of place
+4. Use 'is' with singular nouns, and 'are' with plural nouns.
+5. in, from

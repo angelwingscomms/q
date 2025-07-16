@@ -1,40 +1,35 @@
 Section A (Objective) Answers:
-1. 
+1. b
 2. b
 3. c
-4. a
+4. b
 5. b
 6. b
 7. b
 8. c
-9. b
+9. c
 10. b
-11. 
-12. c
+11. a
+12. b
 13. b
-14. c
+14. b
 15. b
-16. c
+16. a
 17. b
-18. b
+18. c
 19. b
-20. 
-21. b
-22. c
-23. a
+20. b
 
 Section B (Short Answer) Answers:
-1. 
-2. Joystick
-3. To show words, pictures, and films from the computer.
-4. Central Processing Unit (CPU), disk drive, motherboard.
-5. Control Unit (CU), Random Access Memory (RAM), Arithmetic and Logic Unit (ALU).
-6. Flash drive, Hard disk, Compact disk (CD), Floppy disk, Digital video disk (DVD), Magnetic tape.
+1. Joystick
+2. Rectangular
+3. Printer
+4. CPU
+5. Control Unit
 
 Section C (Theory) Answers:
-1. 
-2. A printer is an output device used to transfer data (like text, pictures, charts, tables, sketches) from the computer to paper.
-3. A speaker transfers sound from the computer, allowing users to listen to music or other audio.
-4. The system unit is often called the CPU because the Central Processing Unit (CPU) is its major and most critical component, responsible for making the computer work by performing all operations and controlling activities.
-5. Three functions of the CPU include: storing data in the memory unit, performing all computer operations (including arithmetic calculations and logical operations), and controlling all the activities of the computer.
-6. A storage disk stores information from the computer, while a storage drive is the device that reads from and writes to the storage disk. The key difference mentioned is that a storage drive uses electricity, whereas a storage disk does not.
+1. Joystick, Monitor
+2. CPU, disk drive
+3. CD/DVD disk drive, flash drive
+4. Stores data, Controls activities
+5. Flash drive, Hard disk

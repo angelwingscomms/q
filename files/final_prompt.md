@@ -60,47 +60,37 @@ Let section A contain exactly 20 objective questions. Let section B contain exac
 
 Text to create quiz from:
   """
-  ### C.R.S 20/5/2025
+  ### Mathematics
 
-#### Showing Desire for Peaceful Co-existence
+**Time**
+*(Image of a clock face)*
 
-Peaceful Co-existence simply means different people living together in peace. When people live together without any disagreement or fight, then there is peaceful co-existence among them.
+The clock face shows 12-hour clock times. The long hand on the clock face is called minute hand. It tells the number of minutes past or to the hour. The short hand on the clock face is called the hour hand.
 
-Jesus taught us to live peaceful with others. He advised us that if somebody offends us, we should forgive the person and live happily together.
+*(Images of clocks showing 4 o'clock and 8 o'clock)*
+- 4 o'clock
+- 8 o'clock
 
-#### Instances in the bible of people desiring peaceful co-existence.
+**Classwork**
+Write the following time
+*(Images of clocks for classwork)*
 
-God wants us to live peacefully with others in the community. In the Bible, there are good examples of people who lived happily together to prevent disagreement.
-
-Examples are Esau and Jacob who reconciled after Jacob took the blessings of Esau, his brother from their father.
-
-Also, there were philemon and onesimus, Isaac and Abimelech and Abraham who prevented a quarrel between him and his nephew, Lot.
-
----
-
-### C.R.S 20/5/2025
-
-#### Showing Love and Unselfishness
-#### Moral responsibility of showing unselfish love to others.
-
-It is good to show love to others. We should consider those who are around us. Jesus wants us to show love and hospitality to people.
-
-We should tell them the truth and be open-minded to them.
-
-#### The Love between Jonathan and David
-
-There were two people in the bible who showed unselfish love to each other. Jonathan loved David very much. He loved him as his own soul. When king Saul (Jonathan's Father) planned to kill David, it was Jonathan who saved David by telling him the plans of Saul.
-
-He hid him in a place far away from Saul's sight. They loved each other so much that they even made a covenant.
+**Homework**
+Write the following time
+*(Images of clocks for homework)*
 
 ---
 
-#### The Love that should exist among the pupils
+### Math
 
-Pupils and everybody in the society should show love to one another. We should show love to those in danger and give help to the needy.
+**Analogue and digital time**
 
-Other ways to show love are stated below
-1. We should share our belongings with others.
-2. We should protect one another when there is dang...
+*(Image of a clock at 5:00)*
+- Analogue time: 5 o'clock
+- Digital time: 5:00
+
+*(Image of a clock at 5:30)*
+- Analogue time: half past 5
+- Digital time: 5:30
  """
   
