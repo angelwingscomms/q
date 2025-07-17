@@ -1,67 +1,4 @@
-
-Create a quiz with:
-Section A, Section B, and Section C.
-
-Each section should be an array of strings containing the questions for that section.
-
-Section A should contain objective questions (multiple choice).
-Section B should contain short answer questions.
-Section C should contain essay/theory questions.
-IMPORTANT: Provide answers for all questions in each section in the corresponding answers_A, answers_B, and answers_C arrays.
-
-Format requirements:
-
-# For Section A (objective questions):
-- Never end with a full stop
-- Use 1 underscore (_) for blanks
-- Never end a question with a blank
-- Use brackets for options (e.g., (a)...(b)...(c)...) and place questions and options on same line
-- Fix bad questions by removing or replacing options to ensure one correct answer
-- Questions may end with question marks
-- For answers_A, provide only the letter of the correct option (a, b, c, etc.) or the word that fills the blank
-
-- 
-Each question must:
-– Be closed-ended (True/False or Multiple Choice)
-– Ask for a very simple fact or basic concept
-– Use extremely simple words and grammar
-– Require one-word or short-phrase answers
-
-
-# For Section B (short answer questions):
-- Use 9 underscores (_________) for blanks
-- For answers_B, provide concise answers
-
-- 
-Each question should:
-– Ask for a specific fact (e.g. person, name, object, place, event)
-– Require a short answer (1–3 words)
-– Be written in plain language (avoid complex phrasing)
-– Avoid “why”, “how”, or any question that needs explanation or opinion
-– Focus on basic recall, not reasoning or values
-
-Do not include:
-– Definitions
-– Moral judgments
-– Personal views or behavior-based questions
-– Multi-part questions
-
-
-# For Section C (essay questions):
-- Make questions clear and concise
-- Maintain academic language level
-- For answers_C, provide brief model answers or key points
-
-- Create simple questions. Each question should ask for a basic fact and require a short, direct answer (like one word or a short phrase). Use only clear, simple language. Avoid explanation or reasoning.
-
-let the questions be numbered.
-refrain from mentioning or referencing the source text that the quiz is made from. Never say something like "according to the text" or "from the text"
-sections may have subsections, with headings, instructions for the questions that follow perhaps, or passages, or just such parts that are not really questions in themselves, e.g "Write the short form of the following words". Add such parts as unnumbered questions, except for mainsections A, B and C.
-Let section A contain exactly 50 objective questions. Let section B contain exactly 5 short-answer questions. Let section C contain exactly 5 essay/theory questions.
-
-Text to create quiz from:
-  """
-  Following is a comprehensive extraction of the text from the provided document, organized by topic.
+Following is a comprehensive extraction of the text from the provided document, organized by topic.
 
 ### Magnetism
 
@@ -149,5 +86,3 @@ Magnets can be classified based on how long they can maintain their magnetism. [
 * **Marching**: Refers to the organized, uniformed, steady and rhythmic walking forward usually associated with military troops. Marching is usually performed by following the orders from the leader. The head and body stand erect, while arms are swung with the legs in a regular manner. A marching band consists of instrumental musicians performing for the purpose of entertainment, exercise, and sometimes competition.
 * **Galloping**: Refers to the act of running rapidly at full speed by leaping. Galloping is the fastest pace of a horse. It is sometimes useful in sports. In galloping, the two feet are off the ground at once in each stride. It is best performed by horses but humans also gallop when they are dancing or performing certain sporting activities, especially in gymnastics. The hands are thrown forward and backward while galloping.
 * **Hopping**: Is the act of jumping with one foot or leaping with all feet off the ground, covering a short distance. Both animals and humans hop. Hopping is a skill in table jump and hurdles. To be able to lift the body higher, the performer adds speed, swings the arms upward and forward.
- """
-  
