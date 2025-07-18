@@ -1,5 +1,3 @@
-Of course, here is the extracted content of the notes from your lesson plans.
-
 ### **WEEK 1&2: MEANING OF VALUES**
 
 Value can be defined as the degree of quality or worth of a thing. Value can also be defined as the laid down rules or standard that guide an individual's interactions with people. Value influences our character and attitude towards other people. Value is the acceptable way of life by a group in a particular society.
