@@ -57,97 +57,125 @@ Do not include:
 let the questions be numbered.
 refrain from mentioning or referencing the source text that the quiz is made from. Never say something like "according to the text" or "from the text"
 sections may have subsections, with headings, instructions for the questions that follow perhaps, or passages, or just such parts that are not really questions in themselves, e.g "Write the short form of the following words". Add such parts as unnumbered questions, except for mainsections A, B and C.
-Let section A contain exactly 50 objective questions. Let section B contain exactly 5 short-answer questions. Let section C contain exactly 5 essay/theory questions.
+Let section A contain exactly 40 objective questions. Let section B contain exactly 5 short-answer questions. Let section C contain exactly 5 essay/theory questions.
 
 Text to create quiz from:
   """
-  Following is a comprehensive extraction of the text from the provided document, organized by topic.
+  ### **WEEK 1&2: MEANING OF VALUES**
 
-### Magnetism
+Value can be defined as the degree of quality or worth of a thing. Value can also be defined as the laid down rules or standard that guide an individual's interactions with people. Value influences our character and attitude towards other people. Value is the acceptable way of life by a group in a particular society.
 
-[cite_start]A magnet is a piece of iron that can attract small pieces of metal. [cite: 14, 15, 16, 17]
+Value also includes people’s belief, language, arts and ways of life. Culture is the total way of life of the people and this culture cannot be separated from the people. Since the culture of the people cannot be separated from the people, it is then not possible to remove the value, beliefs and custom of a group of people from their culture.
 
-#### Properties of Magnet
+**Types of value**
+1.  **Discipline:** it is the ability of an individual to control his or her own behaviors
+2.  **Honesty:** It is the ability of being truthful and straight forward at all times.
+3.  **Selflessness:** It is the ability to show more interest in the welfare of other people
+4.  **Courage:** This is ability to face difficulty, danger or pain without fear.
+5.  **Integrity:** It is the ability to stand and stick to sound morals and principle at all times.
+6.  **Sincerity:** it is the ability to be open minded and to have clear mind towards issue
+7.  **Co-operation:** Ability to work with other people to achieve a common goal.
+8.  **Fairness:** It is the ability of been considerate and to avoid cheating
+9.  **Justice:** It is the ability of being just, righteous and upright.
+10. **Contentment:** It is a means of being happy and satisfied with what one has.
 
-1.  [cite_start]Magnets attract magnetic materials such as iron. [cite: 19]
-2.  [cite_start]Unlike poles of two magnets attract, while like poles repel each other. [cite: 20]
-3.  [cite_start]The greatest attracting region of a magnet is the poles, that is, the North and south poles. [cite: 21]
-4.  [cite_start]Magnets are capable of losing their magnetism if subjected to unfavorable conditions like hammering, heating strongly, and dropping them repeatedly. [cite: 22, 23]
-5.  They have a magnetic field around them. [cite_start]A magnetic field is a region around a magnet in which magnetic effects are felt. [cite: 24, 26, 27, 28]
-6.  [cite_start]A permanent magnet can turn magnetic materials into temporary magnets. [cite: 30]
+**IMPORTANCE OF VALUE IN ART AND CRAFT AND MUSIC IN THE SOCIETY**
+1.  It guides the practice of art by setting rules
+2.  It sets standard about how art is to be practiced.
+3.  It helps provide solution to problems about the practice of art and craft and music
+4.  It shows how knowledge in art and craft, and music is to be transferred from one generation to other generation
+5.  It helps art and craft and music to embrace new inventions in the practice, such as improvisation and recycling
 
-#### Classes of magnet
+---
 
-Magnets can be classified based on how long they can maintain their magnetism. [cite_start]They are: [cite: 31]
+### **WEEK 3&4: METHOD OF INCULCATING VALUES**
 
-1.  [cite_start]**Temporary magnets**: These are magnets which easily lose their magnetism. [cite: 32] [cite_start]They are made of soft iron such as pure iron. [cite: 33]
-2.  [cite_start]**Permanent magnet**: These are magnets which can retain their magnetism for a long time; they do not lose their magnetism easily. [cite: 34] [cite_start]They are made of steel. [cite: 35]
+**METHOD OF INCULCATING VALUE**
+1.  Improvisation
+2.  Recycling
+3.  Costume
+4.  Make up
 
-#### Magnetic and Non-magnetic materials
+**MEANING OF IMPROVISATION**
+Improvisation is the activity of making or doing something not planned beforehand, using whatever can be found. Improvisation in the performing arts is a very spontaneous performance without specific or scripted preparation. Improvisation is also known as alternative materials. For example:
+1.  **Brush:** Chewed stick, sponge tied to the end of stick, Grass, raffia foam e.t.c
+2.  **Pen:** stick with flat end, feather, and strip of hard paper Or board e.t.c.
+3.  **Canvas:** printed cloth with emulsion and glue
+4.  **Color:** Red mud, color from leaves
 
-1.  **Magnetic materials**: These are materials that can be attracted by a magnet. [cite_start]Examples: iron, Steel, Nickel and cobalt. [cite: 38]
-2.  **Non-magnetic materials**: These are materials that cannot be attracted by a magnet. [cite_start]They include brass, Silver, plastic, rubber, wood, and paper. [cite: 39, 42]
+**MEANING OF RECYCLING**
+Recycling is the changing waste or used materials into new objects or materials. When waste or used Materials reused, it is called recycling. It is also the process of converting waste materials into new materials and object.
+Recycling has many benefits such as:
+1.  Decoration
+2.  Beautification
+3.  Design
 
-#### Uses of magnets
+**COSTUME**
+Costumes refer to various attire especially made for the use of an actors in theatrical production. Costumes are clothes worn by actresses or actors, which assist them to assume different forms of character aside their true self.
+Examples includes: A pastor, Alfa or imam, Herbalist, Witch.
 
-1.  [cite_start]Magnets are used for separating magnetic materials. [cite: 49]
-2.  [cite_start]They are used for making compasses, which are instruments that help navigators and space travelers to find their direction on the sea or in the air. [cite: 50]
-3.  [cite_start]Magnets can be found in Electric bells, Radios, Television sets, Telephones, and parts of motor vehicles, etc. [cite: 51, 52]
-4.  [cite_start]Large magnets can be used to lift heavy metallic objects. [cite: 53]
-5.  [cite_start]Magnets are used in the production of Electric Current. [cite: 54, 55]
+**MAKE-UP**
+Make up on its own is applied on the actor’s body as an enhancement or aid to characterization. For example: Gray hair or beard, Tribal marks.
 
-#### Making magnets
+---
 
-[cite_start]The methods of making a magnet are: [cite: 57]
+### **WEEK 5&6: CHARACTERISTICS OF VALUE IN CULTURAL AND CREATIVE ART**
 
-1.  [cite_start]Electrical method [cite: 58]
-2.  [cite_start]Induction method [cite: 59]
-3.  [cite_start]Stroking method [cite: 60]
+**CHARACTERISTICS OF ARTS AND CRAFT IN CULTURAL AND CREATIVE ART**
+Value needed in arts and creative work. Arts and craft are very useful for preserving the culture, arts and way of life of the people in a giving society. Values that are needed include the following:
+I. Creativity
+II. Hard work
+III. Honesty
+IV. Precision
 
-* [cite_start]**Electrical method**: A steel bar is placed inside a long coil of insulated copper wire called a Solenoid, to which a battery is connected. [cite: 62] A current is switched on for some time and then switched off. [cite_start]On testing, the steel bar is found to be magnetic. [cite: 63, 65]
-* [cite_start]**Induction method**: Place the material to be made a magnet, such as a nail or a steel rod, at one end of a bar magnet for some time, then test the material. [cite: 67] [cite_start]It can be observed that it picks up some iron filings when brought near them. [cite: 68]
-* [cite_start]**Stroking method**: A steel bar can be magnetized by placing it on the table and then stroking it repeatedly with one end of a magnet. [cite: 70] [cite_start]The magnet is raised each time it reaches the end of the steel bar. [cite: 71]
+**Values are needed to:**
+1.  it help to sustain the practice of arts and craft in order to bring gain economically
+2.  it preserve the art culture
+3.  it help to inform the society about the culture practiced in a particular society
+4.  it help to inculcate cultural practice
+5.  it help to develop an acceptable behavior
+6.  it help in the documentation, preservation and promotion of the cultural practice of the society.
 
-#### Demagnetisation
+---
 
-[cite_start]Demagnetisation is the process of removing magnetic effects from a magnet. [cite: 72] A magnet can be demagnetized by:
+### **WEEK 7&8 AND WEEK 8&9: MEANING OF IMPROVISATION**
 
-* [cite_start]dropping the magnet repeatedly [cite: 73]
-* [cite_start]Heating the magnet very hard (like putting it in fire) [cite: 74]
-* [cite_start]passing an alternating current through a magnet [cite: 75]
-* [cite_start]Hammering one end of the magnet [cite: 76]
+**MEANING OF IMPROVISATION**
+Improvisation is the activity of making or doing something not planned beforehand, using whatever can be found. Improvisation in the performing arts is a very spontaneous performance without specific or scripted preparation. Improvisation is also known as alternative materials. For example:
+1.  **Brush:** Chewed stick, sponge tied to the end of stick, Grass, raffia foam e.t.c
+2.  **Pen:** stick with flat end, feather, and strip of hard paper Or board e.t.c.
+3.  **Canvas:** printed cloth with emulsion and glue
+4.  **Color:** Red mud, color from leaves
 
-### Air
+**ARTS MATERIALS AND THEIR IMPROVISED ONES**
 
-[cite_start]Air is the invisible mixture of gases that surround the earth. [cite: 83] [cite_start]It is made up of different gases, like nitrogen, oxygen and others. [cite: 84]
+| ARTS MATERIALS | IMPROVISED ONES |
+| :--- | :--- |
+| 1. Brush | chewing stick, sponge tied to the end of a stick, grass etc |
+| 2. Pen | stick with flat end, feather and strip of hard paper or board |
+| 3. Color | red mud and color from leaves |
 
-#### Applications of Air
+---
 
-* **Flotation**: Air helps objects float because air is less dense than water. When an object traps air, it becomes lighter and can float on water. [cite_start]Examples include boats, life jackets, and balloons. [cite: 87, 88, 89, 90]
-* [cite_start]**Water transportation**: Air is involved in processes like evaporation. [cite: 91, 93] [cite_start]Wind power also helps boats or ships move as air movement propels them. [cite: 94, 95, 96]
-* [cite_start]**Role in suction**: Air pressure plays a role when air is moved from a space; the pressure decreases, allowing liquids to be drawn in. Examples include vacuum cleaners, siphoning water, and drinking straws. [cite: 98, 99, 100, 101, 102, 103]
+### **WEEK 11&12: MEANING OF IMPROVISATION**
 
-#### Importance of air
+Art materials and their alternative materials are used in arts for design and decorative or beautification. Sometimes, they are mixed together or used separately for the purposes of arts. The following are the materials and their alternatives:
 
-1.  [cite_start]It is essential for breathing. [cite: 106]
-2.  [cite_start]It regulates air temperature. [cite: 107]
-3.  [cite_start]It supports weather patterns. [cite: 109]
+1.  **color:** leaves, red mud, roots, stems.
+2.  **lettering pen:** flat edge stick
+3.  **brush:** soft wood with raffia, grass.
 
-#### Industrial Applications
+**SIMILARITIES AND CHARACTERISTICS OF MATERIALS AND ALTERNATIVES**
 
-* [cite_start]Compressed air is used in pneumatic tools and equipment. [cite: 113]
-* [cite_start]Air Conditioning: Cooling and heating systems that control temperature and humidity. [cite: 114]
-* [cite_start]Drying and dehydration: Air is used to dry products such as food, textiles, and other materials. [cite: 115]
-* [cite_start]Air pollution control technologies that reduce emissions and pollutants in the air. [cite: 117]
+**SIMILARITIES**
+1.  Both can be used for the same purposes.
+2.  Both are reckoned with as materials for making artwork.
 
-#### Medical Applications
-
-* **Ventilation**: Air movement is crucial for maintaining healthy indoor air quality.
-
-### Creating Rhythmic Activities
-
-* **Marching**: Refers to the organized, uniformed, steady and rhythmic walking forward usually associated with military troops. Marching is usually performed by following the orders from the leader. The head and body stand erect, while arms are swung with the legs in a regular manner. A marching band consists of instrumental musicians performing for the purpose of entertainment, exercise, and sometimes competition.
-* **Galloping**: Refers to the act of running rapidly at full speed by leaping. Galloping is the fastest pace of a horse. It is sometimes useful in sports. In galloping, the two feet are off the ground at once in each stride. It is best performed by horses but humans also gallop when they are dancing or performing certain sporting activities, especially in gymnastics. The hands are thrown forward and backward while galloping.
-* **Hopping**: Is the act of jumping with one foot or leaping with all feet off the ground, covering a short distance. Both animals and humans hop. Hopping is a skill in table jump and hurdles. To be able to lift the body higher, the performer adds speed, swings the arms upward and forward.
+**DIFFERENCES**
+1.  Improvised materials are cheaper than the original materials
+2.  Improvised materials can be easily found in the environment while original or actual objects cannot. They are mostly bought.
+3.  Improvised materials are duplicate of the original materials.
+4.  Improvised materials cannot represent the original sometimes.
+5.  Improvised are used as blueprint for the original materials.
  """
   
