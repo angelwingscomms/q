@@ -434,7 +434,9 @@ async function generateDoc({ g, t, s, examType }) {
   console.log(`Saved answers to: ${answersPath}`);
 
   const doc = await patchDocument({
-    data: readFileSync(`./files/template${g === "ONE" ? "-cc" : ""}.docx`),
+    data: readFileSync(
+      `./files/template${g === "ONE" || "TWO" ? "-cc" : ""}.docx`,
+    ),
     outputType: "nodebuffer",
     keepOriginalStyles: true,
     patches: {
