@@ -219,7 +219,7 @@ async function createMidtermQuiz({ t, subject, grade }) {
 
  make sure the questions are very easy to answer, and for the essay part, make sure the questions are so easy they would require easy to write, brief answers
  let the questions be numbered.
- sections may have subsections, with headings, instructions for the questions that follow perhaps, or passages, or just such parts that are not really questions in themselves, e.g "Write the short form of the following words". Add such parts as unnumbered questions, except for main Section A.
+ A section may have subsections, with headings, instructions for the questions that follow perhaps, or passages, or just such parts that are not really questions in themselves, e.g "Write the short form of the following words". Add such part or subheading or instruction as unnumbered questions.
 
         Text to create quiz from:
   """
