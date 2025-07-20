@@ -76,7 +76,7 @@ then all in a mix of 10 questions, questions on past perfect tense, present perf
 set 10 questions by writing a short story full of wrongly spelled words and offering the class correct options in parenthesis to select from
 
 # short answer sections questions
-present a short dreamy poem and ask 5 simple literary questions on the poem. 
+present a short poem and ask 5 simple literary questions on the poem, like rhyming, 'provide similar words', 'provide a title', and 2 comprehension questions. 
 
 ```plaintext
 now consider these questions:
