@@ -57,18 +57,19 @@ Do not include:
 let the questions be numbered.
 refrain from mentioning or referencing the source text that the quiz is made from. Never say something like "according to the text" or "from the text"
 A section may have subsections, which may have headings, stories or instructions for the questions that follow perhaps, or passages, or just such parts that are not really questions in themselves, e.g "Write the short form of the following words" or "<a story required for the questions in this section to be answered>". Add such parts or subheadings or stories or instruction as unnumbered questions.
-Let section A contain exactly 50 objective questions. Let section B contain exactly 5 short-answer questions. Let section C contain exactly 5 essay/theory questions.
+Let section A contain exactly 40 objective questions. Let section B contain exactly 5 short-answer questions. Let section C contain exactly 5 essay/theory questions.
 
-Text to create quiz from:
+Text to create the quiz with:
   """
   # multiple choice questions
 first, present a short comprehension text and ask  8 questions based on the text
 next 12 questions should be on lexis and structure
-then all in a mix of 20 questions, questions on synonyms, antonyms, past perfect tense and adjectives. for antonyms and synonyms questions, you shouldn't only use the words 'antonym' or 'synonym', but mix with other phrases like 'similar word' or 'opposite word'
+
+then all in a mix of 10 questions, questions on past perfect tense, present perfect tense, pronouns, verbs and adverbs.
 set 10 questions by writing a short story full of wrongly spelled words and offering the class correct options in parenthesis to select from
 
-# short answer questions
-present a short poem of ten lines and ask 5 simple questions on it,
+# short answer sections questions
+present a short dreamy story and ask 5 simple questions on it,
 now consider these questions:
 ```
 1. What did the little bird sing? _________
@@ -84,16 +85,10 @@ now consider these questions:
 
 the questions seem to simple. for the short answer poetry section, upgrade the language to be suitable for 10 year olds
 
-# essay questions
-instruction: answer 2 out of 4
-1. You are a member of the Young Innovators' club in your school, you would like to see your club engage in more activities related to AI. Write a formal letter to the head of school suggesting ways this can be done.
-or
+# essay section questions
+instruction: answer 1 out of 2
+1. write an informal letter to your cousin requesting her to teach you how to play basket ball during the summer holiday.
 
-2. write an informal letter to your cousin requesting her to teach you how to play basket ball during the summer holiday.
-3. Describe your favourite whole family outing day.
-
-or
-
-4. rewrite your favourite fairy tale story using your own choice of names for the characters
+2. rewrite your favourite fairy tale story using your own choice of names for the characters
  """
   

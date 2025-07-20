@@ -309,7 +309,7 @@ refrain from mentioning or referencing the source text that the quiz is made fro
 A section may have subsections, which may have headings, stories or instructions for the questions that follow perhaps, or passages, or just such parts that are not really questions in themselves, e.g "Write the short form of the following words" or "<a story required for the questions in this section to be answered>". Add such parts or subheadings or stories or instruction as unnumbered questions.
 ${extra_instructions}
 
-Text to create quiz from:
+Text to create the quiz with:
   """
   ${t}
  """

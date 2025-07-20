@@ -5,7 +5,7 @@ next 12 questions should be on lexis and structure
 then all in a mix of 10 questions, questions on past perfect tense, present perfect tense, pronouns, verbs and adverbs.
 set 10 questions by writing a short story full of wrongly spelled words and offering the class correct options in parenthesis to select from
 
-# short answer questions
+# short answer sections questions
 present a short dreamy story and ask 5 simple questions on it,
 now consider these questions:
 ```
@@ -22,7 +22,7 @@ now consider these questions:
 
 the questions seem to simple. for the short answer poetry section, upgrade the language to be suitable for 10 year olds
 
-# essay questions
+# essay section questions
 instruction: answer 1 out of 2
 1. write an informal letter to your cousin requesting her to teach you how to play basket ball during the summer holiday.
 
