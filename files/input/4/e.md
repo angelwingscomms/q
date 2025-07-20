@@ -5,7 +5,7 @@ USE this EXACT comprehension text:
 The ancient Iroko tree stood majestically in the village square. Its massive branches spread wide like a chief's welcoming embrace. Weaver birds built their intricate nests in its leaves, their cheerful chirps filling the air all day long. A small stream, 'Odo-Aro', flowed gently nearby, its water cool and clear. Children from the village often gathered under the Iroko, sharing tales and laughter. They etched their names into its rugged bark, marking their childhood memories over many seasons. The Iroko was a silent witness to countless sunny market days and moonlit nights, a true guardian of the community.
 ```
 let the text have a Nigerian flair, 
-MAKE SURE THE TEXT IS INCLUDED IN THE QUESTIONS AS AN UNNUMBERED PARAGRAPH
+MAKE SURE THE COMPREHENSION TEXT IS INCLUDED IN THE QUESTIONS AS AN UNNUMBERED PARAGRAPH
 and let the questions be challenging
 
 next 12 questions should be on lexis and structure
@@ -29,6 +29,7 @@ now consider these questions:
 5. What whispered through the leaves? _________
 ```
 
+MAKE SURE THE STORY IS INCLUDED IN THE QUESTIONS AS AN UNNUMBERED PARAGRAPH
 let the story have a Nigerian flair. Let the questions seem to simple. for the short answer poetry section, upgrade the language to be suitable for 10 year olds, and let the questions be slightly challenging
 
 # essay section questions
