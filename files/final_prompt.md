@@ -56,7 +56,7 @@ Do not include:
 
 let the questions be numbered.
 refrain from mentioning or referencing the source text that the quiz is made from. Never say something like "according to the text" or "from the text"
-A section may have subsections, with headings, instructions for the questions that follow perhaps, or passages, or just such parts that are not really questions in themselves, e.g "Write the short form of the following words". Add such part or subheading or instruction as unnumbered questions.
+A section may have subsections, which may have headings, stories or instructions for the questions that follow perhaps, or passages, or just such parts that are not really questions in themselves, e.g "Write the short form of the following words" or "<a story required for the questions in this section to be answered>". Add such parts or subheadings or stories or instruction as unnumbered questions.
 Let section A contain exactly 50 objective questions. Let section B contain exactly 5 short-answer questions. Let section C contain exactly 5 essay/theory questions.
 
 Text to create quiz from:
