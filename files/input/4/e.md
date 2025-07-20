@@ -1,8 +1,8 @@
 # multiple choice questions
-first, present a short comprehension text and ask  8 questions based on the text
-now, consider this comprehension text:
+first, present the comprehension below text and ask  8 questions based on the text
+USE this EXACT comprehension text:
 ```plaintext
-The old oak tree stood tall in the meadow. Its branches reached out like welcoming arms. Birds nested in its leaves, singing sweet songs all day long. A small stream gurgled nearby, its water clear and cool. Children often played under the tree, sharing secrets and laughter. They carved their initials into its ancient bark, marking their visits over many years. The tree was a silent witness to countless sunny days and starry nights, a true guardian of the meadow.
+The ancient Iroko tree stood majestically in the village square. Its massive branches spread wide like a chief's welcoming embrace. Weaver birds built their intricate nests in its leaves, their cheerful chirps filling the air all day long. A small stream, 'Odo-Aro', flowed gently nearby, its water cool and clear. Children from the village often gathered under the Iroko, sharing tales and laughter. They etched their names into its rugged bark, marking their childhood memories over many seasons. The Iroko was a silent witness to countless sunny market days and moonlit nights, a true guardian of the community.
 ```
 let the text have a Nigerian flair, 
 MAKE SURE THE TEXT IS INCLUDED IN THE QUESTIONS AS AN UNNUMBERED PARAGRAPH
@@ -27,7 +27,7 @@ now consider these questions:
 5. What whispered through the leaves? _________
 ```
 
-the questions seem to simple. for the short answer poetry section, upgrade the language to be suitable for 10 year olds, and let the questions be challenging
+let the story have a Nigerian flair. Let the questions seem to simple. for the short answer poetry section, upgrade the language to be suitable for 10 year olds, and let the questions be slightly challenging
 
 # essay section questions
 instruction: answer 1 out of 2
