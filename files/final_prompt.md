@@ -67,7 +67,9 @@ now, consider this comprehension text:
 ```plaintext
 The old oak tree stood tall in the meadow. Its branches reached out like welcoming arms. Birds nested in its leaves, singing sweet songs all day long. A small stream gurgled nearby, its water clear and cool. Children often played under the tree, sharing secrets and laughter. They carved their initials into its ancient bark, marking their visits over many years. The tree was a silent witness to countless sunny days and starry nights, a true guardian of the meadow.
 ```
-let the text have a Nigerian flair, and let the questions be challenging
+let the text have a Nigerian flair, 
+MAKE SURE THE TEXT IS INCLUDED IN THE QUESTIONS AS AN UNNUMBERED PARAGRAPH
+and let the questions be challenging
 
 next 12 questions should be on lexis and structure
 then all in a mix of 10 questions, questions on past perfect tense, present perfect tense, pronouns, verbs and adverbs.
