@@ -6,7 +6,7 @@ then all in a mix of 10 questions, questions on past perfect tense, present perf
 set 10 questions by writing a short story full of wrongly spelled words and offering the class correct options in parenthesis to select from
 
 # short answer questions
-do a short dreamy story and ask 5 simple questions on it,
+present a short dreamy story and ask 5 simple questions on it,
 now consider these questions:
 ```
 1. What did the little bird sing? _________
