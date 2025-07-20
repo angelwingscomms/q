@@ -122,7 +122,7 @@ const rl = readline.createInterface({
 const singleQuizModel = genAI.getGenerativeModel({
   model: "gemini-2.5-flash-preview-05-20",
   generationConfig: {
-    temperature: 0.7,
+    temperature: 0,
     topP: 0.95,
     topK: 64,
     maxOutputTokens: 999999,
