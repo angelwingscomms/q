@@ -1,7 +1,12 @@
 # multiple choice questions
 first, present a short comprehension text and ask  8 questions based on the text
-next 12 questions should be on lexis and structure
+now, consider this comprehension text:
+```plaintext
+The old oak tree stood tall in the meadow. Its branches reached out like welcoming arms. Birds nested in its leaves, singing sweet songs all day long. A small stream gurgled nearby, its water clear and cool. Children often played under the tree, sharing secrets and laughter. They carved their initials into its ancient bark, marking their visits over many years. The tree was a silent witness to countless sunny days and starry nights, a true guardian of the meadow.
+```
+let the text have a Nigerian flair 
 
+next 12 questions should be on lexis and structure
 then all in a mix of 10 questions, questions on past perfect tense, present perfect tense, pronouns, verbs and adverbs.
 set 10 questions by writing a short story full of wrongly spelled words and offering the class correct options in parenthesis to select from
 
