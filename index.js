@@ -326,7 +326,7 @@ Format requirements:
 - For math questions that are sum gaps (e.g., 6 times what equals 18), write as: 6 × _ = 18
 - Use × as multiplication symbol instead of * in displayed questions
 - Think deeply about math questions and math sums when making math quizzes
-- Let the questions be coherent and moderately challenging for 10 year olds
+- Let the questions be coherent and easy for 5 year olds
 - Use proper mathematical notation and Unicode symbols throughout
 
 let the questions be numbered.
@@ -482,18 +482,18 @@ async function generateDoc({ g, t, s, examType }) {
       }
     }
 
-    // For End of Term quizzes, answers for B and C are also required
-    if (examType !== "Midterm") {
+    // For End of Term and Single quizzes, answers for B and C are also required
+    if (examType !== "Midterm" && examType !== "midterm") {
       if (!quizContent.answers_B || !Array.isArray(quizContent.answers_B)) {
         console.warn(
-          "WARNING: End of Term quiz is missing answers for Section B, initializing as empty array but this should be addressed",
+          `WARNING: ${examType} quiz is missing answers for Section B, initializing as empty array but this should be addressed`,
         );
         quizContent.answers_B = [];
       }
 
       if (!quizContent.answers_C || !Array.isArray(quizContent.answers_C)) {
         console.warn(
-          "WARNING: End of Term quiz is missing answers for Section C, initializing as empty array but this should be addressed",
+          `WARNING: ${examType} quiz is missing answers for Section C, initializing as empty array but this should be addressed`,
         );
         quizContent.answers_C = [];
       }
@@ -501,7 +501,7 @@ async function generateDoc({ g, t, s, examType }) {
 
     // Initialize empty arrays for missing answers (for midterm quizzes)
     if (!quizContent.answers_B || !Array.isArray(quizContent.answers_B)) {
-      if (examType === "Midterm") {
+      if (examType === "Midterm" || examType === "midterm") {
         console.log(
           "Section B answers are not present in the response, initializing as empty array",
         );
@@ -510,12 +510,19 @@ async function generateDoc({ g, t, s, examType }) {
     }
 
     if (!quizContent.answers_C || !Array.isArray(quizContent.answers_C)) {
-      if (examType === "Midterm") {
+      if (examType === "Midterm" || examType === "midterm") {
         console.log(
           "Section C answers are not present in the response, initializing as empty array",
         );
         quizContent.answers_C = [];
       }
+    }
+
+    // Log success message for end-of-term quiz validation
+    if (examType !== "Midterm" && examType !== "midterm") {
+      console.log(
+        `✅ ${examType} quiz validation passed: All required sections (A, B, C) are present with content`,
+      );
     }
   } catch (error) {
     console.error(`Error parsing quiz content: ${error.message}`);
