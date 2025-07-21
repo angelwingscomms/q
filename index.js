@@ -326,7 +326,7 @@ Format requirements:
 - For math questions that are sum gaps (e.g., 6 times what equals 18), write as: 6 × _ = 18
 - Use × as multiplication symbol instead of * in displayed questions
 - Think deeply about math questions and math sums when making math quizzes
-- Let the questions be coherent and easy for 5 year olds
+- Let the questions be very very easy, using very simple, easy language, for 6 year olds
 - Use proper mathematical notation and Unicode symbols throughout
 
 let the questions be numbered.
