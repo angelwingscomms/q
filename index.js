@@ -202,6 +202,15 @@ async function createMidtermQuiz({ t, subject, grade }) {
         - Questions may end with question marks
         - For answers_A, provide only the letter of the correct option (a, b, c, etc.) or the word that fills the blank
 
+        For Math quizzes specifically:
+        - Always use perfect Unicode for any math sums, fractions, or symbols (e.g., ½, ¾, ², ³, ×, ÷, ±, ≤, ≥, π, ∞)
+        - Let all fractions always use Unicode creatively in the best way possible (prefer ½, ⅓, ¼, ⅕, ⅙, ⅛, ⅔, ¾, ⅖, ⅗, ⅘, ⅚, ⅝, ⅞ over 1/2, 1/3, etc.)
+        - For math questions that are sum gaps (e.g., 6 times what equals 18), write as: 6 × _ = 18
+        - Use × as multiplication symbol instead of * in displayed questions
+        - Think deeply about math questions and math sums when making math quizzes
+        - Let the questions be coherent and moderately challenging for 10 year olds
+        - Use proper mathematical notation and Unicode symbols throughout
+
         examples:
         """
         1. When you take care of your body you will look attractive (a) True (b) False
@@ -303,6 +312,15 @@ Format requirements:
 - For answers_C, provide brief model answers or key points
 
 - ${ext[1].c}
+
+# For Math quizzes specifically:
+- Always use perfect Unicode for any math sums, fractions, or symbols (e.g., ½, ¾, ², ³, ×, ÷, ±, ≤, ≥, π, ∞)
+- Let all fractions always use Unicode creatively in the best way possible (prefer ½, ⅓, ¼, ⅕, ⅙, ⅛, ⅔, ¾, ⅖, ⅗, ⅘, ⅚, ⅝, ⅞ over 1/2, 1/3, etc.)
+- For math questions that are sum gaps (e.g., 6 times what equals 18), write as: 6 × _ = 18
+- Use × as multiplication symbol instead of * in displayed questions
+- Think deeply about math questions and math sums when making math quizzes
+- Let the questions be coherent and moderately challenging for 10 year olds
+- Use proper mathematical notation and Unicode symbols throughout
 
 let the questions be numbered.
 refrain from mentioning or referencing the source text that the quiz is made from. Never say something like "according to the text" or "from the text"
