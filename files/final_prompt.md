@@ -57,48 +57,48 @@ Do not include:
 let the questions be numbered.
 refrain from mentioning or referencing the source text that the quiz is made from. Never say something like "according to the text" or "from the text"
 A section may have subsections, which may have headings, stories or instructions for the questions that follow perhaps, or passages, or just such parts that are not really questions in themselves, e.g "Write the short form of the following words" or "<a story required for the questions in this section to be answered>". Add such parts or subheadings or stories or instruction as unnumbered questions.
-Let section A contain exactly 40 objective questions. Let section B contain exactly 5 short-answer questions. Let section C contain exactly 5 essay/theory questions.
+Let section A contain exactly 50 objective questions. Let section B contain exactly 5 short-answer questions. Let section C contain exactly 5 essay/theory questions.
 
 Text to create the quiz with:
   """
   # multiple choice questions
-first, present the comprehension below text and ask  8 questions based on the text
-USE this EXACT comprehension text:
+first, present this exact text and ask 8 comprehension questions based on it:
 ```plaintext
-The ancient Iroko tree stood majestically in the village square. Its massive branches spread wide like a chief's welcoming embrace. Weaver birds built their intricate nests in its leaves, their cheerful chirps filling the air all day long. A small stream, 'Odo-Aro', flowed gently nearby, its water cool and clear. Children from the village often gathered under the Iroko, sharing tales and laughter. They etched their names into its rugged bark, marking their childhood memories over many seasons. The Iroko was a silent witness to countless sunny market days and moonlit nights, a true guardian of the community.
+Every morning, Lily would step into her vibrant garden. Her favorite bloom was a radiant red rose, its petals soft and velvety. Soon, tiny, industrious bees would arrive, buzzing around the rose, diligently gathering sweet nectar. In the cool evenings, Lily often sat on her small porch, observing the colorful sunset paint the sky. The peaceful quiet of her garden always brought her a sense of calm and happiness. Her garden, though not sprawling, was a treasure trove of beauty and tranquility.
 ```
-let the text have a Nigerian flair, 
-MAKE SURE THE COMPREHENSION TEXT IS INCLUDED IN THE QUESTIONS AS AN UNNUMBERED PARAGRAPH
-and let the questions be challenging
 
-next 12 questions should be on lexis and structure
-then all in a mix of 10 questions, questions on past perfect tense, present perfect tense, pronouns, verbs and adverbs.
+let the next 12 questions be on lexis and structure
+
+then all in a mix of 20 questions, questions on synonyms, antonyms, past perfect tense and adjectives. for antonyms and synonyms questions, you shouldn't only use the words 'antonym' or 'synonym', but mix with other phrases like 'similar word' or 'opposite word'. Use challenging words.
+
 set 10 questions by writing a short story full of wrongly spelled words and offering the class correct options in parenthesis to select from
 
-# short answer sections questions
-present a short poem and ask 5 simple literary questions on the poem, like rhyming, 'provide similar words', 'provide a title', and 2 comprehension questions. 
+For all questions, let's imagine 0% is the lowest possible ease level and 100% is the highest possible ease level. Let the questions have an ease level of 9%. Let the questions' ease be suitable for 10 year olds
 
+# short answer questions
+present this exact poem ask 5 simple questions on it:
 ```plaintext
-now consider these questions:
+In meadows green, where daisies gleam,
+A gentle stream began to flow.
+A tiny fish, a silver dream,
+Swam gracefully, swift and low.
+The sun shone down, a golden light,
+Upon the water, clear and cool.
+A buzzing bee took happy flight,
+From flower to flower, a busy tool.
+The quiet breeze, a soft sigh,
+Made willow branches gently sway.
 ```
-1. What did the little bird sing? _________
 
-2. Where was the bird singing? _________
+For all the questions above, let's imagine 0% is the lowest possible ease level and 100% is the highest possible ease level. Let the questions have an ease level of 9%. Let the questions' ease be suitable for 10 year olds
 
-3. What color were its feathers? _________
 
-4. What did the bird have for a home? _________
-
-5. What whispered through the leaves? _________
-```
-
-MAKE SURE THE STORY IS INCLUDED IN THE QUESTIONS AS AN UNNUMBERED PARAGRAPH
-let the story have a Nigerian flair. Let the questions seem to simple. for the short answer poetry section, upgrade the language to be suitable for 10 year olds, and let the questions be slightly challenging
-
-# essay section questions
-instruction: answer 1 out of 2
-1. write an informal letter to your cousin requesting her to teach you how to play basket ball during the summer holiday.
-
-2. rewrite your favourite fairy tale story using your own choice of names for the characters
+# essay questions
+Give these exact questions:
+Instruction: answer 2
+1. You are a member of the Young Innovators' club in your school, you would like to see your club engage in more activities related to AI. Write a formal letter to the Head of School suggesting ways this can be done.
+2. Write an informal letter to your cousin requesting her to teach you how to play basket ball during the summer holiday.
+3. Describe your favourite whole family outing day.
+4. Rewrite your favourite story using your own choice of names for the characters, in not less than 30 lines
  """
   
