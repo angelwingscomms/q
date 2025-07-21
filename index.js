@@ -276,7 +276,9 @@ async function createEndOfTermQuiz({ t, selectedClass, subject, grade }) {
 
     let extra_instructions = `MANDATORY: Let section A contain exactly ${obj} objective questions. Let section B contain exactly ${sa} short-answer questions. Let section C contain exactly ${essay} essay/theory questions.
 
-    CRITICAL: For END OF TERM quizzes, sections B and C are REQUIRED and must ALWAYS be included regardless of grade level or any other factors.`;
+    CRITICAL: For END OF TERM quizzes, sections B and C are REQUIRED and must ALWAYS be included regardless of grade level or any other factors.
+    
+    CRITICAL: Make the word problems in the objective section to be only 7 in number`;
 
     const final_prompt = `
 Create a quiz with:

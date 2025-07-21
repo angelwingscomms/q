@@ -74,6 +74,8 @@ A section may have subsections, which may have headings, stories or instructions
 MANDATORY: Let section A contain exactly 20 objective questions. Let section B contain exactly 5 short-answer questions. Let section C contain exactly 5 essay/theory questions.
 
     CRITICAL: For END OF TERM quizzes, sections B and C are REQUIRED and must ALWAYS be included regardless of grade level or any other factors.
+    
+    CRITICAL: Make the word problems in the objective section to be only 7 in number
 
 Text to create the quiz with:
   """
