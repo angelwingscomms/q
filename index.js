@@ -343,11 +343,69 @@ Text to create the quiz with:
     const result = await singleQuizModel.generateContent(final_prompt);
 
     const responseText = result.response.text();
+
+    // Validate that end-of-term quiz includes required sections B and C
+    const validation = validateEndOfTermQuiz(responseText);
+    if (!validation.isValid) {
+      console.warn(`End-of-term quiz validation failed: ${validation.warning}`);
+      // Still return the response but with warning logged
+    }
+
     return responseText;
   } catch (error) {
     console.error(`Error in createEndOfTermQuiz: ${error.message}`);
     throw error;
   }
+}
+
+// Validation function to ensure end-of-term quizzes have all required sections
+function validateEndOfTermQuiz(responseText) {
+  const text = responseText.toLowerCase();
+
+  // Check for Section B
+  const hasSectionB =
+    text.includes("section b") ||
+    text.includes('"section_b"') ||
+    text.includes('"b"') ||
+    text.includes("answers_b");
+
+  // Check for Section C
+  const hasSectionC =
+    text.includes("section c") ||
+    text.includes('"section_c"') ||
+    text.includes('"c"') ||
+    text.includes("answers_c");
+
+  if (!hasSectionB || !hasSectionC) {
+    const missingSections = [];
+    if (!hasSectionB) missingSections.push("B");
+    if (!hasSectionC) missingSections.push("C");
+
+    console.warn(
+      `⚠️  WARNING: End-of-term quiz is missing required section(s): ${missingSections.join(", ")}`,
+    );
+    console.warn(
+      "🔧 This violates the requirement that end-of-term quizzes MUST include sections B and C",
+    );
+    console.warn(
+      "📋 Please review the generated quiz and regenerate if necessary",
+    );
+
+    return {
+      isValid: false,
+      missingSections: missingSections,
+      warning: `End-of-term quiz missing required sections: ${missingSections.join(", ")}`,
+    };
+  }
+
+  console.log(
+    "✅ End-of-term quiz validation passed: All required sections (A, B, C) are present",
+  );
+  return {
+    isValid: true,
+    missingSections: [],
+    warning: null,
+  };
 }
 
 async function generateDoc({ g, t, s, examType }) {
@@ -382,19 +440,34 @@ async function generateDoc({ g, t, s, examType }) {
       quizContent.answers_A = [];
     }
 
-    // Initialize empty arrays for missing sections
+    // For End of Term quizzes, sections B and C are MANDATORY
+    if (examType !== "Midterm") {
+      if (!quizContent.B || !Array.isArray(quizContent.B) || quizContent.B.length === 0) {
+        throw new Error("CRITICAL ERROR: End of Term quiz is missing Section B or Section B is empty. This violates the mandatory requirement that end-of-term quizzes MUST include sections B and C with content.");
+      }
+      
+      if (!quizContent.C || !Array.isArray(quizContent.C) || quizContent.C.length === 0) {
+        throw new Error("CRITICAL ERROR: End of Term quiz is missing Section C or Section C is empty. This violates the mandatory requirement that end-of-term quizzes MUST include sections B and C with content.");
+      }
+    }
+
+    // Initialize empty arrays for missing sections (only for non-end-of-term quizzes)
     if (!quizContent.B || !Array.isArray(quizContent.B)) {
-      console.log(
-        "Section B is not present in the response, initializing as empty array",
-      );
-      quizContent.B = [];
+      if (examType === "Midterm") {
+        console.log(
+          "Section B is not present in the response, initializing as empty array",
+        );
+        quizContent.B = [];
+      }
     }
 
     if (!quizContent.C || !Array.isArray(quizContent.C)) {
-      console.log(
-        "Section C is not present in the response, initializing as empty array",
-      );
-      quizContent.C = [];
+      if (examType === "Midterm") {
+        console.log(
+          "Section C is not present in the response, initializing as empty array",
+        );
+        quizContent.C = [];
+      }
     }
 
     if (!quizContent.answers_B || !Array.isArray(quizContent.answers_B)) {
