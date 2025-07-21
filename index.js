@@ -274,11 +274,18 @@ async function createEndOfTermQuiz({ t, selectedClass, subject, grade }) {
       obj = 0; // For Pre-Nursery, Nursery 1/2, Foundation
     }
 
-    let extra_instructions = `Let section A contain exactly ${obj} objective questions. Let section B contain exactly ${sa} short-answer questions. Let section C contain exactly ${essay} essay/theory questions.`;
+    let extra_instructions = `MANDATORY: Let section A contain exactly ${obj} objective questions. Let section B contain exactly ${sa} short-answer questions. Let section C contain exactly ${essay} essay/theory questions.
+
+    CRITICAL: For END OF TERM quizzes, sections B and C are REQUIRED and must ALWAYS be included regardless of grade level or any other factors.`;
 
     const final_prompt = `
 Create a quiz with:
 Section A, Section B, and Section C.
+
+*** CRITICAL REQUIREMENT FOR END OF TERM QUIZ ***
+This is an END OF TERM quiz, which means ALL THREE SECTIONS (A, B, AND C) are MANDATORY and MUST be included.
+DO NOT skip Section B or Section C under any circumstances.
+*** END OF CRITICAL REQUIREMENT ***
 
 Each section should be an array of strings containing the questions for that section.
 
@@ -338,7 +345,7 @@ Text to create the quiz with:
     const responseText = result.response.text();
     return responseText;
   } catch (error) {
-    console.error(`Error in createSingleQuiz: ${error.message}`);
+    console.error(`Error in createEndOfTermQuiz: ${error.message}`);
     throw error;
   }
 }
