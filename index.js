@@ -440,20 +440,32 @@ async function generateDoc({ g, t, s, examType }) {
       quizContent.answers_A = [];
     }
 
-    // For End of Term quizzes, sections B and C are MANDATORY
-    if (examType !== "Midterm") {
-      if (!quizContent.B || !Array.isArray(quizContent.B) || quizContent.B.length === 0) {
-        throw new Error("CRITICAL ERROR: End of Term quiz is missing Section B or Section B is empty. This violates the mandatory requirement that end-of-term quizzes MUST include sections B and C with content.");
+    // For End of Term quizzes and Single Quizzes, sections B and C are MANDATORY
+    if (examType !== "Midterm" && examType !== "midterm") {
+      if (
+        !quizContent.B ||
+        !Array.isArray(quizContent.B) ||
+        quizContent.B.length === 0
+      ) {
+        throw new Error(
+          `CRITICAL ERROR: ${examType} quiz is missing Section B or Section B is empty. This violates the mandatory requirement that end-of-term and single quizzes MUST include sections B and C with content.`,
+        );
       }
-      
-      if (!quizContent.C || !Array.isArray(quizContent.C) || quizContent.C.length === 0) {
-        throw new Error("CRITICAL ERROR: End of Term quiz is missing Section C or Section C is empty. This violates the mandatory requirement that end-of-term quizzes MUST include sections B and C with content.");
+
+      if (
+        !quizContent.C ||
+        !Array.isArray(quizContent.C) ||
+        quizContent.C.length === 0
+      ) {
+        throw new Error(
+          `CRITICAL ERROR: ${examType} quiz is missing Section C or Section C is empty. This violates the mandatory requirement that end-of-term and single quizzes MUST include sections B and C with content.`,
+        );
       }
     }
 
-    // Initialize empty arrays for missing sections (only for non-end-of-term quizzes)
+    // Initialize empty arrays for missing sections (only for midterm quizzes)
     if (!quizContent.B || !Array.isArray(quizContent.B)) {
-      if (examType === "Midterm") {
+      if (examType === "Midterm" || examType === "midterm") {
         console.log(
           "Section B is not present in the response, initializing as empty array",
         );
@@ -462,7 +474,7 @@ async function generateDoc({ g, t, s, examType }) {
     }
 
     if (!quizContent.C || !Array.isArray(quizContent.C)) {
-      if (examType === "Midterm") {
+      if (examType === "Midterm" || examType === "midterm") {
         console.log(
           "Section C is not present in the response, initializing as empty array",
         );
@@ -470,18 +482,40 @@ async function generateDoc({ g, t, s, examType }) {
       }
     }
 
+    // For End of Term quizzes, answers for B and C are also required
+    if (examType !== "Midterm") {
+      if (!quizContent.answers_B || !Array.isArray(quizContent.answers_B)) {
+        console.warn(
+          "WARNING: End of Term quiz is missing answers for Section B, initializing as empty array but this should be addressed",
+        );
+        quizContent.answers_B = [];
+      }
+
+      if (!quizContent.answers_C || !Array.isArray(quizContent.answers_C)) {
+        console.warn(
+          "WARNING: End of Term quiz is missing answers for Section C, initializing as empty array but this should be addressed",
+        );
+        quizContent.answers_C = [];
+      }
+    }
+
+    // Initialize empty arrays for missing answers (for midterm quizzes)
     if (!quizContent.answers_B || !Array.isArray(quizContent.answers_B)) {
-      console.log(
-        "Section B answers are not present in the response, initializing as empty array",
-      );
-      quizContent.answers_B = [];
+      if (examType === "Midterm") {
+        console.log(
+          "Section B answers are not present in the response, initializing as empty array",
+        );
+        quizContent.answers_B = [];
+      }
     }
 
     if (!quizContent.answers_C || !Array.isArray(quizContent.answers_C)) {
-      console.log(
-        "Section C answers are not present in the response, initializing as empty array",
-      );
-      quizContent.answers_C = [];
+      if (examType === "Midterm") {
+        console.log(
+          "Section C answers are not present in the response, initializing as empty array",
+        );
+        quizContent.answers_C = [];
+      }
     }
   } catch (error) {
     console.error(`Error parsing quiz content: ${error.message}`);
