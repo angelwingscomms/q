@@ -1,38 +1,38 @@
 {
   "A": [
-    "1. People take substances into their body for _ reasons? (a) two (b) three (c) five (d) seven",
-    "2. Drugs help people to stay _? (a) asleep (b) alive (c) tired (d) weak",
-    "3. Food helps to keep _ away? (a) sleep (b) thirst (c) hunger (d) joy",
-    "4. People take soft drinks for _? (a) health (b) enjoyment (c) work (d) study",
-    "5. Some people take substances because they see _ taking them? (a) parents (b) teachers (c) friends (d) others",
-    "6. Curiosity makes some people want to know what substances _ like? (a) look (b) smell (c) taste (d) feel",
-    "7. Taking too much food or drink is called _? (a) habit (b) overdose (c) hunger (d) thirst",
-    "8. Overdose is a _ habit? (a) good (b) bad (c) new (d) old",
-    "9. A good pupil must always _ overdose? (a) try (b) avoid (c) like (d) share",
-    "10. Which is a sign of overdose? (a) laughing (b) singing (c) stooling (d) running",
-    "11. Vomiting is a sign of _? (a) hunger (b) overdose (c) happiness (d) sleep",
-    "12. Fainting can be a sign of _? (a) playing (b) overdose (c) eating (d) walking",
-    "13. Sleeplessness is a sign of _? (a) rest (b) overdose (c) dreams (d) morning",
-    "14. Stomach-pain can be a sign of _? (a) exercise (b) overdose (c) dancing (d) reading",
-    "15. When a person drinks too much, he urinates _? (a) rarely (b) frequently (c) slowly (d) quickly",
-    "16. A child who drinks too much water before bed may _? (a) bed-wet (b) sleep well (c) feel thirsty (d) wake up early",
-    "17. An adult who drinks too much alcohol becomes _? (a) happy (b) tired (c) drunk (d) hungry",
-    "18. Too much smoke can make someone _? (a) laugh (b) faint (c) run (d) talk",
-    "19. Food helps us to grow, stay alive, and have _? (a) dreams (b) energy (c) friends (d) books",
-    "20. We get meat from animals like cows, goats, and _? (a) birds (b) fish (c) hens (d) insects"
+    "1. Drugs are substances that change normal body functions, apart from _ and water. (a) food (b) air (c) light",
+    "2. Drugs are normally used to cure _. (a) illness (b) hunger (c) thirst",
+    "3. Drugs can also be _ for other purposes. (a) sold (b) abused (c) shared",
+    "4. Aspirin is used to treat headache and _. (a) fever (b) pain (c) cough",
+    "5. Daga treats headache and body _, and toothache. (a) pains (b) fever (c) cold",
+    "6. Nivaquine is used to treat _. (a) fever (b) malaria (c) headache",
+    "7. Panadol treats headache and body _. (a) ache (b) cough (c) fever",
+    "8. Paracetamol treats headache and body _. (a) pain (b) rash (c) nausea",
+    "9. Traditional herbal drugs are also called _ occurring drugs. (a) artificially (b) naturally (c) chemically",
+    "10. Traditional herbal drugs are derived from natural substances like plants, animals, chalk, and _. (a) plastic (b) charcoal (c) metal",
+    "11. Which of these is a form of drug? (a) Syrup (b) Food (c) Water",
+    "12. Traditional drugs are usually served in their _ form. (a) processed (b) natural (c) refined",
+    "13. Most traditional drugs come in herbal forms such as leaves, roots, and _ of trees. (a) fruits (b) barks (c) flowers",
+    "14. Modern drugs are artificially _. (a) grown (b) processed (c) found",
+    "15. Traditional drugs are often given without strict dosage _. (a) rules (b) compliance (c) limits",
+    "16. For traditional medicinal purposes, the _ plant is used. (a) entire (b) processed (c) chemical",
+    "17. Traditional drugs are usually preserved _. (a) artificially (b) chemically (c) naturally",
+    "18. Most herbal drugs do not have a specific _ date. (a) production (b) expiry (c) packaging",
+    "19. Modern drugs contain _ substances like chemicals. (a) natural (b) synthetic (c) herbal",
+    "20. Modern drugs normally come in _. (a) doses (b) large amounts (c) liquid form"
   ],
   "answers_A": [
-    "c",
-    "b",
-    "c",
-    "b",
-    "d",
-    "c",
+    "a",
+    "a",
     "b",
     "b",
+    "a",
     "b",
-    "c",
+    "a",
+    "a",
     "b",
+    "b",
+    "a",
     "b",
     "b",
     "b",
@@ -41,28 +41,34 @@
     "c",
     "b",
     "b",
-    "c"
+    "a"
   ],
   "B": [
-    "1. What is the main reason people take soft drinks?_________",
-    "2. What is the term for taking too much food or drink?_________",
-    "3. Name one sign of overdose._________",
-    "4. What happens to an adult who drinks too much alcohol?_________",
-    "5. Where do we get food items like yam and rice?_________"
+    "1. What is any substance apart from food and water that changes normal body functions? _________",
+    "2. Name one common drug mentioned. _________",
+    "3. Traditional herbal drugs are derived from what kind of substances? _________",
+    "4. What is one classification form of drugs? _________",
+    "5. What type of drugs are usually served in their natural form? _________"
+  ],
+  "C": [
+    "1. What is the definition of a drug?",
+    "2. What are the two main ways drugs are used?",
+    "3. List two natural sources from which traditional herbal drugs are derived.",
+    "4. Name three forms in which drugs can be classified.",
+    "5. State one difference between modern and traditional drugs regarding their processing."
   ],
   "answers_B": [
-    "Enjoyment",
-    "Overdose",
-    "Stooling",
-    "Becomes drunk",
-    "Farm"
+    "Drug",
+    "Aspirin",
+    "Natural substances",
+    "Syrup",
+    "Traditional drugs"
   ],
   "answers_C": [
-    "To keep people alive (drugs); To keep hunger away (food); For enjoyment (soft drinks); Seeing others take them; Curiosity.",
-    "Stooling; Vomiting; Fainting; Sleeplessness; Stomach-pain.",
-    "Frequent urination; Bed-wetting (for children drinking too much water); Becoming drunk (for adults drinking too much alcohol).",
-    "Take to the hospital immediately; Apply first aid if fainting; Report children smoking or drinking alcohol to teacher and parents.",
-    "Grow; Stay alive; Have energy."
-  ],
-  "C": []
+    "A substance apart from food and water that changes normal physical and mental functions of the body.",
+    "To cure illness and for abuse.",
+    "Plants, animals, chalk, charcoal.",
+    "Syrup, Ointment, Injection.",
+    "Modern drugs are artificially processed, while traditional drugs occur naturally and are usually administered in their natural state."
+  ]
 }

@@ -1,35 +1,35 @@
 Section A (Objective) Answers:
-1. a
+1. b
 2. b
 3. c
 4. c
-5. b
+5. c
 6. c
-7. b
+7. c
 8. b
-9. b
-10. c
-11. d
-12. a
-13. b
-14. d
-15. c
+9. c
+10. a
+11. b
+12. b
+13. c
+14. c
+15. d
 16. b
 17. b
-18. b
-19. c
-20. b
+18. c
+19. b
+20. c
 
 Section B (Short Answer) Answers:
-1. Joystick
-2. Box
-3. CPU, disk drive, motherboard
-4. CPU
-5. Storage devices
+1. Radio
+2. Mobile phone
+3. Digital wristwatch
+4. Calculator
+5. System unit
 
 Section C (Theory) Answers:
-1. Stores data
-2. Flash drive
-3. Words
-4. Drive uses electricity
-5. Control Unit
+1. Calculator, Radio
+2. Pass information
+3. Cartoons and news
+4. Hour, minute, second
+5. Communicate among people

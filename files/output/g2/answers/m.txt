@@ -1,35 +1,35 @@
 Section A (Objective) Answers:
-1. a
+1. b
 2. c
-3. c
-4. b
+3. a
+4. c
 5. b
 6. b
 7. b
-8. c
-9. b
-10. b
-11. b
+8. b
+9. 5
+10. a
+11. a
 12. b
 13. a
-14. a
-15. b
-16. b
-17. a
+14. b
+15. a
+16. c
+17. b
 18. b
 19. c
 20. b
 
 Section B (Short Answer) Answers:
-1. minute hand
-2. hour hand
-3. minutes
-4. hours
-5. 5 o'clock
+1. halves
+2. quarters
+3. denominator
+4. numerator
+5. 30
 
 Section C (Theory) Answers:
-1. It tells the number of minutes past or to the hour.
-2. It tells the hour.
-3. It is represented as 5 o'clock.
-4. It is represented as 5:30.
-5. It typically shows 12-hour clock times.
+1. 1
+2. 3
+3. 25
+4. volume
+5. capacity

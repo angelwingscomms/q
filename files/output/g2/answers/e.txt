@@ -1,35 +1,35 @@
 Section A (Objective) Answers:
-1. c
-2. b
-3. c
+1. b
+2. c
+3. b
 4. b
-5. b
-6. c
+5. c
+6. b
 7. c
-8. c
+8. b
 9. b
-10. c
-11. c
-12. c
-13. d
+10. b
+11. b
+12. b
+13. b
 14. c
-15. c
+15. b
 16. b
 17. b
-18. b
+18. c
 19. b
 20. b
 
 Section B (Short Answer) Answers:
-1. Determiners
-2. Adjectives
-3. Adverbs
-4. -ly
-5. is, are
+1. Noun
+2. Proper Noun
+3. Collective Noun
+4. Pronoun
+5. Action verb
 
 Section C (Theory) Answers:
-1. Adjectives describe or talk about a noun.
-2. Adverb of manner, Adverb of time, Adverb of place.
-3. A preposition tells you where or when something is in relation to something else.
-4. 'Is' is used with singular nouns, and 'are' is used with plural nouns.
-5. Adverbs tell you how, when, or where actions happen.
+1. Proper Noun
+2. John
+3. Love
+4. Personal pronoun
+5. Run
