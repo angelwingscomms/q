@@ -299,12 +299,12 @@ IMPORTANT: Provide answers for all questions in each section in the correspondin
 Format requirements:
 
 # For Section A (objective questions):
-- Never end with a full stop
+- Never end a question with a full stop
+- A question may end with question mark
 - Use 1 underscore (_) for blanks
 - Never end a question with a blank
 - Use brackets for options (e.g., (a)...(b)...(c)...) and place questions and options on same line
 - Fix bad questions by removing or replacing options to ensure one correct answer
-- Questions may end with question marks
 - For answers_A, provide only the letter of the correct option (a, b, c, etc.) or the word that fills the blank
 
 - ${ext[1].a}
