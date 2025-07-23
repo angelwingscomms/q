@@ -79,164 +79,163 @@ MANDATORY: Let section A contain exactly 50 objective questions. Let section B c
 
 Text to create the quiz with:
   """
-  Here is the transcribed text from the notebook pages:
+  **Page 1**
 
-[Page 1]
+20/5/2025
 
-by sharing what we have with-them.
-[Red ink: seen 30/10/23]
+Topic: Importance of modern Security equipment (continuation)
 
-Date:
-Subject: C.R.S
-Topic: THE PENTECOST
+4. Shock batlon: It is also called stun batton or stun gun.
+This is a baton equipped with eletrical current. It is used by the police and other Security agencies, especially in developed countries. It is designed to help police and other security agents overpower criminals and those intending to commit crime.
 
-Meaning of pentecost:
-Pentecost was a festival observed fifty days after passover to celebrate the close of spring harvest. It was an agricultural feast to mark the completion of wheat harvest for which the jews gave thanks and to God. It was on the pentecost day that the apostle received the Gift to the holy spirit.
+Importance of shock Baton
 
-Events of the day of Pentecost
-Before Jesus ascended to heaven the promised to send down the holy spirit which would guide the disciples and be their comforter. the holy spirit will live in them and make them to perform miracles, preach the gospel and heal the sick. the holy spirit is God living in us, it is the spirit of God and man. After Jesus
+1. It helps security agents to defend themselt-es and victims of crime.
+2. unlike guns, it is not designed to kill. This means it is a safer way of disabling and disarming criminals without killing them.
 
-[Page 2]
+5. Satelite communication
 
-three thousand jews who believed were converted through peter's messages this was the begining of the christian church.
-Home-work [Red check mark]
-[Red ink: Seen 16/1/25]
+---
 
-explain the meaning of pentecost.
+**Page 2**
 
-list two spiritual significant of the pentecost
+Sattelite communication is a means of exchaning information from any point of the world to another.
+Satelite system of Communication is very I'nportant in many ways.
 
-ans
+Importance/use of Satellite communica-tion
 
-The day Jesus fufilled his promise by bringing a comforter
+1. Though satelite communication, people and organization exchange information from any poin. of the world.
+2. In the event of Accidents, dissasters. and other emergenaj Situations, sattelite techno logy would help in finding and rescuing victims
+3. Satelite communications technology assists secur agencies in finding the location of criminals and dectecting their activities
 
-They were speaking in tounges
-three thousand jews were converted
-[Red ink: good ✓, 16/01/25]
+---
 
-Date: 23/1/2025
-Topic: The Holy spirit keeps us faithful
+**Page 3**
 
-Who the Holy spirit is
-Holy spirit is God living in us. It is the spirit of God coming down to guide us, comfort and direct us. The bible says God is spirit and those who worship Him must worship Him in spirits. for us to serve God and expect Him to Guide our path and comfort us, we must a...
+20/5/2025
 
-[Page 3]
+Security Agencies in Nigeria and their Function
 
-had risen and ascended to heaven, the disciples gathered in the upper room, And prayed with one accord.
+1. police: The Nigerian police force is the main organisation responsible for the maintenance of law, peace and order.
 
-Suddenly there was a sound from heaven like a mighty wind and it filled the room where they were praying. There appeared cloven toungues of fire and settled on each of them. they were all filled with the holy spirit and they all began to speak in tounges. they spoke different languages as God gave them ability.
-[Red ink: Seen 9/01/25]
+Functions of Nigerian police
+i i Maintain's public order, law and Safety.
+i i i Arrests and prosecutes people involved in criminal activities.
+iV Detects and investigates criminal activities
+V Enforces the Law of the land made by the legis lature.
 
-Date: 15/1/2025
-Topic: Spiritual significance of the day of Pentecost
+2. the military: the military is made up of the army, Navy and air force. The army fights on land, the navy fights on water and the air force fights in the air.
 
-The day of pentecost was significant because it was the day Jesus fulfilled His promise of sending a comforter to his disciples. Also, it was the day that His disciples received the Holy spirit and started speaking in other tounges as God gave ability.
+Three Branches of Nigerian military
 
-The jews [who written above] came from different part of the world heard the disciples who were Galileans speaking their different languages. some of the and other people [say written above] who heard the disciples speaking in tounges though they were drunk. But [peter written above] preach about Jesus christ.
+---
 
-[Page 4]
+**Page 4**
 
-Date: 30/1/2025
-Topic: Roles of the holy spirit
+1. Army
+2. Airforce
+3. Navy
 
-The holy spirit is capable of doing numerous wonders such as
-i the holy spirit guides our utterances while spreading the good news
+Functions of the nigerian Military.
+i 'i protects the ternborial integrity of Nigeria
+i i i Defends Nigeria against Internal and externa. agression
+i'v works with other security agencies towards promoting national security
 
-Peter and John surended all they were doing to the lord asked [what the written above] them in prayer. They became bold when they speak of the word of God to the people. All the people they approached embraced the word with love and faith. This is because the holy spirit guide them when they talk.
+3. State security Service (SSS)
+Also known as Department of State servic (DSS) their major mandate is to protec and defend Nigeria against threat to the peac and security of the nation. : DSS personnel
 
-ii The Holy spirit encourages us to [Prach written above] keep the gospel.
-An example of a person in the bible who was courageous to peach the gospel was philip. the holy spirit spoke to him to go to the desert road on his way. He met an Ethiopian officer who was incharge of wealth of the ethiopian queen who was on his chariot returning from the place of worship in Jerusalem. The holy spirit told philip to move near the chariot and he did and heard the man reading Isaiah. philip asked if he
+Functions of the State Security Service
+1. They protect and defend Nigeria against ex-ternal and internal threaths.
 
-[Page 5]
+---
 
-this spirit to live in us. This we do by living a live without any sin and following this commandment. The holy spirit is the third person of the trinity - God the father, The son, And the holy spirit.
+**Page 5**
 
-I Influence of the Holy spirit in our daily lives
-When we are filled with the holy spirit, it will show in all areas of our lives. People will see God in us through our;
-i Honesty
-ii Loyalty
-iii love and care for others.
-iv Tolerance.
-v Respect.
-vi Dedication.
-vii Obedience to authority and elders.
-vii Courage to fight the [simple written above] sinful nature.
-ix Boldness to preach christ to others.
-[Red ink: seen 23/1/25]
+2. They assist in upholding and defending the law-ws of the land.
+3. they provide security and protection to govern-ment Officials
+4. They investigate events likely to cause brea-ch of security in Nigeria.
+5. they share intelligence with other security agencies towards promoting peace and Securrly in the country.
 
-[Page 6]
+Answer
 
-The holy spirit is our strenghtner
+1. Q. Building of fences around our neighborhoods helps to secure our neigborhood
+b. The use of security camera (CCTV) helps to secure and watch activities in our neigbor-hood
 
-The holy spirit teaches us all things
+---
 
-The holy spirit gives boldness to preach the gospel
+**Page 6**
 
-the holy spirit gives understanding and interpretation to his word
-[Red ink: seen 30/1/25]
+C. proper Lighting helps us to see our neighborhood well and secure.
+d. Establishing neigborhood. wolch and vigilante groups helps to secure our neigborhood
 
-Date: 6/2/2025
-Topic: The holy spirit guides us to the thruth
+1. Drones
+uses of drones:
+a. Drones are used for aerial surveillence which enables Security agients obtain useful information for Crime dection inves-tigation and prevention.
+b. Drones are useful for attacks against crimi-nal elements whose activities endayers lives and property.
 
-what is thruth?
-Thruth is more than fact in every situation we find ourselves. Thruth is that which is consistent with the mind, will and character glory and being of God - The Holy spirit is the spirit of Thruth. Christ himself is the Thruth whose major assingment is to help us in all we need. Jesus said, I am the way, the truth and the life. Knowing christ and having a close and sweeter relationship with Him will help us in our every day live. we will not take wrong step or decision if we look up to the Holy spirit for help - Jesus also said in John C16 vs 12-13 I have much more to tell you, but now it will be too much for you to bear. whe...
+b. Close circuit television (CCTV)
+uses of CCTV,
 
-[Page 7]
+---
 
-understood what he was reading. The ethiopian officer said "No!" then he orderd philip to come on the chariot so as to explain to him. Then philip explained the gospel to him. He preached the good news about Jesus christ to him when they got to an area where there is water as they road on the chariot, he longed to be baptised immidietly philip heard this he baptised at the nearby water. Then the spirit of the lord took philip away and the man went with joy.
+**Page 7**
 
-ii The holy spirit gives us boldness as a child of God
+It helps investigations to detec & crimes and determine those behind them.
+It helps to obtai'n evidence for prosecu-tion of suspected criminars-
 
-The holy spirit gives us boldness he always persuade us to preach the gospel for life is happy and pleased when souls are saved we must always [seek written above] follow the holy spirit and [obey written above] seek his instruction
+2/6/2015 Security agencies in Nigeria, and their function
 
-iv The holy spirit A comforter
+3. The Nigerian Security and civil defenco corps (NSCDC) was founded in 1967.
+Funtions of the NSCDC
+1. Helps promote peace and order
+2. Helps to reslue Nigerians in case of Natural disaster.
+3. provides security and monitoring services during elec tions
+4. Monitors private gaurds and security companies.
+5. Protects our nation alassets such as petroleum pipe lines, refineries and public buildings. Lioses with other security agencies through Intelligences haring and joint operations.
 
-The holy spirit comfort us. He direct and guide us to taking right and godly decision.
+[Drawing of two small, simple houses]
 
-Moral lesson
+---
 
-[Page 8]
+**Page 8**
 
-The Holy spirit keeps faithful
-[Crossed out: Holy spirit is God living in us.]
+4. The Nigerian Customs service: formed in 1891
+the Nigerian Customs service is, of the oldest government organizations in the country.
 
-The Rewards of the holy spirit
+functions of Nigeria Customs service
+1. Collection of revenues (especially, Import an tand Exercise duties) and tackling or smuggling.
+2. Cheers arms/smuggling. That is Importunt of danger ous arms likely to be used for voilence.
+3. Exchange Intelligence with other security uyencies towards the promotion of peace and secunly in the country.
 
-Reward is something good that happens or what one receives because of sometimes one has done. A school can give a student a Reward of money for helping a student who had an accident. Students can also be rewarded for perfoming well in their enviroment.
+5. The Niyenan Immigration service'. was official ly formed 1st August, 1963, by an oct of Parliament, altho gh it had existed since 1958 when it was extr-acted from the Nigerian police force.
 
-Reward of working in the Holy spirit
+---
 
-God's guidance
+**Page 9**
 
-Oneness
+functions of the Nigerian Immigration Service
+1. provision of International passport pr Nigerian Citizens.
+2. Monitors the Immigration into the country to con trol the entrance of undesirable elements likely to cause Security dangers.
+3. Exchanges Intelligence with other security agen cies towards the promotion of peace and security in the country.
 
-Courage
+6. NAFDAC: National agency for food and drug Aministration and control (NAFDAC) was founded in 1993 under the regime of president Ibrahim Babangida. The principal role of the agency is to tackle the menace of fake counterfeit alduter-ated, food drugs and other controlled circumstances.
 
-Faithfulness
+functions of NAFDAC
 
-[Page 9]
+---
 
-Blessing
+**Page 10**
 
-protecting
+1. Regulates and controls the manufatures Importate exportation distribution, advertisment, sale an use of food, drugs, Cosmetics, medical devices, packaged, water, chemicals and detergents (collectively known as regulated products.)
+2. With the help of the police, arrests manufacturers and distributers and counterfeit food and drugs for Investigation and Possible prosecution.
+3. Confiscates and destroys expired food and drug so.
+4. Locks up offices and factories where counterfeit food and drugs are produced.
 
-Mercy
+Checked
+3/6/2025
 
-fruits of the spirit
-
-Memory verse
-And, being full of the Holy Ghost, look up steady into heaven, and saw the glory of God and Jesus standing Son, the glory of God and Jesus standing on the right hand of God.
-Acts 7:57
-Acts 7: 55
-
-[Page 10]
-
-the spirit comes he will reveal the truth. He will lead you into all truth. He will not speak of what he hears, and will tell you of things to come.
-
-moral leson
-1 It is good to be truthful.
-2. If we allow the holy spirit lead or guide us, our lives will be more than meaningful.
-
-13/3/2025
+11/6/2025 Common, Satrance prepylass
+1. (A)
+2. (E)
  """
   
