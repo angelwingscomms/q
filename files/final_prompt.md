@@ -79,79 +79,51 @@ CRITICAL: Make the word problems in the objective section to be only 7 in number
 
 Text to create the quiz with:
   """
-  PHE
-Care of parts of Our Body
-Taking care of the body is very important for good health.
-1. Do not use a sharp pointed object to clean your ears. It may damage your ears.
-2. Do not use your teeth to cut your nails.
-3. Clean your teeth every morning and after each meal with a toothbrush and toothpaste.
-4. Do not use a broomstick or sharp object to pick your teeth after eating.
+  CRS
+The Birth of Jesus
+Mary became pregnant through the holy Spirit. When it was time for her to give birth, the government announced that they wanted to count the number of people in Israel. Joseph now took Mary his wife to Bethlehem where he came from to be counted. While they were there, It was time for Mary to give birth. There was no more room in the inn. They went to the manger where sheep were kept. It was there she gave birth to Jesus Christ.
+Homework
+Complete this verse (Luke 1:30-31)
+"Fear not Mary, for thou has found"
 
-PHE
-Good personal Health Habits
-Good personal health habit is keeping our body clean and living in a clean environment.
-Good personal health habits
-1. Wash your hands before eating.
-2. Wash your hands after eating.
-3. Wash your hands after leaving the toilet.
-4. Always drink clean water using a clean cup.
-5. Always wash your fruits before eating them.
+CRS
+Why Jesus Came
+Jesus came to the world to save us, to deliver us from the hand of Satan and he died for our sins.
+Ways in which God protected Jesus
+During the birth of Jesus, there was a king named Herod. He was furious when he heard about the birth of the savior. He sought ways of killing him, but God protected Jesus by: By telling Joseph to take baby Jesus and his mother to Egypt till the death of Herod who was planning to kill him.
 
-PHE
-Benefits of Cleanliness
-There are many benefits for maintaining personal hygiene and cleanliness.
-1. It helps to prevent the development and spread of infections and pain.
-2. It prevents illnesses and bad odour.
-3. It makes us more attractive to others.
-4. Good hygiene practices will help to keep you healthy.
+CRS
+Jesus Calls the Little Children
+When little children were brought to Jesus, he laid his hand on them, and prayed for them and carried them on his lap. His disciples were about to rebuke the parents who brought the children but Jesus told them not to send them away for the kingdom of God belongs to those who believe like children.
+Jesus Disciples
+Jesus calls his disciples his friends.
+His disciples are:
+1. peter
+2. Andrew
+3. John
+4. James
+5. Bartholomew
+6. Matthew
+7. Thomas
+8. Simon
+9. Thaddeus
+10. Judas Iscariot
+11. philip
+
+WEEK 6
+CRS
+The Death and Resurrection of Jesus
+Jesus was crucified on the cross at the third hour of the day. And hours later, he died. After his death on the cross, a man called Joseph of Arimathea, a counselor, went to pilate to ask for the body of Jesus to be released to him. He took the body of Jesus wrapped him and put him in tomb. On the third day Jesus risen from the death.
+Memory Verse (John 24:7)
+
+CRS
+How to Become a Christian
+A Christian is someone who believes in Jesus and follows Him as his or her personal Lord and Saviour.
+Steps to Become a Christian
+1. We must accept the message of Jesus.
+2. We must confess our sins and promise not to sin again.
+3. We must be baptized in the name of the father, the son and the Holy Spirit.
 Activities
-Describe how to wash hands, take a bath and care for the skin.
-Demonstrate how to brush the teeth.
-What happens when we take care of our body?
-
-PHE
-First Aid
-First aid is the first help given to a sick or injured person.
-We keep some medicine in the box. We must keep first aid boxes at home, in the school and in our cars.
-
-PHE
-Objectives of first Aid box
-First aid is given to stop bleeding, to save life, to prevent an injury from becoming worse and to prevent shock.
-Conditions that require first Aid
-1. Bleeding
-2. fainting
-3. Bruises
-4. Heat burns
-5. Fracture
-6. Animal bites and stings
-7. poisoning
-
-PHE
-Contents of a first Aid box
-Those things in the first Aid box are the contents of a first aid box. They are:
-1. bandages
-2. gloves
-3. Disinfectant
-4. Scissors
-5. Soap
-6. Cotton wool
-7. pain relieving tablet
-
-PHE
-Safety
-Safety is freedom from danger. It is not getting hurt, wounded.
-Examples of things we should not play with are:
-- Snake
-- blade
-- gun
-- fire
-- syringe
-- deep well
-
-PHE
-Safety Rules
-Safety rules are those things you do to be safe. The following are safety rules:
-1. Avoid playing with dangerous things such as electric wires.
-2. Keep away from places that are not safe, for example rivers, high hills, busy roads.
-3. Avoid doing dangerous things like: climbing trees, playing with nails, cutlasses, blades and pins.
+Who is a Christian?
+How can you become a Christian?
  """
