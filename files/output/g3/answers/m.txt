@@ -1,14 +1,14 @@
 Section A (Objective) Answers:
-1. b
+1. a
 2. b
 3. b
 4. b
 5. b
-6. b
+6. a
 7. b
 8. b
 9. b
-10. b
+10. c
 11. b
 12. b
 13. b
@@ -20,26 +20,26 @@ Section A (Objective) Answers:
 19. b
 20. b
 21. b
-22. c
-23. a
+22. a
+23. b
 24. b
-25. b
+25. a
 26. c
-27. b
-28. a
+27. c
+28. b
 29. b
 30. b
 
 Section B (Short Answer) Answers:
-1. 10
-2. 8
-3. 15
-4. 5
-5. ₦10
+1. 60
+2. 45
+3. 60
+4. 8
+5. 60
 
 Section C (Theory) Answers:
-1. 12 + 8 + 5 = 25
-2. 30 - 17 = 13
-3. 6 × 7 = 42
-4. 45 ÷ 9 = 5
-5. ₦50 + ₦25 = ₦75
+1. 85
+2. 55
+3. 90
+4. 9
+5. 250 kobo
