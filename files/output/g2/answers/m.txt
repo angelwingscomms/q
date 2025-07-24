@@ -1,35 +1,35 @@
 Section A (Objective) Answers:
 1. b
-2. a
-3. c
-4. a
+2. b
+3. b
+4. b
 5. b
 6. b
 7. b
 8. b
 9. b
-10. b
-11. a
+10. a
+11. b
 12. b
-13. b
+13. c
 14. c
 15. b
 16. b
 17. b
-18. a
+18. b
 19. b
 20. b
 
 Section B (Short Answer) Answers:
-1. hour
-2. 5:30
-3. Three
-4. Naira
-5. Sixty
+1. 10
+2. 3
+3. 4:00
+4. ₦20
+5. 10
 
 Section C (Theory) Answers:
-1. The minute hand tells us the number of minutes past or to the hour.
-2. An analogue clock shows time using two hands: a short hour hand and a long minute hand, moving around a numbered face.
-3. Square, Circle, Triangle, Rectangle.
-4. We can lift it to feel its weight, or use a weighing scale.
-5. The main purpose of a clock is to tell us the time.
+1. 9
+2. 30 minutes
+3. ₦100
+4. Circle
+5. 8
