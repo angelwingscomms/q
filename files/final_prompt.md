@@ -1,11 +1,14 @@
 
+
 Create a quiz with:
-Section A, Section B, and Section C.
+Section A, Section B, Section C.
+
 
 *** CRITICAL REQUIREMENT FOR END OF TERM QUIZ ***
 This is an END OF TERM quiz, which means ALL THREE SECTIONS (A, B, AND C) are MANDATORY and MUST be included.
 DO NOT skip Section B or Section C under any circumstances.
 *** END OF CRITICAL REQUIREMENT ***
+
 
 Each section should be an array of strings containing the questions for that section.
 
@@ -33,6 +36,7 @@ Each question must:
 – Require one-word or short-phrase answers
 
 
+
 # For Section B (short answer questions):
 - Use 9 underscores (_________) for blanks
 - For answers_B, provide concise answers
@@ -52,6 +56,8 @@ Do not include:
 – Multi-part questions
 
 
+
+
 # For Section C (essay questions):
 - Make questions clear and concise
 - Maintain academic language level
@@ -59,14 +65,8 @@ Do not include:
 
 - Create simple questions. Each question should ask for a basic fact and require a short, direct answer (like one word or a short phrase). Use only clear, simple language. Avoid explanation or reasoning.
 
-# For Math quizzes specifically:
-- Always use perfect Unicode for any math sums, fractions, or symbols (e.g., ½, ¾, ², ³, ×, ÷, ±, ≤, ≥, π, ∞)
-- Let all fractions always use Unicode creatively in the best way possible (prefer ½, ⅓, ¼, ⅕, ⅙, ⅛, ⅔, ¾, ⅖, ⅗, ⅘, ⅚, ⅝, ⅞ over 1/2, 1/3, etc.)
-- For math questions that are sum gaps (e.g., 6 times what equals 18), write as: 6 × _ = 18
-- Use × as multiplication symbol instead of * in displayed questions
-- Think deeply about math questions and math sums when making math quizzes
-- Let the questions be very very easy, using very simple, easy language, for 6 year olds
-- Use proper mathematical notation and Unicode symbols throughout
+
+
 
 let the questions be numbered.
 refrain from mentioning or referencing the source text that the quiz is made from. Never say something like "according to the text" or "from the text"
@@ -79,43 +79,79 @@ CRITICAL: Make the word problems in the objective section to be only 7 in number
 
 Text to create the quiz with:
   """
-  CCA
-Ceremony
-A ceremony is the coming together of people to celebrate an event. There are lot of food, drinks during a ceremony.
-Types of ceremonies
-There are four types of ceremonies
-1. Traditional ceremony. e.g tradition marriage, naming ceremony etc.
-2. Religious ceremony. e.g christmas, Easter, Sallah
-3. National ceremonies. e.g Independence, Democracy day
-4. Carnivals: This is a colourful celebration where people come together to eat, drink, playing games, music - e.g Abuja and Calabar carnivals.
+  PHE
+Care of parts of Our Body
+Taking care of the body is very important for good health.
+1. Do not use a sharp pointed object to clean your ears. It may damage your ears.
+2. Do not use your teeth to cut your nails.
+3. Clean your teeth every morning and after each meal with a toothbrush and toothpaste.
+4. Do not use a broomstick or sharp object to pick your teeth after eating.
 
-CCA
-Importance of Ceremonies
-1. Ceremonies help to unite the people.
-2. They promotes culture of the people.
-3. They help in educating the youths about the society.
-4. They help to strengthen relationships.
-5. They encourage love and sharing among the people.
-6. They help economic development through tourism.
-Homework
-What is ceremony?
-2. Mention the types of ceremonies we have.
-3. Give an example of a religious ceremony.
+PHE
+Good personal Health Habits
+Good personal health habit is keeping our body clean and living in a clean environment.
+Good personal health habits
+1. Wash your hands before eating.
+2. Wash your hands after eating.
+3. Wash your hands after leaving the toilet.
+4. Always drink clean water using a clean cup.
+5. Always wash your fruits before eating them.
 
-CCA
-Music Song
-A song is a group of sounds that are nice to the ears made by our voices when we sing.
-Why we sing song
-1. We sing song to show the love for our country.
-2. We sing song to praise God.
-3. We sing songs in times when we are sad.
-Musical instruments
-1. drums
-2. flutes
-3. guitars
-4. piano
+PHE
+Benefits of Cleanliness
+There are many benefits for maintaining personal hygiene and cleanliness.
+1. It helps to prevent the development and spread of infections and pain.
+2. It prevents illnesses and bad odour.
+3. It makes us more attractive to others.
+4. Good hygiene practices will help to keep you healthy.
+Activities
+Describe how to wash hands, take a bath and care for the skin.
+Demonstrate how to brush the teeth.
+What happens when we take care of our body?
 
-CCA
-The Letters of Music
-Music has seven letters. They are also called the alphabet of music. They are A B C D E F G
+PHE
+First Aid
+First aid is the first help given to a sick or injured person.
+We keep some medicine in the box. We must keep first aid boxes at home, in the school and in our cars.
+
+PHE
+Objectives of first Aid box
+First aid is given to stop bleeding, to save life, to prevent an injury from becoming worse and to prevent shock.
+Conditions that require first Aid
+1. Bleeding
+2. fainting
+3. Bruises
+4. Heat burns
+5. Fracture
+6. Animal bites and stings
+7. poisoning
+
+PHE
+Contents of a first Aid box
+Those things in the first Aid box are the contents of a first aid box. They are:
+1. bandages
+2. gloves
+3. Disinfectant
+4. Scissors
+5. Soap
+6. Cotton wool
+7. pain relieving tablet
+
+PHE
+Safety
+Safety is freedom from danger. It is not getting hurt, wounded.
+Examples of things we should not play with are:
+- Snake
+- blade
+- gun
+- fire
+- syringe
+- deep well
+
+PHE
+Safety Rules
+Safety rules are those things you do to be safe. The following are safety rules:
+1. Avoid playing with dangerous things such as electric wires.
+2. Keep away from places that are not safe, for example rivers, high hills, busy roads.
+3. Avoid doing dangerous things like: climbing trees, playing with nails, cutlasses, blades and pins.
  """

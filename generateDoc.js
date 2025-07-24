@@ -1,4 +1,3 @@
-
 const { readFileSync, writeFileSync, existsSync, mkdirSync } = require("fs");
 const path = require("path");
 const { grades, subjectAbbreviations } = require("./constants");
@@ -27,7 +26,12 @@ async function generateDoc({ g, t, s, examType }) {
         });
 
   // Lazy-load docx only when needed
-  const { patchDocument, PatchType, TextRun, Paragraph } = require("docx");
+  const {
+    patchDocument,
+    PatchType,
+    TextRun,
+    Paragraph
+  } = require("docx");
 
   let quizContent;
   try {
@@ -44,7 +48,7 @@ async function generateDoc({ g, t, s, examType }) {
 
     if (!quizContent.answers_A || !Array.isArray(quizContent.answers_A)) {
       console.warn(
-        "Section A answers are missing or not an array. Creating empty array."
+        "Section A answers are missing or not an array. Creating empty array.",
       );
       quizContent.answers_A = [];
     }
@@ -57,7 +61,7 @@ async function generateDoc({ g, t, s, examType }) {
         quizContent.B.length === 0
       ) {
         throw new Error(
-          `CRITICAL ERROR: ${examType} quiz is missing Section B or Section B is empty. This violates the mandatory requirement that end-of-term and single quizzes MUST include sections B and C with content.`
+          `CRITICAL ERROR: ${examType} quiz is missing Section B or Section B is empty. This violates the mandatory requirement that end-of-term and single quizzes MUST include sections B and C with content.`,
         );
       }
 
@@ -67,7 +71,7 @@ async function generateDoc({ g, t, s, examType }) {
         quizContent.C.length === 0
       ) {
         throw new Error(
-          `CRITICAL ERROR: ${examType} quiz is missing Section C or Section C is empty. This violates the mandatory requirement that end-of-term and single quizzes MUST include sections B and C with content.`
+          `CRITICAL ERROR: ${examType} quiz is missing Section C or Section C is empty. This violates the mandatory requirement that end-of-term and single quizzes MUST include sections B and C with content.`,
         );
       }
     }
@@ -76,7 +80,7 @@ async function generateDoc({ g, t, s, examType }) {
     if (!quizContent.B || !Array.isArray(quizContent.B)) {
       if (examType === "Midterm" || examType === "midterm") {
         console.log(
-          "Section B is not present in the response, initializing as empty array"
+          "Section B is not present in the response, initializing as empty array",
         );
         quizContent.B = [];
       }
@@ -85,7 +89,7 @@ async function generateDoc({ g, t, s, examType }) {
     if (!quizContent.C || !Array.isArray(quizContent.C)) {
       if (examType === "Midterm" || examType === "midterm") {
         console.log(
-          "Section C is not present in the response, initializing as empty array"
+          "Section C is not present in the response, initializing as empty array",
         );
         quizContent.C = [];
       }
@@ -95,14 +99,14 @@ async function generateDoc({ g, t, s, examType }) {
     if (examType !== "Midterm" && examType !== "midterm") {
       if (!quizContent.answers_B || !Array.isArray(quizContent.answers_B)) {
         console.warn(
-          `WARNING: ${examType} quiz is missing answers for Section B, initializing as empty array but this should be addressed`
+          `WARNING: ${examType} quiz is missing answers for Section B, initializing as empty array but this should be addressed`,
         );
         quizContent.answers_B = [];
       }
 
       if (!quizContent.answers_C || !Array.isArray(quizContent.answers_C)) {
         console.warn(
-          `WARNING: ${examType} quiz is missing answers for Section C, initializing as empty array but this should be addressed`
+          `WARNING: ${examType} quiz is missing answers for Section C, initializing as empty array but this should be addressed`,
         );
         quizContent.answers_C = [];
       }
@@ -112,7 +116,7 @@ async function generateDoc({ g, t, s, examType }) {
     if (!quizContent.answers_B || !Array.isArray(quizContent.answers_B)) {
       if (examType === "Midterm" || examType === "midterm") {
         console.log(
-          "Section B answers are not present in the response, initializing as empty array"
+          "Section B answers are not present in the response, initializing as empty array",
         );
         quizContent.answers_B = [];
       }
@@ -121,7 +125,7 @@ async function generateDoc({ g, t, s, examType }) {
     if (!quizContent.answers_C || !Array.isArray(quizContent.answers_C)) {
       if (examType === "Midterm" || examType === "midterm") {
         console.log(
-          "Section C answers are not present in the response, initializing as empty array"
+          "Section C answers are not present in the response, initializing as empty array",
         );
         quizContent.answers_C = [];
       }
@@ -130,7 +134,7 @@ async function generateDoc({ g, t, s, examType }) {
     // Log success message for end-of-term quiz validation
     if (examType !== "Midterm" && examType !== "midterm") {
       console.log(
-        `✅ ${examType} quiz validation passed: All required sections (A, B, C) are present with content`
+        `✅ ${examType} quiz validation passed: All required sections (A, B, C) are present with content`,
       );
     }
   } catch (error) {
@@ -141,7 +145,10 @@ async function generateDoc({ g, t, s, examType }) {
   // Get grade number and create json folder path
   const gradeNum = Object.keys(grades).find((key) => grades[key] === g);
   const jsonDir = path.join(__dirname, `./files/output/g${gradeNum}/json`);
-  const answersDir = path.join(__dirname, `./files/output/g${gradeNum}/answers`);
+  const answersDir = path.join(
+    __dirname,
+    `./files/output/g${gradeNum}/answers`,
+  );
 
   // Create directories if they don't exist
   [jsonDir, answersDir].forEach((dir) => {
@@ -185,8 +192,29 @@ async function generateDoc({ g, t, s, examType }) {
   const templateSuffix = g === "ONE" || g === "TWO" ? "-cc" : "";
   const templatePath = path.join(
     __dirname,
-    `./files/template${templateSuffix}.docx`
+    `./files/template${templateSuffix}.docx`,
   );
+
+  // Determine font family based on grade
+  const fontFamily = g === "ONE" || g === "TWO" ? "Comic Sans MS" : undefined;
+
+  // Helper function to create TextRun with appropriate font
+  const createTextRun = (text, options = {}) => {
+    return new TextRun({
+      text,
+      font: fontFamily,
+      ...options,
+    });
+  };
+
+  // NOTE: Page margins configuration (0.27 inches on all sides)
+  // The patchDocument function doesn't support setting page margins directly.
+  // To set margins to 0.27 inches on all sides, you need to:
+  // 1. Open the template files (template.docx, template-cc.docx, template-n.docx) in Microsoft Word
+  // 2. Go to Layout > Margins > Custom Margins
+  // 3. Set Top, Bottom, Left, Right margins to 0.27"
+  // 4. Save the template files
+  // This will ensure all generated documents use the 0.27" margins from the templates.
 
   // Patch the Word document
   const doc = await patchDocument({
@@ -196,11 +224,11 @@ async function generateDoc({ g, t, s, examType }) {
     patches: {
       s: {
         type: PatchType.PARAGRAPH,
-        children: [new TextRun(s)],
+        children: [createTextRun(s)],
       },
       g: {
         type: PatchType.PARAGRAPH,
-        children: [new TextRun(g)],
+        children: [createTextRun(g)],
       },
       q: {
         type: PatchType.DOCUMENT,
@@ -208,23 +236,23 @@ async function generateDoc({ g, t, s, examType }) {
           ...quizContent.A.map(
             (question) =>
               new Paragraph({
-                children: [new TextRun(question)],
+                children: [createTextRun(question)],
                 spacing: { after: 9 },
-              })
+              }),
           ),
           // Section B - only include if it has content
           ...(quizContent.B && quizContent.B.length > 0
             ? [
                 new Paragraph({
-                  children: [new TextRun("Section B")],
+                  children: [createTextRun("Section B", { bold: true })],
                   spacing: { after: 9, before: 54 },
                 }),
                 ...quizContent.B.map(
                   (question) =>
                     new Paragraph({
-                      children: [new TextRun(question)],
+                      children: [createTextRun(question)],
                       spacing: { after: 9 },
-                    })
+                    }),
                 ),
               ]
             : []),
@@ -232,15 +260,15 @@ async function generateDoc({ g, t, s, examType }) {
           ...(quizContent.C && quizContent.C.length > 0
             ? [
                 new Paragraph({
-                  children: [new TextRun("Section C")],
+                  children: [createTextRun("Section C", { bold: true })],
                   spacing: { after: 9, before: 54 },
                 }),
                 ...quizContent.C.map(
                   (question) =>
                     new Paragraph({
-                      children: [new TextRun(question)],
+                      children: [createTextRun(question)],
                       spacing: { after: 9 },
-                    })
+                    }),
                 ),
               ]
             : []),
