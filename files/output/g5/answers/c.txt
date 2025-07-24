@@ -1,65 +1,65 @@
 Section A (Objective) Answers:
 1. b
-2. b
-3. b
-4. c
-5. b
-6. b
-7. b
+2. a
+3. a
+4. a
+5. a
+6. a
+7. a
 8. a
-9. b
+9. a
 10. a
-11. b
-12. c
-13. b
-14. c
-15. b
-16. c
-17. c
-18. c
-19. b
-20. c
-21. b
-22. b
-23. b
-24. c
-25. c
-26. b
-27. b
-28. c
-29. b
-30. b
-31. b
-32. b
-33. b
-34. c
-35. c
+11. a
+12. b
+13. a
+14. a
+15. a
+16. a
+17. a
+18. a
+19. a
+20. a
+21. a
+22. a
+23. a
+24. a
+25. a
+26. a
+27. a
+28. a
+29. a
+30. a
+31. a
+32. a
+33. a
+34. a
+35. a
 36. a
-37. c
-38. c
-39. b
-40. b
-41. b
-42. b
-43. c
-44. b
-45. c
-46. b
-47. c
-48. b
-49. c
-50. c
+37. a
+38. a
+39. a
+40. a
+41. a
+42. a
+43. a
+44. a
+45. a
+46. a
+47. a
+48. a
+49. a
+50. a
 
 Section B (Short Answer) Answers:
-1. Dust
-2. Anti-Virus
+1. Care of computer
+2. Word processing
 3. Microsoft
-4. Title
-5. Storage
+4. Title bar
+5. Menu bar
 
 Section C (Theory) Answers:
-1. Avoid dust; Avoid moisture.
-2. To avoid damage; To protect the system.
-3. Microsoft Word; Word Perfect.
-4. To assist the user in producing documents.
-5. Files; Edit.
+1. Adequate ventilation, Avoid dust
+2. To avoid damage, To protect the system
+3. Microsoft Word, Word Perfect
+4. Letters, Reports
+5. Title bar, Menu bar
