@@ -77,202 +77,111 @@ CRITICAL: For END OF TERM quizzes, sections B and C are REQUIRED and must ALWAYS
 
 Text to create the quiz with:
   """
-  Composition
-My Mother
-The name of my mother is Mrs Sandi Seriki. She is 38 years old. She is short and fat. My mother is black in complexion. Her face is round. She has black hair.
-Homework
-Write a composition about your mother.
+  PVS
+The Home
+A home is a place where members of a family live. Home is different from house because house is a building which is the home for a family. A home may be for nuclear or extended families. Home is a place of shelter for a family.
+Items found in different parts of a home are:
+Television
+Radio
+Table fan
+Gas cooker
+Ceiling fan
 
-A Hospital
-A hospital is a place where sick people are treated. Sick people in the hospital are called patients. Doctors and nurses take care of sick people in the hospital.
+P.V.S.
+Different part of a home and their Uses
+1. Living room or sitting room: This is a place where we entertain visitors, where we relax and watch television.
+2. Dining room: This is a room where we eat.
+3. Bedroom: This is a room where we sleep.
+4. Kitchen: This is where foods are prepared.
+5. Toilet: We use the toilet to urinate or defecate.
+6. Bathroom: This is where we take our bath.
+Part of a home and items found in them
+Dining room: Dining chairs, Dining table spread and cover, glass cup, mugs, forks, spoon etc.
+Bedroom: Bed, Bed sheet, mattress, wardrobes, Dressing mirror, pillow.
+Kitchen: Gas cooker, electric cooker, cupboard, kitchen utensils, fridge and freezer.
+Bathroom and toilet: Sink, water bucket, buckets, sponge, soap, toothpaste, toothbrush, wash basin etc.
 
-Grammar
-Capital letters
-We use capital letters to begin people's names. We also begin the days and month with capital letters.
-Afiong, Nosa, Monday, Tuesday, May, December
-1. Afiong was born in April.
-2. He comes here on Fridays.
-3. Nosa was not in school on Tuesday.
-4. August is the eight month of the year.
-5. My best day in the week is Wednesday.
-Classwork
-Use capital letters to make these sentences correct.
-1. ada is in a beautiful dress.
-2. Musa and Isa always read their books.
-3. Our teacher's name is mrs ekpe.
-4. school begins on monday.
+PVS
+Toilet Hygiene
+A toilet is a place where we pass urine, pass faeces or defecate. Toilet is one of the parts of a home. In Nigeria, people make use of different types of toilets.
 
-Grammar
-Pronouns
-Pronouns are words use instead of a noun.
-Examples of pronouns
-She, I, They, Him, We, He, It, Her, Them, me
-Examples:
-Tola is a boy.
-He is a boy.
-Ngozi is a girl.
-She is a girl.
-This watch is very fine.
-It is very fine.
-Classwork (Change the nouns to pronoun)
-1. Adams is a nice boy. (He)
-2. Mary can sing well.
-3. The cat walks slowly.
-4. Odiete and Anum are pupils.
-5. Musa is an intelligent boy.
-Homework
-Change the underline nouns to pronoun.
-1. My father bought a shirt from the market.
-2. Mariam has a beautiful voice.
-3. John is brilliant.
-4. The dog barks harshly.
-5. Eva sings like an angel.
+PVS
+Types of toilet
+Below are the types of toilets used in the olden days and at present
+1. Hole toilet
+2. pit latrine
+3. Sink and Water closet
+4. Bucket toilet
 
-Week 5
-Grammar
-Present Continuous tense
-Present continuous tense is used for actions or events happening now.
-e.g You are learning English now.
-I am standing alone on the narrow road.
-They are reading their books.
-He is swimming.
-Classwork
-Add 'ing' to these words to make sentences.
-1. The baby is crying.
-2. The teacher is writing.
-3. The children are playing.
-4. The boys are swimming.
-5. Shhh! Granny is sleeping.
-Homework
-Add 'ing' to these words to make sentences.
-1. Umana is riding a bicycle.
-2. The girls are running.
-3. Aanu is drinking water.
-4. The trader is selling water.
-5. The mechanic is repairing the car.
+PVS
+Items in a toilet
+A toilet must have the following items:
+1. Bucket and water
+2. Soap and detergents
+3. Broom
+4. Towel
+5. Disinfectant - liquids
+6. Tissue paper
+7. Hand wash basin
+8. Scrubbing stick
+Proper use of the Toilet
+The following are proper ways to use toilets.
+a. Sit properly on water closet
+b. flush the toilet after use
+c. clean properly with water or tissue paper after using the toilet.
+d. Wash your hands with soap and water after using the toilet.
 
-Composition
-Things I do everyday
-Complete the sentences below with what you do every day.
-1. I ___ help my mother to ___ every day.
-2. I ___ football every day.
-3. I ___ my teeth every day.
-4. I ___ my book every day.
-5. I ___ my food every day.
-6. My friends and I ___ to school every day.
+PVS
+Types of Dirt
+Dirt are pieces of refuse which litter our surroundings. The following are the types of dirt:
+1. pieces of paper and card
+2. leaves and flowers
+3. Rags
+4. Dust
+5. Cobwebs
+6. Nylon of sachet water
+7. Empty packs, boxes and cartons
+8. polythene bags
+9. food remnants
+10. Broken bottles
 
-Grammar (Monday)
-Abbreviations
-An abbreviation is the short form of a word. Examples are:
-Dr. = Doctor
-Mr = Mister
-Mrs = Mistress
-Prof. = Professor
-Rev. = Reverend
-Engr. = Engineer
-Fr. = Father
-Classwork
-Copy the following correctly in capital letters.
-1. Early to bed, early to rise.
-2. A word is enough for the wise.
-3. Givers never lack.
-4. Look before you leap.
-5. A cheat never does well in life.
-Homework
-Write the abbreviation of the following words
-1. professor
-2. Reverend
-3. Engineer
-4. Mister
-5. Mistress
+PVS
+Good feeding habits
+Good feeding habits mean what you are allowed to do before, during and after eating. The following are good feeding habits:
+1. Eat in a clean place.
+2. Wash your hands before and after eating.
+3. Do not put too much food into your mouth.
+4. Use your right hand to eat.
+5. Do not talk while eating.
+6. Chew the food in your mouth before swallowing it.
 
-Grammar (Tuesday)
-punctuation
-, . ?
-Comma, full stop, Question mark
-1. We use a comma to seperate two or more items in a sentence.
-Example: The colours in Nigeria's flag are green, white, and green.
-2. We use full stop at the end of a statement.
-Example: Mothers love their children.
-3. We use a question mark at the end of a question.
-Example: What is your name?
-Classwork
-use a comma, full stop or a question mark to complete each sentence.
-1. Amina loves to help her mum cook lunch.
-2. Where are you going?
-3. Do you like cakes?
-4. My toy is big.
-Homework
-Use a comma, full stop or a question mark to complete each sentence.
-1. My toy is big.
-2. I can see a car.
-3. My sister has three friends. They are Maryam, Ezinne and Shade.
-4. Have you seen my bag?
+PVS
+Land and its uses
+Land is the part of the earth's surface covered with soil. It is an area of ground.
+Types of land
+1. Rocky land: This is a land with rocks.
+2. Swampy land: This is a land that has so much water where plants grow.
+3. Dry land: This is a land that has little water.
+Uses of land
+1. We plant crops on land.
+2. Farm animals move on land.
+3. Road is constructed on land.
+4. We build houses on land.
+5. Human beings live on land.
+Activities
+Make a list of different things found on the land.
 
-Grammar
-Preposition
-A preposition is a word that is used to show place, time, and direction.
-Examples of preposition
-1. near
-2. below
-3. under
-4. behind
-5. above
-6. in
-7. on
-Sentences
-1. The stick is in the pot.
-2. The yam is under the table.
-3. The basin is on the box.
-Classwork
-Write five sentences using preposition. Underline the preposition in the sentence.
-Homework
-Write five sentences using preposition.
-
-Grammar
-Antonyms
-An antonym is a word that has an opposite meaning to another word.
-Examples:
-Old - young
-pull - push
-man - woman
-fast - slow
-wet - dry
-small - large
-light - dark
-open - shut
-Classwork
-Circle the opposite of the first word in each row. An example is given.
-1. right (wrong) hurt less
-2. near behind far first
-3. hot warm boil cold
-4. slow crawl fast move
-5. float run trap sink
-Homework
-Draw a line to match each word to its opposite
-A | B
-pull | soft
-Hard | cold
-hot | well
-sick | push
-fat | thin
-Empty | full
-
-WEEK 9
-Grammar
-Simple present tense
-The simple present tense is often formed using the base form of the verb, with the addition of -s or -es for singular person (he, she, it).
-Examples:
-Bode washes plates
-Fatima brushes her teeth
-I go to school
-She studies English
-Classwork
-Underline the simple present tense in the following sentences.
-1. Fatima sweeps the floor.
-2. Bode takes his bath everyday.
-3. Obi plays football everyday.
-4. My friends walk to school every day.
-Homework
-Make five sentences using simple present tense.
+PVS
+The Sun and its uses
+The Sun is an object that is far away from the earth and shines above the earth. The sun rises in the morning to provide light. The sun sets in the evening to usher in night. The energy from the sun is called solar energy.
+Uses of the Sun
+The sun is use for the following purposes:
+1. It provides daylight.
+2. It is used to dry crops like maize, beans, pepper etc.
+3. It makes plants to grow well.
+4. It warm our body.
+Evaluation
+1. When does the sun rise?
+2. When does the sun set?
+3. Energy from the sun is called __
  """
