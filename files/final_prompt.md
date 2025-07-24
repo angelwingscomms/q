@@ -59,7 +59,6 @@ Do not include:
 
 
 # For Section C (essay questions):
-- Make questions clear and concise
 - Maintain academic language level
 - For answers_C, provide brief model answers or key points
 
@@ -68,14 +67,13 @@ Do not include:
 
 
 
+make all questions clear and short
 let the questions be numbered.
 refrain from mentioning or referencing the source text that the quiz is made from. Never say something like "according to the text" or "from the text"
 A section may have subsections, which may have headings, stories or instructions for the questions that follow perhaps, or passages, or just such parts that are not really questions in themselves, e.g "Write the short form of the following words" or "<a story required for the questions in this section to be answered>". Add such parts or subheadings or stories or instruction as unnumbered questions.
 MANDATORY: Let section A contain exactly 20 objective questions. Let section B contain exactly 5 short-answer questions. Let section C contain exactly 5 essay/theory questions.
 
 CRITICAL: For END OF TERM quizzes, sections B and C are REQUIRED and must ALWAYS be included regardless of grade level or any other factors.
-
-CRITICAL: Make the word problems in the objective section to be only 7 in number
 
 Text to create the quiz with:
   """
