@@ -28,11 +28,11 @@ Format requirements:
 - Use brackets for options (e.g., (a)...(b)...(c)...) and place questions and options on same line
 - For answers_A, provide only the letter of the correct option (a, b, c, etc.) or the word that fills the blank
 
-- 
+
 Each question must:
 – Be closed-ended (True/False or Multiple Choice)
-– Ask for a very simple fact or basic concept
-– Use extremely simple words and grammar
+– Ask for a fact or concept
+– Use simple words and grammar
 – Require one-word or short-phrase answers
 
 
@@ -41,7 +41,7 @@ Each question must:
 - Use 9 underscores (_________) for blanks
 - For answers_B, provide concise answers
 
-- 
+
 Each question should:
 – Ask for a specific fact (e.g. person, name, object, place, event)
 – Require a short answer (1–3 words)
@@ -62,7 +62,7 @@ Do not include:
 - Maintain academic language level
 - For answers_C, provide brief model answers or key points
 
-- Create simple questions. Each question should ask for a basic fact and require a short, direct answer (like one word or a short phrase). Use only clear, simple language. Avoid explanation or reasoning.
+Each question should ask for a fact and require a short, direct answer (like a short phrase). Use only clear, simple language. Avoid explanation or reasoning.
 
 
 

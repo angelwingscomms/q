@@ -93,6 +93,10 @@ For Math quizzes specifically:
 - Use proper mathematical notation and Unicode symbols throughout
 `
     : "";
+  
+  const gradeNum = Object.keys(grades).find((key) => grades[key] === grade);
+  let ex = gradeNum < 4 ? ext[1] : ext[5]; 
+  
 
   return `
 ${exampleQuizPrompt}
@@ -119,14 +123,14 @@ Format requirements:
 - Use brackets for options (e.g., (a)...(b)...(c)...) and place questions and options on same line
 - For answers_A, provide only the letter of the correct option (a, b, c, etc.) or the word that fills the blank
 
-- ${ext[1].a}
+${ex.a}
 
 ${sectionRequirements.sections.includes("Section B") ? `
 # For Section B (short answer questions):
 - Use 9 underscores (_________) for blanks
 - For answers_B, provide concise answers
 
-- ${ext[1].b}
+${ex.b}
 ` : ""}
 
 ${sectionRequirements.sections.includes("Section C") ? `
@@ -134,7 +138,7 @@ ${sectionRequirements.sections.includes("Section C") ? `
 - Maintain academic language level
 - For answers_C, provide brief model answers or key points
 
-- ${ext[1].c}
+${ex.c}
 ` : ""}
 
 ${mathBlock}
