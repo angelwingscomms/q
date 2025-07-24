@@ -116,5 +116,9 @@ Analogue time: 5 o'clock
 Digital time: 5:00
 (Drawing of an analogue clock showing 5:30)
 Analogue time: half past 5
-Digital time: 5:30/n/n/n --- Extra instructions for creating quiz: create questions on decimals, fractions, time, Nigerian money, shapes, measurements, data, vertical addition, subtraction and simple multiplication, horizontal calculations (e.g 27 + 54). Include different kinds of easy sums and arithmetic expressions in the objective section/n/n/n --- Extra instructions for creating quiz: time, Nigerian money, shapes, measurements, data, vertical addition, subtraction and simple multiplication, horizontal calculations (e.g 2 + 3 + 4). Include different kinds of easy sums and arithmetic expressions in all sections. Let all the questions be easy 2 digit sums and calculations. No explanations or facts. This exception is being made for Mathematics, where are all questions are easy sums and calculations
+Digital time: 5:30/n/n/n --- Extra instructions for creating quiz: let all the questions be evenly distributed over these topics: decimal addition, decimal subtractions, greater than, less than, time, Nigerian money, shapes, measurements, data, word problems (in section b and section c only), 3 digit HTU vertical addition and subtraction questions (e.g H T U
+1 4 4
++ 5 4
+______
+______, subtraction and simple 2 digit multiplication, horizontal calculations (e.g 234 + 54). Let all the questions be sums and calculations, easy enough for 6 year olds. No explanations or facts. This exception is being made for Mathematics, where are all questions are easy sums and calculations
  """
