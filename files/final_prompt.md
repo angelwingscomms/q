@@ -80,42 +80,41 @@ make all questions clear and short
 let the questions be numbered.
 refrain from mentioning or referencing the source text that the quiz is made from. Never say something like "according to the text" or "from the text"
 A section may have subsections, which may have headings, stories or instructions for the questions that follow perhaps, or passages, or just such parts that are not really questions in themselves, e.g "Write the short form of the following words" or "<a story required for the questions in this section to be answered>". Add such parts or subheadings or stories or instruction as unnumbered questions.
-MANDATORY: Let section A contain exactly 30 objective questions. Let section B contain exactly 5 short-answer questions. Let section C contain exactly 5 essay/theory questions.
+MANDATORY: Let section A contain exactly 20 objective questions. Let section B contain exactly 5 short-answer questions. Let section C contain exactly 5 essay/theory questions.
 
 CRITICAL: For END OF TERM quizzes, sections B and C are REQUIRED and must ALWAYS be included regardless of grade level or any other factors.
 
 Text to create the quiz with:
   """
-  ### Mathematics
-
-**Time**
-*(Image of a clock face)*
-
+  Mathematics
+Time
+(Drawing of a clock showing 3 o'clock)
 The clock face shows 12-hour clock times. The long hand on the clock face is called minute hand. It tells the number of minutes past or to the hour. The short hand on the clock face is called the hour hand.
-
-*(Images of clocks showing 4 o'clock and 8 o'clock)*
-- 4 o'clock
-- 8 o'clock
-
-**Classwork**
+(Drawing of a clock showing 4 o'clock)
+4 o'clock
+(Drawing of a clock showing 8 o'clock)
+8 o'clock
+Classwork
 Write the following time
-*(Images of clocks for classwork)*
-
-**Homework**
+(Drawing of a clock showing 1 o'clock)
+(Drawing of a clock showing 6 o'clock)
+3 (Drawing of a clock showing 11 o'clock)
+4 (Drawing of a clock showing 7 o'clock)
+5 (Drawing of a clock showing 5 o'clock)
+Homework
 Write the following time
-*(Images of clocks for homework)*
+1 (Drawing of a clock showing 9 o'clock)
+2 (Drawing of a clock showing 12:30)
+3 (Drawing of a clock showing 12 o'clock)
+4 (Drawing of a clock showing 2 o'clock)
+5 (Drawing of a clock showing 10 o'clock)
 
----
-
-### Math
-
-**Analogue and digital time**
-
-*(Image of a clock at 5:00)*
-- Analogue time: 5 o'clock
-- Digital time: 5:00
-
-*(Image of a clock at 5:30)*
-- Analogue time: half past 5
-- Digital time: 5:30 /n/n/n --- Extra instructions for creating quiz: time, Nigerian money, shapes, measurements, data, vertical addition, subtraction and simple multiplication, horizontal calculations (e.g 2 + 3 + 4). Include different kinds of easysums and arithmetic expressions in the objective section
+Math
+Analogue and digital time
+(Drawing of an analogue clock showing 5:00 and a digital representation)
+Analogue time: 5 o'clock
+Digital time: 5:00
+(Drawing of an analogue clock showing 5:30)
+Analogue time: half past 5
+Digital time: 5:30 /n/n/n --- Extra instructions for creating quiz: time, Nigerian money, shapes, measurements, data, vertical addition, subtraction and simple multiplication, horizontal calculations (e.g 2 + 3 + 4). Include different kinds of easysums and arithmetic expressions in the objective section
  """

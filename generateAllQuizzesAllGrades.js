@@ -1,4 +1,3 @@
-
 const fs = require("fs");
 const path = require("path");
 const { grades } = require("./constants");
@@ -23,12 +22,12 @@ async function generateAllQuizzesAllGrades({ examType, skipExisting = false }) {
       const jsonDir = path.join(__dirname, `./files/output/g${gradeNum}/json`);
 
       if (fs.existsSync(jsonDir)) {
-        const existingFiles = fs.readdirSync(jsonDir).filter((f) =>
-          f.endsWith(".json")
-        );
+        const existingFiles = fs
+          .readdirSync(jsonDir)
+          .filter((f) => f.endsWith(".json"));
         if (existingFiles.length > 0) {
           console.log(
-            `  Grade ${gradeName}: ${existingFiles.length} existing quizzes (${existingFiles.join(", ")})`
+            `  Grade ${gradeName}: ${existingFiles.length} existing quizzes (${existingFiles.join(", ")})`,
           );
           totalExisting += existingFiles.length;
         } else {
@@ -43,7 +42,7 @@ async function generateAllQuizzesAllGrades({ examType, skipExisting = false }) {
     console.log(
       skipExisting
         ? "Will skip existing files.\n"
-        : "Will overwrite existing files.\n"
+        : "Will overwrite existing files.\n",
     );
   }
 
@@ -56,7 +55,7 @@ async function generateAllQuizzesAllGrades({ examType, skipExisting = false }) {
     processedGrades++;
 
     console.log(
-      `\n=== Processing Grade ${gradeName} (${gradeNum}) [${processedGrades}/${totalGrades}] ===`
+      `\n=== Processing Grade ${gradeName} (${gradeNum}) [${processedGrades}/${totalGrades}] ===`,
     );
 
     // Check what subjects are available for this grade
@@ -66,21 +65,21 @@ async function generateAllQuizzesAllGrades({ examType, skipExisting = false }) {
     let subjectCount = 0;
     if (fs.existsSync(jsonPath)) {
       try {
-        const exams = JSON.parse(fs.readFileSync(jsonPath, "utf8"));
-        subjectCount = exams.length;
+        const jsonData = JSON.parse(fs.readFileSync(jsonPath, "utf8"));
+        subjectCount = Object.keys(jsonData).length;
         console.log(
-          `Found ${subjectCount} subjects in JSON file for Grade ${gradeName}`
+          `Found ${subjectCount} subjects in JSON file for Grade ${gradeName}`,
         );
       } catch (error) {
         console.log(
-          `Could not read JSON file for Grade ${gradeName}: ${error.message}`
+          `Could not read JSON file for Grade ${gradeName}: ${error.message}`,
         );
       }
     } else if (fs.existsSync(folderPath)) {
       const files = fs.readdirSync(folderPath);
       subjectCount = files.length;
       console.log(
-        `Found ${subjectCount} subject files in folder for Grade ${gradeName}`
+        `Found ${subjectCount} subject files in folder for Grade ${gradeName}`,
       );
     } else {
       console.log(`No input data found for Grade ${gradeName}`);
@@ -93,7 +92,7 @@ async function generateAllQuizzesAllGrades({ examType, skipExisting = false }) {
         examType: examType,
       });
       console.log(
-        `✓ Completed Grade ${gradeName} (${processedGrades}/${totalGrades})`
+        `✓ Completed Grade ${gradeName} (${processedGrades}/${totalGrades})`,
       );
     } catch (error) {
       console.error(`✗ Error processing Grade ${gradeName}: ${error.message}`);

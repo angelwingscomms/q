@@ -1,4 +1,3 @@
-
 const fs = require("fs");
 const path = require("path");
 const { grades, subjectAbbreviations } = require("./constants");
@@ -36,10 +35,23 @@ async function generateMultipleQuizzes({ g, skipExisting = false, examType }) {
   if (fs.existsSync(jsonPath)) {
     // Process the JSON file
     try {
-      const exams = JSON.parse(fs.readFileSync(jsonPath, "utf8"));
-      console.log(`Found ${exams.length} exams to generate from JSON file`);
+      const jsonData = JSON.parse(fs.readFileSync(jsonPath, "utf8"));
+      const subjectAbbreviations = Object.keys(jsonData);
+      console.log(
+        `Found ${subjectAbbreviations.length} subjects to generate from JSON file`,
+      );
 
-      for (const { subject: s, content: t } of exams) {
+      for (const abbreviation of subjectAbbreviations) {
+        const getSubjectFromAbbreviation = require("./getSubjectFromAbbreviation");
+        const s = getSubjectFromAbbreviation(abbreviation);
+        const t = jsonData[abbreviation];
+
+        if (!s) {
+          console.log(
+            `Warning: Unknown subject abbreviation '${abbreviation}', skipping...`,
+          );
+          continue;
+        }
         console.log(`Processing quiz for ${s}...`);
 
         // Check if output files already exist
@@ -63,7 +75,12 @@ async function generateMultipleQuizzes({ g, skipExisting = false, examType }) {
         const quiz =
           examType === "Midterm"
             ? await createMidtermQuiz({ t, subject: s, grade: g })
-            : await createEndOfTermQuiz({ t, selectedClass: g, subject: s, grade: g });
+            : await createEndOfTermQuiz({
+                t,
+                selectedClass: g,
+                subject: s,
+                grade: g,
+              });
         const quizContent = JSON.parse(quiz);
 
         // Save the quiz JSON data
@@ -74,19 +91,25 @@ async function generateMultipleQuizzes({ g, skipExisting = false, examType }) {
         const answersPath = path.join(answersDir, `${abbreviatedSubject}.txt`);
         const answersContent = [
           "Section A (Objective) Answers:",
-          ...(quizContent.answers_A || []).map((answer, i) => `${i + 1}. ${answer}`),
+          ...(quizContent.answers_A || []).map(
+            (answer, i) => `${i + 1}. ${answer}`,
+          ),
           ...(quizContent.answers_B && quizContent.answers_B.length > 0
             ? [
                 "",
                 "Section B (Short Answer) Answers:",
-                ...quizContent.answers_B.map((answer, i) => `${i + 1}. ${answer}`),
+                ...quizContent.answers_B.map(
+                  (answer, i) => `${i + 1}. ${answer}`,
+                ),
               ]
             : []),
           ...(quizContent.answers_C && quizContent.answers_C.length > 0
             ? [
                 "",
                 "Section C (Theory) Answers:",
-                ...quizContent.answers_C.map((answer, i) => `${i + 1}. ${answer}`),
+                ...quizContent.answers_C.map(
+                  (answer, i) => `${i + 1}. ${answer}`,
+                ),
               ]
             : []),
         ].join("\n");
@@ -124,7 +147,7 @@ async function generateMultipleQuizzes({ g, skipExisting = false, examType }) {
       // If no match found, use the subject code as is
       if (!subject) {
         console.log(
-          `Warning: No matching subject found for code '${subjectCode}'. Using code as subject name.`
+          `Warning: No matching subject found for code '${subjectCode}'. Using code as subject name.`,
         );
         subject = subjectCode;
       }
@@ -142,7 +165,7 @@ async function generateMultipleQuizzes({ g, skipExisting = false, examType }) {
         fs.existsSync(jsonOutputPath)
       ) {
         console.log(
-          `Skipping ${subject} (code: ${subjectCode}) - output files already exist`
+          `Skipping ${subject} (code: ${subjectCode}) - output files already exist`,
         );
         continue;
       }
@@ -158,7 +181,12 @@ async function generateMultipleQuizzes({ g, skipExisting = false, examType }) {
         const quiz =
           examType === "Midterm"
             ? await createMidtermQuiz({ t: content, subject, grade: g })
-            : await createEndOfTermQuiz({ t: content, selectedClass: g, subject, grade: g });
+            : await createEndOfTermQuiz({
+                t: content,
+                selectedClass: g,
+                subject,
+                grade: g,
+              });
         const quizContent = JSON.parse(quiz);
 
         // Save the quiz JSON data
@@ -169,19 +197,25 @@ async function generateMultipleQuizzes({ g, skipExisting = false, examType }) {
         const answersPath = path.join(answersDir, `${subjectCode}.txt`);
         const answersContent = [
           "Section A (Objective) Answers:",
-          ...(quizContent.answers_A || []).map((answer, i) => `${i + 1}. ${answer}`),
+          ...(quizContent.answers_A || []).map(
+            (answer, i) => `${i + 1}. ${answer}`,
+          ),
           ...(quizContent.answers_B && quizContent.answers_B.length > 0
             ? [
                 "",
                 "Section B (Short Answer) Answers:",
-                ...quizContent.answers_B.map((answer, i) => `${i + 1}. ${answer}`),
+                ...quizContent.answers_B.map(
+                  (answer, i) => `${i + 1}. ${answer}`,
+                ),
               ]
             : []),
           ...(quizContent.answers_C && quizContent.answers_C.length > 0
             ? [
                 "",
                 "Section C (Theory) Answers:",
-                ...quizContent.answers_C.map((answer, i) => `${i + 1}. ${answer}`),
+                ...quizContent.answers_C.map(
+                  (answer, i) => `${i + 1}. ${answer}`,
+                ),
               ]
             : []),
         ].join("\n");
@@ -206,7 +240,7 @@ async function generateMultipleQuizzes({ g, skipExisting = false, examType }) {
     }
   } else {
     throw new Error(
-      `No data found for grade ${gradeNum}. Looked in:\n- ${jsonPath}\n- ${folderPath}`
+      `No data found for grade ${gradeNum}. Looked in:\n- ${jsonPath}\n- ${folderPath}`,
     );
   }
 

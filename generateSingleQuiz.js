@@ -1,4 +1,3 @@
-
 const fs = require("fs");
 const path = require("path");
 const { grades, subjectAbbreviations } = require("./constants");
@@ -26,15 +25,9 @@ async function generateSingleQuiz({ g, t, s, examType = "Single Quiz" }) {
     if (fs.existsSync(jsonPath)) {
       try {
         const jsonData = JSON.parse(fs.readFileSync(jsonPath, "utf8"));
-        // Try to find by abbreviation first, then by full name
-        let subjectData = jsonData.find(
-          (exam) => exam.subject === abbreviatedSubject
-        );
-        if (!subjectData) {
-          subjectData = jsonData.find((exam) => exam.subject === s);
-        }
-        if (subjectData) {
-          t = subjectData.content;
+        // Access content directly using subject abbreviation as key
+        if (jsonData[abbreviatedSubject]) {
+          t = jsonData[abbreviatedSubject];
         }
       } catch (error) {
         console.log(`Warning: Error reading JSON data: ${error.message}`);
@@ -45,7 +38,7 @@ async function generateSingleQuiz({ g, t, s, examType = "Single Quiz" }) {
     if (!t) {
       const subjectFilePath = path.join(
         __dirname,
-        `./files/input/${gradeNum}/${abbreviatedSubject}.md`
+        `./files/input/${gradeNum}/${abbreviatedSubject}.md`,
       );
       if (fs.existsSync(subjectFilePath)) {
         try {
@@ -56,7 +49,7 @@ async function generateSingleQuiz({ g, t, s, examType = "Single Quiz" }) {
         }
       } else {
         throw new Error(
-          `No content found for subject ${s} in grade ${gradeNum}. Checked:\n- ${jsonPath}\n- ${subjectFilePath}`
+          `No content found for subject ${s} in grade ${gradeNum}. Checked:\n- ${jsonPath}\n- ${subjectFilePath}`,
         );
       }
     }
@@ -65,7 +58,7 @@ async function generateSingleQuiz({ g, t, s, examType = "Single Quiz" }) {
   const doc = await generateDoc({ g, t, s, examType });
   const outputPath = path.join(
     __dirname,
-    `./files/output/g${gradeNum}/${abbreviatedSubject}.docx`
+    `./files/output/g${gradeNum}/${abbreviatedSubject}.docx`,
   );
 
   // Ensure the directory exists
