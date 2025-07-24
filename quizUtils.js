@@ -115,8 +115,8 @@ Format requirements:
 - A question may end with question mark
 - Use 1 underscore (_) for blanks
 - Never end a question with a blank
+- If you make a question that would have ended with a blank e.g. "The capital of France is _ (a) Paris (b) London (c) Berlin", then write the question without the blank, e.g. "The capital of France is (a) Paris (b) London (c) Berlin"
 - Use brackets for options (e.g., (a)...(b)...(c)...) and place questions and options on same line
-- Fix bad questions by removing or replacing options to ensure one correct answer
 - For answers_A, provide only the letter of the correct option (a, b, c, etc.) or the word that fills the blank
 
 - ${ext[1].a}
