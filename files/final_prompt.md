@@ -117,5 +117,5 @@ Write the following time
 
 *(Image of a clock at 5:30)*
 - Analogue time: half past 5
-- Digital time: 5:30 /n/n/n --- Extra instructions for creating quiz: time, Nigerian money, shapes, measurements, data, vertical addition, subtraction and simple multiplication, horizontal calculations (e.g 2 + 3 + 4). Include different kinds of easysums and arithmetic expressions in the objective section
+- Digital time: 5:30 /n/n/n --- Extra instructions for creating quiz: time, Nigerian money, shapes, measurements, data, vertical addition, subtraction and simple multiplication, horizontal calculations (e.g 2 + 3 + 4). Include different kinds of easysums and arithmetic expressions in the objective section/n/n/n --- Extra instructions for creating quiz: time, Nigerian money, shapes, measurements, data, vertical addition, subtraction and simple multiplication, horizontal calculations (e.g 2 + 3 + 4). Include different kinds of easy sums and arithmetic expressions in all sections. Let all the questions be easy sums and calculations. No explanations or facts. This exception is being made for Mathematics, where are all questions are easy sums and calculations
  """
