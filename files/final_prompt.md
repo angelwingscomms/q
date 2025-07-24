@@ -79,51 +79,43 @@ CRITICAL: Make the word problems in the objective section to be only 7 in number
 
 Text to create the quiz with:
   """
-  CRS
-The Birth of Jesus
-Mary became pregnant through the holy Spirit. When it was time for her to give birth, the government announced that they wanted to count the number of people in Israel. Joseph now took Mary his wife to Bethlehem where he came from to be counted. While they were there, It was time for Mary to give birth. There was no more room in the inn. They went to the manger where sheep were kept. It was there she gave birth to Jesus Christ.
+  CCA
+Ceremony
+A ceremony is the coming together of people to celebrate an event. There are lot of food, drinks during a ceremony.
+Types of ceremonies
+There are four types of ceremonies
+1. Traditional ceremony. e.g tradition marriage, naming ceremony etc.
+2. Religious ceremony. e.g christmas, Easter, Sallah
+3. National ceremonies. e.g Independence, Democracy day
+4. Carnivals: This is a colourful celebration where people come together to eat, drink, playing games, music - e.g Abuja and Calabar carnivals.
+
+CCA
+Importance of Ceremonies
+1. Ceremonies help to unite the people.
+2. They promotes culture of the people.
+3. They help in educating the youths about the society.
+4. They help to strengthen relationships.
+5. They encourage love and sharing among the people.
+6. They help economic development through tourism.
 Homework
-Complete this verse (Luke 1:30-31)
-"Fear not Mary, for thou has found"
+What is ceremony?
+2. Mention the types of ceremonies we have.
+3. Give an example of a religious ceremony.
 
-CRS
-Why Jesus Came
-Jesus came to the world to save us, to deliver us from the hand of Satan and he died for our sins.
-Ways in which God protected Jesus
-During the birth of Jesus, there was a king named Herod. He was furious when he heard about the birth of the savior. He sought ways of killing him, but God protected Jesus by: By telling Joseph to take baby Jesus and his mother to Egypt till the death of Herod who was planning to kill him.
+CCA
+Music Song
+A song is a group of sounds that are nice to the ears made by our voices when we sing.
+Why we sing song
+1. We sing song to show the love for our country.
+2. We sing song to praise God.
+3. We sing songs in times when we are sad.
+Musical instruments
+1. drums
+2. flutes
+3. guitars
+4. piano
 
-CRS
-Jesus Calls the Little Children
-When little children were brought to Jesus, he laid his hand on them, and prayed for them and carried them on his lap. His disciples were about to rebuke the parents who brought the children but Jesus told them not to send them away for the kingdom of God belongs to those who believe like children.
-Jesus Disciples
-Jesus calls his disciples his friends.
-His disciples are:
-1. peter
-2. Andrew
-3. John
-4. James
-5. Bartholomew
-6. Matthew
-7. Thomas
-8. Simon
-9. Thaddeus
-10. Judas Iscariot
-11. philip
-
-WEEK 6
-CRS
-The Death and Resurrection of Jesus
-Jesus was crucified on the cross at the third hour of the day. And hours later, he died. After his death on the cross, a man called Joseph of Arimathea, a counselor, went to pilate to ask for the body of Jesus to be released to him. He took the body of Jesus wrapped him and put him in tomb. On the third day Jesus risen from the death.
-Memory Verse (John 24:7)
-
-CRS
-How to Become a Christian
-A Christian is someone who believes in Jesus and follows Him as his or her personal Lord and Saviour.
-Steps to Become a Christian
-1. We must accept the message of Jesus.
-2. We must confess our sins and promise not to sin again.
-3. We must be baptized in the name of the father, the son and the Holy Spirit.
-Activities
-Who is a Christian?
-How can you become a Christian?
+CCA
+The Letters of Music
+Music has seven letters. They are also called the alphabet of music. They are A B C D E F G
  """
