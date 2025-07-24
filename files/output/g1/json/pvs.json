@@ -1,0 +1,74 @@
+{
+  "A": [
+    "1. If a family has 3 members and each needs a bed, how many beds are needed for the family? (a) 1 (b) 2 (c) 3)",
+    "2. A kitchen has 1 gas cooker and 1 electric cooker. How many cookers are there in total? (a) 1 (b) 2 (c) 3)",
+    "3. If you have 5 fingers and you use your right hand to eat, how many hands do you use for eating? (a) 1 (b) 2 (c) 5)",
+    "4. A home has 6 rooms. If 2 rooms are bedrooms, how many rooms are not bedrooms? (a) 2 (b) 4 (c) 6)",
+    "5. There are 4 types of toilets listed. If you know 2 of them, how many more do you need to learn? (a) 1 (b) 2 (c) 3)",
+    "6. If the sun provides light for 12 hours and then sets, how many hours of light does it provide? (a) 6 (b) 10 (c) 12)",
+    "7. A dining room has 4 chairs. If 2 chairs are broken, how many chairs are still good? (a) 1 (b) 2 (c) 3)",
+    "8. A home is a place where members of a _ live (a) family (b) school (c) office)",
+    "9. A house is a _ which is the home for a family (a) car (b) building (c) tree)",
+    "10. The living room is where we entertain _ (a) pets (b) visitors (c) toys)",
+    "11. We eat food in the _ room (a) bed (b) dining (c) bath)",
+    "12. We sleep in the _ (a) kitchen (b) bedroom (c) toilet)",
+    "13. Food is prepared in the _ (a) bathroom (b) kitchen (c) living room)",
+    "14. We use the toilet to _ or defecate (a) sleep (b) urinate (c) eat)",
+    "15. We take our bath in the _ (a) kitchen (b) bedroom (c) bathroom)",
+    "16. Which item is found in a bedroom (a) Gas cooker (b) Bed (c) Spoon)",
+    "17. Which item is found in a kitchen (a) Wardrobe (b) Fridge (c) Pillow)",
+    "18. A toilet is a place where we pass _ (a) food (b) urine (c) toys)",
+    "19. Which is a type of toilet (a) Tree toilet (b) Hole toilet (c) Car toilet)",
+    "20. After using the toilet, you should _ your hands with soap and water (a) dry (b) wash (c) hide)"
+  ],
+  "answers_A": [
+    "c",
+    "b",
+    "a",
+    "b",
+    "b",
+    "c",
+    "b",
+    "a",
+    "b",
+    "b",
+    "b",
+    "b",
+    "b",
+    "b",
+    "c",
+    "b",
+    "b",
+    "b",
+    "b",
+    "b"
+  ],
+  "B": [
+    "1. The room where we relax and watch television is the _________ room.",
+    "2. Forks and spoons are found in the _________ room.",
+    "3. A land that has so much water where plants grow is called _________ land.",
+    "4. The sun rises in the _________.",
+    "5. We build houses on _________."
+  ],
+  "C": [
+    "1. Name two items found in a bathroom.",
+    "2. List two types of dirt.",
+    "3. State two uses of land.",
+    "4. Mention two good feeding habits.",
+    "5. What are two uses of the sun?"
+  ],
+  "answers_B": [
+    "living",
+    "dining",
+    "swampy",
+    "morning",
+    "land"
+  ],
+  "answers_C": [
+    "Sink, soap",
+    "Pieces of paper, dust",
+    "Plant crops, build houses",
+    "Wash hands before eating, chew food before swallowing",
+    "Provides daylight, warms our body"
+  ]
+}
