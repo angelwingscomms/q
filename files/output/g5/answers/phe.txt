@@ -1,65 +1,65 @@
 Section A (Objective) Answers:
 1. b
-2. True
-3. a
-4. c
+2. b
+3. True
+4. b
 5. b
-6. b
-7. True
-8. c
+6. c
+7. b
+8. True
 9. b
-10. True
+10. c
 11. b
-12. b
-13. c
+12. False
+13. b
 14. b
 15. c
-16. True
-17. b
+16. False
+17. c
 18. b
 19. b
-20. True
+20. False
 21. b
-22. c
+22. b
 23. b
 24. True
 25. b
 26. b
-27. True
-28. b
+27. a
+28. True
 29. b
-30. True
-31. c
-32. b
-33. b
+30. c
+31. b
+32. False
+33. a
 34. b
-35. c
-36. True
-37. c
+35. a
+36. False
+37. b
 38. b
-39. b
+39. c
 40. False
 41. b
-42. b
+42. c
 43. b
-44. b
-45. c
-46. True
+44. False
+45. b
+46. b
 47. b
-48. b
+48. False
 49. b
-50. True
+50. c
 
 Section B (Short Answer) Answers:
-1. Earth
-2. Tiger
-3. Five
-4. Ocean
-5. Sun
+1. Yellow
+2. Four
+3. Earth
+4. Bird
+5. Honey
 
 Section C (Theory) Answers:
-1. Cow, Pig
-2. Sunny, Rainy, Cloudy
-3. Smelling
-4. Desk, Chair
-5. To tell time
+1. Red, Blue
+2. Sunny, Rainy
+3. Building houses
+4. Hydration
+5. Apple
