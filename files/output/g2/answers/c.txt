@@ -1,35 +1,35 @@
 Section A (Objective) Answers:
-1. a
-2. b
-3. c
-4. c
+1. b
+2. a
+3. b
+4. b
 5. b
 6. c
 7. b
-8. b
+8. a
 9. b
 10. c
-11. d
-12. a
-13. b
-14. d
+11. b
+12. b
+13. c
+14. a
 15. c
 16. b
-17. b
+17. a
 18. b
 19. c
 20. b
 
 Section B (Short Answer) Answers:
-1. Joystick
-2. Box
-3. CPU, disk drive, motherboard
-4. CPU
-5. Storage devices
+1. Information
+2. Antenna
+3. Subtraction
+4. Monitor
+5. Communicate
 
 Section C (Theory) Answers:
-1. Stores data
-2. Flash drive
-3. Words
-4. Drive uses electricity
-5. Control Unit
+1. Calculator, Radio, Television
+2. A television allows users to watch cartoons and news.
+3. A radio passes audio sound programmes and messages to the public using an antenna for receiving and a speaker for passing sound.
+4. A computer has a monitor to see what is entered and a system unit that connects all other devices.
+5. A digital wristwatch displays the time in numbers, showing the hour, minute, and second.
